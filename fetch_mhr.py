@@ -9,7 +9,6 @@ from html.parser import HTMLParser
 
 SCRAPER_API_KEY = os.environ.get("SCRAPER_API_KEY", "").strip()
 
-# Target MHR ranking URLs
 MHR_DIVISIONS = {
     "U11 AA": "https://myhockeyrankings.com/rank.php?y=2026&v=142",
     "U14 AA": "https://myhockeyrankings.com/rank.php?y=2026&v=145"
@@ -83,7 +82,6 @@ def fetch_html(target_url, api_key):
         print("   ⚠️ SCRAPER_API_KEY secret not found. Attempting direct connection...", flush=True)
         req_url = target_url
     else:
-        params = urllib.parse.urlencode({
-            "api_key": api_key,
-            "url": target_url,
-            "render":
+        query_dict = dict(api_key=api_key, url=target_url, render="true", premium="true", country_code="ca")
+        params = urllib.parse.urlencode(query_dict)
+        req_url = f"
