@@ -1,54 +1,18 @@
 import urllib.request
 import urllib.error
+import urllib.parse
 import json
 import os
 import re
 import time
 from datetime import datetime, timezone
 
-# 1. API Headers & Optional Auth
-FIREBASE_API_KEY = os.environ.get("GAMESHEET_FIREBASE_KEY", "").strip()
-AUTH_GATEWAY_URL = "https://gateway-authserver-awy26srzoa-nn.a.run.app/auth/v4/tokens"
-GAMESHEET_EMAIL = os.environ.get("GAMESHEET_EMAIL", "").strip()
-GAMESHEET_PASSWORD = os.environ.get("GAMESHEET_PASSWORD", "").strip()
-FALLBACK_AUTH = os.environ.get("GAMESHEET_AUTH", "").strip()
-
 headers = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
     'Accept': 'application/json, text/plain, */*',
-    'Referer': 'https://gamesheetstats.com/shares/dashboard',
+    'Referer': 'https://gamesheetstats.com/',
     'Origin': 'https://gamesheetstats.com'
 }
-
-def authenticate_gamesheet(email, password):
-    if not FIREBASE_API_KEY:
-        return None
-    try:
-        fb_url = f"https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key={FIREBASE_API_KEY}"
-        payload = json.dumps({"email": email, "password": password, "returnSecureToken": True}).encode('utf-8')
-        req = urllib.request.Request(fb_url, data=payload, headers={"Content-Type": "application/json"})
-        with urllib.request.urlopen(req, timeout=15) as resp:
-            fb_data = json.loads(resp.read().decode('utf-8'))
-            id_token = fb_data.get("idToken")
-
-        if not id_token:
-            return None
-
-        gw_req = urllib.request.Request(
-            AUTH_GATEWAY_URL,
-            headers={"Authorization": f"Bearer {id_token}", "Origin": "https://gamesheet.app"}
-        )
-        with urllib.request.urlopen(gw_req, timeout=15) as resp:
-            gw_data = json.loads(resp.read().decode('utf-8'))
-            return gw_data.get("access")
-    except Exception as e:
-        print(f"WARNING: Auth failed, attempting anonymous fetch: {e}", flush=True)
-        return None
-
-token = authenticate_gamesheet(GAMESHEET_EMAIL, GAMESHEET_PASSWORD) if GAMESHEET_EMAIL else FALLBACK_AUTH
-if token:
-    headers['Authorization'] = f"Bearer {token}"
-    headers['Cookie'] = f"__session={token}"
 
 def clean_name(val):
     return ' '.join(str(val or "").split()).strip()
@@ -74,11 +38,11 @@ def fetch_json(url, retries=3):
             if attempt < retries - 1:
                 time.sleep(1.5)
                 continue
-            print(f"FAILED: Could not fetch {url}: {e}", flush=True)
+            print(f"   ⚠️ Request error for {url}: {e}", flush=True)
             return None
     return None
 
-# 2. Load Sources
+# 1. Load Sources Configuration
 if not os.path.exists("sources.json"):
     raise FileNotFoundError("sources.json not found.")
 
@@ -90,90 +54,134 @@ all_standings = []
 all_games = []
 valid_finals = ["final", "official", "completed", "complete", "played", "finished", "2", "3"]
 
-# 3. Pull Standings & Schedules
+# 2. Extract League Data
 for league_name, config in leagues.items():
-    s_id = str(config.get("id", config))
-    print(f"\nProcessing [{league_name}] (ID: {s_id})...", flush=True)
+    s_id = str(config.get("id", config)).strip()
+    print(f"\n📡 Processing [{league_name}] (Season ID: {s_id})...", flush=True)
 
-    # A. Fetch Standings
-    standings_data = fetch_json(f"https://gamesheetstats.com/api/standings/{s_id}?")
-    if standings_data and "data" in standings_data:
-        for div_group in standings_data["data"]:
-            div_title = clean_name(div_group.get("title") or div_group.get("name") or "")
-            cohort = detect_cohort(div_title)
-            
-            for row in div_group.get("standings", []):
-                row_div = clean_name(row.get("division", {}).get("title") or "")
-                effective_cohort = cohort or detect_cohort(row_div)
-                if not effective_cohort:
-                    continue
+    # Step A: Discover all divisions for this season
+    div_url = f"https://gamesheetstats.com/api/useSeasonDivisions/getDivisions/{s_id}"
+    div_res = fetch_json(div_url)
+    raw_divs = div_res if isinstance(div_res, list) else (div_res.get("data") or div_res.get("divisions") or []) if isinstance(div_res, dict) else []
 
-                t_info = row.get("team", {})
-                st = row.get("stats", {})
+    target_div_map = {}  # div_id -> cohort name
+    for d in raw_divs:
+        d_id = str(d.get("id") or d.get("division_id") or "")
+        d_title = clean_name(d.get("title") or d.get("name") or "")
+        cohort = detect_cohort(d_title)
+        if cohort and d_id:
+            target_div_map[d_id] = cohort
+            print(f"   🎯 Found division: [{d_title}] -> {cohort} (ID: {d_id})", flush=True)
 
-                all_standings.append({
-                    "league": league_name,
-                    "league_id": s_id,
-                    "cohort": effective_cohort,
-                    "team_id": t_info.get("id"),
-                    "team_name": clean_name(t_info.get("title") or t_info.get("name")),
-                    "gp": int(st.get("gp") or 0),
-                    "w": int(st.get("w") or 0),
-                    "l": int(st.get("l") or 0),
-                    "t": int(st.get("t") or 0),
-                    "pts": int(st.get("pts") or 0),
-                    "gf": int(st.get("gf") or 0),
-                    "ga": int(st.get("ga") or 0),
-                    "diff": int(st.get("diff") or 0),
-                    "pim": int(st.get("pim") or 0)
-                })
+    if not target_div_map:
+        print(f"   ⚠️ No U11 AA or U14 AA divisions detected in {league_name}.", flush=True)
+        continue
 
-    # B. Fetch Games (Completed & Scheduled)
-    games_data = fetch_json(f"https://gamesheetstats.com/api/unified-games/{s_id}?filter[limit]=10000")
-    raw_games = games_data if isinstance(games_data, list) else (games_data.get("games") or games_data.get("data") or []) if isinstance(games_data, dict) else []
+    div_ids_str = ",".join(target_div_map.keys())
 
-    league_game_count = 0
-    for g in raw_games:
-        gid = g.get("gameId")
-        if not gid:
-            continue
+    # Step B: Pull Standings
+    standings_url = f"https://gamesheetstats.com/api/useStandings/getDivisionStandings/{s_id}?filter[divisions]={div_ids_str}"
+    standings_res = fetch_json(standings_url)
+    raw_standings_groups = standings_res if isinstance(standings_res, list) else (standings_res.get("data") or standings_res.get("standings") or []) if isinstance(standings_res, dict) else []
 
-        visitor = g.get("visitor") or {}
-        home = g.get("home") or {}
-        g_div = clean_name(g.get("division", {}).get("title") or visitor.get("division", {}).get("title") or home.get("division", {}).get("title") or "")
-        cohort = detect_cohort(g_div)
-
+    league_standings_count = 0
+    for group in raw_standings_groups:
+        g_div = group.get("division", {})
+        g_div_id = str(g_div.get("id") or group.get("division_id") or "")
+        cohort = target_div_map.get(g_div_id) or detect_cohort(g_div.get("title") or group.get("title") or "")
         if not cohort:
             continue
 
-        status_str = str(g.get("status") or "").strip().lower()
-        is_final = status_str in valid_finals
+        team_rows = group.get("standings") or group.get("teams") or [group] if "team" in group or "stats" in group else []
+        for row in team_rows:
+            t_info = row.get("team", {}) if "team" in row else row
+            st = row.get("stats", {}) if "stats" in row else row
 
-        h_goals = int(home.get("goals") or 0) if is_final else None
-        v_goals = int(visitor.get("goals") or 0) if is_final else None
+            t_name = clean_name(t_info.get("title") or t_info.get("name") or row.get("team_name") or "")
+            if not t_name:
+                continue
 
-        all_games.append({
-            "game_id": str(gid),
-            "league": league_name,
-            "league_id": s_id,
-            "cohort": cohort,
-            "date": g.get("date", ""),
-            "time": g.get("time", ""),
-            "status": "final" if is_final else "scheduled",
-            "location": g.get("location", ""),
-            "home_id": home.get("id"),
-            "home_name": clean_name(home.get("title") or home.get("name")),
-            "home_goals": h_goals,
-            "visitor_id": visitor.get("id"),
-            "visitor_name": clean_name(visitor.get("title") or visitor.get("name")),
-            "visitor_goals": v_goals
-        })
-        league_game_count += 1
+            all_standings.append({
+                "league": league_name,
+                "league_id": s_id,
+                "cohort": cohort,
+                "team_id": str(t_info.get("id") or ""),
+                "team_name": t_name,
+                "gp": int(st.get("gp") or 0),
+                "w": int(st.get("w") or 0),
+                "l": int(st.get("l") or 0),
+                "t": int(st.get("t") or 0),
+                "pts": int(st.get("pts") or 0),
+                "gf": int(st.get("gf") or 0),
+                "ga": int(st.get("ga") or 0),
+                "diff": int(st.get("diff") or (int(st.get("gf") or 0) - int(st.get("ga") or 0))),
+                "pim": int(st.get("pim") or 0)
+            })
+            league_standings_count += 1
 
-    print(f"   Collected games for [{league_name}]: {league_game_count}", flush=True)
+    print(f"   📊 Standings collected: {league_standings_count}", flush=True)
+
+    # Step C: Pull Full Schedule (Paginated)
+    offset = 0
+    limit = 250
+    league_game_count = 0
+
+    while True:
+        sched_url = f"https://gamesheetstats.com/api/useSchedule/getSeasonSchedule/{s_id}?filter[divisions]={div_ids_str}&filter[offset]={offset}&filter[limit]={limit}"
+        sched_res = fetch_json(sched_url)
+        games_batch = sched_res if isinstance(sched_res, list) else (sched_res.get("data") or sched_res.get("games") or sched_res.get("schedule") or []) if isinstance(sched_res, dict) else []
+
+        if not games_batch:
+            break
+
+        for g in games_batch:
+            gid = str(g.get("gameId") or g.get("id") or "")
+            if not gid:
+                continue
+
+            visitor = g.get("visitor") or {}
+            home = g.get("home") or {}
+
+            g_div_id = str(g.get("divisionId") or g.get("division_id") or g.get("division", {}).get("id") or "")
+            g_div_title = clean_name(g.get("division", {}).get("title") or visitor.get("division", {}).get("title") or home.get("division", {}).get("title") or "")
+            cohort = target_div_map.get(g_div_id) or detect_cohort(g_div_title)
+
+            if not cohort:
+                continue
+
+            status_str = str(g.get("status") or "").strip().lower()
+            is_final = status_str in valid_finals
+
+            h_goals = int(home.get("goals") or g.get("homeGoals") or 0) if is_final else None
+            v_goals = int(visitor.get("goals") or g.get("visitorGoals") or 0) if is_final else None
+
+            all_games.append({
+                "game_id": gid,
+                "league": league_name,
+                "league_id": s_id,
+                "cohort": cohort,
+                "date": g.get("date", ""),
+                "time": g.get("time", ""),
+                "status": "final" if is_final else "scheduled",
+                "location": g.get("location") or g.get("arena") or "",
+                "home_id": str(home.get("id") or ""),
+                "home_name": clean_name(home.get("title") or home.get("name") or ""),
+                "home_goals": h_goals,
+                "visitor_id": str(visitor.get("id") or ""),
+                "visitor_name": clean_name(visitor.get("title") or visitor.get("name") or ""),
+                "visitor_goals": v_goals
+            })
+            league_game_count += 1
+
+        if len(games_batch) < limit:
+            break
+        offset += limit
+        time.sleep(0.3)
+
+    print(f"   🏒 Games collected: {league_game_count}", flush=True)
     time.sleep(0.5)
 
-# 4. Save Extracted Data
+# 3. Save Output JSON
 output = {
     "generated_at": datetime.now(timezone.utc).isoformat(),
     "standings": all_standings,
@@ -184,7 +192,7 @@ with open("omha_raw_data.json", "w", encoding="utf-8") as f:
     json.dump(output, f, indent=2)
 
 print("\n" + "=" * 50, flush=True)
-print(f" Standings Rows Collected: {len(all_standings)}", flush=True)
-print(f" Games Collected:          {len(all_games)}", flush=True)
+print(f" Total Standings Rows Collected: {len(all_standings)}", flush=True)
+print(f" Total Games Collected:          {len(all_games)}", flush=True)
 print(" Saved to omha_raw_data.json", flush=True)
 print("=" * 50, flush=True)
