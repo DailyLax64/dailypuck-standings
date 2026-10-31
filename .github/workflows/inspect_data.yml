@@ -16,60 +16,125 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Run Deep Diagnostic
+      - name: Run Prototype Team Calendar Scraper
         run: |
-          cat << 'EOF' > deep_check.py
-          import json
+          cat << 'EOF' > parse_team_calendar.py
           import urllib.request
+          import re
           from datetime import datetime
-          from collections import Counter
 
-          # 1. Analyze existing omha_raw_data.json
-          with open("omha_raw_data.json", "r", encoding="utf-8") as f:
-              data = json.load(f)
-
-          games = data.get("games", [])
-          scheduled = [g for g in games if g.get("status") == "scheduled"]
-
-          print("=" * 60)
-          print(f"CURRENT DATASET: {len(games)} Total Games ({len(scheduled)} Scheduled)")
-          print("=" * 60)
-
-          # Show breakdown of scheduled game dates
-          sched_dates = Counter(g.get("date") for g in scheduled)
-          print("\n📅 Scheduled Games by Date:")
-          for d, cnt in sorted(sched_dates.items()):
-              print(f"   {d}: {cnt} games")
-
-          # 2. Test Live GameSheet API for Season 15497 (Tri-County)
-          print("\n" + "=" * 60)
-          print("TESTING GAMESHEET API ENDPOINTS (Tri-County 15497)")
-          print("=" * 60)
+          # Convert webcal:// to https://
+          ics_url = "https://burlingtoneagles.com/webcal.ashx?IDs=2074"
+          html_url = "https://burlingtoneagles.com/Teams/2074/Schedule/"
 
           headers = {
-              'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
-              'Accept': 'application/json, text/plain, */*',
-              'Referer': 'https://gamesheetstats.com/shares/dashboard',
-              'Origin': 'https://gamesheetstats.com'
+              'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
           }
 
-          test_urls = [
-              ("Raw unified-games", "https://gamesheetstats.com/api/unified-games/15497"),
-              ("With limit=5000", "https://gamesheetstats.com/api/unified-games/15497?filter[limit]=5000"),
-              ("Page 2 offset=100", "https://gamesheetstats.com/api/unified-games/15497?filter[offset]=100&filter[limit]=100"),
-              ("Date from Nov 15", "https://gamesheetstats.com/api/unified-games/15497?filter[date_from]=2026-11-15"),
-              ("Schedule endpoint", "https://gamesheetstats.com/api/schedule/15497?")
-          ]
+          print("=" * 65)
+          print("FETCHING BURLINGTON EAGLES U11 AA CALENDAR")
+          print(f"Feed: {ics_url}")
+          print("=" * 65)
 
-          for label, url in test_urls:
-              try:
-                  req = urllib.request.Request(url, headers=headers)
-                  with urllib.request.urlopen(req, timeout=15) as resp:
-                      raw = json.loads(resp.read().decode('utf-8'))
-                      items = raw if isinstance(raw, list) else (raw.get("games") or raw.get("data") or [])
-                      print(f"✅ {label}: Status {resp.status} | Returned {len(items)} items")
-              except Exception as e:
-                  print(f"❌ {label}: {e}")
+          req = urllib.request.Request(ics_url, headers=headers)
+          try:
+              with urllib.request.urlopen(req, timeout=15) as resp:
+                  content = resp.read().decode('utf-8', errors='ignore')
+          except Exception as e:
+              print(f"Error fetching ICS: {e}")
+              exit(1)
+
+          # Parse VEVENT blocks
+          events = []
+          curr = None
+          for raw_line in content.splitlines():
+              line = raw_line.strip()
+              if line == "BEGIN:VEVENT":
+                  curr = {}
+              elif line == "END:VEVENT":
+                  if curr:
+                      events.append(curr)
+                  curr = None
+              elif curr is not None and ":" in line:
+                  # Parse key-value pairs (ignoring sub-parameters like TZID)
+                  k_part, v = line.split(":", 1)
+                  k = k_part.split(";")[0].upper()
+                  curr[k] = v.replace("\\n", " ").replace("\\,", ",")
+
+          print(f"Total calendar entries found: {len(events)}")
+
+          # Filter: KEEP ONLY Home Game and Away Game
+          league_games = []
+          ignored_categories = set()
+
+          for ev in events:
+              summary = ev.get("SUMMARY", "").strip()
+              category = ev.get("CATEGORIES", "").strip()
+              description = ev.get("DESCRIPTION", "").strip()
+              location = ev.get("LOCATION", "").strip()
+              dtstart = ev.get("DTSTART", "").strip()
+
+              # Check if it is a Home Game or Away Game
+              is_home = (
+                  "home game" in category.lower() or 
+                  "home game" in summary.lower() or 
+                  "home game" in description.lower()
+              )
+              is_away = (
+                  "away game" in category.lower() or 
+                  "away game" in summary.lower() or 
+                  "away game" in description.lower()
+              )
+
+              # Filter out Tournaments and Exhibitions explicitly
+              is_excluded = any(
+                  excl in (summary + category + description).lower()
+                  for excl in ["tournament", "exhibition", "practice", "dryland", "photo", "meeting"]
+              )
+
+              if (is_home or is_away) and not is_excluded:
+                  # Extract opponent from summary (e.g., 'Home Game vs Oakville Rangers')
+                  opp = summary
+                  for prefix in ["Home Game vs", "Home Game vs.", "Away Game @", "Away Game vs", "Away Game at"]:
+                      if prefix.lower() in opp.lower():
+                          idx = opp.lower().find(prefix.lower()) + len(prefix)
+                          opp = opp[idx:].strip()
+
+                  # Format date
+                  readable_date = dtstart
+                  try:
+                      # Format: YYYYMMDDTHHMMSSZ or YYYYMMDD
+                      d_clean = dtstart.split("T")[0]
+                      readable_date = datetime.strptime(d_clean, "%Y%m%d").strftime("%Y-%m-%d")
+                  except Exception:
+                      pass
+
+                  league_games.append({
+                      "date": readable_date,
+                      "type": "Home" if is_home else "Away",
+                      "opponent": opp,
+                      "location": location,
+                      "summary": summary
+                  })
+              else:
+                  cat_label = category or summary
+                  ignored_categories.add(cat_label)
+
+          print(f"\nFiltered Out Non-League Categories:")
+          for cat in sorted(ignored_categories)[:8]:
+              print(f"   ✕ {cat}")
+
+          # Sort games chronologically
+          league_games.sort(key=lambda x: x["date"])
+
+          print("\n" + "=" * 65)
+          print(f"EXTRACTED LEAGUE GAMES ({len(league_games)} Games Found)")
+          print("=" * 65)
+          print(f"{'Date':<12} | {'Type':<6} | {'Opponent':<28} | {'Location'}")
+          print("-" * 65)
+
+          for g in league_games:
+              print(f"{g['date']:<12} | {g['type']:<6} | {g['opponent'][:26]:<28} | {g['location'][:30]}")
 
           EOF
-          python deep_check.py
+          python parse_team_calendar.py
