@@ -56,7 +56,7 @@ def find_canonical_team(cleaned_name, cohort, master_db):
     cohort_dict = master_db.get(cohort, {})
     if cleaned_name in cohort_dict:
         return cleaned_name
-    
+
     c_upper = cleaned_name.upper()
     for can in cohort_dict:
         if can.upper() == c_upper:
@@ -79,9 +79,4 @@ def find_canonical_team(cleaned_name, cohort, master_db):
 
 def fetch_html(target_url, api_key):
     if not api_key:
-        print("   ⚠️ SCRAPER_API_KEY secret not found. Attempting direct connection...", flush=True)
-        req_url = target_url
-    else:
-        query_dict = dict(api_key=api_key, url=target_url, render="true", premium="true", country_code="ca")
-        params = urllib.parse.urlencode(query_dict)
-        req_url = f"
+        print("   ⚠️ SCRAPER_API
