@@ -10,8 +10,8 @@ from html.parser import HTMLParser
 SCRAPER_API_KEY = os.environ.get("SCRAPER_API_KEY", "").strip()
 
 MHR_DIVISIONS = {
-    "U11 AA": "https://myhockeyrankings.com/rank.php?y=2026&v=142&view=alphabetic",
-    "U14 AA": "https://myhockeyrankings.com/rank.php?y=2026&v=145&view=alphabetic"
+    "U11 AA": "https://myhockeyrankings.com/rank?y=2026&v=142&view=last10",
+    "U14 AA": "https://myhockeyrankings.com/rank?y=2026&v=145&view=last10"
 }
 
 class MHRTableParser(HTMLParser):
