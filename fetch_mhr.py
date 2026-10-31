@@ -9,8 +9,9 @@ from html.parser import HTMLParser
 
 SCRAPER_API_KEY = os.environ.get("SCRAPER_API_KEY", "").strip()
 
+# Target MHR ranking URLs
 MHR_DIVISIONS = {
-    "U11 AA": "https://myhockeyrankings.com/rank.php?y=2026&v=142&view=alphabetic",
+    "U11 AA": "https://myhockeyrankings.com/rank.php?y=2026&a=1&v=142",
     "U14 AA": "https://myhockeyrankings.com/rank.php?y=2026&v=145&view=alphabetic"
 }
 
@@ -85,6 +86,8 @@ def fetch_html(target_url, api_key):
         params = urllib.parse.urlencode({
             "api_key": api_key,
             "url": target_url,
+            "render": "true",
+            "premium": "true",
             "country_code": "ca"
         })
         req_url = f"https://api.scraperapi.com?{params}"
@@ -95,7 +98,7 @@ def fetch_html(target_url, api_key):
     }
 
     req = urllib.request.Request(req_url, headers=headers)
-    with urllib.request.urlopen(req, timeout=45) as resp:
+    with urllib.request.urlopen(req, timeout=120) as resp:
         return resp.read().decode("utf-8", errors="ignore")
 
 def parse_mhr_table(html_content):
@@ -124,84 +127,4 @@ def parse_mhr_table(html_content):
 
         if "team" in col_map and len(row) > col_map["team"]:
             team_raw = row[col_map["team"]]
-            if not team_raw or team_raw.lower() in ["team", "n/a"]:
-                continue
-            
-            rank_val = row[col_map["rank"]] if "rank" in col_map and len(row) > col_map["rank"] else "n/a"
-            rec_val = row[col_map["record"]] if "record" in col_map and len(row) > col_map["record"] else ""
-            rating_val = row[col_map["rating"]] if "rating" in col_map and len(row) > col_map["rating"] else "0.00"
-            agd_val = row[col_map["agd"]] if "agd" in col_map and len(row) > col_map["agd"] else "0.00"
-            sched_val = row[col_map["sched"]] if "sched" in col_map and len(row) > col_map["sched"] else "0.00"
-
-            records.append({
-                "team_raw": team_raw,
-                "rank": rank_val,
-                "record": rec_val,
-                "rating": rating_val,
-                "agd": agd_val,
-                "sched": sched_val
-            })
-
-    return records
-
-def update_master_teams():
-    master_path = "master_teams.json"
-    if not os.path.exists(master_path):
-        raise FileNotFoundError("master_teams.json does not exist.")
-    
-    with open(master_path, "r", encoding="utf-8") as f:
-        master_db = json.load(f)
-
-    timestamp = datetime.now(timezone.utc).isoformat()
-    total_updated = 0
-
-    for cohort, url in MHR_DIVISIONS.items():
-        print(f"\n🌐 Fetching MHR table for [{cohort}]...", flush=True)
-        for attempt in range(1, 3):
-            try:
-                html = fetch_html(url, SCRAPER_API_KEY)
-                parsed_rows = parse_mhr_table(html)
-                print(f"   📊 Found {len(parsed_rows)} team records in MHR table.", flush=True)
-
-                cohort_updated = 0
-                for r in parsed_rows:
-                    clean_name = clean_team_name(r["team_raw"])
-                    canonical = find_canonical_team(clean_name, cohort, master_db)
-                    
-                    if canonical and canonical in master_db.get(cohort, {}):
-                        t_entry = master_db[cohort][canonical]
-                        
-                        raw_rank = str(r["rank"]).strip()
-                        rank_clean = int(raw_rank) if raw_rank.isdigit() else raw_rank
-                        
-                        try:
-                            rating_float = float(r["rating"])
-                        except ValueError:
-                            rating_float = 0.0
-
-                        t_entry["mhr_rank"] = rank_clean
-                        t_entry["mhr_rating"] = rating_float
-                        t_entry["mhr_record"] = r["record"]
-                        t_entry["mhr_agd"] = r["agd"]
-                        t_entry["mhr_sched"] = r["sched"]
-                        t_entry["mhr_updated_at"] = timestamp
-                        cohort_updated += 1
-
-                print(f"   ✅ Successfully mapped and updated {cohort_updated} teams for {cohort}.", flush=True)
-                total_updated += cohort_updated
-                break
-            except Exception as e:
-                print(f"   ⚠️ Attempt {attempt} error for {cohort}: {e}", flush=True)
-                if attempt < 2:
-                    time.sleep(3.0)
-                else:
-                    print(f"   ❌ Failed to update {cohort} after {attempt} attempts.", flush=True)
-        time.sleep(1.0)
-
-    with open(master_path, "w", encoding="utf-8") as f:
-        json.dump(master_db, f, indent=2)
-
-    print(f"\n💾 Saved updated master_teams.json with {total_updated} team ratings!", flush=True)
-
-if __name__ == "__main__":
-    update_master_teams()
+            if not
