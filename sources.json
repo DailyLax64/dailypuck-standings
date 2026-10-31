@@ -1,0 +1,16 @@
+{
+  "leagues": {
+    "Tri-County": {
+      "id": "15497",
+      "tier": "AA"
+    },
+    "York-Simcoe": {
+      "id": "15489",
+      "tier": "AA"
+    },
+    "Lakeshore": {
+      "id": "15493",
+      "tier": "AA"
+    }
+  }
+}
