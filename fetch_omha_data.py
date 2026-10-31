@@ -42,7 +42,7 @@ def authenticate_gamesheet(email, password):
             gw_data = json.loads(resp.read().decode('utf-8'))
             return gw_data.get("access")
     except Exception as e:
-        print(f"⚠️ Auth failed, attempting anonymous fetch: {e}")
+        print(f"WARNING: Auth failed, attempting anonymous fetch: {e}", flush=True)
         return None
 
 token = authenticate_gamesheet(GAMESHEET_EMAIL, GAMESHEET_PASSWORD) if GAMESHEET_EMAIL else FALLBACK_AUTH
@@ -74,7 +74,7 @@ def fetch_json(url, retries=3):
             if attempt < retries - 1:
                 time.sleep(1.5)
                 continue
-            print(f"❌ Failed to fetch {url}: {e}")
+            print(f"FAILED: Could not fetch {url}: {e}", flush=True)
             return None
     return None
 
@@ -93,7 +93,7 @@ valid_finals = ["final", "official", "completed", "complete", "played", "finishe
 # 3. Pull Standings & Schedules
 for league_name, config in leagues.items():
     s_id = str(config.get("id", config))
-    print(f"\n📡 Processing [{league_name}] (ID: {s_id})...")
+    print(f"\nProcessing [{league_name}] (ID: {s_id})...", flush=True)
 
     # A. Fetch Standings
     standings_data = fetch_json(f"https://gamesheetstats.com/api/standings/{s_id}?")
@@ -106,7 +106,7 @@ for league_name, config in leagues.items():
                 row_div = clean_name(row.get("division", {}).get("title") or "")
                 effective_cohort = cohort or detect_cohort(row_div)
                 if not effective_cohort:
-                    continue  # Only keep U11 AA and U14 AA
+                    continue
 
                 t_info = row.get("team", {})
                 st = row.get("stats", {})
@@ -132,6 +132,7 @@ for league_name, config in leagues.items():
     games_data = fetch_json(f"https://gamesheetstats.com/api/unified-games/{s_id}?filter[limit]=10000")
     raw_games = games_data if isinstance(games_data, list) else (games_data.get("games") or games_data.get("data") or []) if isinstance(games_data, dict) else []
 
+    league_game_count = 0
     for g in raw_games:
         gid = g.get("gameId")
         if not gid:
@@ -167,7 +168,9 @@ for league_name, config in leagues.items():
             "visitor_name": clean_name(visitor.get("title") or visitor.get("name")),
             "visitor_goals": v_goals
         })
+        league_game_count += 1
 
+    print(f"   Collected games for [{league_name}]: {league_game_count}", flush=True)
     time.sleep(0.5)
 
 # 4. Save Extracted Data
@@ -180,8 +183,8 @@ output = {
 with open("omha_raw_data.json", "w", encoding="utf-8") as f:
     json.dump(output, f, indent=2)
 
-print("\n" + "=" * 50)
-print(f" Standings Rows Collected: {len(all_standings)}")
-print(f" Games Collected:          {len(all_games)}")
-print(" Saved to omha_raw_data.json")
-print("=" * 50)
+print("\n" + "=" * 50, flush=True)
+print(f" Standings Rows Collected: {len(all_standings)}", flush=True)
+print(f" Games Collected:          {len(all_games)}", flush=True)
+print(" Saved to omha_raw_data.json", flush=True)
+print("=" * 50, flush=True)
