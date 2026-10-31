@@ -25,6 +25,7 @@ jobs:
       - name: Run MHR Scraper
         env:
           SCRAPER_API_KEY: ${{ secrets.SCRAPER_API_KEY }}
+          PYTHONUNBUFFERED: '1'
         run: |
           python fetch_mhr.py
 
