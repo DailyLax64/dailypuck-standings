@@ -1,0 +1,55 @@
+name: Inspect GameSheet Data
+
+on:
+  workflow_dispatch:
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run Inspection Script
+        run: |
+          cat << 'EOF' > inspect_games.py
+          import json
+          from collections import Counter
+          import sys
+
+          try:
+              with open("omha_raw_data.json", "r", encoding="utf-8") as f:
+                  data = json.load(f)
+          except FileNotFoundError:
+              print("❌ Error: omha_raw_data.json not found. Run the 'Update GameSheet League Data' action first.")
+              sys.exit(1)
+
+          games = data.get("games", [])
+          standings = data.get("standings", [])
+
+          print(f"Total teams in standings: {len(standings)}")
+          print(f"Total games collected:    {len(games)}")
+
+          statuses = Counter(g.get("status") for g in games)
+          print("\n📊 Game Status Breakdown:")
+          for status, count in statuses.items():
+              print(f"   - {status}: {count}")
+
+          dates = [g.get("date") for g in games if g.get("date")]
+          if dates:
+              print(f"\n📅 Schedule Date Range:")
+              print(f"   - Earliest Game: {min(dates)}")
+              print(f"   - Latest Game:   {max(dates)}")
+
+          cohort_games = Counter(f"{g.get('league')} - {g.get('cohort')}" for g in games)
+          print("\n🏒 Games by League & Cohort:")
+          for grp, count in sorted(cohort_games.items()):
+              print(f"   - {grp}: {count} games")
+          EOF
+          python inspect_games.py
