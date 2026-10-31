@@ -11,8 +11,8 @@ SCRAPER_API_KEY = os.environ.get("SCRAPER_API_KEY", "").strip()
 
 # Target MHR ranking URLs
 MHR_DIVISIONS = {
-    "U11 AA": "https://myhockeyrankings.com/rank.php?y=2026&a=1&v=142",
-    "U14 AA": "https://myhockeyrankings.com/rank.php?y=2026&v=145&view=alphabetic"
+    "U11 AA": "https://myhockeyrankings.com/rank.php?y=2026&v=142",
+    "U14 AA": "https://myhockeyrankings.com/rank.php?y=2026&v=145"
 }
 
 class MHRTableParser(HTMLParser):
@@ -65,4 +65,25 @@ def find_canonical_team(cleaned_name, cohort, master_db):
 
     for can, data in cohort_dict.items():
         for alias in data.get("aliases", []):
-            if alias.upper() == c_upper
+            if alias.upper() == c_upper:
+                return can
+
+    c_norm = norm_key(cleaned_name)
+    for can, data in cohort_dict.items():
+        if norm_key(can) == c_norm:
+            return can
+        for alias in data.get("aliases", []):
+            if norm_key(alias) == c_norm:
+                return can
+
+    return None
+
+def fetch_html(target_url, api_key):
+    if not api_key:
+        print("   ⚠️ SCRAPER_API_KEY secret not found. Attempting direct connection...", flush=True)
+        req_url = target_url
+    else:
+        params = urllib.parse.urlencode({
+            "api_key": api_key,
+            "url": target_url,
+            "render":
