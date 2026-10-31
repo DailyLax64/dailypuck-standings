@@ -23,18 +23,14 @@ jobs:
           import re
           from datetime import datetime
 
-          # Convert webcal:// to https://
           ics_url = "https://burlingtoneagles.com/webcal.ashx?IDs=2074"
-          html_url = "https://burlingtoneagles.com/Teams/2074/Schedule/"
-
           headers = {
               'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
           }
 
-          print("=" * 65)
-          print("FETCHING BURLINGTON EAGLES U11 AA CALENDAR")
-          print(f"Feed: {ics_url}")
-          print("=" * 65)
+          print("=" * 70)
+          print("FETCHING BURLINGTON EAGLES U11 AA LEAGUE CALENDAR")
+          print("=" * 70)
 
           req = urllib.request.Request(ics_url, headers=headers)
           try:
@@ -56,85 +52,71 @@ jobs:
                       events.append(curr)
                   curr = None
               elif curr is not None and ":" in line:
-                  # Parse key-value pairs (ignoring sub-parameters like TZID)
                   k_part, v = line.split(":", 1)
                   k = k_part.split(";")[0].upper()
                   curr[k] = v.replace("\\n", " ").replace("\\,", ",")
 
-          print(f"Total calendar entries found: {len(events)}")
-
-          # Filter: KEEP ONLY Home Game and Away Game
           league_games = []
-          ignored_categories = set()
+
+          def parse_dt(dt_str):
+              clean = re.sub(r'[^0-9T]', '', dt_str or "")
+              date_part, time_part = "", ""
+              if "T" in clean:
+                  d, t = clean.split("T", 1)
+                  if len(d) == 8:
+                      date_part = f"{d[0:4]}-{d[4:6]}-{d[6:8]}"
+                  if len(t) >= 4:
+                      time_part = f"{t[0:2]}:{t[2:4]}"
+              elif len(clean) == 8:
+                  date_part = f"{clean[0:4]}-{clean[4:6]}-{clean[6:8]}"
+              return date_part, time_part
 
           for ev in events:
               summary = ev.get("SUMMARY", "").strip()
-              category = ev.get("CATEGORIES", "").strip()
               description = ev.get("DESCRIPTION", "").strip()
               location = ev.get("LOCATION", "").strip()
               dtstart = ev.get("DTSTART", "").strip()
 
-              # Check if it is a Home Game or Away Game
-              is_home = (
-                  "home game" in category.lower() or 
-                  "home game" in summary.lower() or 
-                  "home game" in description.lower()
-              )
-              is_away = (
-                  "away game" in category.lower() or 
-                  "away game" in summary.lower() or 
-                  "away game" in description.lower()
-              )
+              # Search summary or description for league game code: [XXX]
+              full_text = f"{summary} {description}"
+              match = re.search(r'(?:vs\.?|@)\s+(.*?)\s*\[(.*?)\]', full_text, re.IGNORECASE)
 
-              # Filter out Tournaments and Exhibitions explicitly
-              is_excluded = any(
-                  excl in (summary + category + description).lower()
-                  for excl in ["tournament", "exhibition", "practice", "dryland", "photo", "meeting"]
-              )
+              if match:
+                  opp = match.group(1).strip()
+                  game_code = match.group(2).strip()
 
-              if (is_home or is_away) and not is_excluded:
-                  # Extract opponent from summary (e.g., 'Home Game vs Oakville Rangers')
-                  opp = summary
-                  for prefix in ["Home Game vs", "Home Game vs.", "Away Game @", "Away Game vs", "Away Game at"]:
-                      if prefix.lower() in opp.lower():
-                          idx = opp.lower().find(prefix.lower()) + len(prefix)
-                          opp = opp[idx:].strip()
+                  # Home vs Away detection
+                  is_away = "@" in summary.split("[")[0] if "[" in summary else "@" in summary
+                  game_type = "Away" if is_away else "Home"
 
-                  # Format date
-                  readable_date = dtstart
-                  try:
-                      # Format: YYYYMMDDTHHMMSSZ or YYYYMMDD
-                      d_clean = dtstart.split("T")[0]
-                      readable_date = datetime.strptime(d_clean, "%Y%m%d").strftime("%Y-%m-%d")
-                  except Exception:
-                      pass
+                  date_val, time_val = parse_dt(dtstart)
 
                   league_games.append({
-                      "date": readable_date,
-                      "type": "Home" if is_home else "Away",
+                      "game_code": game_code,
+                      "date": date_val,
+                      "time": time_val,
+                      "type": game_type,
                       "opponent": opp,
                       "location": location,
                       "summary": summary
                   })
-              else:
-                  cat_label = category or summary
-                  ignored_categories.add(cat_label)
 
-          print(f"\nFiltered Out Non-League Categories:")
-          for cat in sorted(ignored_categories)[:8]:
-              print(f"   ✕ {cat}")
+          league_games.sort(key=lambda x: (x["date"], x["time"]))
 
-          # Sort games chronologically
-          league_games.sort(key=lambda x: x["date"])
+          print(f"Total Calendar Entries: {len(events)}")
+          print(f"Official League Games Identified: {len(league_games)}\n")
 
-          print("\n" + "=" * 65)
-          print(f"EXTRACTED LEAGUE GAMES ({len(league_games)} Games Found)")
-          print("=" * 65)
-          print(f"{'Date':<12} | {'Type':<6} | {'Opponent':<28} | {'Location'}")
-          print("-" * 65)
+          if league_games:
+              print(f"📅 Schedule Coverage:")
+              print(f"   Earliest Game: {league_games[0]['date']}")
+              print(f"   Latest Game:   {league_games[-1]['date']}\n")
 
-          for g in league_games:
-              print(f"{g['date']:<12} | {g['type']:<6} | {g['opponent'][:26]:<28} | {g['location'][:30]}")
+              print("=" * 80)
+              print(f"{'Date':<11} | {'Time':<5} | {'Type':<5} | {'Code':<12} | {'Opponent':<24} | {'Location'}")
+              print("-" * 80)
+              for g in league_games:
+                  print(f"{g['date']:<11} | {g['time']:<5} | {g['type']:<5} | {g['game_code']:<12} | {g['opponent'][:22]:<24} | {g['location'][:25]}")
+              print("=" * 80)
 
           EOF
           python parse_team_calendar.py
