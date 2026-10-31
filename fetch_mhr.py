@@ -79,14 +79,12 @@ def find_canonical_team(cleaned_name, cohort, master_db):
 
 def fetch_html(target_url, api_key):
     if not api_key:
-        print("   ⚠️  SCRAPER_API_KEY secret not found. Attempting direct connection...")
+        print("   ⚠️ SCRAPER_API_KEY secret not found. Attempting direct connection...", flush=True)
         req_url = target_url
     else:
         params = urllib.parse.urlencode({
             "api_key": api_key,
             "url": target_url,
-            "render": "true",
-            "premium": "true",
             "country_code": "ca"
         })
         req_url = f"https://api.scraperapi.com?{params}"
@@ -97,7 +95,7 @@ def fetch_html(target_url, api_key):
     }
 
     req = urllib.request.Request(req_url, headers=headers)
-    with urllib.request.urlopen(req, timeout=120) as resp:
+    with urllib.request.urlopen(req, timeout=45) as resp:
         return resp.read().decode("utf-8", errors="ignore")
 
 def parse_mhr_table(html_content):
@@ -158,12 +156,12 @@ def update_master_teams():
     total_updated = 0
 
     for cohort, url in MHR_DIVISIONS.items():
-        print(f"\n🌐 Fetching MHR table for [{cohort}]...")
+        print(f"\n🌐 Fetching MHR table for [{cohort}]...", flush=True)
         for attempt in range(1, 3):
             try:
                 html = fetch_html(url, SCRAPER_API_KEY)
                 parsed_rows = parse_mhr_table(html)
-                print(f"   📊 Found {len(parsed_rows)} team records in MHR table.")
+                print(f"   📊 Found {len(parsed_rows)} team records in MHR table.", flush=True)
 
                 cohort_updated = 0
                 for r in parsed_rows:
@@ -189,21 +187,21 @@ def update_master_teams():
                         t_entry["mhr_updated_at"] = timestamp
                         cohort_updated += 1
 
-                print(f"   ✅ Successfully mapped and updated {cohort_updated} teams for {cohort}.")
+                print(f"   ✅ Successfully mapped and updated {cohort_updated} teams for {cohort}.", flush=True)
                 total_updated += cohort_updated
                 break
             except Exception as e:
-                print(f"   ⚠️ Attempt {attempt} error for {cohort}: {e}")
+                print(f"   ⚠️ Attempt {attempt} error for {cohort}: {e}", flush=True)
                 if attempt < 2:
-                    time.sleep(5.0)
+                    time.sleep(3.0)
                 else:
-                    print(f"   ❌ Failed to update {cohort} after {attempt} attempts.")
+                    print(f"   ❌ Failed to update {cohort} after {attempt} attempts.", flush=True)
         time.sleep(1.0)
 
     with open(master_path, "w", encoding="utf-8") as f:
         json.dump(master_db, f, indent=2)
 
-    print(f"\n💾 Saved updated master_teams.json with {total_updated} team ratings!")
+    print(f"\n💾 Saved updated master_teams.json with {total_updated} team ratings!", flush=True)
 
 if __name__ == "__main__":
     update_master_teams()
