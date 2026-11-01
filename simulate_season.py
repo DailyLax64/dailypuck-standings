@@ -10,6 +10,20 @@ SIMULATION_RUNS = 10000
 HOME_ICE_ADVANTAGE = 0.35  # MHR rating bonus for home ice
 DEFAULT_MHR_RATING = 82.0   # Fallback if unranked
 
+# Official Tri-County Playoff Group Seed Mappings
+TRI_COUNTY_POOLS = {
+    "U11 AA": {
+        "Group A": {1, 6, 10, 11, 12},
+        "Group B": {2, 5, 8, 9, 15},
+        "Group C": {3, 4, 7, 13, 14}
+    },
+    "U14 AA": {
+        "Group A": {1, 6, 7, 12, 13},
+        "Group B": {2, 5, 9, 10},
+        "Group C": {3, 4, 8, 11}
+    }
+}
+
 def load_data():
     with open("master_teams.json", "r", encoding="utf-8") as f:
         master_db = json.load(f)
@@ -70,7 +84,7 @@ def simulate():
     master_db, all_games, omha_data = load_data()
     resolver = build_team_resolver(master_db)
 
-    # 1. Compute official standings directly from completed GameSheet matches
+    # 1. Base standings from completed GameSheet matches
     base_points = defaultdict(int)
     base_wins = defaultdict(int)
     base_losses = defaultdict(int)
@@ -120,17 +134,16 @@ def simulate():
     total_teams_count = len(master_db.get("U11 AA", {})) + len(master_db.get("U14 AA", {}))
     matched_teams_count = sum(1 for k in base_gp if base_gp[k] > 0)
 
-    # Future games to simulate from team calendars
+    # Remaining regular season games
     remaining_games = [g for g in all_games if g.get("status") == "scheduled"]
 
-    print("=" * 85)
+    print("=" * 90)
     print(f"RUNNING MONTE CARLO SEASON SIMULATION ({SIMULATION_RUNS:,} iterations)")
     print(f"Official GameSheet Matches Processed: {valid_final_games}")
     print(f"Teams with Standings Computed:        {matched_teams_count} / {total_teams_count}")
     print(f"Remaining Games to Simulate:          {len(remaining_games)}")
-    print("=" * 85)
+    print("=" * 90)
 
-    # Pre-calculate probabilities for remaining matchups
     precomputed_matchups = []
     for g in remaining_games:
         cohort = g["cohort"]
@@ -152,11 +165,10 @@ def simulate():
             "game_code": g.get("game_code")
         })
 
-    # Track aggregates
     sim_pts_totals = defaultdict(list)
     sim_rank_counts = defaultdict(lambda: defaultdict(int))
 
-    # Monte Carlo simulation loop
+    # Monte Carlo simulation runs
     for _ in range(SIMULATION_RUNS):
         cur_pts = defaultdict(int)
         cur_wins = defaultdict(int)
@@ -181,7 +193,6 @@ def simulate():
                 cur_pts[(cohort, v_team)] += 2
                 cur_wins[(cohort, v_team)] += 1
 
-        # Group by cohort and league to rank
         for cohort in ["U11 AA", "U14 AA"]:
             leagues = defaultdict(list)
             for t, meta in master_db[cohort].items():
@@ -189,68 +200,12 @@ def simulate():
                 leagues[league].append((t, cur_pts[(cohort, t)], cur_wins[(cohort, t)]))
 
             for league, teams_data in leagues.items():
-                # Sort: Points (descending), Wins (descending), random draw
+                # Tiebreaker: Points (desc), Wins (desc), random draw
                 teams_data.sort(key=lambda x: (x[1], x[2], random.random()), reverse=True)
                 for rank, (team_name, pts, wins) in enumerate(teams_data, 1):
                     sim_pts_totals[(cohort, team_name)].append(pts)
                     sim_rank_counts[(cohort, team_name)][rank] += 1
 
-    # Format simulation results
     results = {}
     for cohort in ["U11 AA", "U14 AA"]:
-        results[cohort] = {}
-        for league in ["Tri-County", "York-Simcoe", "Lakeshore"]:
-            results[cohort][league] = []
-
-            for team_name, meta in master_db[cohort].items():
-                if meta.get("league") != league:
-                    continue
-
-                pts_list = sim_pts_totals[(cohort, team_name)]
-                avg_pts = sum(pts_list) / len(pts_list) if pts_list else 0.0
-                rank_dist = sim_rank_counts[(cohort, team_name)]
-
-                p_first = (rank_dist[1] / SIMULATION_RUNS) * 100.0
-                p_top4 = (sum(rank_dist[r] for r in range(1, 5)) / SIMULATION_RUNS) * 100.0
-                p_top8 = (sum(rank_dist[r] for r in range(1, 9)) / SIMULATION_RUNS) * 100.0
-
-                results[cohort][league].append({
-                    "team_name": team_name,
-                    "mhr_rating": get_team_rating(master_db, cohort, team_name),
-                    "current_gp": base_gp[(cohort, team_name)],
-                    "current_pts": base_points[(cohort, team_name)],
-                    "current_w": base_wins[(cohort, team_name)],
-                    "current_l": base_losses[(cohort, team_name)],
-                    "current_t": base_ties[(cohort, team_name)],
-                    "proj_pts_avg": round(avg_pts, 1),
-                    "proj_pts_min": min(pts_list) if pts_list else 0,
-                    "proj_pts_max": max(pts_list) if pts_list else 0,
-                    "prob_1st_pct": round(p_first, 1),
-                    "prob_top4_pct": round(p_top4, 1),
-                    "prob_top8_pct": round(p_top8, 1)
-                })
-
-            results[cohort][league].sort(key=lambda x: x["proj_pts_avg"], reverse=True)
-
-    final_output = {
-        "generated_at": datetime.now(timezone.utc).isoformat(),
-        "simulations_count": SIMULATION_RUNS,
-        "results": results,
-        "upcoming_matchup_projections": precomputed_matchups[:40]
-    }
-
-    with open("simulation_results.json", "w", encoding="utf-8") as f:
-        json.dump(final_output, f, indent=2)
-
-    # Print summary tables
-    for cohort in ["U11 AA", "U14 AA"]:
-        for league in ["Tri-County", "York-Simcoe", "Lakeshore"]:
-            print(f"\n🏆 Projected Standings: [{cohort}] {league}")
-            print(f"{'Rk':<3} | {'Team':<28} | {'Rating':<6} | {'GP':<3} | {'Record':<8} | {'Cur Pts':<7} | {'Proj Pts':<8} | {'1st Place %':<11} | {'Top 4 %'}")
-            print("-" * 100)
-            for rk, row in enumerate(results[cohort][league], 1):
-                rec_str = f"{row['current_w']}-{row['current_l']}-{row['current_t']}"
-                print(f"{rk:<3} | {row['team_name'][:26]:<28} | {row['mhr_rating']:<6.1f} | {row['current_gp']:<3} | {rec_str:<8} | {row['current_pts']:<7} | {row['proj_pts_avg']:<8.1f} | {row['prob_1st_pct']:<10.1f}% | {row['prob_top4_pct']:<6.1f}%")
-
-if __name__ == "__main__":
-    simulate()
+        results
