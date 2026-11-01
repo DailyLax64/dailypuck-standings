@@ -1,4 +1,4 @@
-name: Test Sim
+name: Run Season Simulation
 
 on:
   workflow_dispatch:
