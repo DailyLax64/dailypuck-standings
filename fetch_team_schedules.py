@@ -53,10 +53,8 @@ def resolve_team(lookup, cohort, name):
 def is_valid_league_code(league, code):
     c = str(code).upper()
     if league == "York-Simcoe":
-        # York-Simcoe regular season explicitly has RS
         return bool(re.search(r'U\d{1,2}AA-RS', c))
     elif league in ["Tri-County", "Lakeshore"]:
-        # Hyphenated format with division and game number
         return bool(re.match(r'^U\d{1,2}AA-\d+$', c))
     return False
 
@@ -68,7 +66,7 @@ def main():
         master_teams = json.load(f)
 
     resolver = build_team_resolver(master_teams)
-    all_future_games = []
+    all_league_games = []
     seen_matchups = set()
     today_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
@@ -102,7 +100,6 @@ def main():
                 dtstart = ev.get("DTSTART", "").strip()
                 full_text = f"{summary} {description}"
 
-                # Match [Code]
                 match = re.search(r'(?:vs\.?|@)\s+(.*?)\s*\[([A-Za-z0-9-]+)\]', full_text, re.IGNORECASE)
                 if not match:
                     continue
@@ -110,43 +107,39 @@ def main():
                 opp_raw = match.group(1).strip()
                 game_code = match.group(2).strip()
 
-                # Home vs Away determination
                 is_away = "@" in summary.split("[")[0] if "[" in summary else "@" in summary
                 home_raw = opp_raw if is_away else source_team
                 visitor_raw = source_team if is_away else opp_raw
 
-                # Resolve against master DB
                 home_can, home_league = resolve_team(resolver, cohort, home_raw)
                 visitor_can, visitor_league = resolve_team(resolver, cohort, visitor_raw)
 
-                # Guardrail 1: Both teams must exist in master DB
+                # Validation checks
                 if not home_can or not visitor_can:
                     continue
-
-                # Guardrail 2: Both teams must belong to the same league
                 if home_league != visitor_league:
                     continue
-
-                # Guardrail 3: Strict regular season code check
                 if not is_valid_league_code(home_league, game_code):
                     continue
 
                 date_val, time_val = parse_dt(dtstart)
-                if date_val < today_str:
-                    continue
 
-                # Guardrail 4: Deduplication across team feeds
+                # Deduplicate cross-calendar entries
                 matchup_key = (cohort, date_val, home_can, visitor_can)
                 if matchup_key in seen_matchups:
                     continue
                 seen_matchups.add(matchup_key)
 
-                all_future_games.append({
+                # Tag status by date (past vs future)
+                game_status = "played" if date_val < today_str else "scheduled"
+
+                all_league_games.append({
                     "game_code": game_code,
                     "cohort": cohort,
                     "league": home_league,
                     "date": date_val,
                     "time": time_val,
+                    "status": game_status,
                     "home": home_can,
                     "visitor": visitor_can,
                     "location": ev.get("LOCATION", "").strip()
@@ -154,19 +147,20 @@ def main():
 
             time.sleep(0.3)
 
-    all_future_games.sort(key=lambda x: (x["cohort"], x["date"], x["time"]))
+    all_league_games.sort(key=lambda x: (x["cohort"], x["date"], x["time"]))
 
     output = {
         "updated_at": datetime.now(timezone.utc).isoformat(),
-        "total_games": len(all_future_games),
-        "scheduled_games": all_future_games
+        "total_season_games": len(all_league_games),
+        "games": all_league_games
     }
 
-    with open("future_games.json", "w", encoding="utf-8") as f:
+    with open("full_season_games.json", "w", encoding="utf-8") as f:
         json.dump(output, f, indent=2)
 
-    print(f"\n✅ Clean League Games Extracted: {len(all_future_games)}")
-    print("Saved clean schedule to future_games.json", flush=True)
+    played_cnt = sum(1 for g in all_league_games if g["status"] == "played")
+    sched_cnt = sum(1 for g in all_league_games if g["status"] == "scheduled")
+    print(f"\n✅ Total Season Games: {len(all_league_games)} (Played: {played_cnt}, Remaining: {sched_cnt})", flush=True)
 
 if __name__ == "__main__":
     main()
