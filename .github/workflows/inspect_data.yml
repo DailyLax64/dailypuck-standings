@@ -16,6 +16,7 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Run Schedule Audit
+      - name: Ingest Full Season and Audit
         run: |
+          python fetch_team_schedules.py
           python audit_schedules.py
