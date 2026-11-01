@@ -4,6 +4,12 @@ import re
 import time
 from datetime import datetime, timezone
 
+# Blacklist of known tournament games that adopted league bracket syntax
+EXCLUDED_GAME_KEYS = {
+    # (cohort, date, game_code)
+    ("U11 AA", "2026-10-17", "U11AA-19"),  # Brampton vs Centre Wellington tournament matchup
+}
+
 def parse_dt(dt_str):
     clean = re.sub(r'[^0-9T]', '', dt_str or "")
     date_part, time_part = "", ""
@@ -114,7 +120,7 @@ def main():
                 home_can, home_league = resolve_team(resolver, cohort, home_raw)
                 visitor_can, visitor_league = resolve_team(resolver, cohort, visitor_raw)
 
-                # Validation checks
+                # Validation guardrails
                 if not home_can or not visitor_can:
                     continue
                 if home_league != visitor_league:
@@ -124,13 +130,16 @@ def main():
 
                 date_val, time_val = parse_dt(dtstart)
 
-                # Deduplicate cross-calendar entries
+                # Tournament exclusion check
+                if (cohort, date_val, game_code) in EXCLUDED_GAME_KEYS:
+                    continue
+
+                # Deduplication across home/away feeds
                 matchup_key = (cohort, date_val, home_can, visitor_can)
                 if matchup_key in seen_matchups:
                     continue
                 seen_matchups.add(matchup_key)
 
-                # Tag status by date (past vs future)
                 game_status = "played" if date_val < today_str else "scheduled"
 
                 all_league_games.append({
