@@ -1,4 +1,4 @@
-name: Inspect GameSheet Data
+name: Inspect Schedule Data
 
 on:
   workflow_dispatch:
