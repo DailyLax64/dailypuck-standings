@@ -16,7 +16,56 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Ingest Full Season and Audit
+      - name: Ingest Full Season
         run: |
           python fetch_team_schedules.py
-          python audit_schedules.py
+
+      - name: Inspect Brampton and Centre Wellington Matchups
+        run: |
+          cat << 'EOF' > find_duplicate.py
+          import json
+          from collections import Counter
+
+          with open("full_season_games.json", "r", encoding="utf-8") as f:
+              data = json.load(f)
+
+          games = data.get("games", [])
+
+          cw_brampton_games = []
+          for g in games:
+              if g.get("cohort") == "U11 AA":
+                  h, v = g.get("home", ""), g.get("visitor", "")
+                  if "Centre Wellington" in (h + v) or "Brampton" in (h + v):
+                      cw_brampton_games.append(g)
+
+          h2h = [
+              g for g in cw_brampton_games
+              if ("Centre Wellington" in g.get("home", "") or "Centre Wellington" in g.get("visitor", ""))
+              and ("Brampton" in g.get("home", "") or "Brampton" in g.get("visitor", ""))
+          ]
+
+          print("=" * 85)
+          print(f"HEAD-TO-HEAD MATCHUPS: Brampton 45s vs Centre Wellington Fusion ({len(h2h)} found)")
+          print("=" * 85)
+          print(f"{'Date':<12} | {'Time':<6} | {'Code':<15} | {'Home Team':<26} | {'Visitor Team':<26} | {'Status'}")
+          print("-" * 85)
+          for g in h2h:
+              print(f"{g.get('date', ''):<12} | {g.get('time', ''):<6} | {g.get('game_code', ''):<15} | {g.get('home', '')[:24]:<26} | {g.get('visitor', '')[:24]:<26} | {g.get('status', '')}")
+
+          print("\n" + "=" * 85)
+          print("OPPONENT FREQUENCY BREAKDOWN")
+          print("=" * 85)
+          for target in ["Centre Wellington Fusion", "Brampton 45s"]:
+              opps = []
+              for g in cw_brampton_games:
+                  if g.get("home") == target:
+                      opps.append(g.get("visitor"))
+                  elif g.get("visitor") == target:
+                      opps.append(g.get("home"))
+              print(f"\n{target} Opponent Counts (Total Games: {len(opps)}):")
+              counts = Counter(opps)
+              for opp, cnt in sorted(counts.items()):
+                  flag = " ⚠️ (>2 games)" if cnt > 2 else ""
+                  print(f"   - {opp:<30}: {cnt} games{flag}")
+          EOF
+          python find_duplicate.py
