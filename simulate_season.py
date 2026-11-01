@@ -91,7 +91,6 @@ def simulate_game_score(r_home, r_visitor):
     lam_home = max(0.5, base_goals + expected_margin / 2.0)
     lam_visitor = max(0.5, base_goals - expected_margin / 2.0)
 
-    # Poisson random draw for goals
     def sample_poisson(lam):
         L = math.exp(-lam)
         k, p = 0, 1.0
@@ -104,7 +103,7 @@ def simulate_game_score(r_home, r_visitor):
     gv = sample_poisson(lam_visitor)
     return gh, gv
 
-def make_tiebreaker_comparator(cur_pts, cur_wins, cur_gf, cur_ga, h2h_pts):
+def make_tiebreaker_comparator(cohort, cur_pts, cur_wins, cur_gf, cur_ga, h2h_pts):
     """
     Official OMHA Tiebreaker Resolution:
     1. Head-to-Head record between tied teams
@@ -114,23 +113,26 @@ def make_tiebreaker_comparator(cur_pts, cur_wins, cur_gf, cur_ga, h2h_pts):
     5. Most Goals For
     """
     def compare(t1, t2):
+        k1 = (cohort, t1)
+        k2 = (cohort, t2)
+
         # 0. Total Points
-        if cur_pts[t1] != cur_pts[t2]:
-            return 1 if cur_pts[t1] > cur_pts[t2] else -1
+        if cur_pts[k1] != cur_pts[k2]:
+            return 1 if cur_pts[k1] > cur_pts[k2] else -1
 
         # 1. Head-to-Head Points
-        h2h_1 = h2h_pts.get((t1, t2), 0)
-        h2h_2 = h2h_pts.get((t2, t1), 0)
+        h2h_1 = h2h_pts.get((cohort, t1, t2), 0)
+        h2h_2 = h2h_pts.get((cohort, t2, t1), 0)
         if h2h_1 != h2h_2:
             return 1 if h2h_1 > h2h_2 else -1
 
         # 2. Most Wins
-        if cur_wins[t1] != cur_wins[t2]:
-            return 1 if cur_wins[t1] > cur_wins[t2] else -1
+        if cur_wins[k1] != cur_wins[k2]:
+            return 1 if cur_wins[k1] > cur_wins[k2] else -1
 
         # 3. Highest Goals For Percentage: GF / (GF + GA)
-        gf1, ga1 = cur_gf[t1], cur_ga[t1]
-        gf2, ga2 = cur_gf[t2], cur_ga[t2]
+        gf1, ga1 = cur_gf[k1], cur_ga[k1]
+        gf2, ga2 = cur_gf[k2], cur_ga[k2]
         pct1 = gf1 / (gf1 + ga1) if (gf1 + ga1) > 0 else 0.0
         pct2 = gf2 / (gf2 + ga2) if (gf2 + ga2) > 0 else 0.0
         if abs(pct1 - pct2) > 1e-6:
@@ -153,7 +155,7 @@ def simulate():
     master_db, all_games, omha_data = load_data()
     resolver = build_team_resolver(master_db)
 
-    # 1. Base standings & head-to-head from actual completed GameSheet matches
+    # 1. Base standings & head-to-head strictly keyed by (cohort, team)
     base_points = defaultdict(int)
     base_wins = defaultdict(int)
     base_losses = defaultdict(int)
@@ -197,19 +199,19 @@ def simulate():
             base_points[(cohort, h_can)] += 2
             base_wins[(cohort, h_can)] += 1
             base_losses[(cohort, v_can)] += 1
-            base_h2h_pts[(h_can, v_can)] += 2
+            base_h2h_pts[(cohort, h_can, v_can)] += 2
         elif v_goals > h_goals:
             base_points[(cohort, v_can)] += 2
             base_wins[(cohort, v_can)] += 1
             base_losses[(cohort, h_can)] += 1
-            base_h2h_pts[(v_can, h_can)] += 2
+            base_h2h_pts[(cohort, v_can, h_can)] += 2
         else:
             base_points[(cohort, h_can)] += 1
             base_points[(cohort, v_can)] += 1
             base_ties[(cohort, h_can)] += 1
             base_ties[(cohort, v_can)] += 1
-            base_h2h_pts[(h_can, v_can)] += 1
-            base_h2h_pts[(v_can, h_can)] += 1
+            base_h2h_pts[(cohort, h_can, v_can)] += 1
+            base_h2h_pts[(cohort, v_can, h_can)] += 1
 
     total_teams_count = len(master_db.get("U11 AA", {})) + len(master_db.get("U14 AA", {}))
     matched_teams_count = sum(1 for k in base_gp if base_gp[k] > 0)
@@ -223,7 +225,6 @@ def simulate():
     print(f"Tiebreaker Engine Active:             1. H2H -> 2. Wins -> 3. GF% -> 4. Fewest GA -> 5. GF")
     print("=" * 95)
 
-    # Pre-fetch matchup ratings
     scheduled_matchups = []
     for g in remaining_games:
         cohort = g["cohort"]
@@ -244,37 +245,37 @@ def simulate():
         cur_ga = defaultdict(int)
         cur_h2h = defaultdict(int)
 
-        # Initialize from banked records
+        # Initialize directly with (cohort, team) keys
         for (cohort, t), pts in base_points.items():
-            cur_pts[t] = pts
-            cur_wins[t] = base_wins[(cohort, t)]
-            cur_gf[t] = base_gf[(cohort, t)]
-            cur_ga[t] = base_ga[(cohort, t)]
+            cur_pts[(cohort, t)] = pts
+            cur_wins[(cohort, t)] = base_wins[(cohort, t)]
+            cur_gf[(cohort, t)] = base_gf[(cohort, t)]
+            cur_ga[(cohort, t)] = base_ga[(cohort, t)]
 
-        for k, v in base_h2h_pts.items():
-            cur_h2h[k] = v
+        for (cohort, t1, t2), v in base_h2h_pts.items():
+            cur_h2h[(cohort, t1, t2)] = v
 
         # Simulate remaining matchups with goal generation
         for cohort, h_team, v_team, r_h, r_v in scheduled_matchups:
             gh, gv = simulate_game_score(r_h, r_v)
-            cur_gf[h_team] += gh
-            cur_ga[h_team] += gv
-            cur_gf[v_team] += gv
-            cur_ga[v_team] += gh
+            cur_gf[(cohort, h_team)] += gh
+            cur_ga[(cohort, h_team)] += gv
+            cur_gf[(cohort, v_team)] += gv
+            cur_ga[(cohort, v_team)] += gh
 
             if gh > gv:
-                cur_pts[h_team] += 2
-                cur_wins[h_team] += 1
-                cur_h2h[(h_team, v_team)] += 2
+                cur_pts[(cohort, h_team)] += 2
+                cur_wins[(cohort, h_team)] += 1
+                cur_h2h[(cohort, h_team, v_team)] += 2
             elif gv > gh:
-                cur_pts[v_team] += 2
-                cur_wins[v_team] += 1
-                cur_h2h[(v_team, h_team)] += 2
+                cur_pts[(cohort, v_team)] += 2
+                cur_wins[(cohort, v_team)] += 1
+                cur_h2h[(cohort, v_team, h_team)] += 2
             else:
-                cur_pts[h_team] += 1
-                cur_pts[v_team] += 1
-                cur_h2h[(h_team, v_team)] += 1
-                cur_h2h[(v_team, h_team)] += 1
+                cur_pts[(cohort, h_team)] += 1
+                cur_pts[(cohort, v_team)] += 1
+                cur_h2h[(cohort, h_team, v_team)] += 1
+                cur_h2h[(cohort, v_team, h_team)] += 1
 
         # Rank each league using official 5-stage tiebreaker
         for cohort in ["U11 AA", "U14 AA"]:
@@ -284,11 +285,11 @@ def simulate():
                 leagues[league].append(t)
 
             for league, team_list in leagues.items():
-                comparator = make_tiebreaker_comparator(cur_pts, cur_wins, cur_gf, cur_ga, cur_h2h)
+                comparator = make_tiebreaker_comparator(cohort, cur_pts, cur_wins, cur_gf, cur_ga, cur_h2h)
                 sorted_teams = sorted(team_list, key=cmp_to_key(comparator), reverse=True)
 
                 for rank, team_name in enumerate(sorted_teams, 1):
-                    sim_pts_totals[(cohort, team_name)].append(cur_pts[team_name])
+                    sim_pts_totals[(cohort, team_name)].append(cur_pts[(cohort, team_name)])
                     sim_rank_counts[(cohort, team_name)][rank] += 1
 
     results = {}
@@ -350,7 +351,6 @@ def simulate():
     with open("simulation_results.json", "w", encoding="utf-8") as f:
         json.dump(final_output, f, indent=2)
 
-    # Helper function to get projected bracket group
     def get_assigned_pool(league, cohort, rank):
         if league == "Tri-County":
             for g, s in TRI_COUNTY_POOLS[cohort].items():
@@ -362,10 +362,6 @@ def simulate():
             for g, s in LAKESHORE_POOLS.items():
                 if rank in s: return g
         return "-"
-
-    # =========================================================================
-    # TERMINAL REPORTS
-    # =========================================================================
 
     # 1. Tri-County Standings & Pools
     for cohort in ["U11 AA", "U14 AA"]:
