@@ -70,36 +70,64 @@ def simulate():
     master_db, all_games, omha_data = load_data()
     resolver = build_team_resolver(master_db)
 
-    # Base standings from actual completed games
+    # 1. Compute official standings directly from completed GameSheet matches
     base_points = defaultdict(int)
     base_wins = defaultdict(int)
     base_losses = defaultdict(int)
     base_ties = defaultdict(int)
     base_gp = defaultdict(int)
 
-    # Ingest GameSheet official standings using resolver
-    for row in omha_data.get("standings", []):
-        cohort = row.get("cohort")
-        raw_name = row.get("team_name")
-        can_name, _ = resolve_team(resolver, cohort, raw_name)
-        if can_name:
-            base_points[(cohort, can_name)] = int(row.get("pts", 0) or 0)
-            base_wins[(cohort, can_name)] = int(row.get("w", 0) or 0)
-            base_losses[(cohort, can_name)] = int(row.get("l", 0) or 0)
-            base_ties[(cohort, can_name)] = int(row.get("t", 0) or 0)
-            base_gp[(cohort, can_name)] = int(row.get("gp", 0) or 0)
+    omha_games = omha_data.get("games", [])
+    valid_final_games = 0
+
+    for g in omha_games:
+        if str(g.get("status", "")).lower() != "final":
+            continue
+
+        h_goals = g.get("home_goals")
+        v_goals = g.get("visitor_goals")
+        if h_goals is None or v_goals is None:
+            continue
+
+        cohort = g.get("cohort")
+        h_raw = g.get("home_name")
+        v_raw = g.get("visitor_name")
+
+        h_can, _ = resolve_team(resolver, cohort, h_raw)
+        v_can, _ = resolve_team(resolver, cohort, v_raw)
+
+        if not h_can or not v_can:
+            continue
+
+        valid_final_games += 1
+        base_gp[(cohort, h_can)] += 1
+        base_gp[(cohort, v_can)] += 1
+
+        if h_goals > v_goals:
+            base_points[(cohort, h_can)] += 2
+            base_wins[(cohort, h_can)] += 1
+            base_losses[(cohort, v_can)] += 1
+        elif v_goals > h_goals:
+            base_points[(cohort, v_can)] += 2
+            base_wins[(cohort, v_can)] += 1
+            base_losses[(cohort, h_can)] += 1
+        else:
+            base_points[(cohort, h_can)] += 1
+            base_points[(cohort, v_can)] += 1
+            base_ties[(cohort, h_can)] += 1
+            base_ties[(cohort, v_can)] += 1
 
     total_teams_count = len(master_db.get("U11 AA", {})) + len(master_db.get("U14 AA", {}))
     matched_teams_count = sum(1 for k in base_gp if base_gp[k] > 0)
 
-    completed_games = [g for g in all_games if g.get("status") == "played"]
+    # Future games to simulate from team calendars
     remaining_games = [g for g in all_games if g.get("status") == "scheduled"]
 
     print("=" * 85)
     print(f"RUNNING MONTE CARLO SEASON SIMULATION ({SIMULATION_RUNS:,} iterations)")
-    print(f"Teams with Standings Ingested: {matched_teams_count} / {total_teams_count}")
-    print(f"Completed Games Counted:      {len(completed_games)}")
-    print(f"Remaining Games to Simulate:  {len(remaining_games)}")
+    print(f"Official GameSheet Matches Processed: {valid_final_games}")
+    print(f"Teams with Standings Computed:        {matched_teams_count} / {total_teams_count}")
+    print(f"Remaining Games to Simulate:          {len(remaining_games)}")
     print("=" * 85)
 
     # Pre-calculate probabilities for remaining matchups
@@ -191,6 +219,9 @@ def simulate():
                     "mhr_rating": get_team_rating(master_db, cohort, team_name),
                     "current_gp": base_gp[(cohort, team_name)],
                     "current_pts": base_points[(cohort, team_name)],
+                    "current_w": base_wins[(cohort, team_name)],
+                    "current_l": base_losses[(cohort, team_name)],
+                    "current_t": base_ties[(cohort, team_name)],
                     "proj_pts_avg": round(avg_pts, 1),
                     "proj_pts_min": min(pts_list) if pts_list else 0,
                     "proj_pts_max": max(pts_list) if pts_list else 0,
@@ -215,10 +246,11 @@ def simulate():
     for cohort in ["U11 AA", "U14 AA"]:
         for league in ["Tri-County", "York-Simcoe", "Lakeshore"]:
             print(f"\n🏆 Projected Standings: [{cohort}] {league}")
-            print(f"{'Rk':<3} | {'Team':<28} | {'Rating':<6} | {'GP':<3} | {'Cur Pts':<7} | {'Proj Pts':<8} | {'1st Place %':<11} | {'Top 4 %'}")
-            print("-" * 90)
+            print(f"{'Rk':<3} | {'Team':<28} | {'Rating':<6} | {'GP':<3} | {'Record':<8} | {'Cur Pts':<7} | {'Proj Pts':<8} | {'1st Place %':<11} | {'Top 4 %'}")
+            print("-" * 100)
             for rk, row in enumerate(results[cohort][league], 1):
-                print(f"{rk:<3} | {row['team_name'][:26]:<28} | {row['mhr_rating']:<6.1f} | {row['current_gp']:<3} | {row['current_pts']:<7} | {row['proj_pts_avg']:<8.1f} | {row['prob_1st_pct']:<10.1f}% | {row['prob_top4_pct']:<6.1f}%")
+                rec_str = f"{row['current_w']}-{row['current_l']}-{row['current_t']}"
+                print(f"{rk:<3} | {row['team_name'][:26]:<28} | {row['mhr_rating']:<6.1f} | {row['current_gp']:<3} | {rec_str:<8} | {row['current_pts']:<7} | {row['proj_pts_avg']:<8.1f} | {row['prob_1st_pct']:<10.1f}% | {row['prob_top4_pct']:<6.1f}%")
 
 if __name__ == "__main__":
     simulate()
