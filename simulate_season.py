@@ -3,6 +3,7 @@ import math
 import random
 import re
 from collections import defaultdict
+from functools import cmp_to_key
 from datetime import datetime, timezone
 
 # 1. Configuration & Parameters
@@ -10,11 +11,7 @@ SIMULATION_RUNS = 10000
 HOME_ICE_ADVANTAGE = 0.35  # MHR rating bonus for home ice
 DEFAULT_MHR_RATING = 82.0   # Fallback if unranked
 
-# ---------------------------------------------------------------------------
-# Official Playoff Group / Pool Mappings
-# ---------------------------------------------------------------------------
-
-# Tri-County Playoff Groups
+# Official Playoff Group Seed Mappings
 TRI_COUNTY_POOLS = {
     "U11 AA": {
         "Group A": {1, 6, 10, 11, 12},
@@ -28,7 +25,6 @@ TRI_COUNTY_POOLS = {
     }
 }
 
-# York-Simcoe Playoff Pools (12-team loop, 1st in each pool to Semis)
 YORK_SIMCOE_POOLS = {
     "Pool A": {1, 11, 12},
     "Pool B": {2, 9, 10},
@@ -36,7 +32,6 @@ YORK_SIMCOE_POOLS = {
     "Pool D": {4, 5, 6}
 }
 
-# Lakeshore Playoff Pools (10-team loop, Top 2 in each pool to Crossover Semis)
 LAKESHORE_POOLS = {
     "Pool A": {1, 4, 6, 8, 10},
     "Pool B": {2, 3, 5, 7, 9}
@@ -87,27 +82,86 @@ def get_team_rating(master_db, cohort, team_name):
     except (ValueError, TypeError):
         return DEFAULT_MHR_RATING
 
-def calculate_matchup_probabilities(r_home, r_visitor):
+def simulate_game_score(r_home, r_visitor):
+    """Simulates realistic minor hockey scores based on MHR rating differentials."""
     delta = (r_home + HOME_ICE_ADVANTAGE) - r_visitor
-    p_base_home = 1.0 / (1.0 + math.pow(10.0, -delta / 2.8))
-    p_tie = 0.14 * math.exp(-math.pow(delta / 3.2, 2.0))
+    expected_margin = delta * 0.90
+    base_goals = 3.2
 
-    p_home = max(0.01, min(0.98, p_base_home - (p_tie / 2.0)))
-    p_visitor = max(0.01, min(0.98, 1.0 - p_home - p_tie))
+    lam_home = max(0.5, base_goals + expected_margin / 2.0)
+    lam_visitor = max(0.5, base_goals - expected_margin / 2.0)
 
-    total = p_home + p_tie + p_visitor
-    return p_home / total, p_tie / total, p_visitor / total
+    # Poisson random draw for goals
+    def sample_poisson(lam):
+        L = math.exp(-lam)
+        k, p = 0, 1.0
+        while p > L:
+            k += 1
+            p *= random.random()
+        return k - 1
+
+    gh = sample_poisson(lam_home)
+    gv = sample_poisson(lam_visitor)
+    return gh, gv
+
+def make_tiebreaker_comparator(cur_pts, cur_wins, cur_gf, cur_ga, h2h_pts):
+    """
+    Official OMHA Tiebreaker Resolution:
+    1. Head-to-Head record between tied teams
+    2. Most Wins
+    3. Goals For Percentage: GF / (GF + GA)
+    4. Fewest Goals Against
+    5. Most Goals For
+    """
+    def compare(t1, t2):
+        # 0. Total Points
+        if cur_pts[t1] != cur_pts[t2]:
+            return 1 if cur_pts[t1] > cur_pts[t2] else -1
+
+        # 1. Head-to-Head Points
+        h2h_1 = h2h_pts.get((t1, t2), 0)
+        h2h_2 = h2h_pts.get((t2, t1), 0)
+        if h2h_1 != h2h_2:
+            return 1 if h2h_1 > h2h_2 else -1
+
+        # 2. Most Wins
+        if cur_wins[t1] != cur_wins[t2]:
+            return 1 if cur_wins[t1] > cur_wins[t2] else -1
+
+        # 3. Highest Goals For Percentage: GF / (GF + GA)
+        gf1, ga1 = cur_gf[t1], cur_ga[t1]
+        gf2, ga2 = cur_gf[t2], cur_ga[t2]
+        pct1 = gf1 / (gf1 + ga1) if (gf1 + ga1) > 0 else 0.0
+        pct2 = gf2 / (gf2 + ga2) if (gf2 + ga2) > 0 else 0.0
+        if abs(pct1 - pct2) > 1e-6:
+            return 1 if pct1 > pct2 else -1
+
+        # 4. Fewest Goals Against
+        if ga1 != ga2:
+            return 1 if ga1 < ga2 else -1
+
+        # 5. Most Goals For
+        if gf1 != gf2:
+            return 1 if gf1 > gf2 else -1
+
+        # 6. Random Draw
+        return 1 if random.random() > 0.5 else -1
+
+    return compare
 
 def simulate():
     master_db, all_games, omha_data = load_data()
     resolver = build_team_resolver(master_db)
 
-    # 1. Base standings calculated from GameSheet final scores
+    # 1. Base standings & head-to-head from actual completed GameSheet matches
     base_points = defaultdict(int)
     base_wins = defaultdict(int)
     base_losses = defaultdict(int)
     base_ties = defaultdict(int)
     base_gp = defaultdict(int)
+    base_gf = defaultdict(int)
+    base_ga = defaultdict(int)
+    base_h2h_pts = defaultdict(int)
 
     omha_games = omha_data.get("games", [])
     valid_final_games = 0
@@ -134,20 +188,28 @@ def simulate():
         valid_final_games += 1
         base_gp[(cohort, h_can)] += 1
         base_gp[(cohort, v_can)] += 1
+        base_gf[(cohort, h_can)] += int(h_goals)
+        base_ga[(cohort, h_can)] += int(v_goals)
+        base_gf[(cohort, v_can)] += int(v_goals)
+        base_ga[(cohort, v_can)] += int(h_goals)
 
         if h_goals > v_goals:
             base_points[(cohort, h_can)] += 2
             base_wins[(cohort, h_can)] += 1
             base_losses[(cohort, v_can)] += 1
+            base_h2h_pts[(h_can, v_can)] += 2
         elif v_goals > h_goals:
             base_points[(cohort, v_can)] += 2
             base_wins[(cohort, v_can)] += 1
             base_losses[(cohort, h_can)] += 1
+            base_h2h_pts[(v_can, h_can)] += 2
         else:
             base_points[(cohort, h_can)] += 1
             base_points[(cohort, v_can)] += 1
             base_ties[(cohort, h_can)] += 1
             base_ties[(cohort, v_can)] += 1
+            base_h2h_pts[(h_can, v_can)] += 1
+            base_h2h_pts[(v_can, h_can)] += 1
 
     total_teams_count = len(master_db.get("U11 AA", {})) + len(master_db.get("U14 AA", {}))
     matched_teams_count = sum(1 for k in base_gp if base_gp[k] > 0)
@@ -158,68 +220,75 @@ def simulate():
     print(f"Official GameSheet Matches Processed: {valid_final_games}")
     print(f"Teams with Standings Computed:        {matched_teams_count} / {total_teams_count}")
     print(f"Remaining Games to Simulate:          {len(remaining_games)}")
+    print(f"Tiebreaker Engine Active:             1. H2H -> 2. Wins -> 3. GF% -> 4. Fewest GA -> 5. GF")
     print("=" * 95)
 
-    precomputed_matchups = []
+    # Pre-fetch matchup ratings
+    scheduled_matchups = []
     for g in remaining_games:
         cohort = g["cohort"]
         h_team = g["home"]
         v_team = g["visitor"]
-
         r_h = get_team_rating(master_db, cohort, h_team)
         r_v = get_team_rating(master_db, cohort, v_team)
-        p_h, p_t, _ = calculate_matchup_probabilities(r_h, r_v)
-
-        precomputed_matchups.append({
-            "cohort": cohort,
-            "home": h_team,
-            "visitor": v_team,
-            "p_home": p_h,
-            "p_tie": p_t,
-            "date": g.get("date"),
-            "time": g.get("time"),
-            "game_code": g.get("game_code")
-        })
+        scheduled_matchups.append((cohort, h_team, v_team, r_h, r_v))
 
     sim_pts_totals = defaultdict(list)
     sim_rank_counts = defaultdict(lambda: defaultdict(int))
 
-    # Monte Carlo simulation runs
+    # Monte Carlo simulation loop
     for _ in range(SIMULATION_RUNS):
         cur_pts = defaultdict(int)
         cur_wins = defaultdict(int)
+        cur_gf = defaultdict(int)
+        cur_ga = defaultdict(int)
+        cur_h2h = defaultdict(int)
 
+        # Initialize from banked records
         for (cohort, t), pts in base_points.items():
-            cur_pts[(cohort, t)] = pts
-            cur_wins[(cohort, t)] = base_wins[(cohort, t)]
+            cur_pts[t] = pts
+            cur_wins[t] = base_wins[(cohort, t)]
+            cur_gf[t] = base_gf[(cohort, t)]
+            cur_ga[t] = base_ga[(cohort, t)]
 
-        for m in precomputed_matchups:
-            cohort = m["cohort"]
-            h_team = m["home"]
-            v_team = m["visitor"]
+        for k, v in base_h2h_pts.items():
+            cur_h2h[k] = v
 
-            roll = random.random()
-            if roll < m["p_home"]:
-                cur_pts[(cohort, h_team)] += 2
-                cur_wins[(cohort, h_team)] += 1
-            elif roll < (m["p_home"] + m["p_tie"]):
-                cur_pts[(cohort, h_team)] += 1
-                cur_pts[(cohort, v_team)] += 1
+        # Simulate remaining matchups with goal generation
+        for cohort, h_team, v_team, r_h, r_v in scheduled_matchups:
+            gh, gv = simulate_game_score(r_h, r_v)
+            cur_gf[h_team] += gh
+            cur_ga[h_team] += gv
+            cur_gf[v_team] += gv
+            cur_ga[v_team] += gh
+
+            if gh > gv:
+                cur_pts[h_team] += 2
+                cur_wins[h_team] += 1
+                cur_h2h[(h_team, v_team)] += 2
+            elif gv > gh:
+                cur_pts[v_team] += 2
+                cur_wins[v_team] += 1
+                cur_h2h[(v_team, h_team)] += 2
             else:
-                cur_pts[(cohort, v_team)] += 2
-                cur_wins[(cohort, v_team)] += 1
+                cur_pts[h_team] += 1
+                cur_pts[v_team] += 1
+                cur_h2h[(h_team, v_team)] += 1
+                cur_h2h[(v_team, h_team)] += 1
 
+        # Rank each league using official 5-stage tiebreaker
         for cohort in ["U11 AA", "U14 AA"]:
             leagues = defaultdict(list)
             for t, meta in master_db[cohort].items():
                 league = meta.get("league")
-                leagues[league].append((t, cur_pts[(cohort, t)], cur_wins[(cohort, t)]))
+                leagues[league].append(t)
 
-            for league, teams_data in leagues.items():
-                # Tiebreaker: Points (desc), Wins (desc), random draw
-                teams_data.sort(key=lambda x: (x[1], x[2], random.random()), reverse=True)
-                for rank, (team_name, pts, wins) in enumerate(teams_data, 1):
-                    sim_pts_totals[(cohort, team_name)].append(pts)
+            for league, team_list in leagues.items():
+                comparator = make_tiebreaker_comparator(cur_pts, cur_wins, cur_gf, cur_ga, cur_h2h)
+                sorted_teams = sorted(team_list, key=cmp_to_key(comparator), reverse=True)
+
+                for rank, team_name in enumerate(sorted_teams, 1):
+                    sim_pts_totals[(cohort, team_name)].append(cur_pts[team_name])
                     sim_rank_counts[(cohort, team_name)][rank] += 1
 
     results = {}
@@ -236,38 +305,23 @@ def simulate():
                 avg_pts = sum(pts_list) / len(pts_list) if pts_list else 0.0
                 rank_dist = sim_rank_counts[(cohort, team_name)]
 
-                # Projected Finish (Expected Seed)
+                # Projected Finish (Expected Rank)
                 exp_finish = sum(rank * count for rank, count in rank_dist.items()) / SIMULATION_RUNS
 
-                # Key threshold odds
                 p_first = (rank_dist[1] / SIMULATION_RUNS) * 100.0
                 p_top2 = ((rank_dist[1] + rank_dist[2]) / SIMULATION_RUNS) * 100.0
                 p_top4 = (sum(rank_dist[r] for r in range(1, 5)) / SIMULATION_RUNS) * 100.0
 
                 pool_probs = {}
-                likely_pool_str = "-"
-
-                # Tri-County Pool Distribution
                 if league == "Tri-County" and cohort in TRI_COUNTY_POOLS:
-                    pools_def = TRI_COUNTY_POOLS[cohort]
-                    for g_name, seeds in pools_def.items():
+                    for g_name, seeds in TRI_COUNTY_POOLS[cohort].items():
                         pool_probs[g_name] = (sum(rank_dist[r] for r in seeds) / SIMULATION_RUNS) * 100.0
-                    sorted_p = sorted(pool_probs.items(), key=lambda x: x[1], reverse=True)
-                    likely_pool_str = f"{sorted_p[0][0]} ({sorted_p[0][1]:.0f}%)"
-
-                # York-Simcoe Pool Distribution
                 elif league == "York-Simcoe":
                     for p_name, seeds in YORK_SIMCOE_POOLS.items():
                         pool_probs[p_name] = (sum(rank_dist[r] for r in seeds) / SIMULATION_RUNS) * 100.0
-                    sorted_p = sorted(pool_probs.items(), key=lambda x: x[1], reverse=True)
-                    likely_pool_str = f"{sorted_p[0][0]} ({sorted_p[0][1]:.0f}%)"
-
-                # Lakeshore Pool Distribution
                 elif league == "Lakeshore":
                     for p_name, seeds in LAKESHORE_POOLS.items():
                         pool_probs[p_name] = (sum(rank_dist[r] for r in seeds) / SIMULATION_RUNS) * 100.0
-                    sorted_p = sorted(pool_probs.items(), key=lambda x: x[1], reverse=True)
-                    likely_pool_str = f"{sorted_p[0][0]} ({sorted_p[0][1]:.0f}%)"
 
                 results[cohort][league].append({
                     "team_name": team_name,
@@ -282,8 +336,7 @@ def simulate():
                     "prob_1st_pct": round(p_first, 1),
                     "prob_top2_pct": round(p_top2, 1),
                     "prob_top4_pct": round(p_top4, 1),
-                    "pool_probs": {k: round(v, 1) for k, v in pool_probs.items()},
-                    "likely_pool": likely_pool_str
+                    "pool_probs": {k: round(v, 1) for k, v in pool_probs.items()}
                 })
 
             results[cohort][league].sort(key=lambda x: x["proj_pts_avg"], reverse=True)
@@ -297,21 +350,38 @@ def simulate():
     with open("simulation_results.json", "w", encoding="utf-8") as f:
         json.dump(final_output, f, indent=2)
 
+    # Helper function to get projected bracket group
+    def get_assigned_pool(league, cohort, rank):
+        if league == "Tri-County":
+            for g, s in TRI_COUNTY_POOLS[cohort].items():
+                if rank in s: return g
+        elif league == "York-Simcoe":
+            for g, s in YORK_SIMCOE_POOLS.items():
+                if rank in s: return g
+        elif league == "Lakeshore":
+            for g, s in LAKESHORE_POOLS.items():
+                if rank in s: return g
+        return "-"
+
     # =========================================================================
-    # TERMINAL REPORTS (Full Standings + Playoff Cards for all 3 Leagues)
+    # TERMINAL REPORTS
     # =========================================================================
 
     # 1. Tri-County Standings & Pools
     for cohort in ["U11 AA", "U14 AA"]:
         tc_teams = results[cohort]["Tri-County"]
         print(f"\n🏆 Projected Standings: [{cohort}] Tri-County")
-        print(f"{'Rk':<3} | {'Team':<27} | {'Rating':<6} | {'GP':<3} | {'Record':<8} | {'Cur Pts':<7} | {'Proj Pts':<8} | {'Proj Finish':<11} | {'Top 2 % (Bye)':<14} | {'Likely Pool'}")
-        print("-" * 115)
+        print(f"{'Rk':<3} | {'Team':<26} | {'Rating':<6} | {'GP':<3} | {'Record':<8} | {'Pts':<5} | {'Proj Pts':<8} | {'Proj Fin':<8} | {'Top 2 %':<8} | {'Proj Pool':<10} | {'Grp A %':<7} | {'Grp B %':<7} | {'Grp C %'}")
+        print("-" * 135)
         for rk, row in enumerate(tc_teams, 1):
             rec_str = f"{row['current_w']}-{row['current_l']}-{row['current_t']}"
-            print(f"{rk:<3} | {row['team_name'][:25]:<27} | {row['mhr_rating']:<6.1f} | {row['current_gp']:<3} | {rec_str:<8} | {row['current_pts']:<7} | {row['proj_pts_avg']:<8.1f} | {row['proj_finish']:<11.1f} | {row['prob_top2_pct']:<13.1f}% | {row['likely_pool']}")
+            p_a = row['pool_probs'].get("Group A", 0.0)
+            p_b = row['pool_probs'].get("Group B", 0.0)
+            p_c = row['pool_probs'].get("Group C", 0.0)
+            assigned_pool = get_assigned_pool("Tri-County", cohort, rk)
+            print(f"{rk:<3} | {row['team_name'][:24]:<26} | {row['mhr_rating']:<6.1f} | {row['current_gp']:<3} | {rec_str:<8} | {row['current_pts']:<5} | {row['proj_pts_avg']:<8.1f} | {row['proj_finish']:<8.1f} | {row['prob_top2_pct']:<7.1f}% | {assigned_pool:<10} | {p_a:<7.1f} | {p_b:<7.1f} | {p_c:<.1f}%")
 
-        print(f"\n🏒 [{cohort}] Tri-County Projected Playoff Groups")
+        print(f"\n🏒 [{cohort}] Tri-County Projected Playoff Groups (Strict Bracket Assignment)")
         pools_def = TRI_COUNTY_POOLS[cohort]
         for g_name, seeds in pools_def.items():
             seed_list = sorted(list(seeds))
@@ -328,11 +398,17 @@ def simulate():
     for cohort in ["U11 AA", "U14 AA"]:
         ys_teams = results[cohort]["York-Simcoe"]
         print(f"\n🏆 Projected Standings: [{cohort}] York-Simcoe")
-        print(f"{'Rk':<3} | {'Team':<28} | {'Rating':<6} | {'GP':<3} | {'Record':<8} | {'Cur Pts':<7} | {'Proj Pts':<8} | {'Proj Finish':<11} | {'Top 2 %':<8} | {'Top 4 %':<8} | {'Likely Pool'}")
-        print("-" * 125)
+        print(f"{'Rk':<3} | {'Team':<26} | {'Rating':<6} | {'GP':<3} | {'Record':<8} | {'Pts':<5} | {'Proj Pts':<8} | {'Proj Fin':<8} | {'Top 2 %':<8} | {'Top 4 %':<8} | {'Proj Pool':<10} | {'Pool Odds (A / B / C / D)'}")
+        print("-" * 135)
         for rk, row in enumerate(ys_teams, 1):
             rec_str = f"{row['current_w']}-{row['current_l']}-{row['current_t']}"
-            print(f"{rk:<3} | {row['team_name'][:26]:<28} | {row['mhr_rating']:<6.1f} | {row['current_gp']:<3} | {rec_str:<8} | {row['current_pts']:<7} | {row['proj_pts_avg']:<8.1f} | {row['proj_finish']:<11.1f} | {row['prob_top2_pct']:<7.1f}% | {row['prob_top4_pct']:<7.1f}% | {row['likely_pool']}")
+            p_a = row['pool_probs'].get("Pool A", 0.0)
+            p_b = row['pool_probs'].get("Pool B", 0.0)
+            p_c = row['pool_probs'].get("Pool C", 0.0)
+            p_d = row['pool_probs'].get("Pool D", 0.0)
+            assigned_pool = get_assigned_pool("York-Simcoe", cohort, rk)
+            odds_str = f"{p_a:.0f}% / {p_b:.0f}% / {p_c:.0f}% / {p_d:.0f}%"
+            print(f"{rk:<3} | {row['team_name'][:24]:<26} | {row['mhr_rating']:<6.1f} | {row['current_gp']:<3} | {rec_str:<8} | {row['current_pts']:<5} | {row['proj_pts_avg']:<8.1f} | {row['proj_finish']:<8.1f} | {row['prob_top2_pct']:<7.1f}% | {row['prob_top4_pct']:<7.1f}% | {assigned_pool:<10} | {odds_str}")
 
         print(f"\n🏒 [{cohort}] York-Simcoe Projected Playoff Pools (1st Place Moves to Semis)")
         for p_name, seeds in YORK_SIMCOE_POOLS.items():
@@ -350,11 +426,14 @@ def simulate():
     for cohort in ["U11 AA", "U14 AA"]:
         ls_teams = results[cohort]["Lakeshore"]
         print(f"\n🏆 Projected Standings: [{cohort}] Lakeshore")
-        print(f"{'Rk':<3} | {'Team':<28} | {'Rating':<6} | {'GP':<3} | {'Record':<8} | {'Cur Pts':<7} | {'Proj Pts':<8} | {'Proj Finish':<11} | {'Top 2 %':<8} | {'Top 4 %':<8} | {'Likely Pool'}")
-        print("-" * 125)
+        print(f"{'Rk':<3} | {'Team':<26} | {'Rating':<6} | {'GP':<3} | {'Record':<8} | {'Pts':<5} | {'Proj Pts':<8} | {'Proj Fin':<8} | {'Top 2 %':<8} | {'Top 4 %':<8} | {'Proj Pool':<10} | {'Pool A %':<8} | {'Pool B %'}")
+        print("-" * 135)
         for rk, row in enumerate(ls_teams, 1):
             rec_str = f"{row['current_w']}-{row['current_l']}-{row['current_t']}"
-            print(f"{rk:<3} | {row['team_name'][:26]:<28} | {row['mhr_rating']:<6.1f} | {row['current_gp']:<3} | {rec_str:<8} | {row['current_pts']:<7} | {row['proj_pts_avg']:<8.1f} | {row['proj_finish']:<11.1f} | {row['prob_top2_pct']:<7.1f}% | {row['prob_top4_pct']:<7.1f}% | {row['likely_pool']}")
+            p_a = row['pool_probs'].get("Pool A", 0.0)
+            p_b = row['pool_probs'].get("Pool B", 0.0)
+            assigned_pool = get_assigned_pool("Lakeshore", cohort, rk)
+            print(f"{rk:<3} | {row['team_name'][:24]:<26} | {row['mhr_rating']:<6.1f} | {row['current_gp']:<3} | {rec_str:<8} | {row['current_pts']:<5} | {row['proj_pts_avg']:<8.1f} | {row['proj_finish']:<8.1f} | {row['prob_top2_pct']:<7.1f}% | {row['prob_top4_pct']:<7.1f}% | {assigned_pool:<10} | {p_a:<7.1f}% | {p_b:<.1f}%")
 
         print(f"\n🏒 [{cohort}] Lakeshore Projected Playoff Pools (Top 2 Move to Crossover Semis)")
         for p_name, seeds in LAKESHORE_POOLS.items():
