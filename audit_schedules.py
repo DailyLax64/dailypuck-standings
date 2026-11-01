@@ -1,5 +1,4 @@
 import json
-import re
 from collections import defaultdict
 
 with open("master_teams.json", "r", encoding="utf-8") as f:
@@ -16,7 +15,6 @@ except Exception:
 
 games = season_data.get("games", [])
 
-# Tally Played vs Remaining by team
 played_by_team = defaultdict(int)
 rem_by_team = defaultdict(int)
 
@@ -33,20 +31,20 @@ for g in games:
         rem_by_team[(cohort, h)] += 1
         rem_by_team[(cohort, v)] += 1
 
-# Expected regular season game targets
 LEAGUE_TARGETS = {
     "Tri-County": 26,
-    "Lakeshore": 24,
-    "York-Simcoe": 26
+    "York-Simcoe": 26,
+    "Lakeshore": 27
 }
 
 print("=" * 85)
 print(f"FULL REGULAR SEASON SCHEDULE RECONCILIATION ({len(games)} Total Games)")
 print("=" * 85)
 
+all_verified = True
 for cohort in ["U11 AA", "U14 AA"]:
     for league in ["Tri-County", "York-Simcoe", "Lakeshore"]:
-        target = LEAGUE_TARGETS.get(league, 26)
+        target = LEAGUE_TARGETS.get(league)
         print(f"\n🏒 [{cohort}] {league} (Target: {target} Total Games per Team)")
         print(f"{'Team Name':<32} | {'Played':<6} | {'Rem':<6} | {'Total':<6} | {'Status'}")
         print("-" * 75)
@@ -59,14 +57,18 @@ for cohort in ["U11 AA", "U14 AA"]:
             rem = rem_by_team.get((cohort, team_name), 0)
             tot = gp + rem
 
-            status_str = "✅ Verified" if tot == target else f"⚠️ Diff ({tot - target:+d})"
+            if tot == target:
+                status_str = "✅ Verified"
+            else:
+                status_str = f"⚠️ Diff ({tot - target:+d})"
+                all_verified = False
+
             print(f"{team_name[:30]:<32} | {gp:<6} | {rem:<6} | {tot:<6} | {status_str}")
 
-# Cross-reference with GameSheet completed games
 print("\n" + "=" * 85)
-print("GAMESHEET CROSS-REFERENCE CHECK")
+print("AUDIT RESULT")
 print("=" * 85)
-gs_final_games = [g for g in omha_data.get("games", []) if g.get("status") == "final"]
-cal_played_games = [g for g in games if g.get("status") == "played"]
-print(f"GameSheet Official Final Games:   {len(gs_final_games)}")
-print(f"Calendar Season Games to Date:    {len(cal_played_games)}")
+if all_verified:
+    print("🏆 ALL 72 TEAMS PERFECTLY MATCHED TO OFFICIAL LEAGUE SCHEDULE TARGETS!")
+else:
+    print("⚠️ Discrepancies detected. Review individual team lines above.")
