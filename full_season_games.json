@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-02T14:08:07.748735+00:00",
-  "total_season_games": 946,
+  "updated_at": "2026-11-02T17:04:52.909708+00:00",
+  "total_season_games": 947,
   "games": [
     {
       "game_code": "U11AA-RS-68",
@@ -9824,6 +9824,17 @@
       "home": "Guelph Gryphons",
       "visitor": "Halton Hills Thunder",
       "location": "South End Recreation Centre (2)"
+    },
+    {
+      "game_code": "U14AA-18",
+      "cohort": "U14 AA",
+      "league": "Tri-County",
+      "date": "2027-01-19",
+      "time": "00:30",
+      "status": "scheduled",
+      "home": "Guelph Gryphons",
+      "visitor": "Halton Hills Thunder",
+      "location": "South End (SER2)"
     },
     {
       "game_code": "U14AA-RS-127",
