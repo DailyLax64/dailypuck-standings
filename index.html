@@ -64,14 +64,14 @@
 
     /* Frosted Crisp Light Panels */
     .glass-header {
-      background: rgba(255, 255, 255, 0.88);
+      background: rgba(255, 255, 255, 0.90);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid rgba(153, 246, 228, 0.7);
     }
     .card-neon {
-      background: rgba(255, 255, 255, 0.94);
+      background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(8px);
-      border: 1px solid rgba(153, 246, 228, 0.8);
+      border: 1px solid rgba(153, 246, 228, 0.85);
     }
     .card-neon:hover {
       border-color: rgba(45, 212, 191, 1);
@@ -86,15 +86,7 @@
 </head>
 <body class="min-h-screen flex flex-col antialiased selection:bg-cyan-500 selection:text-white">
 
-  <!-- TOP NEON ENERGY BANNER -->
-  <div class="bg-gradient-to-r from-cyan-600 via-teal-600 to-emerald-600 text-xs py-1.5 px-4 text-center text-white flex items-center justify-center gap-2 font-medium shadow-sm">
-    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-black bg-white/20 border border-white/30 tracking-widest uppercase">
-      MONTE CARLO PROJECTIONS
-    </span>
-    <span class="font-mono text-[11px] sm:text-xs tracking-tight">10,000 Iterations &bull; Ingested GameSheet Real Scores &bull; Official OMHA Tiebreakers</span>
-  </div>
-
-  <!-- NAVIGATION & BRAND HEADER -->
+  <!-- NAVIGATION & BRAND HEADER (Top Ribbon Removed) -->
   <header class="glass-header sticky top-0 z-40 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16 sm:h-20 gap-4">
@@ -103,7 +95,7 @@
         <div class="flex items-center space-x-3 cursor-pointer select-none">
           <div class="bg-gradient-to-r from-cyan-500 via-teal-500 to-emerald-500 text-white font-black px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-xl text-lg sm:text-2xl tracking-tight uppercase shadow-md neon-glow-cyan transform -skew-x-6 flex items-baseline">
             Daily Puck
-            <span class="ml-1.5 text-emerald-100 font-extrabold text-xs sm:text-sm tracking-wider uppercase opacity-95">STANDINGS</span>
+            <span class="ml-1.5 text-emerald-100 font-extrabold text-xs sm:text-sm tracking-wider uppercase opacity-95">STANDINGS<span class="lowercase text-xs opacity-80 font-normal">.ca</span></span>
           </div>
           <div class="text-left hidden md:block">
             <span class="block text-[11px] font-black tracking-widest text-teal-700 uppercase leading-none">Playoff Probability Engine</span>
@@ -191,41 +183,12 @@
       <!-- Injected via renderRulesBanner() -->
     </div>
 
-    <!-- VIEW 1: STANDINGS TABLE (NO RANK COLUMN - DEFAULT SORTED BY CURRENT POINTS) -->
+    <!-- VIEW 1: STANDINGS TABLE (NO RANK COLUMN - DEFAULT SORTED BY CURRENT POINTS - DRAWER ACCORDION) -->
     <div id="standingsContainer" class="card-neon rounded-2xl overflow-hidden neon-card-glow">
       <div class="overflow-x-auto">
         <table class="w-full text-left text-xs sm:text-sm border-collapse whitespace-nowrap">
-          <thead>
-            <tr class="bg-gradient-to-r from-mint-100/90 via-teal-100/70 to-cyan-100/90 border-b border-teal-200 text-slate-700 font-mono text-[11px] uppercase tracking-wider select-none font-black">
-              <th onclick="sortTable('team_name')" class="py-3.5 px-4 cursor-pointer hover:text-teal-900 transition">
-                <span class="flex items-center gap-1">Team Name <span id="sort-icon-team_name" class="text-[10px] text-slate-400">↕</span></span>
-              </th>
-              <th onclick="sortTable('mhr_rating')" class="py-3.5 px-3 text-center cursor-pointer hover:text-teal-900 transition">
-                <span class="flex items-center justify-center gap-1">Rating <span id="sort-icon-mhr_rating" class="text-[10px] text-slate-400">↕</span></span>
-              </th>
-              <th onclick="sortTable('current_gp')" class="py-3.5 px-2.5 text-center cursor-pointer hover:text-teal-900 transition">
-                <span class="flex items-center justify-center gap-1">GP <span id="sort-icon-current_gp" class="text-[10px] text-slate-400">↕</span></span>
-              </th>
-              <th class="py-3.5 px-3 text-center">Record</th>
-              <!-- DEFAULT PRIMARY SORT: Cur Pts -->
-              <th onclick="sortTable('current_pts')" class="py-3.5 px-3 text-center cursor-pointer transition bg-emerald-100/80 text-emerald-900 font-black border-x border-teal-200">
-                <span class="flex items-center justify-center gap-1">Cur Pts <span id="sort-icon-current_pts" class="text-[11px] font-black">▼</span></span>
-              </th>
-              <th onclick="sortTable('proj_pts_avg')" class="py-3.5 px-3.5 text-center cursor-pointer hover:text-teal-900 transition">
-                <span class="flex items-center justify-center gap-1">Proj Pts <span id="sort-icon-proj_pts_avg" class="text-[10px] text-slate-400">↕</span></span>
-              </th>
-              <th onclick="sortTable('proj_finish')" class="py-3.5 px-3.5 text-center cursor-pointer hover:text-teal-900 transition">
-                <span class="flex items-center justify-center gap-1">Proj Fin <span id="sort-icon-proj_finish" class="text-[10px] text-slate-400">↕</span></span>
-              </th>
-              <th onclick="sortTable('prob_top2_pct')" id="th-top2" class="py-3.5 px-4 text-center cursor-pointer hover:text-teal-900 transition">
-                <span class="flex items-center justify-center gap-1">Top 2 % <span id="sort-icon-prob_top2_pct" class="text-[10px] text-slate-400">↕</span></span>
-              </th>
-              <th onclick="sortTable('prob_top4_pct')" id="th-top4" class="py-3.5 px-3.5 text-center cursor-pointer hover:text-teal-900 transition">
-                <span class="flex items-center justify-center gap-1">Top 4 % <span id="sort-icon-prob_top4_pct" class="text-[10px] text-slate-400">↕</span></span>
-              </th>
-              <th class="py-3.5 px-4 text-center">Proj Pool</th>
-              <th class="py-3.5 px-4 text-center">Pool Breakdown</th>
-            </tr>
+          <thead id="standingsThead">
+            <!-- Dynamically populated to handle Top 4 % presence in York-Simcoe only -->
           </thead>
           <tbody id="standingsTbody" class="divide-y divide-teal-100 font-sans">
             <!-- Rendered by renderStandingsTable() -->
@@ -235,7 +198,9 @@
       
       <!-- Table Footer Status -->
       <div class="px-4 py-3 bg-mint-50/70 border-t border-teal-200 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-slate-600 font-mono font-medium">
-        <div>Official Tiebreakers: 1. Head-to-Head &bull; 2. Total Wins &bull; 3. GF% &bull; 4. Fewest GA &bull; 5. Most GF</div>
+        <div class="flex items-center gap-2">
+          <span>💡 <em>Tip: Click any team row to inspect completed box scores & upcoming games.</em></span>
+        </div>
         <div id="standingsFooterCounter" class="font-bold text-teal-800">Showing 0 of 0 Teams</div>
       </div>
     </div>
@@ -294,15 +259,15 @@
   <!-- FOOTER -->
   <footer class="bg-white/90 border-t border-teal-200 py-6 text-center text-[11px] text-slate-500 font-mono mt-auto">
     <div class="max-w-7xl mx-auto px-4 space-y-1">
-      <p class="font-bold text-slate-700 uppercase tracking-wider">&copy; Daily Puck Standings &bull; Minor Hockey Monte Carlo Simulation Suite</p>
-      <p class="text-slate-400">Real-time standings integration for OMHA U11 AA & U14 AA cohorts.</p>
+      <p class="font-bold text-slate-700 uppercase tracking-wider">&copy; Daily Puck Standings &bull; Minor Hockey Analytics Suite</p>
+      <p class="text-slate-400">Regular Season Standings &amp; Playoff Projections &bull; OMHA AA Cohorts</p>
     </div>
   </footer>
 
   <!-- CORE SCRIPT & DATA LOGIC -->
   <script>
     // =========================================================================
-    // 1. EMBEDDED COMPLETE DATASET (Fallback & Offline)
+    // 1. EMBEDDED COMPLETE DATASET (Standings + Game Results + Schedule)
     // =========================================================================
     const DEFAULT_DATA = {
       "updated_at": "2026-11-01T15:30:00Z",
@@ -400,15 +365,198 @@
     };
 
     // =========================================================================
-    // 2. STATE & PLAYOFF POOL MAPPINGS
+    // 2. EMBEDDED GAMES (Actual 2026 GameSheet Matches & Scheduled Fixtures)
+    // =========================================================================
+    const EMBEDDED_GAMES = [
+      // U11 AA Tri-County
+      { cohort: "U11 AA", league: "Tri-County", date: "Sep 14, 2026", status: "final", home: "West Niagara Flying Aces", home_goals: 0, visitor: "Garden City Minor Falcons", visitor_goals: 6, location: "Fleming Memorial Arena" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 3, 2026", status: "final", home: "Centre Wellington Fusion", home_goals: 2, visitor: "West Niagara Flying Aces", visitor_goals: 4, location: "Elora Arena" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 3, 2026", status: "final", home: "Hamilton Steel", home_goals: 3, visitor: "Oakville Rangers", visitor_goals: 6, location: "Parkdale Arena" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 3, 2026", status: "final", home: "Glancaster Bombers", home_goals: 4, visitor: "Flamborough Sabres", visitor_goals: 1, location: "Morgan Arena" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 3, 2026", status: "final", home: "Halton Hills Thunder", home_goals: 6, visitor: "Brampton 45s", visitor_goals: 1, location: "Acton Arena" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 3, 2026", status: "final", home: "Niagara Falls Canucks", home_goals: 0, visitor: "Norfolk Knights", visitor_goals: 3, location: "Gale Centre" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 4, 2026", status: "final", home: "West Niagara Flying Aces", home_goals: 2, visitor: "Guelph Gryphons", visitor_goals: 3, location: "Fleming Arena" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 4, 2026", status: "final", home: "Oakville Rangers", home_goals: 2, visitor: "Halton Hills Thunder", visitor_goals: 0, location: "Trafalgar Park" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 4, 2026", status: "final", home: "Niagara Falls Canucks", home_goals: 3, visitor: "Milton Winterhawks", visitor_goals: 1, location: "Gale Centre" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 4, 2026", status: "final", home: "Norfolk Knights", home_goals: 7, visitor: "Brampton 45s", visitor_goals: 2, location: "Port Dover Arena" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 5, 2026", status: "final", home: "Milton Winterhawks", home_goals: 5, visitor: "Glancaster Bombers", visitor_goals: 2, location: "MSC Pad D" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 6, 2026", status: "final", home: "Burlington Eagles", home_goals: 6, visitor: "Stoney Creek Warriors", visitor_goals: 1, location: "Central Arena" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 7, 2026", status: "final", home: "Centre Wellington Fusion", home_goals: 3, visitor: "Brampton 45s", visitor_goals: 1, location: "Elora Arena" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 8, 2026", status: "final", home: "Oakville Rangers", home_goals: 0, visitor: "Guelph Gryphons", visitor_goals: 2, location: "Joshua Creek" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 9, 2026", status: "final", home: "Brampton 45s", home_goals: 1, visitor: "Centre Wellington Fusion", visitor_goals: 5, location: "Earnscliffe" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 10, 2026", status: "final", home: "Guelph Gryphons", home_goals: 2, visitor: "Flamborough Sabres", visitor_goals: 3, location: "WERC Pad 1" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 10, 2026", status: "final", home: "Stoney Creek Warriors", home_goals: 3, visitor: "West Niagara Flying Aces", visitor_goals: 2, location: "Valley Park" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 10, 2026", status: "final", home: "Glancaster Bombers", home_goals: 0, visitor: "Centre Wellington Fusion", visitor_goals: 7, location: "Morgan Pad B" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 10, 2026", status: "final", home: "Niagara Falls Canucks", home_goals: 0, visitor: "Garden City Minor Falcons", visitor_goals: 8, location: "Gale Centre" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 10, 2026", status: "final", home: "Burlington Eagles", home_goals: 9, visitor: "Norfolk Knights", visitor_goals: 6, location: "Appleby Pad 2" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 11, 2026", status: "final", home: "Flamborough Sabres", home_goals: 4, visitor: "Niagara Falls Canucks", visitor_goals: 3, location: "Harry Howell" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 11, 2026", status: "final", home: "West Niagara Flying Aces", home_goals: 7, visitor: "Brampton 45s", visitor_goals: 1, location: "Fleming Arena" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 11, 2026", status: "final", home: "Garden City Minor Falcons", home_goals: 11, visitor: "Stoney Creek Warriors", visitor_goals: 2, location: "Seymour-Hannah 1" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 11, 2026", status: "final", home: "Norfolk Knights", home_goals: 3, visitor: "Burlington Eagles", visitor_goals: 2, location: "Port Dover Arena" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 13, 2026", status: "final", home: "Oakville Rangers", home_goals: 0, visitor: "Stoney Creek Warriors", visitor_goals: 4, location: "Trafalgar Park" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 14, 2026", status: "final", home: "Centre Wellington Fusion", home_goals: 1, visitor: "Halton Hills Thunder", visitor_goals: 2, location: "Elora Arena" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 17, 2026", status: "final", home: "Guelph Gryphons", home_goals: 2, visitor: "Milton Winterhawks", visitor_goals: 2, location: "WERC Pad 1" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 17, 2026", status: "final", home: "Hamilton Steel", home_goals: 2, visitor: "Glancaster Bombers", visitor_goals: 5, location: "Parkdale Arena" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 17, 2026", status: "final", home: "Stoney Creek Warriors", home_goals: 2, visitor: "Norfolk Knights", visitor_goals: 1, location: "Valley Park" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 17, 2026", status: "final", home: "Halton Hills Thunder", home_goals: 0, visitor: "Oakville Rangers", visitor_goals: 3, location: "Acton Arena" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 17, 2026", status: "final", home: "Burlington Eagles", home_goals: 5, visitor: "Flamborough Sabres", visitor_goals: 1, location: "Appleby Pad 1" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 18, 2026", status: "final", home: "Burlington Eagles", home_goals: 3, visitor: "Hamilton Steel", visitor_goals: 1, location: "Appleby Pad 1" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 18, 2026", status: "final", home: "Flamborough Sabres", home_goals: 0, visitor: "Guelph Gryphons", visitor_goals: 2, location: "Harry Howell" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 18, 2026", status: "final", home: "Glancaster Bombers", home_goals: 1, visitor: "Stoney Creek Warriors", visitor_goals: 5, location: "Morgan Pad A" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 18, 2026", status: "final", home: "Norfolk Knights", home_goals: 3, visitor: "Niagara Falls Canucks", visitor_goals: 1, location: "Port Dover Arena" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 19, 2026", status: "final", home: "Milton Winterhawks", home_goals: 3, visitor: "Brampton 45s", visitor_goals: 4, location: "MSC Pad D" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 21, 2026", status: "final", home: "Halton Hills Thunder", home_goals: 2, visitor: "Garden City Minor Falcons", visitor_goals: 4, location: "MMSP Pad D" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 21, 2026", status: "final", home: "Centre Wellington Fusion", home_goals: 3, visitor: "Oakville Rangers", visitor_goals: 1, location: "Elora Arena" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 24, 2026", status: "final", home: "Norfolk Knights", home_goals: 2, visitor: "Centre Wellington Fusion", visitor_goals: 3, location: "Port Dover Arena" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 24, 2026", status: "final", home: "Stoney Creek Warriors", home_goals: 1, visitor: "Milton Winterhawks", visitor_goals: 1, location: "Valley Park" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 24, 2026", status: "final", home: "Garden City Minor Falcons", home_goals: 3, visitor: "Halton Hills Thunder", visitor_goals: 1, location: "Seymour-Hannah 1" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 24, 2026", status: "final", home: "Glancaster Bombers", home_goals: 2, visitor: "Niagara Falls Canucks", visitor_goals: 5, location: "Glanbrook Arena" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 24, 2026", status: "final", home: "Burlington Eagles", home_goals: 2, visitor: "Brampton 45s", visitor_goals: 2, location: "Appleby Pad 2" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 25, 2026", status: "final", home: "Oakville Rangers", home_goals: 4, visitor: "West Niagara Flying Aces", visitor_goals: 1, location: "Trafalgar Park" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 25, 2026", status: "final", home: "Halton Hills Thunder", home_goals: 0, visitor: "Glancaster Bombers", visitor_goals: 3, location: "Acton Arena" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 25, 2026", status: "final", home: "Burlington Eagles", home_goals: 2, visitor: "Centre Wellington Fusion", visitor_goals: 0, location: "Appleby Pad 1" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 25, 2026", status: "final", home: "Niagara Falls Canucks", home_goals: 1, visitor: "Stoney Creek Warriors", visitor_goals: 2, location: "Gale Centre" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 25, 2026", status: "final", home: "Norfolk Knights", home_goals: 5, visitor: "Garden City Minor Falcons", visitor_goals: 4, location: "Port Dover Arena" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 26, 2026", status: "final", home: "Milton Winterhawks", home_goals: 2, visitor: "Flamborough Sabres", visitor_goals: 7, location: "MSC Pad D" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 27, 2026", status: "final", home: "Glancaster Bombers", home_goals: 3, visitor: "Burlington Eagles", visitor_goals: 2, location: "Morgan Pad B" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 30, 2026", status: "final", home: "Garden City Minor Falcons", home_goals: 6, visitor: "Hamilton Steel", visitor_goals: 1, location: "Seymour-Hannah 4" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 31, 2026", status: "final", home: "Hamilton Steel", home_goals: 1, visitor: "Stoney Creek Warriors", visitor_goals: 1, location: "Parkdale Arena" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Oct 31, 2026", status: "final", home: "Guelph Gryphons", home_goals: 3, visitor: "Halton Hills Thunder", visitor_goals: 0, location: "WERC Pad 1" },
+      // Scheduled games U11 Tri-County
+      { cohort: "U11 AA", league: "Tri-County", date: "Nov 4, 2026", time: "6:15 PM", status: "scheduled", home: "Halton Hills Thunder", visitor: "West Niagara Flying Aces", location: "MMSP Pad D" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Nov 4, 2026", time: "6:35 PM", status: "scheduled", home: "Centre Wellington Fusion", visitor: "Hamilton Steel", location: "Elora Arena" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Nov 6, 2026", time: "7:15 PM", status: "scheduled", home: "Burlington Eagles", visitor: "Milton Winterhawks", location: "Appleby Pad 1" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Nov 7, 2026", time: "1:30 PM", status: "scheduled", home: "Guelph Gryphons", visitor: "West Niagara Flying Aces", location: "WERC Pad 1" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Nov 7, 2026", time: "3:15 PM", status: "scheduled", home: "Hamilton Steel", visitor: "Centre Wellington Fusion", location: "Parkdale Arena" },
+      { cohort: "U11 AA", league: "Tri-County", date: "Nov 7, 2026", time: "4:45 PM", status: "scheduled", home: "Burlington Eagles", visitor: "Halton Hills Thunder", location: "Appleby Pad 2" },
+
+      // U14 AA Tri-County
+      { cohort: "U14 AA", league: "Tri-County", date: "Sep 15, 2026", status: "final", home: "Flamborough Sabres", home_goals: 4, visitor: "Garden City Minor Falcons", visitor_goals: 7, location: "Harry Howell Arena" },
+      { cohort: "U14 AA", league: "Tri-County", date: "Oct 3, 2026", status: "final", home: "Milton Winterhawks", home_goals: 5, visitor: "Flamborough Sabres", visitor_goals: 0, location: "MSC Pad D" },
+      { cohort: "U14 AA", league: "Tri-County", date: "Oct 3, 2026", status: "final", home: "Glancaster Bombers", home_goals: 2, visitor: "Centre Wellington Fusion", visitor_goals: 0, location: "Morgan Pad B" },
+      { cohort: "U14 AA", league: "Tri-County", date: "Oct 3, 2026", status: "final", home: "Garden City Minor Falcons", home_goals: 8, visitor: "Norfolk Knights", visitor_goals: 0, location: "Seymour-Hannah 1" },
+      { cohort: "U14 AA", league: "Tri-County", date: "Oct 4, 2026", status: "final", home: "West Niagara Flying Aces", home_goals: 1, visitor: "Guelph Gryphons", visitor_goals: 4, location: "Fleming Arena" },
+      { cohort: "U14 AA", league: "Tri-County", date: "Oct 4, 2026", status: "final", home: "Burlington Eagles", home_goals: 2, visitor: "Halton Hills Thunder", visitor_goals: 2, location: "Appleby Pad 1" },
+      { cohort: "U14 AA", league: "Tri-County", date: "Oct 5, 2026", status: "final", home: "Guelph Gryphons", home_goals: 2, visitor: "Hamilton Steel", visitor_goals: 5, location: "WERC Pad 2" },
+      { cohort: "U14 AA", league: "Tri-County", date: "Oct 6, 2026", status: "final", home: "Niagara Falls Canucks", home_goals: 3, visitor: "Garden City Minor Falcons", visitor_goals: 4, location: "Gale Centre 4" },
+      { cohort: "U14 AA", league: "Tri-County", date: "Oct 6, 2026", status: "final", home: "Flamborough Sabres", home_goals: 3, visitor: "Milton Winterhawks", visitor_goals: 6, location: "Harry Howell B" },
+      { cohort: "U14 AA", league: "Tri-County", date: "Oct 6, 2026", status: "final", home: "Burlington Eagles", home_goals: 9, visitor: "Norfolk Knights", visitor_goals: 1, location: "Appleby Pad 1" },
+      { cohort: "U14 AA", league: "Tri-County", date: "Oct 7, 2026", status: "final", home: "Halton Hills Thunder", home_goals: 2, visitor: "Niagara Falls Canucks", visitor_goals: 2, location: "Acton Main" },
+      { cohort: "U14 AA", league: "Tri-County", date: "Oct 7, 2026", status: "final", home: "Glancaster Bombers", home_goals: 3, visitor: "Milton Winterhawks", visitor_goals: 7, location: "Morgan Pad B" },
+      { cohort: "U14 AA", league: "Tri-County", date: "Oct 9, 2026", status: "final", home: "Oakville Rangers", home_goals: 0, visitor: "Centre Wellington Fusion", visitor_goals: 0, location: "Joshua Creek" },
+      { cohort: "U14 AA", league: "Tri-County", date: "Oct 10, 2026", status: "final", home: "Centre Wellington Fusion", home_goals: 2, visitor: "West Niagara Flying Aces", visitor_goals: 2, location: "Fergus Pad A" },
+      { cohort: "U14 AA", league: "Tri-County", date: "Oct 11, 2026", status: "final", home: "Burlington Eagles", home_goals: 4, visitor: "Oakville Rangers", visitor_goals: 1, location: "Appleby Pad 1" },
+      { cohort: "U14 AA", league: "Tri-County", date: "Oct 11, 2026", status: "final", home: "West Niagara Flying Aces", home_goals: 5, visitor: "Flamborough Sabres", visitor_goals: 4, location: "Fleming Arena" },
+      { cohort: "U14 AA", league: "Tri-County", date: "Oct 11, 2026", status: "final", home: "Glancaster Bombers", home_goals: 2, visitor: "Garden City Minor Falcons", visitor_goals: 6, location: "Morgan Pad B" },
+      { cohort: "U14 AA", league: "Tri-County", date: "Oct 13, 2026", status: "final", home: "Niagara Falls Canucks", home_goals: 2, visitor: "Milton Winterhawks", visitor_goals: 3, location: "Gale Centre 4" },
+      { cohort: "U14 AA", league: "Tri-County", date: "Oct 13, 2026", status: "final", home: "Flamborough Sabres", home_goals: 0, visitor: "Burlington Eagles", visitor_goals: 9, location: "Harry Howell B" },
+      { cohort: "U14 AA", league: "Tri-County", date: "Oct 14, 2026", status: "final", home: "Halton Hills Thunder", home_goals: 1, visitor: "West Niagara Flying Aces", visitor_goals: 4, location: "Acton Main" },
+      { cohort: "U14 AA", league: "Tri-County", date: "Oct 14, 2026", status: "final", home: "Garden City Minor Falcons", home_goals: 4, visitor: "Niagara Falls Canucks", visitor_goals: 3, location: "Walker Sports 2" },
+      { cohort: "U14 AA", league: "Tri-County", date: "Oct 14, 2026", status: "final", home: "Centre Wellington Fusion", home_goals: 4, visitor: "Hamilton Steel", visitor_goals: 2, location: "Fergus Pad A" },
+      { cohort: "U14 AA", league: "Tri-County", date: "Oct 17, 2026", status: "final", home: "Oakville Rangers", home_goals: 4, visitor: "Guelph Gryphons", visitor_goals: 4, location: "Joshua Creek Red" },
+      { cohort: "U14 AA", league: "Tri-County", date: "Oct 17, 2026", status: "final", home: "Milton Winterhawks", home_goals: 5, visitor: "Halton Hills Thunder", visitor_goals: 0, location: "MSC Pad D" },
+      { cohort: "U14 AA", league: "Tri-County", date: "Oct 17, 2026", status: "final", home: "Garden City Minor Falcons", home_goals: 3, visitor: "Hamilton Steel", visitor_goals: 2, location: "Seymour-Hannah 1" },
+      { cohort: "U14 AA", league: "Tri-County", date: "Oct 18, 2026", status: "final", home: "Burlington Eagles", home_goals: 4, visitor: "Flamborough Sabres", visitor_goals: 0, location: "Appleby Pad 1" },
+      { cohort: "U14 AA", league: "Tri-County", date: "Oct 18, 2026", status: "final", home: "West Niagara Flying Aces", home_goals: 3, visitor: "Centre Wellington Fusion", visitor_goals: 0, location: "Fleming Arena" },
+      { cohort: "U14 AA", league: "Tri-County", date: "Oct 18, 2026", status: "final", home: "Glancaster Bombers", home_goals: 6, visitor: "Niagara Falls Canucks", visitor_goals: 10, location: "Morgan Pad B" },
+      { cohort: "U14 AA", league: "Tri-County", date: "Oct 19, 2026", status: "final", home: "Guelph Gryphons", home_goals: 3, visitor: "Glancaster Bombers", visitor_goals: 2, location: "WERC Pad 2" },
+      { cohort: "U14 AA", league: "Tri-County", date: "Oct 19, 2026", status: "final", home: "Oakville Rangers", home_goals: 1, visitor: "Garden City Minor Falcons", visitor_goals: 2, location: "Trafalgar Park" },
+      { cohort: "U14 AA", league: "Tri-County", date: "Oct 19, 2026", status: "final", home: "Flamborough Sabres", home_goals: 3, visitor: "West Niagara Flying Aces", visitor_goals: 3, location: "Harry Howell B" },
+      { cohort: "U14 AA", league: "Tri-County", date: "Oct 20, 2026", status: "final", home: "Niagara Falls Canucks", home_goals: 2, visitor: "Halton Hills Thunder", visitor_goals: 1, location: "Gale Centre 4" },
+      { cohort: "U14 AA", league: "Tri-County", date: "Oct 22, 2026", status: "final", home: "Norfolk Knights", home_goals: 5, visitor: "Hamilton Steel", visitor_goals: 8, location: "Waterford Arena" },
+      { cohort: "U14 AA", league: "Tri-County", date: "Oct 23, 2026", status: "final", home: "Guelph Gryphons", home_goals: 5, visitor: "Centre Wellington Fusion", visitor_goals: 1, location: "WERC Pad 2" },
+      { cohort: "U14 AA", league: "Tri-County", date: "Oct 24, 2026", status: "final", home: "Hamilton Steel", home_goals: 3, visitor: "Norfolk Knights", visitor_goals: 2, location: "Chedoke Red" },
+      { cohort: "U14 AA", league: "Tri-County", date: "Oct 24, 2026", status: "final", home: "Niagara Falls Canucks", home_goals: 2, visitor: "Centre Wellington Fusion", visitor_goals: 3, location: "Gale Centre 2" },
+      { cohort: "U14 AA", league: "Tri-County", date: "Oct 24, 2026", status: "final", home: "Milton Winterhawks", home_goals: 2, visitor: "Garden City Minor Falcons", visitor_goals: 3, location: "MSC Pad D" },
+      { cohort: "U14 AA", league: "Tri-County", date: "Oct 25, 2026", status: "final", home: "Glancaster Bombers", home_goals: 6, visitor: "Flamborough Sabres", visitor_goals: 3, location: "Morgan Pad B" },
+      { cohort: "U14 AA", league: "Tri-County", date: "Oct 26, 2026", status: "final", home: "Guelph Gryphons", home_goals: 4, visitor: "Milton Winterhawks", visitor_goals: 1, location: "WERC Pad 2" },
+      { cohort: "U14 AA", league: "Tri-County", date: "Oct 27, 2026", status: "final", home: "Niagara Falls Canucks", home_goals: 2, visitor: "Burlington Eagles", visitor_goals: 3, location: "Gale Centre 4" },
+      { cohort: "U14 AA", league: "Tri-County", date: "Oct 27, 2026", status: "final", home: "Flamborough Sabres", home_goals: 4, visitor: "Hamilton Steel", visitor_goals: 7, location: "Harry Howell B" },
+      { cohort: "U14 AA", league: "Tri-County", date: "Oct 28, 2026", status: "final", home: "Halton Hills Thunder", home_goals: 6, visitor: "Norfolk Knights", visitor_goals: 0, location: "Acton Main" },
+      { cohort: "U14 AA", league: "Tri-County", date: "Oct 28, 2026", status: "final", home: "Centre Wellington Fusion", home_goals: 4, visitor: "Oakville Rangers", visitor_goals: 3, location: "Fergus Pad A" },
+      { cohort: "U14 AA", league: "Tri-County", date: "Oct 29, 2026", status: "final", home: "Norfolk Knights", home_goals: 0, visitor: "Garden City Minor Falcons", visitor_goals: 4, location: "Waterford Arena" },
+      { cohort: "U14 AA", league: "Tri-County", date: "Oct 30, 2026", status: "final", home: "Glancaster Bombers", home_goals: 3, visitor: "Burlington Eagles", visitor_goals: 3, location: "Glanbrook Arena" },
+      { cohort: "U14 AA", league: "Tri-County", date: "Oct 31, 2026", status: "final", home: "Hamilton Steel", home_goals: 4, visitor: "West Niagara Flying Aces", visitor_goals: 2, location: "Chedoke Red" },
+      { cohort: "U14 AA", league: "Tri-County", date: "Oct 31, 2026", status: "final", home: "Garden City Minor Falcons", home_goals: 5, visitor: "Guelph Gryphons", visitor_goals: 0, location: "Seymour-Hannah 1" },
+      // Scheduled games U14 Tri-County
+      { cohort: "U14 AA", league: "Tri-County", date: "Nov 4, 2026", time: "7:15 PM", status: "scheduled", home: "Halton Hills Thunder", visitor: "Hamilton Steel", location: "Acton Main" },
+      { cohort: "U14 AA", league: "Tri-County", date: "Nov 4, 2026", time: "8:00 PM", status: "scheduled", home: "Centre Wellington Fusion", visitor: "Milton Winterhawks", location: "Fergus Pad A" },
+      { cohort: "U14 AA", league: "Tri-County", date: "Nov 5, 2026", time: "7:15 PM", status: "scheduled", home: "Burlington Eagles", visitor: "West Niagara Flying Aces", location: "Appleby Pad 1" },
+      { cohort: "U14 AA", league: "Tri-County", date: "Nov 7, 2026", time: "3:15 PM", status: "scheduled", home: "Garden City Minor Falcons", visitor: "Halton Hills Thunder", location: "Walker Sports 2" },
+      { cohort: "U14 AA", league: "Tri-County", date: "Nov 7, 2026", time: "5:00 PM", status: "scheduled", home: "Milton Winterhawks", visitor: "Guelph Gryphons", location: "MSC Pad D" },
+
+      // York-Simcoe Highlights (U11 & U14)
+      { cohort: "U11 AA", league: "York-Simcoe", date: "Oct 2, 2026", status: "final", home: "Stouffville Clippers U11 AA", home_goals: 0, visitor: "South Simcoe Storm U11 AA", visitor_goals: 6, location: "Stouffville Pad A" },
+      { cohort: "U11 AA", league: "York-Simcoe", date: "Oct 3, 2026", status: "final", home: "Richmond Hill Jaguars U11 AA", home_goals: 1, visitor: "Upper York Admirals U11 AA", visitor_goals: 7, location: "Elvis Stojko Arena" },
+      { cohort: "U11 AA", league: "York-Simcoe", date: "Oct 3, 2026", status: "final", home: "Orangeville Flyer U11 AA", home_goals: 3, visitor: "Collingwood Jr. Blues 11 AA", visitor_goals: 0, location: "Alder Red" },
+      { cohort: "U11 AA", league: "York-Simcoe", date: "Oct 3, 2026", status: "final", home: "King Rebellion U11AA", home_goals: 2, visitor: "Newmarket Renegades U11 AA", visitor_goals: 6, location: "Nobleton Rec" },
+      { cohort: "U11 AA", league: "York-Simcoe", date: "Oct 3, 2026", status: "final", home: "TNT Tornados U11 AA", home_goals: 2, visitor: "Aurora Tigers U11 AA", visitor_goals: 3, location: "NTRC Pad 1" },
+      { cohort: "U11 AA", league: "York-Simcoe", date: "Oct 4, 2026", status: "final", home: "South Simcoe Storm U11 AA", home_goals: 1, visitor: "TNT Tornados U11 AA", visitor_goals: 0, location: "Innisfil Rec Red" },
+      { cohort: "U11 AA", league: "York-Simcoe", date: "Oct 6, 2026", status: "final", home: "Richmond Hill Jaguars U11 AA", home_goals: 1, visitor: "Orangeville Flyer U11 AA", visitor_goals: 5, location: "Elvis Stojko Arena" },
+      { cohort: "U11 AA", league: "York-Simcoe", date: "Oct 8, 2026", status: "final", home: "Aurora Tigers U11 AA", home_goals: 11, visitor: "Markham Waxers U11 AA", visitor_goals: 1, location: "Aurora CC Ford" },
+      { cohort: "U11 AA", league: "York-Simcoe", date: "Oct 9, 2026", status: "final", home: "Orangeville Flyer U11 AA", home_goals: 5, visitor: "Barrie Colts U11 AA", visitor_goals: 5, location: "Alder Red" },
+      { cohort: "U11 AA", league: "York-Simcoe", date: "Oct 13, 2026", status: "final", home: "TNT Tornados U11 AA", home_goals: 8, visitor: "Collingwood Jr. Blues 11 AA", visitor_goals: 2, location: "NTRC Pad 1" },
+      { cohort: "U11 AA", league: "York-Simcoe", date: "Oct 15, 2026", status: "final", home: "Newmarket Renegades U11 AA", home_goals: 8, visitor: "Markham Waxers U11 AA", visitor_goals: 2, location: "Magna Scotiabank" },
+      { cohort: "U11 AA", league: "York-Simcoe", date: "Oct 15, 2026", status: "final", home: "Aurora Tigers U11 AA", home_goals: 2, visitor: "Upper York Admirals U11 AA", visitor_goals: 3, location: "Aurora CC Ford" },
+      { cohort: "U11 AA", league: "York-Simcoe", date: "Oct 22, 2026", status: "final", home: "Aurora Tigers U11 AA", home_goals: 4, visitor: "South Simcoe Storm U11 AA", visitor_goals: 5, location: "Aurora CC Ford" },
+      { cohort: "U11 AA", league: "York-Simcoe", date: "Oct 24, 2026", status: "final", home: "South Simcoe Storm U11 AA", home_goals: 2, visitor: "Upper York Admirals U11 AA", visitor_goals: 1, location: "Bradford Leisure" },
+      { cohort: "U11 AA", league: "York-Simcoe", date: "Oct 28, 2026", status: "final", home: "Markham Waxers U11 AA", home_goals: 0, visitor: "Newmarket Renegades U11 AA", visitor_goals: 9, location: "Centennial Arena" },
+
+      { cohort: "U14 AA", league: "York-Simcoe", date: "Oct 2, 2026", status: "final", home: "Orangeville Flyers U14 AA", home_goals: 6, visitor: "Markham Waxers U14 AA", visitor_goals: 1, location: "Tony Rose Arena" },
+      { cohort: "U14 AA", league: "York-Simcoe", date: "Oct 3, 2026", status: "final", home: "Barrie Colts U14 AA", home_goals: 2, visitor: "Markham Waxers U14 AA", visitor_goals: 0, location: "Peggy Hill 1" },
+      { cohort: "U14 AA", league: "York-Simcoe", date: "Oct 3, 2026", status: "final", home: "Caledon Hawks U14 AA", home_goals: 0, visitor: "TNT Tornados U14 AA", visitor_goals: 4, location: "Caledon East 2" },
+      { cohort: "U14 AA", league: "York-Simcoe", date: "Oct 3, 2026", status: "final", home: "Newmarket Renegades U14 AA", home_goals: 4, visitor: "Collingwood Jr. Blues 14 AA", visitor_goals: 1, location: "Magna Scotiabank" },
+      { cohort: "U14 AA", league: "York-Simcoe", date: "Oct 4, 2026", status: "final", home: "King Rebellion U14 AA", home_goals: 3, visitor: "Upper York Admirals U14 AA", visitor_goals: 4, location: "Zancor CDS" },
+      { cohort: "U14 AA", league: "York-Simcoe", date: "Oct 4, 2026", status: "final", home: "Aurora Tigers U14 AA", home_goals: 5, visitor: "Caledon Hawks U14 AA", visitor_goals: 0, location: "Aurora CC Lincoln" },
+      { cohort: "U14 AA", league: "York-Simcoe", date: "Oct 5, 2026", status: "final", home: "Aurora Tigers U14 AA", home_goals: 2, visitor: "Newmarket Renegades U14 AA", visitor_goals: 3, location: "Aurora Rec Complex" },
+      { cohort: "U14 AA", league: "York-Simcoe", date: "Oct 7, 2026", status: "final", home: "South Simcoe Storm U14 AA", home_goals: 3, visitor: "Newmarket Renegades U14 AA", visitor_goals: 1, location: "Innisfil Rec Red" },
+      { cohort: "U14 AA", league: "York-Simcoe", date: "Oct 8, 2026", status: "final", home: "Collingwood Jr. Blues 14 AA", home_goals: 3, visitor: "TNT Tornados U14 AA", visitor_goals: 4, location: "Eddie Bush Arena" },
+      { cohort: "U14 AA", league: "York-Simcoe", date: "Oct 14, 2026", status: "final", home: "Caledon Hawks U14 AA", home_goals: 0, visitor: "Orangeville Flyers U14 AA", visitor_goals: 8, location: "Caledon East 1" },
+      { cohort: "U14 AA", league: "York-Simcoe", date: "Oct 17, 2026", status: "final", home: "King Rebellion U14 AA", home_goals: 4, visitor: "Stouffville Clippers U14 AA", visitor_goals: 0, location: "Nobleton Rec" },
+      { cohort: "U14 AA", league: "York-Simcoe", date: "Oct 20, 2026", status: "final", home: "Barrie Colts U14 AA", home_goals: 5, visitor: "King Rebellion U14 AA", visitor_goals: 6, location: "Peggy Hill 2" },
+      { cohort: "U14 AA", league: "York-Simcoe", date: "Oct 21, 2026", status: "final", home: "South Simcoe Storm U14 AA", home_goals: 5, visitor: "Orangeville Flyers U14 AA", visitor_goals: 5, location: "Innisfil Rec Red" },
+      { cohort: "U14 AA", league: "York-Simcoe", date: "Oct 23, 2026", status: "final", home: "Orangeville Flyers U14 AA", home_goals: 4, visitor: "South Simcoe Storm U14 AA", visitor_goals: 5, location: "Tony Rose A" },
+
+      // Lakeshore Highlights (U11 & U14)
+      { cohort: "U11 AA", league: "Lakeshore", date: "Oct 2, 2026", status: "final", home: "NORTHUMBERLAND AA U11", home_goals: 0, visitor: "QUINTE WEST AA U11", visitor_goals: 7, location: "Jack Burger Arena" },
+      { cohort: "U11 AA", league: "Lakeshore", date: "Oct 3, 2026", status: "final", home: "AJAX-PICKERING AA U11", home_goals: 1, visitor: "BELLEVILLE AA U11", visitor_goals: 2, location: "Ajax CC Pad 4" },
+      { cohort: "U11 AA", league: "Lakeshore", date: "Oct 3, 2026", status: "final", home: "PETERBOROUGH AA U11", home_goals: 11, visitor: "NORTHUMBERLAND AA U11", visitor_goals: 0, location: "Miskin Law CC" },
+      { cohort: "U11 AA", league: "Lakeshore", date: "Oct 3, 2026", status: "final", home: "QUINTE WEST AA U11", home_goals: 3, visitor: "WHITBY AA U11", visitor_goals: 3, location: "Duncan McDonald 1" },
+      { cohort: "U11 AA", league: "Lakeshore", date: "Oct 3, 2026", status: "final", home: "NORTH DURHAM AA U11", home_goals: 6, visitor: "CLARINGTON AA U11", visitor_goals: 2, location: "Scugog Pad 1" },
+      { cohort: "U11 AA", league: "Lakeshore", date: "Oct 4, 2026", status: "final", home: "WHITBY AA U11", home_goals: 1, visitor: "PETERBOROUGH AA U11", visitor_goals: 1, location: "Fieldgate Pad 1" },
+      { cohort: "U11 AA", league: "Lakeshore", date: "Oct 9, 2026", status: "final", home: "WHITBY AA U11", home_goals: 6, visitor: "QUINTE WEST AA U11", visitor_goals: 3, location: "McKinney Pad 2" },
+      { cohort: "U11 AA", league: "Lakeshore", date: "Oct 9, 2026", status: "final", home: "OSHAWA AA U11", home_goals: 4, visitor: "AJAX-PICKERING AA U11", visitor_goals: 2, location: "Delpark Homes 1" },
+      { cohort: "U11 AA", league: "Lakeshore", date: "Oct 10, 2026", status: "final", home: "NORTH DURHAM AA U11", home_goals: 4, visitor: "OSHAWA AA U11", visitor_goals: 4, location: "Scugog Pad 2" },
+      { cohort: "U11 AA", league: "Lakeshore", date: "Oct 11, 2026", status: "final", home: "BELLEVILLE AA U11", home_goals: 7, visitor: "CLARINGTON AA U11", visitor_goals: 2, location: "Quinte S&WC Wally Dever" },
+      { cohort: "U11 AA", league: "Lakeshore", date: "Oct 16, 2026", status: "final", home: "OSHAWA AA U11", home_goals: 3, visitor: "PETERBOROUGH AA U11", visitor_goals: 0, location: "Delpark Homes 1" },
+      { cohort: "U11 AA", league: "Lakeshore", date: "Oct 18, 2026", status: "final", home: "OSHAWA AA U11", home_goals: 6, visitor: "KINGSTON AREA AA U11", visitor_goals: 2, location: "Delpark Homes 1" },
+
+      { cohort: "U14 AA", league: "Lakeshore", date: "Oct 3, 2026", status: "final", home: "NORTH DURHAM AA U14", home_goals: 3, visitor: "QUINTE WEST AA U14", visitor_goals: 3, location: "Uxbridge Pad 2" },
+      { cohort: "U14 AA", league: "Lakeshore", date: "Oct 3, 2026", status: "final", home: "KINGSTON AREA AA U14", home_goals: 4, visitor: "PETERBOROUGH AA U14", visitor_goals: 2, location: "Cataraqui Kinsmen" },
+      { cohort: "U14 AA", league: "Lakeshore", date: "Oct 4, 2026", status: "final", home: "QUINTE WEST AA U14", home_goals: 4, visitor: "PETERBOROUGH AA U14", visitor_goals: 3, location: "Duncan McDonald 1" },
+      { cohort: "U14 AA", league: "Lakeshore", date: "Oct 9, 2026", status: "final", home: "CLARINGTON AA U14", home_goals: 4, visitor: "NORTHUMBERLAND AA U14", visitor_goals: 2, location: "Rickard Pad B" },
+      { cohort: "U14 AA", league: "Lakeshore", date: "Oct 10, 2026", status: "final", home: "OSHAWA AA U14", home_goals: 5, visitor: "BELLEVILLE AA U14", visitor_goals: 1, location: "Delpark Homes 2" },
+      { cohort: "U14 AA", league: "Lakeshore", date: "Oct 11, 2026", status: "final", home: "OSHAWA AA U14", home_goals: 1, visitor: "KINGSTON AREA AA U14", visitor_goals: 2, location: "Delpark Homes 3" },
+      { cohort: "U14 AA", league: "Lakeshore", date: "Oct 16, 2026", status: "final", home: "AJAX-PICKERING AA U14", home_goals: 1, visitor: "OSHAWA AA U14", visitor_goals: 6, location: "Don Beer Pad 3" },
+      { cohort: "U14 AA", league: "Lakeshore", date: "Oct 17, 2026", status: "final", home: "WHITBY AA U14", home_goals: 2, visitor: "NORTHUMBERLAND AA U14", visitor_goals: 7, location: "IPSC Pad 4" },
+      { cohort: "U14 AA", league: "Lakeshore", date: "Oct 27, 2026", status: "final", home: "OSHAWA AA U14", home_goals: 7, visitor: "NORTHUMBERLAND AA U14", visitor_goals: 2, location: "Delpark Homes 1" },
+      { cohort: "U14 AA", league: "Lakeshore", date: "Oct 28, 2026", status: "final", home: "PETERBOROUGH AA U14", home_goals: 2, visitor: "CLARINGTON AA U14", visitor_goals: 1, location: "Miskin Law CC South" },
+      { cohort: "U14 AA", league: "Lakeshore", date: "Oct 30, 2026", status: "final", home: "CLARINGTON AA U14", home_goals: 0, visitor: "KINGSTON AREA AA U14", visitor_goals: 4, location: "Rickard Pad B" }
+    ];
+
+    // =========================================================================
+    // 3. STATE & POOL MAPPINGS
     // =========================================================================
     let currentData = DEFAULT_DATA;
     let currentView = 'standings'; // 'standings' | 'pools'
     let searchQuery = '';
     
-    // CRITICAL: Page initializes sorted by CURRENT POINTS descending
+    // Sort defaults: Current Points descending
     let sortColumn = 'current_pts';
     let sortAsc = false;
+
+    // Single-expand accordion state
+    let expandedTeamName = null;
 
     const POOL_SCHEMES = {
       'Tri-County': {
@@ -453,15 +601,71 @@
       return 'TBD';
     }
 
+    // Helper: normalize team names for loose matching in game logs
+    function cleanName(n) {
+      return String(n || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+    }
+
+    // Retrieve games for a specific team
+    function getTeamGames(cohort, teamName) {
+      const targetClean = cleanName(teamName);
+      const allGames = (currentData.games && currentData.games.length > 0) ? currentData.games : EMBEDDED_GAMES;
+      
+      const teamGames = allGames.filter(g => {
+        if (g.cohort && g.cohort !== cohort) return false;
+        const hClean = cleanName(g.home || g.home_name);
+        const vClean = cleanName(g.visitor || g.visitor_name);
+        return hClean === targetClean || vClean === targetClean || hClean.includes(targetClean) || targetClean.includes(hClean) || vClean.includes(targetClean) || targetClean.includes(vClean);
+      });
+
+      const completed = [];
+      const scheduled = [];
+
+      teamGames.forEach(g => {
+        const isHome = cleanName(g.home || g.home_name) === targetClean || cleanName(g.home || g.home_name).includes(targetClean);
+        const oppName = isHome ? (g.visitor || g.visitor_name) : (g.home || g.home_name);
+        const isFinal = (g.status || '').toLowerCase() === 'final';
+
+        if (isFinal) {
+          const myGoals = isHome ? Number(g.home_goals) : Number(g.visitor_goals);
+          const oppGoals = isHome ? Number(g.visitor_goals) : Number(g.home_goals);
+          let result = 'T';
+          if (myGoals > oppGoals) result = 'W';
+          else if (myGoals < oppGoals) result = 'L';
+
+          completed.push({
+            date: g.date || 'Final',
+            opponent: oppName,
+            is_home: isHome,
+            my_goals: myGoals,
+            opp_goals: oppGoals,
+            result: result,
+            location: g.location || 'Local Rink'
+          });
+        } else {
+          scheduled.push({
+            date: g.date || 'TBD',
+            time: g.time || 'Puck Drop',
+            opponent: oppName,
+            is_home: isHome,
+            location: g.location || 'Local Rink'
+          });
+        }
+      });
+
+      return { completed, scheduled };
+    }
+
     // =========================================================================
-    // 3. UI CONTROLS & LISTENERS
+    // 4. UI CONTROLS & LISTENERS
     // =========================================================================
     function onControlsChange() {
       searchQuery = '';
+      expandedTeamName = null;
       document.getElementById('teamSearch').value = '';
       document.getElementById('clearSearch').classList.add('hidden');
       
-      // Reset sort to current points descending whenever controls change
+      // Reset sort to current points descending
       sortColumn = 'current_pts';
       sortAsc = false;
       render();
@@ -514,8 +718,17 @@
       render();
     }
 
+    function toggleTeamAccordion(teamName) {
+      if (expandedTeamName === teamName) {
+        expandedTeamName = null;
+      } else {
+        expandedTeamName = teamName;
+      }
+      renderStandingsTable();
+    }
+
     // =========================================================================
-    // 4. RENDERING METHODS
+    // 5. RENDERING METHODS
     // =========================================================================
     function getFilteredAndSortedTeams() {
       const currentCohort = getCurrentCohort();
@@ -528,18 +741,15 @@
       const seedMap = new Map();
       seedRoster.forEach((t, idx) => seedMap.set(t.team_name, idx + 1));
 
-      // Attach seed to each team object
       teams = teams.map(t => ({
         ...t,
         projectedSeed: seedMap.get(t.team_name) || 99
       }));
 
-      // Search filter
       if (searchQuery) {
         teams = teams.filter(t => t.team_name.toLowerCase().includes(searchQuery));
       }
 
-      // Sort
       teams.sort((a, b) => {
         let vA = a[sortColumn];
         let vB = b[sortColumn];
@@ -551,21 +761,6 @@
       });
 
       return teams;
-    }
-
-    function updateSortIcons() {
-      const headers = ['team_name', 'mhr_rating', 'current_gp', 'current_pts', 'proj_pts_avg', 'proj_finish', 'prob_top2_pct', 'prob_top4_pct'];
-      headers.forEach(h => {
-        const iconEl = document.getElementById(`sort-icon-${h}`);
-        if (!iconEl) return;
-        if (sortColumn === h) {
-          iconEl.textContent = sortAsc ? '▲' : '▼';
-          iconEl.className = 'text-[11px] font-black text-teal-900';
-        } else {
-          iconEl.textContent = '↕';
-          iconEl.className = 'text-[10px] text-slate-400';
-        }
-      });
     }
 
     function renderRulesBanner() {
@@ -581,13 +776,13 @@
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
         </div>`;
         title = `Tri-County ${currentCohort} Playoff Format`;
-        desc = `<strong>Critical Bye Incentive:</strong> Top 2 regular season seeds advance directly to the semi-finals with a first-round bye. Remaining seeds compete across 3 round-robin groups.`;
+        desc = `<strong>First-Round Bye:</strong> Top 2 regular season seeds advance directly to the semi-finals with a bye. Remaining seeds compete across round-robin groups.`;
       } else if (currentLeague === 'York-Simcoe') {
         icon = `<div class="p-2 rounded-xl bg-gradient-to-r from-teal-400 to-emerald-500 text-white flex-shrink-0 shadow-sm">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
         </div>`;
         title = `York-Simcoe (YMSHL) 12-Team Pool Format`;
-        desc = `<strong>Winner-Take-All Pools:</strong> 4 Pools (A-D) of 3 teams each. <strong>Only the 1st place team in each pool moves on to the YMSHL Semis</strong>. Top 2 seeds receive heavily favorable draws in Pools A & B.`;
+        desc = `<strong>Top 4 Seeds Headline Pools:</strong> 4 Pools (A-D). <strong>Only the 1st place team in each pool moves on to the YMSHL Semis</strong>. Seeds 1 & 2 draw favorable lower-tier brackets.`;
       } else {
         icon = `<div class="p-2 rounded-xl bg-gradient-to-r from-cyan-400 to-blue-500 text-white flex-shrink-0 shadow-sm">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
@@ -605,27 +800,84 @@
       `;
     }
 
+    function renderStandingsThead() {
+      const thead = document.getElementById('standingsThead');
+      const currentLeague = getCurrentLeague();
+      const isYorkSimcoe = (currentLeague === 'York-Simcoe');
+
+      // Top 2 header label depending on league
+      let top2Label = 'Top 2 %';
+      if (currentLeague === 'Tri-County') top2Label = 'Top 2 % (Bye)';
+
+      let top4Th = isYorkSimcoe ? `
+        <th onclick="sortTable('prob_top4_pct')" class="py-3.5 px-3.5 text-center cursor-pointer hover:text-teal-900 transition">
+          <span class="flex items-center justify-center gap-1">Top 4 % <span id="sort-icon-prob_top4_pct" class="text-[10px] text-slate-400">↕</span></span>
+        </th>
+      ` : '';
+
+      thead.innerHTML = `
+        <tr class="bg-gradient-to-r from-mint-100/90 via-teal-100/70 to-cyan-100/90 border-b border-teal-200 text-slate-700 font-mono text-[11px] uppercase tracking-wider select-none font-black">
+          <th onclick="sortTable('team_name')" class="py-3.5 px-4 cursor-pointer hover:text-teal-900 transition">
+            <span class="flex items-center gap-1">Team <span id="sort-icon-team_name" class="text-[10px] text-slate-400">↕</span></span>
+          </th>
+          <th onclick="sortTable('current_gp')" class="py-3.5 px-2.5 text-center cursor-pointer hover:text-teal-900 transition">
+            <span class="flex items-center justify-center gap-1">GP <span id="sort-icon-current_gp" class="text-[10px] text-slate-400">↕</span></span>
+          </th>
+          <th class="py-3.5 px-3 text-center">Record</th>
+          <th onclick="sortTable('current_pts')" class="py-3.5 px-3 text-center cursor-pointer transition bg-emerald-100/80 text-emerald-900 font-black border-x border-teal-200">
+            <span class="flex items-center justify-center gap-1">Cur Pts <span id="sort-icon-current_pts" class="text-[11px] font-black">▼</span></span>
+          </th>
+          <th onclick="sortTable('proj_pts_avg')" class="py-3.5 px-3.5 text-center cursor-pointer hover:text-teal-900 transition">
+            <span class="flex items-center justify-center gap-1">Proj Pts <span id="sort-icon-proj_pts_avg" class="text-[10px] text-slate-400">↕</span></span>
+          </th>
+          <th onclick="sortTable('proj_finish')" class="py-3.5 px-3.5 text-center cursor-pointer hover:text-teal-900 transition">
+            <span class="flex items-center justify-center gap-1">Proj Fin <span id="sort-icon-proj_finish" class="text-[10px] text-slate-400">↕</span></span>
+          </th>
+          <th onclick="sortTable('prob_top2_pct')" class="py-3.5 px-4 text-center cursor-pointer hover:text-teal-900 transition">
+            <span class="flex items-center justify-center gap-1">${top2Label} <span id="sort-icon-prob_top2_pct" class="text-[10px] text-slate-400">↕</span></span>
+          </th>
+          ${top4Th}
+          <th class="py-3.5 px-4 text-center">Proj Pool</th>
+          <th class="py-3.5 px-4 text-center">Pool Odds</th>
+          <th onclick="sortTable('mhr_rating')" class="py-3.5 px-3.5 text-center cursor-pointer hover:text-teal-900 transition">
+            <span class="flex items-center justify-center gap-1">MHR <span id="sort-icon-mhr_rating" class="text-[10px] text-slate-400">↕</span></span>
+          </th>
+        </tr>
+      `;
+    }
+
+    function updateSortIcons() {
+      const headers = ['team_name', 'current_gp', 'current_pts', 'proj_pts_avg', 'proj_finish', 'prob_top2_pct', 'prob_top4_pct', 'mhr_rating'];
+      headers.forEach(h => {
+        const iconEl = document.getElementById(`sort-icon-${h}`);
+        if (!iconEl) return;
+        if (sortColumn === h) {
+          iconEl.textContent = sortAsc ? '▲' : '▼';
+          iconEl.className = 'text-[11px] font-black text-teal-900';
+        } else {
+          iconEl.textContent = '↕';
+          iconEl.className = 'text-[10px] text-slate-400';
+        }
+      });
+    }
+
     function renderStandingsTable() {
+      renderStandingsThead();
       const tbody = document.getElementById('standingsTbody');
       const currentCohort = getCurrentCohort();
       const currentLeague = getCurrentLeague();
+      const isYorkSimcoe = (currentLeague === 'York-Simcoe');
+      const totalColspan = isYorkSimcoe ? 11 : 10;
       const teams = getFilteredAndSortedTeams();
       const totalTeams = (currentData.results[currentCohort] || {})[currentLeague] || [];
 
       document.getElementById('standingsFooterCounter').innerText = `Showing ${teams.length} of ${totalTeams.length} Teams`;
       updateSortIcons();
 
-      const thTop2 = document.getElementById('th-top2');
-      if (currentLeague === 'Tri-County') {
-        thTop2.innerHTML = `<span class="flex items-center justify-center gap-1">Top 2 % (Bye) <span id="sort-icon-prob_top2_pct">${sortColumn === 'prob_top2_pct' ? (sortAsc ? '▲' : '▼') : '↕'}</span></span>`;
-      } else {
-        thTop2.innerHTML = `<span class="flex items-center justify-center gap-1">Top 2 % <span id="sort-icon-prob_top2_pct">${sortColumn === 'prob_top2_pct' ? (sortAsc ? '▲' : '▼') : '↕'}</span></span>`;
-      }
-
       if (!teams.length) {
         tbody.innerHTML = `
           <tr>
-            <td colspan="11" class="py-12 text-center text-slate-500 font-mono text-sm font-bold bg-white/70">
+            <td colspan="${totalColspan}" class="py-12 text-center text-slate-500 font-mono text-sm font-bold bg-white/70">
               No teams found matching "${searchQuery}".
             </td>
           </tr>
@@ -636,13 +888,7 @@
       let html = '';
       teams.forEach((t) => {
         const assignedPool = getAssignedPoolName(currentLeague, currentCohort, t.projectedSeed);
-        
-        let top2Badge = '';
-        if (currentLeague === 'Tri-County' && t.prob_top2_pct >= 50.0) {
-          top2Badge = `<span class="ml-1.5 px-1.5 py-0.5 rounded text-[10px] font-black bg-cyan-100 text-cyan-800 border border-cyan-300 shadow-sm">BYE LOCK</span>`;
-        } else if (currentLeague === 'Tri-County' && t.prob_top2_pct >= 20.0) {
-          top2Badge = `<span class="ml-1.5 px-1.5 py-0.5 rounded text-[10px] font-bold bg-mint-100 text-teal-800 border border-teal-300">IN HUNT</span>`;
-        }
+        const isExpanded = (expandedTeamName === t.team_name);
 
         let poolBadgeClass = 'bg-slate-100 text-slate-700 border-slate-300';
         if (assignedPool.includes('A')) poolBadgeClass = 'bg-cyan-50 text-cyan-800 border-cyan-300 font-bold shadow-sm';
@@ -657,8 +903,8 @@
           poolBreakdownHtml = `<div class="flex items-center justify-center gap-1.5 flex-wrap">` +
             entries.map(([pKey, pVal]) => {
               const shortName = pKey.replace('Group ', 'G').replace('Pool ', 'P');
-              const opacity = pVal > 60 ? 'text-white font-bold bg-gradient-to-r from-teal-500 to-cyan-500 border-cyan-600 shadow-sm' : (pVal > 25 ? 'text-teal-900 bg-mint-100 border-teal-300 font-bold' : 'text-slate-500 bg-slate-100 border-slate-200');
-              return `<span class="px-1.5 py-0.5 rounded-md text-[10px] font-mono border ${opacity}">${shortName}: ${pVal.toFixed(0)}%</span>`;
+              const opacity = pVal > 60 ? 'text-teal-900 bg-teal-100/90 border-teal-300 font-bold shadow-sm' : (pVal > 25 ? 'text-teal-900 bg-mint-50 border-teal-200 font-semibold' : 'text-slate-400 bg-slate-50 border-slate-200');
+              return `<span class="px-1.5 py-0.5 rounded text-[10px] font-mono border ${opacity}">${shortName}: ${pVal.toFixed(0)}%</span>`;
             }).join('') +
           `</div>`;
         } else {
@@ -667,24 +913,34 @@
 
         const isHighlighted = searchQuery && t.team_name.toLowerCase().includes(searchQuery);
 
+        const top4Td = isYorkSimcoe ? `
+          <td class="py-3 px-3.5 text-center font-mono font-bold text-slate-800">
+            ${t.prob_top4_pct ? t.prob_top4_pct.toFixed(1) + '%' : '-'}
+          </td>
+        ` : '';
+
+        // Row expander chevron
+        const chevron = isExpanded ? 
+          `<span class="w-5 h-5 rounded-md bg-teal-100 text-teal-800 text-xs flex items-center justify-center flex-shrink-0 font-bold font-mono">▼</span>` : 
+          `<span class="w-5 h-5 rounded-md bg-slate-100 group-hover:bg-teal-50 text-slate-500 group-hover:text-teal-700 text-xs flex items-center justify-center flex-shrink-0 font-bold font-mono transition">▶</span>`;
+
         html += `
-          <tr class="hover:bg-mint-50/70 transition border-b border-teal-100 bg-white/90 ${isHighlighted ? 'bg-cyan-50/80 ring-1 ring-cyan-400' : ''}">
-            <td class="py-3 px-4 font-black text-slate-900 tracking-tight text-xs sm:text-sm">
-              ${t.team_name}
+          <tr onclick="toggleTeamAccordion('${t.team_name.replace(/'/g, "\\'")}')" class="group cursor-pointer hover:bg-mint-50/80 transition-colors border-b border-teal-100 ${isExpanded ? 'bg-mint-50/90 ring-1 ring-teal-400 font-semibold' : (isHighlighted ? 'bg-cyan-50/80' : 'bg-white/90')}">
+            <td class="py-3 px-4 text-slate-900 tracking-tight text-xs sm:text-sm">
+              <div class="flex items-center gap-2">
+                ${chevron}
+                <span class="font-black truncate group-hover:text-teal-800 transition">${t.team_name}</span>
+              </div>
             </td>
-            <td class="py-3 px-3 text-center font-mono text-slate-600 font-medium">${t.mhr_rating ? t.mhr_rating.toFixed(1) : '-'}</td>
             <td class="py-3 px-2.5 text-center font-mono text-slate-500">${t.current_gp}</td>
-            <td class="py-3 px-3 text-center font-mono text-slate-700 text-xs">${t.current_w}-${t.current_l}-${t.current_t}</td>
+            <td class="py-3 px-3 text-center font-mono text-slate-700 text-xs font-semibold">${t.current_w}-${t.current_l}-${t.current_t}</td>
             <td class="py-3 px-3 text-center font-mono font-black text-emerald-700 bg-emerald-50/70 border-x border-teal-100 text-sm sm:text-base">${t.current_pts}</td>
             <td class="py-3 px-3.5 text-center font-mono font-black text-teal-700">${t.proj_pts_avg.toFixed(1)}</td>
             <td class="py-3 px-3.5 text-center font-mono text-slate-700 font-bold">${t.proj_finish.toFixed(1)}</td>
             <td class="py-3 px-4 text-center font-mono font-bold text-slate-800">
-              <div class="flex items-center justify-center gap-1">
-                <span>${t.prob_top2_pct.toFixed(1)}%</span>
-                ${top2Badge}
-              </div>
+              ${t.prob_top2_pct.toFixed(1)}%
             </td>
-            <td class="py-3 px-3.5 text-center font-mono text-slate-500 font-medium">${t.prob_top4_pct ? t.prob_top4_pct.toFixed(1) + '%' : '-'}</td>
+            ${top4Td}
             <td class="py-3 px-4 text-center">
               <span class="inline-block px-2.5 py-0.5 rounded-lg text-xs font-mono border ${poolBadgeClass}">
                 ${assignedPool}
@@ -693,8 +949,148 @@
             <td class="py-3 px-4 text-center">
               ${poolBreakdownHtml}
             </td>
+            <td class="py-3 px-3.5 text-center font-mono text-slate-700 font-bold">
+              ${t.mhr_rating ? t.mhr_rating.toFixed(1) : '-'}
+            </td>
           </tr>
         `;
+
+        // =====================================================================
+        // ACCORDION DRAWER (Only 1 Team Expanded At A Time)
+        // =====================================================================
+        if (isExpanded) {
+          const gameData = getTeamGames(currentCohort, t.team_name);
+          const completedList = gameData.completed;
+          const scheduledList = gameData.scheduled;
+
+          html += `
+            <tr class="bg-mint-50/40 border-b-2 border-teal-300">
+              <td colspan="${totalColspan}" class="p-3 sm:p-5">
+                <div class="card-neon rounded-2xl p-4 sm:p-5 shadow-sm border border-teal-200 space-y-4">
+                  
+                  <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-3 border-b border-teal-100 gap-2">
+                    <div class="flex items-center gap-2">
+                      <span class="text-base sm:text-lg">🏒</span>
+                      <h4 class="text-xs sm:text-sm font-black uppercase tracking-tight text-slate-900">
+                        ${t.team_name} &bull; Season Schedule &amp; Results
+                      </h4>
+                    </div>
+                    <div class="text-[11px] font-mono font-bold text-teal-700 bg-white px-2.5 py-1 rounded-lg border border-teal-200 shadow-xs">
+                      Official GameSheet Record: ${t.current_w}W - ${t.current_l}L - ${t.current_t}T (${t.current_pts} Pts)
+                    </div>
+                  </div>
+
+                  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
+                    
+                    <!-- 1. Completed Matchups Box -->
+                    <div class="bg-white rounded-xl p-3.5 sm:p-4 border border-teal-200/80 shadow-xs space-y-2.5">
+                      <div class="flex items-center justify-between">
+                        <span class="text-[11px] font-black uppercase font-mono tracking-wider text-teal-800 flex items-center gap-1.5">
+                          🏁 Completed Results (${completedList.length})
+                        </span>
+                      </div>
+
+                      <div class="overflow-x-auto max-h-60 overflow-y-auto">
+                        <table class="w-full text-left text-xs font-mono whitespace-nowrap">
+                          <thead>
+                            <tr class="bg-mint-50/90 text-slate-600 text-[10px] uppercase font-bold border-b border-teal-100">
+                              <th class="py-1.5 px-2.5">Date</th>
+                              <th class="py-1.5 px-2">Opponent</th>
+                              <th class="py-1.5 px-2 text-center">Score</th>
+                              <th class="py-1.5 px-2 text-center">Result</th>
+                              <th class="py-1.5 px-2">Venue</th>
+                            </tr>
+                          </thead>
+                          <tbody class="divide-y divide-slate-100">
+          `;
+
+          if (completedList.length > 0) {
+            completedList.forEach(cg => {
+              let resBadge = '';
+              if (cg.result === 'W') resBadge = `<span class="px-1.5 py-0.5 rounded text-[10px] font-black bg-emerald-100 text-emerald-800 border border-emerald-300">W</span>`;
+              else if (cg.result === 'L') resBadge = `<span class="px-1.5 py-0.5 rounded text-[10px] font-black bg-rose-100 text-rose-800 border border-rose-300">L</span>`;
+              else resBadge = `<span class="px-1.5 py-0.5 rounded text-[10px] font-black bg-amber-100 text-amber-800 border border-amber-300">T</span>`;
+
+              html += `
+                <tr class="hover:bg-slate-50">
+                  <td class="py-1.5 px-2.5 text-slate-500 font-medium">${cg.date}</td>
+                  <td class="py-1.5 px-2 font-sans font-bold text-slate-800 truncate max-w-[140px] sm:max-w-xs">
+                    <span class="text-slate-400 font-mono text-[10px] mr-1">${cg.is_home ? 'vs' : '@'}</span>${cg.opponent}
+                  </td>
+                  <td class="py-1.5 px-2 text-center font-bold text-slate-900">${cg.my_goals} - ${cg.opp_goals}</td>
+                  <td class="py-1.5 px-2 text-center">${resBadge}</td>
+                  <td class="py-1.5 px-2 text-slate-400 text-[11px] truncate max-w-[110px] sm:max-w-xs">${cg.location}</td>
+                </tr>
+              `;
+            });
+          } else {
+            html += `
+              <tr>
+                <td colspan="5" class="py-4 text-center text-slate-400 italic">No completed GameSheet matches recorded yet.</td>
+              </tr>
+            `;
+          }
+
+          html += `
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+
+                    <!-- 2. Upcoming Schedule Box -->
+                    <div class="bg-white rounded-xl p-3.5 sm:p-4 border border-teal-200/80 shadow-xs space-y-2.5">
+                      <div class="flex items-center justify-between">
+                        <span class="text-[11px] font-black uppercase font-mono tracking-wider text-cyan-800 flex items-center gap-1.5">
+                          📅 Upcoming Fixtures (${scheduledList.length})
+                        </span>
+                      </div>
+
+                      <div class="overflow-x-auto max-h-60 overflow-y-auto">
+                        <table class="w-full text-left text-xs font-mono whitespace-nowrap">
+                          <thead>
+                            <tr class="bg-mint-50/90 text-slate-600 text-[10px] uppercase font-bold border-b border-teal-100">
+                              <th class="py-1.5 px-2.5">Date</th>
+                              <th class="py-1.5 px-2">Time</th>
+                              <th class="py-1.5 px-2">Opponent</th>
+                              <th class="py-1.5 px-2">Location</th>
+                            </tr>
+                          </thead>
+                          <tbody class="divide-y divide-slate-100">
+          `;
+
+          if (scheduledList.length > 0) {
+            scheduledList.forEach(sg => {
+              html += `
+                <tr class="hover:bg-slate-50">
+                  <td class="py-1.5 px-2.5 text-slate-500 font-medium">${sg.date}</td>
+                  <td class="py-1.5 px-2 font-bold text-teal-700">${sg.time}</td>
+                  <td class="py-1.5 px-2 font-sans font-bold text-slate-800 truncate max-w-[140px] sm:max-w-xs">
+                    <span class="text-slate-400 font-mono text-[10px] mr-1">${sg.is_home ? 'vs' : '@'}</span>${sg.opponent}
+                  </td>
+                  <td class="py-1.5 px-2 text-slate-400 text-[11px] truncate max-w-[120px] sm:max-w-xs">${sg.location}</td>
+                </tr>
+              `;
+            });
+          } else {
+            html += `
+              <tr>
+                <td colspan="4" class="py-4 text-center text-slate-400 italic">Remaining regular season schedule pending.</td>
+              </tr>
+            `;
+          }
+
+          html += `
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </td>
+            </tr>
+          `;
+        }
       });
 
       tbody.innerHTML = html;
@@ -707,7 +1103,6 @@
       const def = getLeaguePoolDefinition(currentLeague, currentCohort);
       const cohortData = currentData.results[currentCohort] || {};
       
-      // Order strictly by projected finish seed
       const teams = [...(cohortData[currentLeague] || [])].sort((a, b) => b.proj_pts_avg - a.proj_pts_avg);
       teams.forEach((t, idx) => { t.rank = idx + 1; });
 
@@ -805,7 +1200,7 @@
     }
 
     // =========================================================================
-    // 5. MODAL & EXTERNAL FILE SYNC
+    // 6. MODAL & EXTERNAL FILE SYNC
     // =========================================================================
     function openModal() { document.getElementById('syncModal').classList.remove('hidden'); }
     function closeModal() { 
@@ -881,11 +1276,11 @@
       }
     });
 
-    // Auto-initialize
+    // Auto-initialize on load
     window.onload = function() {
-      // Always initialize with Current Points sort descending
       sortColumn = 'current_pts';
       sortAsc = false;
+      expandedTeamName = null;
       render();
 
       // Silent background fetch for live JSON
