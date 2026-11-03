@@ -208,7 +208,7 @@
                     { team_name: "Niagara Falls Canucks", mhr_rating: 85.6, current_gp: 7, current_w: 2, current_l: 5, current_t: 0, current_pts: 4, proj_pts_avg: 19.0, proj_finish: 11.0, prob_top2_pct: 0.0, prob_top4_pct: 0.0, pool_probs: { "Group A": 75.4, "Group B": 15.0, "Group C": 9.6 }, completed_games: [], upcoming_games: [] },
                     { team_name: "Glancaster Bombers", mhr_rating: 85.2, current_gp: 8, current_w: 4, current_l: 4, current_t: 0, current_pts: 8, proj_pts_avg: 17.7, proj_finish: 11.5, prob_top2_pct: 0.0, prob_top4_pct: 0.0, pool_probs: { "Group A": 76.0, "Group B": 14.0, "Group C": 10.0 }, completed_games: [], upcoming_games: [] },
                     { team_name: "Milton Winterhawks", mhr_rating: 85.0, current_gp: 6, current_w: 1, current_l: 3, current_t: 2, current_pts: 4, proj_pts_avg: 14.7, proj_finish: 12.6, prob_top2_pct: 0.0, prob_top4_pct: 0.0, pool_probs: { "Group A": 24.0, "Group B": 39.1, "Group C": 36.9 }, completed_games: [], upcoming_games: [] },
-                    { team_name: "Brampton 45s", mhr_rating: 83.6, current_gp: 7, current_w: 1, current_l: 5, current_t: 1, current_pts: 3, proj_pts_avg: 8.6, proj_finish: 14.1, prob_top2_pct: 0.0, prob_top4_pct: 0.0, pool_probs: { "Group A": 0.0, "Group B": 98.3, "Group C": 1.7 }, completed_games: [], upcoming_games: [] },
+                    { team_name: "Brampton 45s", mhr_rating: 83.6, current_gp: 7, "current_w": 1, current_l: 5, current_t: 1, current_pts: 3, proj_pts_avg: 8.6, proj_finish: 14.1, prob_top2_pct: 0.0, prob_top4_pct: 0.0, pool_probs: { "Group A": 0.0, "Group B": 98.3, "Group C": 1.7 }, completed_games: [], upcoming_games: [] },
                     { team_name: "Hamilton Steel", mhr_rating: 83.0, current_gp: 5, current_w: 0, current_l: 4, current_t: 1, current_pts: 1, proj_pts_avg: 5.0, proj_finish: 14.8, prob_top2_pct: 0.0, prob_top4_pct: 0.0, pool_probs: { "Group A": 6.3, "Group B": 1.7, "Group C": 92.0 }, completed_games: [], upcoming_games: [] }
                 ]
             }
@@ -340,7 +340,15 @@
             });
         }
 
-        function getProjectedPoolAssignment(cohort, league, projRank) {
+        function getProjectedPoolAssignment(team, cohort, league, projRank) {
+            // Select the pool with the highest simulated probability
+            if (team && team.pool_probs && Object.keys(team.pool_probs).length > 0) {
+                const bestPool = Object.entries(team.pool_probs).sort((a, b) => b[1] - a[1])[0];
+                if (bestPool && bestPool[1] > 0) {
+                    return bestPool[0];
+                }
+            }
+            // Fallback to seed mapping if simulation odds are not populated
             const leaguePools = POOL_DEFINITIONS[league]?.[cohort] || {};
             for (const [poolName, data] of Object.entries(leaguePools)) {
                 if (data.seeds.includes(projRank)) return poolName;
@@ -392,7 +400,7 @@
                 const isOpen = activeOpenAccordionTeam === t.team_name;
                 const recStr = `${t.current_w}-${t.current_l}-${t.current_t}`;
                 const projectedSeed = Math.round(t.proj_finish) || 1;
-                const assignedPool = getProjectedPoolAssignment(currentCohort, currentLeague, projectedSeed);
+                const assignedPool = getProjectedPoolAssignment(t, currentCohort, currentLeague, projectedSeed);
 
                 // Pool Odds Split String
                 let poolOddsStr = "";
