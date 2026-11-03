@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T17:05:20.607481+00:00",
+  "generated_at": "2026-11-03T13:25:07.544876+00:00",
   "simulations_count": 10000,
   "results": {
     "U11 AA": {
@@ -12,15 +12,15 @@
           "current_w": 6,
           "current_l": 2,
           "current_t": 0,
-          "proj_pts_avg": 44.0,
+          "proj_pts_avg": 44.1,
           "proj_finish": 1.1,
-          "prob_1st_pct": 89.9,
-          "prob_top2_pct": 97.4,
-          "prob_top4_pct": 99.8,
+          "prob_1st_pct": 90.5,
+          "prob_top2_pct": 97.8,
+          "prob_top4_pct": 99.9,
           "pool_probs": {
-            "Group A": 90.0,
-            "Group B": 7.6,
-            "Group C": 2.4
+            "Group A": 90.6,
+            "Group B": 7.3,
+            "Group C": 2.1
           },
           "completed_games": [
             {
@@ -240,15 +240,15 @@
           "current_w": 5,
           "current_l": 3,
           "current_t": 0,
-          "proj_pts_avg": 36.6,
-          "proj_finish": 3.2,
-          "prob_1st_pct": 4.8,
-          "prob_top2_pct": 39.9,
-          "prob_top4_pct": 81.3,
+          "proj_pts_avg": 36.5,
+          "proj_finish": 3.3,
+          "prob_1st_pct": 4.2,
+          "prob_top2_pct": 38.8,
+          "prob_top4_pct": 80.6,
           "pool_probs": {
             "Group A": 10.0,
-            "Group B": 46.1,
-            "Group C": 43.9
+            "Group B": 45.6,
+            "Group C": 44.4
           },
           "completed_games": [
             {
@@ -456,19 +456,19 @@
         {
           "team_name": "Burlington Eagles",
           "mhr_rating": 87.9,
-          "current_gp": 8,
-          "current_pts": 11,
-          "current_w": 5,
+          "current_gp": 9,
+          "current_pts": 13,
+          "current_w": 6,
           "current_l": 2,
           "current_t": 1,
-          "proj_pts_avg": 35.4,
-          "proj_finish": 3.9,
+          "proj_pts_avg": 35.6,
+          "proj_finish": 3.8,
           "prob_1st_pct": 2.4,
-          "prob_top2_pct": 24.0,
-          "prob_top4_pct": 67.9,
+          "prob_top2_pct": 25.5,
+          "prob_top4_pct": 70.0,
           "pool_probs": {
-            "Group A": 11.6,
-            "Group B": 39.8,
+            "Group A": 11.1,
+            "Group B": 40.3,
             "Group C": 48.6
           },
           "completed_games": [
@@ -543,16 +543,18 @@
               "opp_goals": 6,
               "result": "W",
               "location": "Appleby (2)"
+            },
+            {
+              "date": "Nov 2, 2026",
+              "opponent": "Milton Winterhawks",
+              "is_home": false,
+              "team_goals": 4,
+              "opp_goals": 3,
+              "result": "W",
+              "location": "MSC (D)"
             }
           ],
           "upcoming_games": [
-            {
-              "date": "2026-11-02",
-              "time": "23:30",
-              "opponent": "Milton Winterhawks",
-              "is_home": false,
-              "location": "MSC (D)"
-            },
             {
               "date": "2026-11-07",
               "time": "00:15",
@@ -684,13 +686,13 @@
           "current_t": 0,
           "proj_pts_avg": 35.4,
           "proj_finish": 3.9,
-          "prob_1st_pct": 1.7,
-          "prob_top2_pct": 21.4,
-          "prob_top4_pct": 67.4,
+          "prob_1st_pct": 1.8,
+          "prob_top2_pct": 21.1,
+          "prob_top4_pct": 66.8,
           "pool_probs": {
-            "Group A": 12.0,
-            "Group B": 36.5,
-            "Group C": 51.4
+            "Group A": 11.9,
+            "Group B": 37.6,
+            "Group C": 50.5
           },
           "completed_games": [
             {
@@ -907,13 +909,13 @@
           "current_t": 1,
           "proj_pts_avg": 33.4,
           "proj_finish": 4.8,
-          "prob_1st_pct": 0.9,
-          "prob_top2_pct": 11.0,
-          "prob_top4_pct": 42.5,
+          "prob_1st_pct": 0.8,
+          "prob_top2_pct": 10.5,
+          "prob_top4_pct": 42.4,
           "pool_probs": {
-            "Group A": 19.2,
-            "Group B": 37.2,
-            "Group C": 43.7
+            "Group A": 19.8,
+            "Group B": 36.4,
+            "Group C": 43.8
           },
           "completed_games": [
             {
@@ -1124,15 +1126,15 @@
           "current_w": 5,
           "current_l": 2,
           "current_t": 2,
-          "proj_pts_avg": 31.9,
+          "proj_pts_avg": 32.0,
           "proj_finish": 5.6,
           "prob_1st_pct": 0.2,
-          "prob_top2_pct": 4.3,
-          "prob_top4_pct": 25.1,
+          "prob_top2_pct": 4.6,
+          "prob_top4_pct": 25.3,
           "pool_probs": {
-            "Group A": 25.7,
-            "Group B": 36.0,
-            "Group C": 38.4
+            "Group A": 25.2,
+            "Group B": 36.5,
+            "Group C": 38.2
           },
           "completed_games": [
             {
@@ -1349,13 +1351,13 @@
           "current_t": 1,
           "proj_pts_avg": 30.1,
           "proj_finish": 6.5,
-          "prob_1st_pct": 0.1,
+          "prob_1st_pct": 0.0,
           "prob_top2_pct": 1.5,
-          "prob_top4_pct": 12.0,
+          "prob_top4_pct": 11.7,
           "pool_probs": {
-            "Group A": 22.6,
-            "Group B": 38.4,
-            "Group C": 39.0
+            "Group A": 23.1,
+            "Group B": 37.4,
+            "Group C": 39.5
           },
           "completed_games": [
             {
@@ -1568,15 +1570,15 @@
           "current_w": 4,
           "current_l": 3,
           "current_t": 0,
-          "proj_pts_avg": 26.8,
+          "proj_pts_avg": 26.7,
           "proj_finish": 8.1,
           "prob_1st_pct": 0.0,
-          "prob_top2_pct": 0.3,
-          "prob_top4_pct": 2.9,
+          "prob_top2_pct": 0.2,
+          "prob_top4_pct": 2.5,
           "pool_probs": {
-            "Group A": 24.9,
-            "Group B": 55.7,
-            "Group C": 19.4
+            "Group A": 24.3,
+            "Group B": 56.8,
+            "Group C": 18.9
           },
           "completed_games": [
             {
@@ -1791,11 +1793,11 @@
           "proj_finish": 9.0,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.1,
-          "prob_top4_pct": 0.8,
+          "prob_top4_pct": 0.7,
           "pool_probs": {
-            "Group A": 36.4,
-            "Group B": 52.4,
-            "Group C": 11.2
+            "Group A": 36.3,
+            "Group B": 52.6,
+            "Group C": 11.1
           },
           "completed_games": [
             {
@@ -2019,9 +2021,9 @@
           "prob_top2_pct": 0.0,
           "prob_top4_pct": 0.1,
           "pool_probs": {
-            "Group A": 59.0,
-            "Group B": 32.2,
-            "Group C": 8.8
+            "Group A": 59.7,
+            "Group B": 31.6,
+            "Group C": 8.7
           },
           "completed_games": [
             {
@@ -2455,15 +2457,15 @@
           "current_w": 4,
           "current_l": 5,
           "current_t": 0,
-          "proj_pts_avg": 18.7,
-          "proj_finish": 11.5,
+          "proj_pts_avg": 18.8,
+          "proj_finish": 11.4,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.0,
           "prob_top4_pct": 0.0,
           "pool_probs": {
-            "Group A": 67.7,
-            "Group B": 7.0,
-            "Group C": 25.3
+            "Group A": 70.0,
+            "Group B": 7.3,
+            "Group C": 22.7
           },
           "completed_games": [
             {
@@ -2673,20 +2675,20 @@
         {
           "team_name": "Milton Winterhawks",
           "mhr_rating": 85.0,
-          "current_gp": 7,
+          "current_gp": 8,
           "current_pts": 5,
           "current_w": 1,
-          "current_l": 3,
+          "current_l": 4,
           "current_t": 3,
-          "proj_pts_avg": 16.9,
-          "proj_finish": 12.2,
+          "proj_pts_avg": 16.5,
+          "proj_finish": 12.3,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.0,
           "prob_top4_pct": 0.0,
           "pool_probs": {
-            "Group A": 46.6,
-            "Group B": 3.2,
-            "Group C": 50.2
+            "Group A": 43.3,
+            "Group B": 2.9,
+            "Group C": 53.8
           },
           "completed_games": [
             {
@@ -2744,6 +2746,15 @@
               "location": "WERC (1)"
             },
             {
+              "date": "Nov 2, 2026",
+              "opponent": "Burlington Eagles",
+              "is_home": true,
+              "team_goals": 3,
+              "opp_goals": 4,
+              "result": "L",
+              "location": "MSC (D)"
+            },
+            {
               "date": "Nov 1, 2026",
               "opponent": "Oakville Rangers",
               "is_home": false,
@@ -2754,13 +2765,6 @@
             }
           ],
           "upcoming_games": [
-            {
-              "date": "2026-11-02",
-              "time": "23:30",
-              "opponent": "Burlington Eagles",
-              "is_home": true,
-              "location": "MSC (D)"
-            },
             {
               "date": "2026-11-07",
               "time": "00:15",
@@ -2903,9 +2907,9 @@
           "prob_top2_pct": 0.0,
           "prob_top4_pct": 0.0,
           "pool_probs": {
-            "Group A": 1.9,
-            "Group B": 22.5,
-            "Group C": 75.6
+            "Group A": 2.2,
+            "Group B": 22.4,
+            "Group C": 75.3
           },
           "completed_games": [
             {
@@ -3125,8 +3129,8 @@
           "prob_top4_pct": 0.0,
           "pool_probs": {
             "Group A": 0.3,
-            "Group B": 76.6,
-            "Group C": 23.1
+            "Group B": 76.5,
+            "Group C": 23.2
           },
           "completed_games": [
             {
@@ -3335,15 +3339,15 @@
           "current_w": 6,
           "current_l": 0,
           "current_t": 0,
-          "proj_pts_avg": 44.1,
+          "proj_pts_avg": 44.2,
           "proj_finish": 1.2,
-          "prob_1st_pct": 83.9,
+          "prob_1st_pct": 84.0,
           "prob_top2_pct": 99.3,
           "prob_top4_pct": 100.0,
           "pool_probs": {
-            "Pool A": 83.9,
+            "Pool A": 84.0,
             "Pool B": 15.3,
-            "Pool C": 0.7,
+            "Pool C": 0.6,
             "Pool D": 0.1
           },
           "completed_games": [
@@ -3556,13 +3560,13 @@
           "proj_pts_avg": 39.3,
           "proj_finish": 2.0,
           "prob_1st_pct": 15.5,
-          "prob_top2_pct": 88.2,
-          "prob_top4_pct": 98.9,
+          "prob_top2_pct": 87.9,
+          "prob_top4_pct": 99.0,
           "pool_probs": {
             "Pool A": 15.5,
-            "Pool B": 72.7,
-            "Pool C": 8.7,
-            "Pool D": 3.1
+            "Pool B": 72.5,
+            "Pool C": 9.1,
+            "Pool D": 3.0
           },
           "completed_games": [
             {
@@ -3771,16 +3775,16 @@
           "current_w": 4,
           "current_l": 3,
           "current_t": 2,
-          "proj_pts_avg": 31.6,
+          "proj_pts_avg": 31.5,
           "proj_finish": 4.4,
           "prob_1st_pct": 0.1,
-          "prob_top2_pct": 4.3,
-          "prob_top4_pct": 62.4,
+          "prob_top2_pct": 4.2,
+          "prob_top4_pct": 61.1,
           "pool_probs": {
             "Pool A": 0.1,
             "Pool B": 5.5,
-            "Pool C": 40.2,
-            "Pool D": 54.1
+            "Pool C": 39.5,
+            "Pool D": 54.9
           },
           "completed_games": [
             {
@@ -3995,16 +3999,16 @@
           "current_w": 5,
           "current_l": 0,
           "current_t": 1,
-          "proj_pts_avg": 31.3,
-          "proj_finish": 4.6,
+          "proj_pts_avg": 31.4,
+          "proj_finish": 4.5,
           "prob_1st_pct": 0.4,
-          "prob_top2_pct": 4.8,
-          "prob_top4_pct": 56.1,
+          "prob_top2_pct": 5.0,
+          "prob_top4_pct": 57.5,
           "pool_probs": {
             "Pool A": 0.4,
-            "Pool B": 6.6,
-            "Pool C": 43.3,
-            "Pool D": 49.7
+            "Pool B": 6.9,
+            "Pool C": 43.2,
+            "Pool D": 49.5
           },
           "completed_games": [
             {
@@ -4213,16 +4217,16 @@
           "current_w": 4,
           "current_l": 2,
           "current_t": 3,
-          "proj_pts_avg": 29.2,
+          "proj_pts_avg": 29.1,
           "proj_finish": 5.6,
           "prob_1st_pct": 0.0,
-          "prob_top2_pct": 1.5,
-          "prob_top4_pct": 29.6,
+          "prob_top2_pct": 1.6,
+          "prob_top4_pct": 29.0,
           "pool_probs": {
             "Pool A": 0.0,
-            "Pool B": 5.2,
-            "Pool C": 37.4,
-            "Pool D": 57.4
+            "Pool B": 5.7,
+            "Pool C": 37.8,
+            "Pool D": 56.5
           },
           "completed_games": [
             {
@@ -4440,13 +4444,13 @@
           "proj_pts_avg": 28.0,
           "proj_finish": 6.2,
           "prob_1st_pct": 0.0,
-          "prob_top2_pct": 1.0,
-          "prob_top4_pct": 20.4,
+          "prob_top2_pct": 1.1,
+          "prob_top4_pct": 20.1,
           "pool_probs": {
-            "Pool A": 0.0,
-            "Pool B": 11.8,
-            "Pool C": 42.8,
-            "Pool D": 45.4
+            "Pool A": 0.1,
+            "Pool B": 12.6,
+            "Pool C": 42.4,
+            "Pool D": 45.0
           },
           "completed_games": [
             {
@@ -4659,14 +4663,14 @@
           "current_t": 1,
           "proj_pts_avg": 27.5,
           "proj_finish": 6.4,
-          "prob_1st_pct": 0.1,
+          "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.7,
-          "prob_top4_pct": 17.7,
+          "prob_top4_pct": 18.0,
           "pool_probs": {
-            "Pool A": 0.1,
-            "Pool B": 14.8,
-            "Pool C": 42.1,
-            "Pool D": 43.0
+            "Pool A": 0.0,
+            "Pool B": 14.4,
+            "Pool C": 42.0,
+            "Pool D": 43.6
           },
           "completed_games": [
             {
@@ -4881,12 +4885,12 @@
           "proj_finish": 6.8,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.3,
-          "prob_top4_pct": 12.6,
+          "prob_top4_pct": 12.8,
           "pool_probs": {
-            "Pool A": 0.1,
-            "Pool B": 17.8,
+            "Pool A": 0.0,
+            "Pool B": 17.0,
             "Pool C": 47.5,
-            "Pool D": 34.6
+            "Pool D": 35.5
           },
           "completed_games": [
             {
@@ -5101,12 +5105,12 @@
           "proj_finish": 8.2,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.0,
-          "prob_top4_pct": 2.3,
+          "prob_top4_pct": 2.4,
           "pool_probs": {
             "Pool A": 0.1,
-            "Pool B": 55.8,
-            "Pool C": 32.1,
-            "Pool D": 12.0
+            "Pool B": 55.4,
+            "Pool C": 33.1,
+            "Pool D": 11.4
           },
           "completed_games": [
             {
@@ -5325,12 +5329,12 @@
           "proj_finish": 9.8,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.0,
-          "prob_top4_pct": 0.1,
+          "prob_top4_pct": 0.0,
           "pool_probs": {
-            "Pool A": 5.4,
-            "Pool B": 89.0,
-            "Pool C": 5.1,
-            "Pool D": 0.6
+            "Pool A": 5.3,
+            "Pool B": 89.4,
+            "Pool C": 4.8,
+            "Pool D": 0.5
           },
           "completed_games": [
             {
@@ -5547,8 +5551,8 @@
           "prob_top2_pct": 0.0,
           "prob_top4_pct": 0.0,
           "pool_probs": {
-            "Pool A": 94.5,
-            "Pool B": 5.5,
+            "Pool A": 94.6,
+            "Pool B": 5.4,
             "Pool C": 0.0,
             "Pool D": 0.0
           },
@@ -5974,6 +5978,229 @@
       ],
       "Lakeshore": [
         {
+          "team_name": "WHITBY AA U11",
+          "mhr_rating": 89.4,
+          "current_gp": 6,
+          "current_pts": 10,
+          "current_w": 4,
+          "current_l": 0,
+          "current_t": 2,
+          "proj_pts_avg": 40.1,
+          "proj_finish": 2.2,
+          "prob_1st_pct": 34.7,
+          "prob_top2_pct": 63.3,
+          "prob_top4_pct": 98.5,
+          "pool_probs": {
+            "Pool A": 48.6,
+            "Pool B": 51.4
+          },
+          "completed_games": [
+            {
+              "date": "Oct 9, 2026",
+              "opponent": "QUINTE WEST AA U11",
+              "is_home": true,
+              "team_goals": 6,
+              "opp_goals": 3,
+              "result": "W",
+              "location": "McKinney (2)"
+            },
+            {
+              "date": "Oct 4, 2026",
+              "opponent": "PETERBOROUGH AA U11",
+              "is_home": true,
+              "team_goals": 1,
+              "opp_goals": 1,
+              "result": "T",
+              "location": "Fieldgate (1)"
+            },
+            {
+              "date": "Oct 30, 2026",
+              "opponent": "NORTHUMBERLAND AA U11",
+              "is_home": true,
+              "team_goals": 9,
+              "opp_goals": 1,
+              "result": "W",
+              "location": "Fieldgate (1)"
+            },
+            {
+              "date": "Oct 3, 2026",
+              "opponent": "QUINTE WEST AA U11",
+              "is_home": false,
+              "team_goals": 3,
+              "opp_goals": 3,
+              "result": "T",
+              "location": "Duncan McDonald (1)"
+            },
+            {
+              "date": "Oct 10, 2026",
+              "opponent": "AJAX-PICKERING AA U11",
+              "is_home": true,
+              "team_goals": 6,
+              "opp_goals": 2,
+              "result": "W",
+              "location": "IPSC (4)"
+            },
+            {
+              "date": "Nov 1, 2026",
+              "opponent": "KINGSTON AREA AA U11",
+              "is_home": true,
+              "team_goals": 5,
+              "opp_goals": 1,
+              "result": "W",
+              "location": "Fieldgate (1)"
+            }
+          ],
+          "upcoming_games": [
+            {
+              "date": "2026-11-12",
+              "time": "23:30",
+              "opponent": "AJAX-PICKERING AA U11",
+              "is_home": false,
+              "location": "Don Beer (3)"
+            },
+            {
+              "date": "2026-11-14",
+              "time": "20:35",
+              "opponent": "NORTHUMBERLAND AA U11",
+              "is_home": true,
+              "location": "IPSC (4)"
+            },
+            {
+              "date": "2026-11-15",
+              "time": "18:00",
+              "opponent": "KINGSTON AREA AA U11",
+              "is_home": false,
+              "location": "INVISTA (Selkirk)"
+            },
+            {
+              "date": "2026-11-18",
+              "time": "00:30",
+              "opponent": "OSHAWA AA U11",
+              "is_home": false,
+              "location": "Delpark Homes Centre (Pad 1)"
+            },
+            {
+              "date": "2026-11-21",
+              "time": "20:35",
+              "opponent": "BELLEVILLE AA U11",
+              "is_home": true,
+              "location": "IPSC (4)"
+            },
+            {
+              "date": "2026-11-22",
+              "time": "17:15",
+              "opponent": "KINGSTON AREA AA U11",
+              "is_home": true,
+              "location": "IPSC (4)"
+            },
+            {
+              "date": "2026-11-29",
+              "time": "18:30",
+              "opponent": "PETERBOROUGH AA U11",
+              "is_home": false,
+              "location": "Healthy Planet (Gardener)"
+            },
+            {
+              "date": "2026-12-02",
+              "time": "23:15",
+              "opponent": "CLARINGTON AA U11",
+              "is_home": false,
+              "location": "Rickard (Toyota)"
+            },
+            {
+              "date": "2026-12-09",
+              "time": "23:15",
+              "opponent": "CLARINGTON AA U11",
+              "is_home": false,
+              "location": "Rickard (Toyota)"
+            },
+            {
+              "date": "2026-12-12",
+              "time": "20:55",
+              "opponent": "NORTH DURHAM AA U11",
+              "is_home": true,
+              "location": "IPSC (3)"
+            },
+            {
+              "date": "2026-12-13",
+              "time": "23:15",
+              "opponent": "NORTH DURHAM AA U11",
+              "is_home": false,
+              "location": "Scugog Arena Pad 2"
+            },
+            {
+              "date": "2026-12-18",
+              "time": "23:00",
+              "opponent": "NORTHUMBERLAND AA U11",
+              "is_home": false,
+              "location": "Jack Burger"
+            },
+            {
+              "date": "2026-12-19",
+              "time": "19:15",
+              "opponent": "QUINTE WEST AA U11",
+              "is_home": false,
+              "location": "Duncan McDonald (1)"
+            },
+            {
+              "date": "2026-12-20",
+              "time": "17:15",
+              "opponent": "BELLEVILLE AA U11",
+              "is_home": true,
+              "location": "Fieldgate (1)"
+            },
+            {
+              "date": "2027-01-03",
+              "time": "20:30",
+              "opponent": "OSHAWA AA U11",
+              "is_home": false,
+              "location": "Delpark Homes Centre (Pad 1)"
+            },
+            {
+              "date": "2027-01-17",
+              "time": "20:45",
+              "opponent": "BELLEVILLE AA U11",
+              "is_home": false,
+              "location": "Quinte SWC (Wally Dever)"
+            },
+            {
+              "date": "2027-01-20",
+              "time": "23:15",
+              "opponent": "CLARINGTON AA U11",
+              "is_home": true,
+              "location": "IPSC (2)"
+            },
+            {
+              "date": "2027-01-21",
+              "time": "23:30",
+              "opponent": "AJAX-PICKERING AA U11",
+              "is_home": false,
+              "location": "Don Beer (3)"
+            },
+            {
+              "date": "2027-01-24",
+              "time": "17:15",
+              "opponent": "PETERBOROUGH AA U11",
+              "is_home": true,
+              "location": "IPSC (4)"
+            },
+            {
+              "date": "2027-01-30",
+              "time": "18:15",
+              "opponent": "NORTH DURHAM AA U11",
+              "is_home": false,
+              "location": "Uxbridge Community Centre Pad 2"
+            },
+            {
+              "date": "2027-01-31",
+              "time": "18:45",
+              "opponent": "OSHAWA AA U11",
+              "is_home": true,
+              "location": "Fieldgate (1)"
+            }
+          ]
+        },
+        {
           "team_name": "OSHAWA AA U11",
           "mhr_rating": 89.2,
           "current_gp": 7,
@@ -5981,14 +6208,14 @@
           "current_w": 5,
           "current_l": 1,
           "current_t": 1,
-          "proj_pts_avg": 40.0,
+          "proj_pts_avg": 39.9,
           "proj_finish": 2.2,
-          "prob_1st_pct": 32.4,
+          "prob_1st_pct": 32.3,
           "prob_top2_pct": 61.6,
-          "prob_top4_pct": 98.8,
+          "prob_top4_pct": 98.6,
           "pool_probs": {
-            "Pool A": 45.0,
-            "Pool B": 55.0
+            "Pool A": 45.1,
+            "Pool B": 54.9
           },
           "completed_games": [
             {
@@ -6199,229 +6426,6 @@
           ]
         },
         {
-          "team_name": "WHITBY AA U11",
-          "mhr_rating": 89.4,
-          "current_gp": 6,
-          "current_pts": 10,
-          "current_w": 4,
-          "current_l": 0,
-          "current_t": 2,
-          "proj_pts_avg": 40.0,
-          "proj_finish": 2.2,
-          "prob_1st_pct": 33.5,
-          "prob_top2_pct": 62.4,
-          "prob_top4_pct": 98.2,
-          "pool_probs": {
-            "Pool A": 47.4,
-            "Pool B": 52.5
-          },
-          "completed_games": [
-            {
-              "date": "Oct 9, 2026",
-              "opponent": "QUINTE WEST AA U11",
-              "is_home": true,
-              "team_goals": 6,
-              "opp_goals": 3,
-              "result": "W",
-              "location": "McKinney (2)"
-            },
-            {
-              "date": "Oct 4, 2026",
-              "opponent": "PETERBOROUGH AA U11",
-              "is_home": true,
-              "team_goals": 1,
-              "opp_goals": 1,
-              "result": "T",
-              "location": "Fieldgate (1)"
-            },
-            {
-              "date": "Oct 30, 2026",
-              "opponent": "NORTHUMBERLAND AA U11",
-              "is_home": true,
-              "team_goals": 9,
-              "opp_goals": 1,
-              "result": "W",
-              "location": "Fieldgate (1)"
-            },
-            {
-              "date": "Oct 3, 2026",
-              "opponent": "QUINTE WEST AA U11",
-              "is_home": false,
-              "team_goals": 3,
-              "opp_goals": 3,
-              "result": "T",
-              "location": "Duncan McDonald (1)"
-            },
-            {
-              "date": "Oct 10, 2026",
-              "opponent": "AJAX-PICKERING AA U11",
-              "is_home": true,
-              "team_goals": 6,
-              "opp_goals": 2,
-              "result": "W",
-              "location": "IPSC (4)"
-            },
-            {
-              "date": "Nov 1, 2026",
-              "opponent": "KINGSTON AREA AA U11",
-              "is_home": true,
-              "team_goals": 5,
-              "opp_goals": 1,
-              "result": "W",
-              "location": "Fieldgate (1)"
-            }
-          ],
-          "upcoming_games": [
-            {
-              "date": "2026-11-12",
-              "time": "23:30",
-              "opponent": "AJAX-PICKERING AA U11",
-              "is_home": false,
-              "location": "Don Beer (3)"
-            },
-            {
-              "date": "2026-11-14",
-              "time": "20:35",
-              "opponent": "NORTHUMBERLAND AA U11",
-              "is_home": true,
-              "location": "IPSC (4)"
-            },
-            {
-              "date": "2026-11-15",
-              "time": "18:00",
-              "opponent": "KINGSTON AREA AA U11",
-              "is_home": false,
-              "location": "INVISTA (Selkirk)"
-            },
-            {
-              "date": "2026-11-18",
-              "time": "00:30",
-              "opponent": "OSHAWA AA U11",
-              "is_home": false,
-              "location": "Delpark Homes Centre (Pad 1)"
-            },
-            {
-              "date": "2026-11-21",
-              "time": "20:35",
-              "opponent": "BELLEVILLE AA U11",
-              "is_home": true,
-              "location": "IPSC (4)"
-            },
-            {
-              "date": "2026-11-22",
-              "time": "17:15",
-              "opponent": "KINGSTON AREA AA U11",
-              "is_home": true,
-              "location": "IPSC (4)"
-            },
-            {
-              "date": "2026-11-29",
-              "time": "18:30",
-              "opponent": "PETERBOROUGH AA U11",
-              "is_home": false,
-              "location": "Healthy Planet (Gardener)"
-            },
-            {
-              "date": "2026-12-02",
-              "time": "23:15",
-              "opponent": "CLARINGTON AA U11",
-              "is_home": false,
-              "location": "Rickard (Toyota)"
-            },
-            {
-              "date": "2026-12-09",
-              "time": "23:15",
-              "opponent": "CLARINGTON AA U11",
-              "is_home": false,
-              "location": "Rickard (Toyota)"
-            },
-            {
-              "date": "2026-12-12",
-              "time": "20:55",
-              "opponent": "NORTH DURHAM AA U11",
-              "is_home": true,
-              "location": "IPSC (3)"
-            },
-            {
-              "date": "2026-12-13",
-              "time": "23:15",
-              "opponent": "NORTH DURHAM AA U11",
-              "is_home": false,
-              "location": "Scugog Arena Pad 2"
-            },
-            {
-              "date": "2026-12-18",
-              "time": "23:00",
-              "opponent": "NORTHUMBERLAND AA U11",
-              "is_home": false,
-              "location": "Jack Burger"
-            },
-            {
-              "date": "2026-12-19",
-              "time": "19:15",
-              "opponent": "QUINTE WEST AA U11",
-              "is_home": false,
-              "location": "Duncan McDonald (1)"
-            },
-            {
-              "date": "2026-12-20",
-              "time": "17:15",
-              "opponent": "BELLEVILLE AA U11",
-              "is_home": true,
-              "location": "Fieldgate (1)"
-            },
-            {
-              "date": "2027-01-03",
-              "time": "20:30",
-              "opponent": "OSHAWA AA U11",
-              "is_home": false,
-              "location": "Delpark Homes Centre (Pad 1)"
-            },
-            {
-              "date": "2027-01-17",
-              "time": "20:45",
-              "opponent": "BELLEVILLE AA U11",
-              "is_home": false,
-              "location": "Quinte SWC (Wally Dever)"
-            },
-            {
-              "date": "2027-01-20",
-              "time": "23:15",
-              "opponent": "CLARINGTON AA U11",
-              "is_home": true,
-              "location": "IPSC (2)"
-            },
-            {
-              "date": "2027-01-21",
-              "time": "23:30",
-              "opponent": "AJAX-PICKERING AA U11",
-              "is_home": false,
-              "location": "Don Beer (3)"
-            },
-            {
-              "date": "2027-01-24",
-              "time": "17:15",
-              "opponent": "PETERBOROUGH AA U11",
-              "is_home": true,
-              "location": "IPSC (4)"
-            },
-            {
-              "date": "2027-01-30",
-              "time": "18:15",
-              "opponent": "NORTH DURHAM AA U11",
-              "is_home": false,
-              "location": "Uxbridge Community Centre Pad 2"
-            },
-            {
-              "date": "2027-01-31",
-              "time": "18:45",
-              "opponent": "OSHAWA AA U11",
-              "is_home": true,
-              "location": "Fieldgate (1)"
-            }
-          ]
-        },
-        {
           "team_name": "BELLEVILLE AA U11",
           "mhr_rating": 89.0,
           "current_gp": 6,
@@ -6429,14 +6433,14 @@
           "current_w": 5,
           "current_l": 0,
           "current_t": 1,
-          "proj_pts_avg": 39.4,
+          "proj_pts_avg": 39.3,
           "proj_finish": 2.4,
-          "prob_1st_pct": 27.7,
-          "prob_top2_pct": 55.2,
-          "prob_top4_pct": 97.2,
+          "prob_1st_pct": 26.2,
+          "prob_top2_pct": 54.4,
+          "prob_top4_pct": 97.4,
           "pool_probs": {
-            "Pool A": 43.9,
-            "Pool B": 56.1
+            "Pool A": 43.2,
+            "Pool B": 56.8
           },
           "completed_games": [
             {
@@ -6654,12 +6658,12 @@
           "current_t": 3,
           "proj_pts_avg": 36.1,
           "proj_finish": 3.4,
-          "prob_1st_pct": 6.4,
+          "prob_1st_pct": 6.7,
           "prob_top2_pct": 20.3,
-          "prob_top4_pct": 88.0,
+          "prob_top4_pct": 87.5,
           "pool_probs": {
-            "Pool A": 52.3,
-            "Pool B": 47.7
+            "Pool A": 51.3,
+            "Pool B": 48.7
           },
           "completed_games": [
             {
@@ -6881,12 +6885,12 @@
           "current_t": 1,
           "proj_pts_avg": 28.8,
           "proj_finish": 5.6,
-          "prob_1st_pct": 0.0,
-          "prob_top2_pct": 0.6,
-          "prob_top4_pct": 11.8,
+          "prob_1st_pct": 0.1,
+          "prob_top2_pct": 0.4,
+          "prob_top4_pct": 12.3,
           "pool_probs": {
-            "Pool A": 41.1,
-            "Pool B": 58.9
+            "Pool A": 41.4,
+            "Pool B": 58.6
           },
           "completed_games": [
             {
@@ -7102,14 +7106,14 @@
           "current_w": 4,
           "current_l": 6,
           "current_t": 0,
-          "proj_pts_avg": 26.1,
+          "proj_pts_avg": 26.2,
           "proj_finish": 6.4,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.0,
-          "prob_top4_pct": 2.5,
+          "prob_top4_pct": 2.3,
           "pool_probs": {
-            "Pool A": 52.2,
-            "Pool B": 47.8
+            "Pool A": 52.1,
+            "Pool B": 47.9
           },
           "completed_games": [
             {
@@ -7336,11 +7340,11 @@
           "proj_pts_avg": 25.3,
           "proj_finish": 6.7,
           "prob_1st_pct": 0.0,
-          "prob_top2_pct": 0.1,
-          "prob_top4_pct": 2.6,
+          "prob_top2_pct": 0.0,
+          "prob_top4_pct": 2.5,
           "pool_probs": {
-            "Pool A": 54.1,
-            "Pool B": 45.9
+            "Pool A": 54.3,
+            "Pool B": 45.7
           },
           "completed_games": [
             {
@@ -7560,10 +7564,10 @@
           "proj_finish": 7.1,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.0,
-          "prob_top4_pct": 0.7,
+          "prob_top4_pct": 0.9,
           "pool_probs": {
-            "Pool A": 63.8,
-            "Pool B": 36.2
+            "Pool A": 63.9,
+            "Pool B": 36.1
           },
           "completed_games": [
             {
@@ -7785,8 +7789,8 @@
           "prob_top2_pct": 0.0,
           "prob_top4_pct": 0.0,
           "pool_probs": {
-            "Pool A": 0.2,
-            "Pool B": 99.8
+            "Pool A": 0.3,
+            "Pool B": 99.7
           },
           "completed_games": [
             {
@@ -8010,8 +8014,8 @@
           "prob_top2_pct": 0.0,
           "prob_top4_pct": 0.0,
           "pool_probs": {
-            "Pool A": 99.9,
-            "Pool B": 0.1
+            "Pool A": 99.8,
+            "Pool B": 0.2
           },
           "completed_games": [
             {
@@ -8241,13 +8245,13 @@
           "current_t": 0,
           "proj_pts_avg": 46.3,
           "proj_finish": 1.2,
-          "prob_1st_pct": 86.8,
-          "prob_top2_pct": 97.5,
+          "prob_1st_pct": 84.6,
+          "prob_top2_pct": 97.3,
           "prob_top4_pct": 100.0,
           "pool_probs": {
-            "Group A": 86.8,
-            "Group B": 10.8,
-            "Group C": 2.4
+            "Group A": 84.6,
+            "Group B": 12.7,
+            "Group C": 2.7
           },
           "completed_games": [
             {
@@ -8464,241 +8468,22 @@
           ]
         },
         {
-          "team_name": "Milton Winterhawks",
-          "mhr_rating": 85.02,
-          "current_gp": 7,
-          "current_pts": 10,
-          "current_w": 5,
-          "current_l": 2,
-          "current_t": 0,
-          "proj_pts_avg": 39.9,
-          "proj_finish": 2.5,
-          "prob_1st_pct": 5.9,
-          "prob_top2_pct": 51.9,
-          "prob_top4_pct": 99.2,
-          "pool_probs": {
-            "Group A": 6.1,
-            "Group B": 46.6,
-            "Group C": 47.3
-          },
-          "completed_games": [
-            {
-              "date": "Oct 7, 2026",
-              "opponent": "Glancaster Bombers",
-              "is_home": false,
-              "team_goals": 7,
-              "opp_goals": 3,
-              "result": "W",
-              "location": "Morgan (B)"
-            },
-            {
-              "date": "Oct 6, 2026",
-              "opponent": "Flamborough Sabres",
-              "is_home": false,
-              "team_goals": 6,
-              "opp_goals": 3,
-              "result": "W",
-              "location": "Harry Howell (B)"
-            },
-            {
-              "date": "Oct 3, 2026",
-              "opponent": "Flamborough Sabres",
-              "is_home": true,
-              "team_goals": 5,
-              "opp_goals": 0,
-              "result": "W",
-              "location": "MSC (D)"
-            },
-            {
-              "date": "Oct 26, 2026",
-              "opponent": "Guelph Gryphons",
-              "is_home": false,
-              "team_goals": 1,
-              "opp_goals": 4,
-              "result": "L",
-              "location": "WERC (2)"
-            },
-            {
-              "date": "Oct 24, 2026",
-              "opponent": "Garden City Minor Falcons",
-              "is_home": true,
-              "team_goals": 2,
-              "opp_goals": 3,
-              "result": "L",
-              "location": "MSC (D)"
-            },
-            {
-              "date": "Oct 17, 2026",
-              "opponent": "Halton Hills Thunder",
-              "is_home": true,
-              "team_goals": 5,
-              "opp_goals": 0,
-              "result": "W",
-              "location": "MSC (D)"
-            },
-            {
-              "date": "Oct 13, 2026",
-              "opponent": "Niagara Falls Canucks",
-              "is_home": false,
-              "team_goals": 3,
-              "opp_goals": 2,
-              "result": "W",
-              "location": "Gale (4 - Centennial)"
-            }
-          ],
-          "upcoming_games": [
-            {
-              "date": "2026-11-05",
-              "time": "01:00",
-              "opponent": "Centre Wellington Fusion",
-              "is_home": false,
-              "location": "Fergus (A)"
-            },
-            {
-              "date": "2026-11-07",
-              "time": "22:00",
-              "opponent": "Guelph Gryphons",
-              "is_home": true,
-              "location": "Milton Sports Centre - Rink D"
-            },
-            {
-              "date": "2026-11-08",
-              "time": "17:00",
-              "opponent": "Oakville Rangers",
-              "is_home": true,
-              "location": "Milton Memorial Arena"
-            },
-            {
-              "date": "2026-11-13",
-              "time": "00:45",
-              "opponent": "Oakville Rangers",
-              "is_home": false,
-              "location": "Glen Abbey (Blue)"
-            },
-            {
-              "date": "2026-11-14",
-              "time": "20:45",
-              "opponent": "Burlington Eagles",
-              "is_home": true,
-              "location": "Sherwood Arena"
-            },
-            {
-              "date": "2026-11-16",
-              "time": "00:30",
-              "opponent": "Glancaster Bombers",
-              "is_home": false,
-              "location": "Morgan (B)"
-            },
-            {
-              "date": "2026-11-26",
-              "time": "00:00",
-              "opponent": "Garden City Minor Falcons",
-              "is_home": false,
-              "location": "Seymour-Hannah (3)"
-            },
-            {
-              "date": "2026-11-28",
-              "time": "19:30",
-              "opponent": "Hamilton Steel",
-              "is_home": false,
-              "location": "Chedoke (Red)"
-            },
-            {
-              "date": "2026-12-05",
-              "time": "22:30",
-              "opponent": "Centre Wellington Fusion",
-              "is_home": true,
-              "location": "Milton Sports Centre - Rink D"
-            },
-            {
-              "date": "2026-12-06",
-              "time": "22:45",
-              "opponent": "Halton Hills Thunder",
-              "is_home": false,
-              "location": "Acton (Main)"
-            },
-            {
-              "date": "2026-12-11",
-              "time": "00:30",
-              "opponent": "Norfolk Knights",
-              "is_home": false,
-              "location": "Waterford"
-            },
-            {
-              "date": "2026-12-12",
-              "time": "22:30",
-              "opponent": "Glancaster Bombers",
-              "is_home": true,
-              "location": "Milton Sports Centre - Rink D"
-            },
-            {
-              "date": "2026-12-14",
-              "time": "00:25",
-              "opponent": "Burlington Eagles",
-              "is_home": false,
-              "location": "Appleby (1)"
-            },
-            {
-              "date": "2026-12-19",
-              "time": "21:15",
-              "opponent": "Oakville Rangers",
-              "is_home": true,
-              "location": "Milton Sports Centre - Rink D"
-            },
-            {
-              "date": "2026-12-20",
-              "time": "19:30",
-              "opponent": "Norfolk Knights",
-              "is_home": true,
-              "location": "Milton Memorial Arena"
-            },
-            {
-              "date": "2027-01-07",
-              "time": "00:00",
-              "opponent": "Hamilton Steel",
-              "is_home": true,
-              "location": "John Tonelli Sports Centre"
-            },
-            {
-              "date": "2027-01-09",
-              "time": "21:15",
-              "opponent": "West Niagara Flying Aces",
-              "is_home": true,
-              "location": "Milton Sports Centre - Rink D"
-            },
-            {
-              "date": "2027-01-10",
-              "time": "22:00",
-              "opponent": "West Niagara Flying Aces",
-              "is_home": false,
-              "location": "Fleming"
-            },
-            {
-              "date": "2027-01-16",
-              "time": "17:30",
-              "opponent": "Niagara Falls Canucks",
-              "is_home": true,
-              "location": "John Tonelli Sports Centre"
-            }
-          ]
-        },
-        {
           "team_name": "Burlington Eagles",
           "mhr_rating": 84.75,
-          "current_gp": 8,
-          "current_pts": 14,
+          "current_gp": 9,
+          "current_pts": 15,
           "current_w": 6,
           "current_l": 0,
-          "current_t": 2,
-          "proj_pts_avg": 39.4,
-          "proj_finish": 2.7,
-          "prob_1st_pct": 6.7,
-          "prob_top2_pct": 42.2,
-          "prob_top4_pct": 98.2,
+          "current_t": 3,
+          "proj_pts_avg": 40.3,
+          "proj_finish": 2.5,
+          "prob_1st_pct": 9.1,
+          "prob_top2_pct": 49.4,
+          "prob_top4_pct": 98.9,
           "pool_probs": {
-            "Group A": 6.9,
-            "Group B": 37.1,
-            "Group C": 56.0
+            "Group A": 9.2,
+            "Group B": 41.3,
+            "Group C": 49.5
           },
           "completed_games": [
             {
@@ -8763,6 +8548,15 @@
               "opp_goals": 1,
               "result": "W",
               "location": "Appleby (1)"
+            },
+            {
+              "date": "Nov 2, 2026",
+              "opponent": "Guelph Gryphons",
+              "is_home": false,
+              "team_goals": 1,
+              "opp_goals": 1,
+              "result": "T",
+              "location": "WERC (2)"
             },
             {
               "date": "Nov 1, 2026",
@@ -8904,22 +8698,241 @@
           ]
         },
         {
+          "team_name": "Milton Winterhawks",
+          "mhr_rating": 85.02,
+          "current_gp": 7,
+          "current_pts": 10,
+          "current_w": 5,
+          "current_l": 2,
+          "current_t": 0,
+          "proj_pts_avg": 39.9,
+          "proj_finish": 2.6,
+          "prob_1st_pct": 6.0,
+          "prob_top2_pct": 48.4,
+          "prob_top4_pct": 99.4,
+          "pool_probs": {
+            "Group A": 6.1,
+            "Group B": 43.0,
+            "Group C": 51.0
+          },
+          "completed_games": [
+            {
+              "date": "Oct 7, 2026",
+              "opponent": "Glancaster Bombers",
+              "is_home": false,
+              "team_goals": 7,
+              "opp_goals": 3,
+              "result": "W",
+              "location": "Morgan (B)"
+            },
+            {
+              "date": "Oct 6, 2026",
+              "opponent": "Flamborough Sabres",
+              "is_home": false,
+              "team_goals": 6,
+              "opp_goals": 3,
+              "result": "W",
+              "location": "Harry Howell (B)"
+            },
+            {
+              "date": "Oct 3, 2026",
+              "opponent": "Flamborough Sabres",
+              "is_home": true,
+              "team_goals": 5,
+              "opp_goals": 0,
+              "result": "W",
+              "location": "MSC (D)"
+            },
+            {
+              "date": "Oct 26, 2026",
+              "opponent": "Guelph Gryphons",
+              "is_home": false,
+              "team_goals": 1,
+              "opp_goals": 4,
+              "result": "L",
+              "location": "WERC (2)"
+            },
+            {
+              "date": "Oct 24, 2026",
+              "opponent": "Garden City Minor Falcons",
+              "is_home": true,
+              "team_goals": 2,
+              "opp_goals": 3,
+              "result": "L",
+              "location": "MSC (D)"
+            },
+            {
+              "date": "Oct 17, 2026",
+              "opponent": "Halton Hills Thunder",
+              "is_home": true,
+              "team_goals": 5,
+              "opp_goals": 0,
+              "result": "W",
+              "location": "MSC (D)"
+            },
+            {
+              "date": "Oct 13, 2026",
+              "opponent": "Niagara Falls Canucks",
+              "is_home": false,
+              "team_goals": 3,
+              "opp_goals": 2,
+              "result": "W",
+              "location": "Gale (4 - Centennial)"
+            }
+          ],
+          "upcoming_games": [
+            {
+              "date": "2026-11-05",
+              "time": "01:00",
+              "opponent": "Centre Wellington Fusion",
+              "is_home": false,
+              "location": "Fergus (A)"
+            },
+            {
+              "date": "2026-11-07",
+              "time": "22:00",
+              "opponent": "Guelph Gryphons",
+              "is_home": true,
+              "location": "Milton Sports Centre - Rink D"
+            },
+            {
+              "date": "2026-11-08",
+              "time": "17:00",
+              "opponent": "Oakville Rangers",
+              "is_home": true,
+              "location": "Milton Memorial Arena"
+            },
+            {
+              "date": "2026-11-13",
+              "time": "00:45",
+              "opponent": "Oakville Rangers",
+              "is_home": false,
+              "location": "Glen Abbey (Blue)"
+            },
+            {
+              "date": "2026-11-14",
+              "time": "20:45",
+              "opponent": "Burlington Eagles",
+              "is_home": true,
+              "location": "Sherwood Arena"
+            },
+            {
+              "date": "2026-11-16",
+              "time": "00:30",
+              "opponent": "Glancaster Bombers",
+              "is_home": false,
+              "location": "Morgan (B)"
+            },
+            {
+              "date": "2026-11-26",
+              "time": "00:00",
+              "opponent": "Garden City Minor Falcons",
+              "is_home": false,
+              "location": "Seymour-Hannah (3)"
+            },
+            {
+              "date": "2026-11-28",
+              "time": "19:30",
+              "opponent": "Hamilton Steel",
+              "is_home": false,
+              "location": "Chedoke (Red)"
+            },
+            {
+              "date": "2026-12-05",
+              "time": "22:35",
+              "opponent": "Centre Wellington Fusion",
+              "is_home": true,
+              "location": "Milton Sports Centre - Rink D"
+            },
+            {
+              "date": "2026-12-06",
+              "time": "22:45",
+              "opponent": "Halton Hills Thunder",
+              "is_home": false,
+              "location": "Acton (Main)"
+            },
+            {
+              "date": "2026-12-11",
+              "time": "00:30",
+              "opponent": "Norfolk Knights",
+              "is_home": false,
+              "location": "Waterford"
+            },
+            {
+              "date": "2026-12-12",
+              "time": "21:15",
+              "opponent": "Glancaster Bombers",
+              "is_home": true,
+              "location": "Milton Sports Centre - Rink D"
+            },
+            {
+              "date": "2026-12-14",
+              "time": "00:25",
+              "opponent": "Burlington Eagles",
+              "is_home": false,
+              "location": "Appleby (1)"
+            },
+            {
+              "date": "2026-12-19",
+              "time": "21:15",
+              "opponent": "Oakville Rangers",
+              "is_home": true,
+              "location": "Milton Sports Centre - Rink D"
+            },
+            {
+              "date": "2026-12-20",
+              "time": "19:30",
+              "opponent": "Norfolk Knights",
+              "is_home": true,
+              "location": "Milton Memorial Arena"
+            },
+            {
+              "date": "2027-01-07",
+              "time": "00:00",
+              "opponent": "Hamilton Steel",
+              "is_home": true,
+              "location": "John Tonelli Sports Centre"
+            },
+            {
+              "date": "2027-01-09",
+              "time": "21:15",
+              "opponent": "West Niagara Flying Aces",
+              "is_home": true,
+              "location": "Milton Sports Centre - Rink D"
+            },
+            {
+              "date": "2027-01-10",
+              "time": "22:00",
+              "opponent": "West Niagara Flying Aces",
+              "is_home": false,
+              "location": "Fleming"
+            },
+            {
+              "date": "2027-01-16",
+              "time": "17:30",
+              "opponent": "Niagara Falls Canucks",
+              "is_home": true,
+              "location": "John Tonelli Sports Centre"
+            }
+          ]
+        },
+        {
           "team_name": "Guelph Gryphons",
           "mhr_rating": 83.59,
-          "current_gp": 7,
-          "current_pts": 9,
+          "current_gp": 8,
+          "current_pts": 10,
           "current_w": 4,
           "current_l": 2,
-          "current_t": 1,
-          "proj_pts_avg": 35.1,
-          "proj_finish": 3.8,
-          "prob_1st_pct": 0.5,
-          "prob_top2_pct": 8.2,
-          "prob_top4_pct": 84.2,
+          "current_t": 2,
+          "proj_pts_avg": 34.6,
+          "proj_finish": 4.0,
+          "prob_1st_pct": 0.3,
+          "prob_top2_pct": 4.8,
+          "prob_top4_pct": 81.8,
           "pool_probs": {
-            "Group A": 4.5,
-            "Group B": 19.3,
-            "Group C": 76.3
+            "Group A": 4.9,
+            "Group B": 17.8,
+            "Group C": 77.3
           },
           "completed_games": [
             {
@@ -8984,6 +8997,15 @@
               "opp_goals": 4,
               "result": "T",
               "location": "Joshua Creek (Red)"
+            },
+            {
+              "date": "Nov 2, 2026",
+              "opponent": "Burlington Eagles",
+              "is_home": true,
+              "team_goals": 1,
+              "opp_goals": 1,
+              "result": "T",
+              "location": "WERC (2)"
             }
           ],
           "upcoming_games": [
@@ -9107,18 +9129,11 @@
               "location": "Harry Howell (B)"
             },
             {
-              "date": "2027-01-18",
-              "time": "23:30",
-              "opponent": "Halton Hills Thunder",
-              "is_home": true,
-              "location": "South End Recreation Centre (2)"
-            },
-            {
               "date": "2027-01-19",
               "time": "00:30",
               "opponent": "Halton Hills Thunder",
               "is_home": true,
-              "location": "South End (SER2)"
+              "location": "South End Recreation Centre (2)"
             },
             {
               "date": "2027-01-20",
@@ -9141,11 +9156,11 @@
           "proj_finish": 5.7,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.1,
-          "prob_top4_pct": 11.8,
+          "prob_top4_pct": 12.7,
           "pool_probs": {
-            "Group A": 33.3,
-            "Group B": 48.6,
-            "Group C": 18.1
+            "Group A": 34.0,
+            "Group B": 46.7,
+            "Group C": 19.3
           },
           "completed_games": [
             {
@@ -9362,11 +9377,11 @@
           "proj_finish": 6.9,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.0,
-          "prob_top4_pct": 2.5,
+          "prob_top4_pct": 2.9,
           "pool_probs": {
-            "Group A": 49.1,
-            "Group B": 30.9,
-            "Group C": 20.0
+            "Group A": 48.4,
+            "Group B": 30.6,
+            "Group C": 21.0
           },
           "completed_games": [
             {
@@ -9579,15 +9594,15 @@
           "current_w": 5,
           "current_l": 2,
           "current_t": 1,
-          "proj_pts_avg": 25.6,
-          "proj_finish": 7.2,
+          "proj_pts_avg": 25.7,
+          "proj_finish": 7.1,
           "prob_1st_pct": 0.0,
-          "prob_top2_pct": 0.0,
-          "prob_top4_pct": 2.9,
+          "prob_top2_pct": 0.1,
+          "prob_top4_pct": 3.2,
           "pool_probs": {
-            "Group A": 43.2,
-            "Group B": 34.5,
-            "Group C": 22.3
+            "Group A": 43.6,
+            "Group B": 34.6,
+            "Group C": 21.7
           },
           "completed_games": [
             {
@@ -9795,20 +9810,20 @@
         {
           "team_name": "Halton Hills Thunder",
           "mhr_rating": 82.2,
-          "current_gp": 6,
-          "current_pts": 4,
-          "current_w": 1,
+          "current_gp": 7,
+          "current_pts": 6,
+          "current_w": 2,
           "current_l": 3,
           "current_t": 2,
-          "proj_pts_avg": 22.4,
-          "proj_finish": 8.7,
+          "proj_pts_avg": 23.0,
+          "proj_finish": 8.3,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.0,
           "prob_top4_pct": 0.8,
           "pool_probs": {
-            "Group A": 22.3,
-            "Group B": 40.1,
-            "Group C": 37.6
+            "Group A": 27.6,
+            "Group B": 39.5,
+            "Group C": 32.8
           },
           "completed_games": [
             {
@@ -9864,16 +9879,18 @@
               "opp_goals": 4,
               "result": "L",
               "location": "Acton (Main)"
+            },
+            {
+              "date": "Nov 2, 2026",
+              "opponent": "Oakville Rangers",
+              "is_home": false,
+              "team_goals": 7,
+              "opp_goals": 2,
+              "result": "W",
+              "location": "Entripy Centre (4)"
             }
           ],
           "upcoming_games": [
-            {
-              "date": "2026-11-02",
-              "time": "23:30",
-              "opponent": "Oakville Rangers",
-              "is_home": false,
-              "location": "Entripy Centre (4)"
-            },
             {
               "date": "2026-11-05",
               "time": "00:15",
@@ -9994,245 +10011,17 @@
               "location": "Morgan Firestone Arena (B Pad)"
             },
             {
-              "date": "2027-01-18",
-              "time": "23:30",
-              "opponent": "Guelph Gryphons",
-              "is_home": false,
-              "location": "South End Recreation Centre (2)"
-            },
-            {
               "date": "2027-01-19",
               "time": "00:30",
               "opponent": "Guelph Gryphons",
               "is_home": false,
-              "location": "South End (SER2)"
+              "location": "South End Recreation Centre (2)"
             },
             {
               "date": "2027-01-21",
               "time": "00:15",
               "opponent": "Glancaster Bombers",
               "is_home": true,
-              "location": "Acton (Main)"
-            }
-          ]
-        },
-        {
-          "team_name": "Glancaster Bombers",
-          "mhr_rating": 82.1,
-          "current_gp": 8,
-          "current_pts": 5,
-          "current_w": 2,
-          "current_l": 5,
-          "current_t": 1,
-          "proj_pts_avg": 21.6,
-          "proj_finish": 9.0,
-          "prob_1st_pct": 0.0,
-          "prob_top2_pct": 0.0,
-          "prob_top4_pct": 0.1,
-          "pool_probs": {
-            "Group A": 19.1,
-            "Group B": 42.0,
-            "Group C": 38.8
-          },
-          "completed_games": [
-            {
-              "date": "Oct 7, 2026",
-              "opponent": "Milton Winterhawks",
-              "is_home": true,
-              "team_goals": 3,
-              "opp_goals": 7,
-              "result": "L",
-              "location": "Morgan (B)"
-            },
-            {
-              "date": "Oct 30, 2026",
-              "opponent": "Burlington Eagles",
-              "is_home": true,
-              "team_goals": 3,
-              "opp_goals": 3,
-              "result": "T",
-              "location": "Glanbrook (Glanbrook)"
-            },
-            {
-              "date": "Oct 3, 2026",
-              "opponent": "Centre Wellington Fusion",
-              "is_home": true,
-              "team_goals": 2,
-              "opp_goals": 0,
-              "result": "W",
-              "location": "Morgan (B)"
-            },
-            {
-              "date": "Oct 25, 2026",
-              "opponent": "Flamborough Sabres",
-              "is_home": true,
-              "team_goals": 6,
-              "opp_goals": 3,
-              "result": "W",
-              "location": "Morgan (B)"
-            },
-            {
-              "date": "Oct 19, 2026",
-              "opponent": "Guelph Gryphons",
-              "is_home": false,
-              "team_goals": 2,
-              "opp_goals": 3,
-              "result": "L",
-              "location": "WERC (2)"
-            },
-            {
-              "date": "Oct 18, 2026",
-              "opponent": "Niagara Falls Canucks",
-              "is_home": true,
-              "team_goals": 6,
-              "opp_goals": 10,
-              "result": "L",
-              "location": "Morgan (B)"
-            },
-            {
-              "date": "Oct 11, 2026",
-              "opponent": "Garden City Minor Falcons",
-              "is_home": true,
-              "team_goals": 2,
-              "opp_goals": 6,
-              "result": "L",
-              "location": "Morgan (B)"
-            },
-            {
-              "date": "Nov 1, 2026",
-              "opponent": "Burlington Eagles",
-              "is_home": false,
-              "team_goals": 1,
-              "opp_goals": 3,
-              "result": "L",
-              "location": "Appleby (1)"
-            }
-          ],
-          "upcoming_games": [
-            {
-              "date": "2026-11-11",
-              "time": "00:30",
-              "opponent": "Flamborough Sabres",
-              "is_home": false,
-              "location": "Harry Howell (B)"
-            },
-            {
-              "date": "2026-11-14",
-              "time": "21:50",
-              "opponent": "Oakville Rangers",
-              "is_home": false,
-              "location": "Joshua Creek (Red)"
-            },
-            {
-              "date": "2026-11-16",
-              "time": "00:30",
-              "opponent": "Milton Winterhawks",
-              "is_home": true,
-              "location": "Morgan (B)"
-            },
-            {
-              "date": "2026-11-23",
-              "time": "00:40",
-              "opponent": "Hamilton Steel",
-              "is_home": true,
-              "location": "Morgan (B)"
-            },
-            {
-              "date": "2026-11-29",
-              "time": "00:00",
-              "opponent": "West Niagara Flying Aces",
-              "is_home": true,
-              "location": "Morgan (B)"
-            },
-            {
-              "date": "2026-11-30",
-              "time": "00:40",
-              "opponent": "Oakville Rangers",
-              "is_home": true,
-              "location": "Morgan Firestone Arena (B Pad)"
-            },
-            {
-              "date": "2026-12-08",
-              "time": "00:30",
-              "opponent": "Hamilton Steel",
-              "is_home": false,
-              "location": "Chedoke Twin Pad - Red"
-            },
-            {
-              "date": "2026-12-12",
-              "time": "22:30",
-              "opponent": "Milton Winterhawks",
-              "is_home": false,
-              "location": "Milton Sports Centre - Rink D"
-            },
-            {
-              "date": "2026-12-14",
-              "time": "00:55",
-              "opponent": "Norfolk Knights",
-              "is_home": true,
-              "location": "Morgan Firestone Arena (A Pad)"
-            },
-            {
-              "date": "2026-12-18",
-              "time": "00:30",
-              "opponent": "Norfolk Knights",
-              "is_home": false,
-              "location": "Waterford"
-            },
-            {
-              "date": "2026-12-20",
-              "time": "23:30",
-              "opponent": "Garden City Minor Falcons",
-              "is_home": false,
-              "location": "Seymour-Hannah (1)"
-            },
-            {
-              "date": "2026-12-23",
-              "time": "01:05",
-              "opponent": "Centre Wellington Fusion",
-              "is_home": false,
-              "location": "Centre Wellington Community Sportsplex (Pad B)"
-            },
-            {
-              "date": "2027-01-02",
-              "time": "18:40",
-              "opponent": "Guelph Gryphons",
-              "is_home": true,
-              "location": "Morgan (B)"
-            },
-            {
-              "date": "2027-01-03",
-              "time": "22:00",
-              "opponent": "West Niagara Flying Aces",
-              "is_home": false,
-              "location": "Fleming Memorial Arena"
-            },
-            {
-              "date": "2027-01-08",
-              "time": "00:30",
-              "opponent": "Norfolk Knights",
-              "is_home": false,
-              "location": "Waterford"
-            },
-            {
-              "date": "2027-01-11",
-              "time": "00:40",
-              "opponent": "Halton Hills Thunder",
-              "is_home": true,
-              "location": "Morgan Firestone Arena (B Pad)"
-            },
-            {
-              "date": "2027-01-13",
-              "time": "00:00",
-              "opponent": "Niagara Falls Canucks",
-              "is_home": false,
-              "location": "Gale Centre 4 - Centennial"
-            },
-            {
-              "date": "2027-01-21",
-              "time": "00:15",
-              "opponent": "Halton Hills Thunder",
-              "is_home": false,
               "location": "Acton (Main)"
             }
           ]
@@ -10245,15 +10034,15 @@
           "current_w": 3,
           "current_l": 3,
           "current_t": 3,
-          "proj_pts_avg": 21.5,
+          "proj_pts_avg": 21.6,
           "proj_finish": 9.1,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.0,
           "prob_top4_pct": 0.1,
           "pool_probs": {
-            "Group A": 14.8,
-            "Group B": 48.0,
-            "Group C": 37.2
+            "Group A": 14.6,
+            "Group B": 50.6,
+            "Group C": 34.8
           },
           "completed_games": [
             {
@@ -10390,7 +10179,7 @@
             },
             {
               "date": "2026-12-05",
-              "time": "22:30",
+              "time": "22:35",
               "opponent": "Milton Winterhawks",
               "is_home": false,
               "location": "Milton Sports Centre - Rink D"
@@ -10461,22 +10250,243 @@
           ]
         },
         {
-          "team_name": "Oakville Rangers",
-          "mhr_rating": 82.65,
-          "current_gp": 6,
-          "current_pts": 2,
-          "current_w": 0,
-          "current_l": 4,
-          "current_t": 2,
-          "proj_pts_avg": 21.2,
-          "proj_finish": 9.2,
+          "team_name": "Glancaster Bombers",
+          "mhr_rating": 82.1,
+          "current_gp": 8,
+          "current_pts": 5,
+          "current_w": 2,
+          "current_l": 5,
+          "current_t": 1,
+          "proj_pts_avg": 21.6,
+          "proj_finish": 9.0,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.0,
-          "prob_top4_pct": 0.2,
+          "prob_top4_pct": 0.1,
           "pool_probs": {
-            "Group A": 15.7,
-            "Group B": 41.9,
-            "Group C": 42.4
+            "Group A": 18.6,
+            "Group B": 42.5,
+            "Group C": 38.9
+          },
+          "completed_games": [
+            {
+              "date": "Oct 7, 2026",
+              "opponent": "Milton Winterhawks",
+              "is_home": true,
+              "team_goals": 3,
+              "opp_goals": 7,
+              "result": "L",
+              "location": "Morgan (B)"
+            },
+            {
+              "date": "Oct 30, 2026",
+              "opponent": "Burlington Eagles",
+              "is_home": true,
+              "team_goals": 3,
+              "opp_goals": 3,
+              "result": "T",
+              "location": "Glanbrook (Glanbrook)"
+            },
+            {
+              "date": "Oct 3, 2026",
+              "opponent": "Centre Wellington Fusion",
+              "is_home": true,
+              "team_goals": 2,
+              "opp_goals": 0,
+              "result": "W",
+              "location": "Morgan (B)"
+            },
+            {
+              "date": "Oct 25, 2026",
+              "opponent": "Flamborough Sabres",
+              "is_home": true,
+              "team_goals": 6,
+              "opp_goals": 3,
+              "result": "W",
+              "location": "Morgan (B)"
+            },
+            {
+              "date": "Oct 19, 2026",
+              "opponent": "Guelph Gryphons",
+              "is_home": false,
+              "team_goals": 2,
+              "opp_goals": 3,
+              "result": "L",
+              "location": "WERC (2)"
+            },
+            {
+              "date": "Oct 18, 2026",
+              "opponent": "Niagara Falls Canucks",
+              "is_home": true,
+              "team_goals": 6,
+              "opp_goals": 10,
+              "result": "L",
+              "location": "Morgan (B)"
+            },
+            {
+              "date": "Oct 11, 2026",
+              "opponent": "Garden City Minor Falcons",
+              "is_home": true,
+              "team_goals": 2,
+              "opp_goals": 6,
+              "result": "L",
+              "location": "Morgan (B)"
+            },
+            {
+              "date": "Nov 1, 2026",
+              "opponent": "Burlington Eagles",
+              "is_home": false,
+              "team_goals": 1,
+              "opp_goals": 3,
+              "result": "L",
+              "location": "Appleby (1)"
+            }
+          ],
+          "upcoming_games": [
+            {
+              "date": "2026-11-11",
+              "time": "00:30",
+              "opponent": "Flamborough Sabres",
+              "is_home": false,
+              "location": "Harry Howell (B)"
+            },
+            {
+              "date": "2026-11-14",
+              "time": "21:50",
+              "opponent": "Oakville Rangers",
+              "is_home": false,
+              "location": "Joshua Creek (Red)"
+            },
+            {
+              "date": "2026-11-16",
+              "time": "00:30",
+              "opponent": "Milton Winterhawks",
+              "is_home": true,
+              "location": "Morgan (B)"
+            },
+            {
+              "date": "2026-11-23",
+              "time": "00:40",
+              "opponent": "Hamilton Steel",
+              "is_home": true,
+              "location": "Morgan (B)"
+            },
+            {
+              "date": "2026-11-29",
+              "time": "00:00",
+              "opponent": "West Niagara Flying Aces",
+              "is_home": true,
+              "location": "Morgan (B)"
+            },
+            {
+              "date": "2026-11-30",
+              "time": "00:40",
+              "opponent": "Oakville Rangers",
+              "is_home": true,
+              "location": "Morgan Firestone Arena (B Pad)"
+            },
+            {
+              "date": "2026-12-08",
+              "time": "00:30",
+              "opponent": "Hamilton Steel",
+              "is_home": false,
+              "location": "Chedoke Twin Pad - Red"
+            },
+            {
+              "date": "2026-12-12",
+              "time": "21:15",
+              "opponent": "Milton Winterhawks",
+              "is_home": false,
+              "location": "Milton Sports Centre - Rink D"
+            },
+            {
+              "date": "2026-12-14",
+              "time": "00:55",
+              "opponent": "Norfolk Knights",
+              "is_home": true,
+              "location": "Morgan Firestone Arena (A Pad)"
+            },
+            {
+              "date": "2026-12-18",
+              "time": "00:30",
+              "opponent": "Norfolk Knights",
+              "is_home": false,
+              "location": "Waterford"
+            },
+            {
+              "date": "2026-12-20",
+              "time": "23:30",
+              "opponent": "Garden City Minor Falcons",
+              "is_home": false,
+              "location": "Seymour-Hannah (1)"
+            },
+            {
+              "date": "2026-12-23",
+              "time": "01:05",
+              "opponent": "Centre Wellington Fusion",
+              "is_home": false,
+              "location": "Centre Wellington Community Sportsplex (Pad B)"
+            },
+            {
+              "date": "2027-01-02",
+              "time": "18:40",
+              "opponent": "Guelph Gryphons",
+              "is_home": true,
+              "location": "Morgan (B)"
+            },
+            {
+              "date": "2027-01-03",
+              "time": "22:00",
+              "opponent": "West Niagara Flying Aces",
+              "is_home": false,
+              "location": "Fleming Memorial Arena"
+            },
+            {
+              "date": "2027-01-08",
+              "time": "00:30",
+              "opponent": "Norfolk Knights",
+              "is_home": false,
+              "location": "Waterford"
+            },
+            {
+              "date": "2027-01-11",
+              "time": "00:40",
+              "opponent": "Halton Hills Thunder",
+              "is_home": true,
+              "location": "Morgan Firestone Arena (B Pad)"
+            },
+            {
+              "date": "2027-01-13",
+              "time": "00:00",
+              "opponent": "Niagara Falls Canucks",
+              "is_home": false,
+              "location": "Gale Centre 4 - Centennial"
+            },
+            {
+              "date": "2027-01-21",
+              "time": "00:15",
+              "opponent": "Halton Hills Thunder",
+              "is_home": false,
+              "location": "Acton (Main)"
+            }
+          ]
+        },
+        {
+          "team_name": "Oakville Rangers",
+          "mhr_rating": 82.65,
+          "current_gp": 7,
+          "current_pts": 2,
+          "current_w": 0,
+          "current_l": 5,
+          "current_t": 2,
+          "proj_pts_avg": 20.0,
+          "proj_finish": 9.7,
+          "prob_1st_pct": 0.0,
+          "prob_top2_pct": 0.0,
+          "prob_top4_pct": 0.1,
+          "pool_probs": {
+            "Group A": 10.6,
+            "Group B": 40.4,
+            "Group C": 49.1
           },
           "completed_games": [
             {
@@ -10525,6 +10535,15 @@
               "location": "Appleby (1)"
             },
             {
+              "date": "Nov 2, 2026",
+              "opponent": "Halton Hills Thunder",
+              "is_home": true,
+              "team_goals": 2,
+              "opp_goals": 7,
+              "result": "L",
+              "location": "Entripy Centre (4)"
+            },
+            {
               "date": "Nov 1, 2026",
               "opponent": "West Niagara Flying Aces",
               "is_home": false,
@@ -10535,13 +10554,6 @@
             }
           ],
           "upcoming_games": [
-            {
-              "date": "2026-11-02",
-              "time": "23:30",
-              "opponent": "Halton Hills Thunder",
-              "is_home": true,
-              "location": "Entripy Centre (4)"
-            },
             {
               "date": "2026-11-08",
               "time": "17:00",
@@ -10691,9 +10703,9 @@
           "prob_top2_pct": 0.0,
           "prob_top4_pct": 0.0,
           "pool_probs": {
-            "Group A": 98.6,
+            "Group A": 98.2,
             "Group B": 0.2,
-            "Group C": 1.3
+            "Group C": 1.7
           },
           "completed_games": [
             {
@@ -10921,9 +10933,9 @@
           "prob_top2_pct": 0.0,
           "prob_top4_pct": 0.0,
           "pool_probs": {
-            "Group A": 99.8,
+            "Group A": 99.7,
             "Group B": 0.0,
-            "Group C": 0.2
+            "Group C": 0.3
           },
           "completed_games": [
             {
@@ -11129,21 +11141,21 @@
         {
           "team_name": "South Simcoe Storm U14 AA",
           "mhr_rating": 84.95,
-          "current_gp": 7,
+          "current_gp": 8,
           "current_pts": 12,
           "current_w": 5,
-          "current_l": 0,
+          "current_l": 1,
           "current_t": 2,
-          "proj_pts_avg": 43.0,
+          "proj_pts_avg": 43.1,
           "proj_finish": 1.5,
-          "prob_1st_pct": 60.5,
-          "prob_top2_pct": 95.1,
-          "prob_top4_pct": 99.8,
+          "prob_1st_pct": 60.4,
+          "prob_top2_pct": 91.5,
+          "prob_top4_pct": 99.7,
           "pool_probs": {
-            "Pool A": 60.5,
-            "Pool B": 34.6,
-            "Pool C": 4.0,
-            "Pool D": 0.9
+            "Pool A": 60.4,
+            "Pool B": 31.1,
+            "Pool C": 6.9,
+            "Pool D": 1.6
           },
           "completed_games": [
             {
@@ -11198,6 +11210,15 @@
               "team_goals": 5,
               "opp_goals": 5,
               "result": "T",
+              "location": "Innisfil Rec (Red)"
+            },
+            {
+              "date": "Nov 2, 2026",
+              "opponent": "TNT Tornados U14 AA",
+              "is_home": true,
+              "team_goals": 2,
+              "opp_goals": 3,
+              "result": "L",
               "location": "Innisfil Rec (Red)"
             },
             {
@@ -11356,14 +11377,14 @@
           "current_t": 1,
           "proj_pts_avg": 42.3,
           "proj_finish": 1.7,
-          "prob_1st_pct": 37.7,
-          "prob_top2_pct": 93.6,
-          "prob_top4_pct": 99.8,
+          "prob_1st_pct": 36.6,
+          "prob_top2_pct": 91.1,
+          "prob_top4_pct": 99.6,
           "pool_probs": {
-            "Pool A": 37.7,
-            "Pool B": 55.9,
-            "Pool C": 5.3,
-            "Pool D": 1.1
+            "Pool A": 36.6,
+            "Pool B": 54.5,
+            "Pool C": 6.9,
+            "Pool D": 1.9
           },
           "completed_games": [
             {
@@ -11571,21 +11592,21 @@
         {
           "team_name": "TNT Tornados U14 AA",
           "mhr_rating": 84.29,
-          "current_gp": 6,
-          "current_pts": 4,
-          "current_w": 2,
+          "current_gp": 7,
+          "current_pts": 6,
+          "current_w": 3,
           "current_l": 4,
           "current_t": 0,
-          "proj_pts_avg": 33.8,
-          "proj_finish": 4.0,
-          "prob_1st_pct": 0.5,
-          "prob_top2_pct": 3.9,
-          "prob_top4_pct": 70.5,
+          "proj_pts_avg": 35.8,
+          "proj_finish": 3.6,
+          "prob_1st_pct": 1.8,
+          "prob_top2_pct": 10.1,
+          "prob_top4_pct": 81.9,
           "pool_probs": {
-            "Pool A": 0.5,
-            "Pool B": 3.5,
-            "Pool C": 43.7,
-            "Pool D": 52.2
+            "Pool A": 1.8,
+            "Pool B": 8.4,
+            "Pool C": 48.6,
+            "Pool D": 41.2
           },
           "completed_games": [
             {
@@ -11632,6 +11653,15 @@
               "opp_goals": 3,
               "result": "L",
               "location": "New Tecumseth Rec (NTRC 1)"
+            },
+            {
+              "date": "Nov 2, 2026",
+              "opponent": "South Simcoe Storm U14 AA",
+              "is_home": false,
+              "team_goals": 3,
+              "opp_goals": 2,
+              "result": "W",
+              "location": "Innisfil Rec (Red)"
             },
             {
               "date": "Nov 1, 2026",
@@ -11795,15 +11825,15 @@
           "current_l": 1,
           "current_t": 0,
           "proj_pts_avg": 33.1,
-          "proj_finish": 4.4,
-          "prob_1st_pct": 1.1,
-          "prob_top2_pct": 5.7,
-          "prob_top4_pct": 59.4,
+          "proj_finish": 4.5,
+          "prob_1st_pct": 0.9,
+          "prob_top2_pct": 4.9,
+          "prob_top4_pct": 54.1,
           "pool_probs": {
-            "Pool A": 1.1,
-            "Pool B": 5.5,
-            "Pool C": 36.9,
-            "Pool D": 56.6
+            "Pool A": 0.9,
+            "Pool B": 4.7,
+            "Pool C": 28.8,
+            "Pool D": 65.5
           },
           "completed_games": [
             {
@@ -12003,21 +12033,21 @@
         {
           "team_name": "King Rebellion U14 AA",
           "mhr_rating": 82.65,
-          "current_gp": 8,
-          "current_pts": 11,
-          "current_w": 5,
+          "current_gp": 9,
+          "current_pts": 13,
+          "current_w": 6,
           "current_l": 2,
           "current_t": 1,
-          "proj_pts_avg": 31.7,
-          "proj_finish": 5.0,
-          "prob_1st_pct": 0.1,
-          "prob_top2_pct": 1.4,
-          "prob_top4_pct": 42.8,
+          "proj_pts_avg": 32.7,
+          "proj_finish": 4.7,
+          "prob_1st_pct": 0.2,
+          "prob_top2_pct": 2.2,
+          "prob_top4_pct": 48.6,
           "pool_probs": {
-            "Pool A": 0.1,
-            "Pool B": 2.9,
-            "Pool C": 31.1,
-            "Pool D": 65.8
+            "Pool A": 0.2,
+            "Pool B": 2.4,
+            "Pool C": 23.8,
+            "Pool D": 73.5
           },
           "completed_games": [
             {
@@ -12084,6 +12114,15 @@
               "location": "Nobleton Rec (Nobleton Rec)"
             },
             {
+              "date": "Nov 2, 2026",
+              "opponent": "Aurora Tigers U14 AA",
+              "is_home": false,
+              "team_goals": 2,
+              "opp_goals": 0,
+              "result": "W",
+              "location": "Aurora Rec Complex (Toyota)"
+            },
+            {
               "date": "Nov 1, 2026",
               "opponent": "Newmarket Renegades U14 AA",
               "is_home": true,
@@ -12094,13 +12133,6 @@
             }
           ],
           "upcoming_games": [
-            {
-              "date": "2026-11-02",
-              "time": "23:00",
-              "opponent": "Aurora Tigers U14 AA",
-              "is_home": false,
-              "location": "Aurora Rec Complex (Toyota)"
-            },
             {
               "date": "2026-11-11",
               "time": "00:00",
@@ -12234,12 +12266,12 @@
           "proj_finish": 6.3,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.1,
-          "prob_top4_pct": 11.8,
+          "prob_top4_pct": 8.7,
           "pool_probs": {
             "Pool A": 0.0,
-            "Pool B": 6.9,
-            "Pool C": 40.7,
-            "Pool D": 52.4
+            "Pool B": 6.2,
+            "Pool C": 39.9,
+            "Pool D": 53.9
           },
           "completed_games": [
             {
@@ -12447,21 +12479,21 @@
         {
           "team_name": "Aurora Tigers U14 AA",
           "mhr_rating": 82.43,
-          "current_gp": 6,
+          "current_gp": 7,
           "current_pts": 7,
           "current_w": 3,
-          "current_l": 2,
+          "current_l": 3,
           "current_t": 1,
-          "proj_pts_avg": 28.2,
-          "proj_finish": 6.5,
+          "proj_pts_avg": 27.2,
+          "proj_finish": 6.9,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.1,
-          "prob_top4_pct": 12.0,
+          "prob_top4_pct": 4.7,
           "pool_probs": {
             "Pool A": 0.0,
-            "Pool B": 9.3,
-            "Pool C": 47.0,
-            "Pool D": 43.7
+            "Pool B": 13.1,
+            "Pool C": 51.8,
+            "Pool D": 35.0
           },
           "completed_games": [
             {
@@ -12517,16 +12549,18 @@
               "opp_goals": 4,
               "result": "T",
               "location": "Magna (Pfaff)"
+            },
+            {
+              "date": "Nov 2, 2026",
+              "opponent": "King Rebellion U14 AA",
+              "is_home": true,
+              "team_goals": 0,
+              "opp_goals": 2,
+              "result": "L",
+              "location": "Aurora Rec Complex (Toyota)"
             }
           ],
           "upcoming_games": [
-            {
-              "date": "2026-11-02",
-              "time": "23:00",
-              "opponent": "King Rebellion U14 AA",
-              "is_home": true,
-              "location": "Aurora Rec Complex (Toyota)"
-            },
             {
               "date": "2026-11-04",
               "time": "00:00",
@@ -12671,15 +12705,15 @@
           "current_l": 3,
           "current_t": 2,
           "proj_pts_avg": 25.6,
-          "proj_finish": 7.5,
+          "proj_finish": 7.6,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.0,
-          "prob_top4_pct": 2.6,
+          "prob_top4_pct": 1.9,
           "pool_probs": {
             "Pool A": 0.0,
-            "Pool B": 25.2,
-            "Pool C": 56.3,
-            "Pool D": 18.6
+            "Pool B": 24.9,
+            "Pool C": 56.8,
+            "Pool D": 18.3
           },
           "completed_games": [
             {
@@ -12898,12 +12932,12 @@
           "proj_finish": 8.2,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.0,
-          "prob_top4_pct": 1.2,
+          "prob_top4_pct": 0.8,
           "pool_probs": {
             "Pool A": 0.0,
-            "Pool B": 56.1,
-            "Pool C": 35.1,
-            "Pool D": 8.7
+            "Pool B": 54.5,
+            "Pool C": 36.4,
+            "Pool D": 9.0
           },
           "completed_games": [
             {
@@ -13114,8 +13148,8 @@
           "prob_top2_pct": 0.0,
           "prob_top4_pct": 0.0,
           "pool_probs": {
-            "Pool A": 33.5,
-            "Pool B": 66.5,
+            "Pool A": 33.4,
+            "Pool B": 66.6,
             "Pool C": 0.0,
             "Pool D": 0.0
           },
@@ -13332,8 +13366,8 @@
           "prob_top2_pct": 0.0,
           "prob_top4_pct": 0.0,
           "pool_probs": {
-            "Pool A": 80.8,
-            "Pool B": 19.2,
+            "Pool A": 81.2,
+            "Pool B": 18.8,
             "Pool C": 0.0,
             "Pool D": 0.0
           },
@@ -13548,8 +13582,8 @@
           "prob_top2_pct": 0.0,
           "prob_top4_pct": 0.0,
           "pool_probs": {
-            "Pool A": 85.7,
-            "Pool B": 14.3,
+            "Pool A": 85.4,
+            "Pool B": 14.6,
             "Pool C": 0.0,
             "Pool D": 0.0
           },
@@ -13760,14 +13794,14 @@
           "current_w": 3,
           "current_l": 1,
           "current_t": 3,
-          "proj_pts_avg": 41.1,
+          "proj_pts_avg": 41.0,
           "proj_finish": 1.6,
-          "prob_1st_pct": 60.7,
-          "prob_top2_pct": 87.1,
-          "prob_top4_pct": 100.0,
+          "prob_1st_pct": 60.8,
+          "prob_top2_pct": 86.0,
+          "prob_top4_pct": 99.9,
           "pool_probs": {
-            "Pool A": 63.9,
-            "Pool B": 36.0
+            "Pool A": 64.3,
+            "Pool B": 35.7
           },
           "completed_games": [
             {
@@ -13987,12 +14021,12 @@
           "current_t": 0,
           "proj_pts_avg": 38.1,
           "proj_finish": 2.3,
-          "prob_1st_pct": 25.1,
-          "prob_top2_pct": 60.0,
-          "prob_top4_pct": 98.3,
+          "prob_1st_pct": 24.7,
+          "prob_top2_pct": 59.9,
+          "prob_top4_pct": 98.2,
           "pool_probs": {
-            "Pool A": 38.6,
-            "Pool B": 61.4
+            "Pool A": 38.2,
+            "Pool B": 61.8
           },
           "completed_games": [
             {
@@ -14206,12 +14240,12 @@
           "current_t": 3,
           "proj_pts_avg": 35.9,
           "proj_finish": 3.0,
-          "prob_1st_pct": 9.4,
-          "prob_top2_pct": 33.1,
-          "prob_top4_pct": 95.5,
+          "prob_1st_pct": 9.3,
+          "prob_top2_pct": 33.0,
+          "prob_top4_pct": 95.3,
           "pool_probs": {
-            "Pool A": 38.1,
-            "Pool B": 61.9
+            "Pool A": 38.6,
+            "Pool B": 61.4
           },
           "completed_games": [
             {
@@ -14433,14 +14467,14 @@
           "current_w": 3,
           "current_l": 2,
           "current_t": 2,
-          "proj_pts_avg": 34.6,
-          "proj_finish": 3.4,
-          "prob_1st_pct": 4.8,
-          "prob_top2_pct": 19.4,
-          "prob_top4_pct": 93.1,
+          "proj_pts_avg": 34.7,
+          "proj_finish": 3.3,
+          "prob_1st_pct": 5.2,
+          "prob_top2_pct": 20.8,
+          "prob_top4_pct": 92.4,
           "pool_probs": {
-            "Pool A": 50.6,
-            "Pool B": 49.4
+            "Pool A": 49.5,
+            "Pool B": 50.5
           },
           "completed_games": [
             {
@@ -14658,14 +14692,14 @@
           "current_w": 4,
           "current_l": 3,
           "current_t": 2,
-          "proj_pts_avg": 26.2,
-          "proj_finish": 5.6,
+          "proj_pts_avg": 26.1,
+          "proj_finish": 5.7,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.2,
-          "prob_top4_pct": 7.8,
+          "prob_top4_pct": 7.5,
           "pool_probs": {
-            "Pool A": 37.5,
-            "Pool B": 62.5
+            "Pool A": 38.7,
+            "Pool B": 61.3
           },
           "completed_games": [
             {
@@ -14887,14 +14921,14 @@
           "current_w": 3,
           "current_l": 4,
           "current_t": 0,
-          "proj_pts_avg": 24.1,
-          "proj_finish": 6.2,
+          "proj_pts_avg": 24.2,
+          "proj_finish": 6.3,
           "prob_1st_pct": 0.0,
-          "prob_top2_pct": 0.2,
-          "prob_top4_pct": 4.3,
+          "prob_top2_pct": 0.1,
+          "prob_top4_pct": 4.2,
           "pool_probs": {
-            "Pool A": 49.9,
-            "Pool B": 50.1
+            "Pool A": 49.3,
+            "Pool B": 50.7
           },
           "completed_games": [
             {
@@ -15107,19 +15141,19 @@
         {
           "team_name": "QUINTE WEST AA U14",
           "mhr_rating": 82.07,
-          "current_gp": 7,
-          "current_pts": 6,
-          "current_w": 2,
+          "current_gp": 8,
+          "current_pts": 8,
+          "current_w": 3,
           "current_l": 3,
           "current_t": 2,
-          "proj_pts_avg": 20.7,
-          "proj_finish": 7.3,
+          "proj_pts_avg": 22.8,
+          "proj_finish": 6.8,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.0,
-          "prob_top4_pct": 0.6,
+          "prob_top4_pct": 1.9,
           "pool_probs": {
-            "Pool A": 51.0,
-            "Pool B": 49.0
+            "Pool A": 48.8,
+            "Pool B": 51.2
           },
           "completed_games": [
             {
@@ -15173,6 +15207,15 @@
               "is_home": true,
               "team_goals": 3,
               "opp_goals": 2,
+              "result": "W",
+              "location": "Duncan McDonald (1)"
+            },
+            {
+              "date": "Nov 2, 2026",
+              "opponent": "NORTHUMBERLAND AA U14",
+              "is_home": true,
+              "team_goals": 7,
+              "opp_goals": 1,
               "result": "W",
               "location": "Duncan McDonald (1)"
             },
@@ -15332,19 +15375,19 @@
         {
           "team_name": "NORTHUMBERLAND AA U14",
           "mhr_rating": 82.41,
-          "current_gp": 8,
+          "current_gp": 9,
           "current_pts": 5,
           "current_w": 2,
-          "current_l": 5,
+          "current_l": 6,
           "current_t": 1,
-          "proj_pts_avg": 20.3,
-          "proj_finish": 7.4,
+          "proj_pts_avg": 20.2,
+          "proj_finish": 7.6,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.0,
-          "prob_top4_pct": 0.4,
+          "prob_top4_pct": 0.5,
           "pool_probs": {
-            "Pool A": 51.5,
-            "Pool B": 48.5
+            "Pool A": 55.4,
+            "Pool B": 44.6
           },
           "completed_games": [
             {
@@ -15418,6 +15461,15 @@
               "opp_goals": 4,
               "result": "L",
               "location": "Jack Burger (Jack Burger)"
+            },
+            {
+              "date": "Nov 2, 2026",
+              "opponent": "QUINTE WEST AA U14",
+              "is_home": false,
+              "team_goals": 1,
+              "opp_goals": 7,
+              "result": "L",
+              "location": "Duncan McDonald (1)"
             }
           ],
           "upcoming_games": [
@@ -15564,14 +15616,14 @@
           "current_w": 1,
           "current_l": 4,
           "current_t": 2,
-          "proj_pts_avg": 14.8,
+          "proj_pts_avg": 14.7,
           "proj_finish": 9.2,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.0,
           "prob_top4_pct": 0.0,
           "pool_probs": {
-            "Pool A": 57.8,
-            "Pool B": 42.2
+            "Pool A": 57.9,
+            "Pool B": 42.1
           },
           "completed_games": [
             {
@@ -15789,14 +15841,14 @@
           "current_w": 1,
           "current_l": 3,
           "current_t": 1,
-          "proj_pts_avg": 14.2,
-          "proj_finish": 9.2,
+          "proj_pts_avg": 14.3,
+          "proj_finish": 9.3,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.0,
           "prob_top4_pct": 0.0,
           "pool_probs": {
-            "Pool A": 61.1,
-            "Pool B": 38.9
+            "Pool A": 59.4,
+            "Pool B": 40.6
           },
           "completed_games": [
             {

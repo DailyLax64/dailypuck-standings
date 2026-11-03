@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-02T17:04:52.909708+00:00",
-  "total_season_games": 947,
+  "updated_at": "2026-11-03T13:24:46.293978+00:00",
+  "total_season_games": 946,
   "games": [
     {
       "game_code": "U11AA-RS-68",
@@ -1504,7 +1504,7 @@
       "league": "Tri-County",
       "date": "2026-11-02",
       "time": "23:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "Milton Winterhawks",
       "visitor": "Burlington Eagles",
       "location": "MSC (D)"
@@ -6696,7 +6696,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-02",
       "time": "23:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "Aurora Tigers U14 AA",
       "visitor": "King Rebellion U14 AA",
       "location": "Aurora Rec Complex (Toyota)"
@@ -6707,7 +6707,7 @@
       "league": "Tri-County",
       "date": "2026-11-02",
       "time": "23:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "Oakville Rangers",
       "visitor": "Halton Hills Thunder",
       "location": "Entripy Centre (4)"
@@ -8279,7 +8279,7 @@
       "cohort": "U14 AA",
       "league": "Tri-County",
       "date": "2026-12-05",
-      "time": "22:30",
+      "time": "22:35",
       "status": "scheduled",
       "home": "Milton Winterhawks",
       "visitor": "Centre Wellington Fusion",
@@ -8576,7 +8576,7 @@
       "cohort": "U14 AA",
       "league": "Tri-County",
       "date": "2026-12-12",
-      "time": "22:30",
+      "time": "21:15",
       "status": "scheduled",
       "home": "Milton Winterhawks",
       "visitor": "Glancaster Bombers",
@@ -9818,23 +9818,12 @@
       "game_code": "U14AA-18",
       "cohort": "U14 AA",
       "league": "Tri-County",
-      "date": "2027-01-18",
-      "time": "23:30",
-      "status": "scheduled",
-      "home": "Guelph Gryphons",
-      "visitor": "Halton Hills Thunder",
-      "location": "South End Recreation Centre (2)"
-    },
-    {
-      "game_code": "U14AA-18",
-      "cohort": "U14 AA",
-      "league": "Tri-County",
       "date": "2027-01-19",
       "time": "00:30",
       "status": "scheduled",
       "home": "Guelph Gryphons",
       "visitor": "Halton Hills Thunder",
-      "location": "South End (SER2)"
+      "location": "South End Recreation Centre (2)"
     },
     {
       "game_code": "U14AA-RS-127",
