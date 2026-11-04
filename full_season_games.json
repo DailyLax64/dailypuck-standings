@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03T21:25:17.261503+00:00",
+  "updated_at": "2026-11-04T04:01:03.579358+00:00",
   "total_season_games": 946,
   "games": [
     {
@@ -6718,7 +6718,7 @@
       "league": "Tri-County",
       "date": "2026-11-03",
       "time": "00:15",
-      "status": "scheduled",
+      "status": "played",
       "home": "Guelph Gryphons",
       "visitor": "Burlington Eagles",
       "location": "WERC (2)"
@@ -6729,7 +6729,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-03",
       "time": "00:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "South Simcoe Storm U14 AA",
       "visitor": "TNT Tornados U14 AA",
       "location": "IRC CORTELLUCCI (RED)"
@@ -6740,7 +6740,7 @@
       "league": "Lakeshore",
       "date": "2026-11-03",
       "time": "01:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "QUINTE WEST AA U14",
       "visitor": "NORTHUMBERLAND AA U14",
       "location": "Duncan McDonald (1)"
@@ -7860,8 +7860,8 @@
       "game_code": "U14AA-094",
       "cohort": "U14 AA",
       "league": "Lakeshore",
-      "date": "2026-11-26",
-      "time": "23:30",
+      "date": "2026-11-27",
+      "time": "00:00",
       "status": "scheduled",
       "home": "OSHAWA AA U14",
       "visitor": "WHITBY AA U14",
