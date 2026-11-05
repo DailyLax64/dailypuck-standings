@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-05T17:05:35.569401+00:00",
-  "total_season_games": 944,
+  "updated_at": "2026-11-05T17:41:25.023267+00:00",
+  "total_season_games": 946,
   "games": [
     {
       "game_code": "U11AA-RS-68",
@@ -539,7 +539,7 @@
       "status": "played",
       "home": "West Niagara Flying Aces",
       "visitor": "Brampton 45s",
-      "location": "Fleming"
+      "location": "Fleming Memorial Arena"
     },
     {
       "game_code": "U11AA-155",
@@ -1441,7 +1441,7 @@
       "status": "played",
       "home": "West Niagara Flying Aces",
       "visitor": "Niagara Falls Canucks",
-      "location": "Fleming"
+      "location": "Fleming Memorial Arena"
     },
     {
       "game_code": "U11AA-71",
@@ -1518,7 +1518,7 @@
       "status": "played",
       "home": "Halton Hills Thunder",
       "visitor": "West Niagara Flying Aces",
-      "location": "D-Mold-Master Saputo"
+      "location": "MMSP (D)"
     },
     {
       "game_code": "U11AA-159",
@@ -2618,7 +2618,7 @@
       "status": "scheduled",
       "home": "Brampton 45s",
       "visitor": "West Niagara Flying Aces",
-      "location": "Susan Fennell (Pad 1)"
+      "location": "Susan Fennell (1)"
     },
     {
       "game_code": "U11AA-61",
@@ -3036,7 +3036,7 @@
       "status": "scheduled",
       "home": "West Niagara Flying Aces",
       "visitor": "Hamilton Steel",
-      "location": "Fleming"
+      "location": "Fleming Memorial Arena"
     },
     {
       "game_code": "U11AA-RS-35",
@@ -3575,7 +3575,7 @@
       "status": "scheduled",
       "home": "Milton Winterhawks",
       "visitor": "West Niagara Flying Aces",
-      "location": "John Tonelli Sports Centre"
+      "location": "John Tonelli"
     },
     {
       "game_code": "U11AA-RS--016",
@@ -3840,6 +3840,17 @@
       "home": "OSHAWA AA U11",
       "visitor": "QUINTE WEST AA U11",
       "location": "Delpark Homes Centre (Pad 1)"
+    },
+    {
+      "game_code": "U11AA-153",
+      "cohort": "U11 AA",
+      "league": "Tri-County",
+      "date": "2026-12-20",
+      "time": "20:45",
+      "status": "scheduled",
+      "home": "West Niagara Flying Aces",
+      "visitor": "Glancaster Bombers",
+      "location": "Fleming Memorial Arena"
     },
     {
       "game_code": "U11AA-39",
@@ -4356,7 +4367,7 @@
       "status": "scheduled",
       "home": "Hamilton Steel",
       "visitor": "West Niagara Flying Aces",
-      "location": "Pat Quinn-Parkdale Arena"
+      "location": "Parkdale"
     },
     {
       "game_code": "U11AA-73",
@@ -4455,7 +4466,7 @@
       "status": "scheduled",
       "home": "West Niagara Flying Aces",
       "visitor": "Halton Hills Thunder",
-      "location": "Fleming"
+      "location": "Fleming Memorial Arena"
     },
     {
       "game_code": "U11AA-119",
@@ -4609,7 +4620,7 @@
       "status": "scheduled",
       "home": "Niagara Falls Canucks",
       "visitor": "West Niagara Flying Aces",
-      "location": "Gale Centre 1 - ES Fox"
+      "location": "Gale (1 - ES Fox)"
     },
     {
       "game_code": "U11AA-RS-50",
@@ -4731,6 +4742,17 @@
       "home": "Stoney Creek Warriors",
       "visitor": "Halton Hills Thunder",
       "location": "Valley Park arena"
+    },
+    {
+      "game_code": "U11AA-48",
+      "cohort": "U11 AA",
+      "league": "Tri-County",
+      "date": "2027-01-16",
+      "time": "21:25",
+      "status": "scheduled",
+      "home": "Glancaster Bombers",
+      "visitor": "West Niagara Flying Aces",
+      "location": "Glanbrook"
     },
     {
       "game_code": "U11AA-022",
