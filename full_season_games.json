@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T20:42:57.303844+00:00",
+  "updated_at": "2026-11-05T04:01:19.032594+00:00",
   "total_season_games": 946,
   "games": [
     {
@@ -1515,7 +1515,7 @@
       "league": "Tri-County",
       "date": "2026-11-04",
       "time": "23:15",
-      "status": "scheduled",
+      "status": "played",
       "home": "Halton Hills Thunder",
       "visitor": "West Niagara Flying Aces",
       "location": "MMSP (D)"
@@ -1526,7 +1526,7 @@
       "league": "Tri-County",
       "date": "2026-11-04",
       "time": "23:35",
-      "status": "scheduled",
+      "status": "played",
       "home": "Centre Wellington Fusion",
       "visitor": "Hamilton Steel",
       "location": "Jefferson Elora Community Centre"
@@ -2687,6 +2687,17 @@
       "location": "Healthy Planet (Gardener)"
     },
     {
+      "game_code": "U11AA-119",
+      "cohort": "U11 AA",
+      "league": "Tri-County",
+      "date": "2026-11-29",
+      "time": "19:00",
+      "status": "scheduled",
+      "home": "Centre Wellington Fusion",
+      "visitor": "Garden City Minor Falcons",
+      "location": "Elora"
+    },
+    {
       "game_code": "U11AA-RS-73",
       "cohort": "U11 AA",
       "league": "York-Simcoe",
@@ -2696,17 +2707,6 @@
       "home": "Upper York Admirals U11 AA",
       "visitor": "TNT Tornados U11 AA",
       "location": "Georgina Ice Palace - Blue"
-    },
-    {
-      "game_code": "U11AA-119",
-      "cohort": "U11 AA",
-      "league": "Tri-County",
-      "date": "2026-11-29",
-      "time": "20:00",
-      "status": "scheduled",
-      "home": "Centre Wellington Fusion",
-      "visitor": "Garden City Minor Falcons",
-      "location": "Elora"
     },
     {
       "game_code": "U11AA-RS-45",
@@ -3798,17 +3798,6 @@
       "location": "Trafalgar Park"
     },
     {
-      "game_code": "U11AA-189",
-      "cohort": "U11 AA",
-      "league": "Tri-County",
-      "date": "2026-12-20",
-      "time": "19:00",
-      "status": "scheduled",
-      "home": "Centre Wellington Fusion",
-      "visitor": "Norfolk Knights",
-      "location": "Jefferson Elora Community Centre"
-    },
-    {
       "game_code": "U11AA-038",
       "cohort": "U11 AA",
       "league": "Lakeshore",
@@ -3818,6 +3807,17 @@
       "home": "CLARINGTON AA U11",
       "visitor": "PETERBOROUGH AA U11",
       "location": "Darlington"
+    },
+    {
+      "game_code": "U11AA-189",
+      "cohort": "U11 AA",
+      "league": "Tri-County",
+      "date": "2026-12-20",
+      "time": "20:15",
+      "status": "scheduled",
+      "home": "Centre Wellington Fusion",
+      "visitor": "Norfolk Knights",
+      "location": "Jefferson Elora Community Centre"
     },
     {
       "game_code": "U11AA-RS-17",
@@ -6751,7 +6751,7 @@
       "league": "Tri-County",
       "date": "2026-11-04",
       "time": "00:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "Niagara Falls Canucks",
       "visitor": "Flamborough Sabres",
       "location": "Gale Centre 4 - Centennial"
@@ -6762,7 +6762,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-04",
       "time": "00:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "Markham Waxers U14 AA",
       "visitor": "Aurora Tigers U14 AA",
       "location": "Centennial"
