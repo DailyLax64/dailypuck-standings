@@ -9,9 +9,10 @@ from html.parser import HTMLParser
 
 SCRAPER_API_KEY = os.environ.get("SCRAPER_API_KEY", "").strip()
 
+# Removed &view=last10 to target live full-season division tables
 MHR_DIVISIONS = {
-    "U11 AA": "https://myhockeyrankings.com/rank.php?y=2026&v=142&view=last10",
-    "U14 AA": "https://myhockeyrankings.com/rank.php?y=2026&v=145&view=last10"
+    "U11 AA": "https://myhockeyrankings.com/rank.php?y=2026&v=142",
+    "U14 AA": "https://myhockeyrankings.com/rank.php?y=2026&v=145"
 }
 
 class MHRTableParser(HTMLParser):
@@ -78,17 +79,31 @@ def find_canonical_team(cleaned_name, cohort, master_db):
     return None
 
 def fetch_html(target_url, api_key):
+    # Cache-buster to bypass Cloudflare edge caching on MHR
+    cache_buster = f"&_cb={int(time.time())}"
+    busted_url = target_url + cache_buster
+
     if not api_key:
         print("   WARNING: SCRAPER_API_KEY secret not found. Attempting direct connection...", flush=True)
-        req_url = target_url
+        req_url = busted_url
     else:
-        query_dict = dict(api_key=api_key, url=target_url, render="true", premium="true", country_code="ca")
+        # cache_control="no-cache" instructs ScraperAPI to bypass its internal cache
+        query_dict = dict(
+            api_key=api_key,
+            url=busted_url,
+            render="true",
+            premium="true",
+            country_code="ca",
+            cache_control="no-cache"
+        )
         params = urllib.parse.urlencode(query_dict)
         req_url = "https://api.scraperapi.com?" + params
 
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "Cache-Control": "no-cache",
+        "Pragma": "no-cache"
     }
 
     req = urllib.request.Request(req_url, headers=headers)
@@ -157,6 +172,7 @@ def update_master_teams():
 
     timestamp = datetime.now(timezone.utc).isoformat()
     total_updated = 0
+    total_rating_changes = 0
 
     for cohort, url in MHR_DIVISIONS.items():
         print(f"\nFetching MHR table for [{cohort}]...", flush=True)
@@ -167,6 +183,7 @@ def update_master_teams():
                 print(f"   Found {len(parsed_rows)} team records in MHR table.", flush=True)
 
                 cohort_updated = 0
+                cohort_changes = 0
                 for r in parsed_rows:
                     clean_name = clean_team_name(r["team_raw"])
                     canonical = find_canonical_team(clean_name, cohort, master_db)
@@ -182,6 +199,13 @@ def update_master_teams():
                         except ValueError:
                             rating_float = 0.0
 
+                        old_rating = float(t_entry.get("mhr_rating") or 0.0)
+                        diff = rating_float - old_rating
+
+                        if abs(diff) > 0.001:
+                            print(f"   📈 {canonical}: {old_rating:.2f} -> {rating_float:.2f} ({diff:+.2f})", flush=True)
+                            cohort_changes += 1
+
                         t_entry["mhr_rank"] = rank_clean
                         t_entry["mhr_rating"] = rating_float
                         t_entry["mhr_record"] = r["record"]
@@ -190,8 +214,9 @@ def update_master_teams():
                         t_entry["mhr_updated_at"] = timestamp
                         cohort_updated += 1
 
-                print(f"   Successfully mapped and updated {cohort_updated} teams for {cohort}.", flush=True)
+                print(f"   Successfully processed {cohort_updated} teams ({cohort_changes} rating shifts).", flush=True)
                 total_updated += cohort_updated
+                total_rating_changes += cohort_changes
                 break
             except Exception as e:
                 print(f"   Attempt {attempt} error for {cohort}: {e}", flush=True)
@@ -204,7 +229,7 @@ def update_master_teams():
     with open(master_path, "w", encoding="utf-8") as f:
         json.dump(master_db, f, indent=2)
 
-    print(f"\nSaved updated master_teams.json with {total_updated} team ratings!", flush=True)
+    print(f"\nDone! Updated master_teams.json ({total_rating_changes} actual rating changes).", flush=True)
 
 if __name__ == "__main__":
     update_master_teams()
