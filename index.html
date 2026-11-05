@@ -119,6 +119,9 @@
                                 <th onclick="handleSort('current_pts')" class="py-3 px-3 text-center cursor-pointer text-teal-800 bg-teal-100/60 hover:text-teal-600">
                                     Cur Pts <span id="sort-icon-current_pts" class="ml-0.5 text-teal-600 font-black">▼</span>
                                 </th>
+                                <th onclick="handleSort('pt_pct')" class="py-3 px-2.5 text-center cursor-pointer hover:text-teal-600">
+                                    Pt % <span id="sort-icon-pt_pct" class="ml-0.5 text-slate-400"></span>
+                                </th>
                                 <th onclick="handleSort('proj_pts_avg')" class="py-3 px-3 text-center cursor-pointer hover:text-teal-600">
                                     Proj Pts <span id="sort-icon-proj_pts_avg" class="ml-0.5 text-slate-400"></span>
                                 </th>
@@ -230,8 +233,8 @@
                                 <tr class="bg-teal-50/90 border-b border-teal-200 text-teal-900 text-[10px] sm:text-[11px] font-black uppercase tracking-wider select-none">
                                     <th class="py-2.5 px-3">Team</th>
                                     <th class="py-2.5 px-2 text-center">GP</th>
-                                    <th class="py-2.5 px-2 text-center">Pts</th>
-                                    <th class="py-2.5 px-2.5 text-center bg-teal-100/50 text-teal-950 font-black">Proj Pts</th>
+                                    <th class="py-2.5 px-2.5 text-center bg-teal-100/50 text-teal-950 font-black">Pts</th>
+                                    <th class="py-2.5 px-2.5 text-center font-bold">Proj Pts</th>
                                     <th class="py-2.5 px-2 text-center">Proj Fin</th>
                                     <th class="py-2.5 px-2.5 text-center">Top 2 %</th>
                                     <th class="py-2.5 px-3 text-center">Projected Pool</th>
@@ -434,6 +437,11 @@
                 teams = teams.filter(t => t.team_name.toLowerCase().includes(currentSearchQuery));
             }
 
+            // Ensure point percentage is computed for sorting
+            teams.forEach(t => {
+                t.pt_pct = (t.current_gp && t.current_gp > 0) ? ((t.current_pts / (t.current_gp * 2)) * 100) : 0.0;
+            });
+
             return [...teams].sort((a, b) => {
                 let valA = a[currentSortColumn];
                 let valB = b[currentSortColumn];
@@ -475,7 +483,7 @@
                 top2Header.innerText = currentLeague === 'Tri-County' ? 'Top 2 % (Bye)' : 'Top 2 %';
             }
 
-            ['team_name', 'current_gp', 'current_pts', 'proj_pts_avg', 'proj_finish', 'prob_top2_pct', 'prob_top4_pct', 'mhr_rating'].forEach(col => {
+            ['team_name', 'current_gp', 'current_pts', 'pt_pct', 'proj_pts_avg', 'proj_finish', 'prob_top2_pct', 'prob_top4_pct', 'mhr_rating'].forEach(col => {
                 const iconEl = document.getElementById('sort-icon-' + col);
                 if (iconEl) {
                     if (currentSortColumn === col) {
@@ -489,7 +497,7 @@
 
             tbody.innerHTML = '';
             if (teams.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="11" class="py-8 text-center text-slate-400 font-mono text-xs uppercase">No teams found.</td></tr>`;
+                tbody.innerHTML = `<tr><td colspan="12" class="py-8 text-center text-slate-400 font-mono text-xs uppercase">No teams found.</td></tr>`;
                 return;
             }
 
@@ -498,6 +506,7 @@
                 const recStr = `${t.current_w}-${t.current_l}-${t.current_t}`;
                 const projectedSeed = Math.round(t.proj_finish) || 1;
                 const assignedPool = getProjectedPoolAssignment(t, currentCohort, currentLeague, projectedSeed);
+                const ptPct = (t.current_gp && t.current_gp > 0) ? ((t.current_pts / (t.current_gp * 2)) * 100) : 0.0;
 
                 let poolOddsStr = "";
                 if (t.pool_probs) {
@@ -516,6 +525,7 @@
                         <td class="py-3 px-2 text-center font-mono text-slate-600">${t.current_gp}</td>
                         <td class="py-3 px-2 text-center font-mono text-slate-700">${recStr}</td>
                         <td class="py-3 px-3 text-center font-mono font-black text-teal-900 bg-teal-50/50">${t.current_pts}</td>
+                        <td class="py-3 px-2.5 text-center font-mono font-bold text-slate-700">${ptPct.toFixed(1)}%</td>
                         <td class="py-3 px-3 text-center font-mono font-black text-cyan-700">${t.proj_pts_avg.toFixed(1)}</td>
                         <td class="py-3 px-3 text-center font-mono font-black text-slate-900">#${t.proj_finish.toFixed(1)}</td>
                         <td class="py-3 px-3 text-center font-mono font-bold text-slate-800">${t.prob_top2_pct.toFixed(1)}%</td>
@@ -584,7 +594,7 @@
 
                     drawerHtml = `
                         <tr class="bg-teal-50/40 border-b border-teal-200 animate-fadeIn">
-                            <td colspan="11" class="p-3 sm:p-5">
+                            <td colspan="12" class="p-3 sm:p-5">
                                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
                                     <!-- Completed Box Scores -->
                                     <div class="bg-white rounded-xl border border-teal-200 p-3 shadow-sm">
@@ -645,7 +655,7 @@
             if (poolSummaryEl) {
                 const leaguePools = POOL_DEFINITIONS[currentLeague]?.[currentCohort] || {};
                 const parts = Object.entries(leaguePools).map(([pName, pData]) => `<strong>${pName}:</strong> Ranks ${pData.seeds.join(', ')}`);
-                poolSummaryEl.innerHTML = `<span class="text-teal-900 font-bold uppercase tracking-wider text-[11px]">Pool Placement by Rank:</span> ${parts.join(' &nbspbull;&nbsp; ')}`;
+                poolSummaryEl.innerHTML = `<span class="text-teal-900 font-bold uppercase tracking-wider text-[11px]">Pool Placement by Rank:</span> ${parts.join(' &nbsp; &bull; &nbsp; ')}`;
             }
         }
 
@@ -866,6 +876,30 @@
                 const teams = cohortData[currentLeague] || [];
                 const fixtures = extractMasterScheduledFixtures(currentCohort, currentLeague);
 
+                // Calculate added points and GP based on user-picked games
+                const addedPts = {};
+                const addedGp = {};
+                teams.forEach(t => {
+                    addedPts[t.team_name] = 0;
+                    addedGp[t.team_name] = 0;
+                });
+
+                fixtures.forEach(f => {
+                    const pick = userGamePicks[f.id];
+                    if (pick && pick !== 'auto') {
+                        addedGp[f.home] = (addedGp[f.home] || 0) + 1;
+                        addedGp[f.away] = (addedGp[f.away] || 0) + 1;
+                        if (pick === 'home') {
+                            addedPts[f.home] = (addedPts[f.home] || 0) + 2;
+                        } else if (pick === 'away') {
+                            addedPts[f.away] = (addedPts[f.away] || 0) + 2;
+                        } else if (pick === 'tie') {
+                            addedPts[f.home] = (addedPts[f.home] || 0) + 1;
+                            addedPts[f.away] = (addedPts[f.away] || 0) + 1;
+                        }
+                    }
+                });
+
                 const teamRatings = {};
                 teams.forEach(t => {
                     teamRatings[t.team_name] = t.effective_rating || t.mhr_rating || 82.0;
@@ -881,19 +915,14 @@
 
                 for (let r = 0; r < SIM_RUNS; r++) {
                     const currentPts = {};
-                    teams.forEach(t => { currentPts[t.team_name] = t.current_pts || 0; });
+                    teams.forEach(t => { 
+                        currentPts[t.team_name] = (t.current_pts || 0) + (addedPts[t.team_name] || 0); 
+                    });
 
                     fixtures.forEach(f => {
                         const userPick = userGamePicks[f.id];
-                        if (userPick === 'home') {
-                            currentPts[f.home] = (currentPts[f.home] || 0) + 2;
-                        } else if (userPick === 'away') {
-                            currentPts[f.away] = (currentPts[f.away] || 0) + 2;
-                        } else if (userPick === 'tie') {
-                            currentPts[f.home] = (currentPts[f.home] || 0) + 1;
-                            currentPts[f.away] = (currentPts[f.away] || 0) + 1;
-                        } else {
-                            // Auto Monte Carlo Simulation
+                        // Only simulate outcomes for unpicked matches
+                        if (!userPick || userPick === 'auto') {
                             const rHome = teamRatings[f.home] || 82.0;
                             const rAway = teamRatings[f.away] || 82.0;
                             const delta = (rHome + 0.35) - rAway;
@@ -928,7 +957,7 @@
                     });
                 }
 
-                // Compile Simulated Projections
+                // Compile Simulated Projections with updated GP, Points, and ranking by Points
                 const simResults = teams.map(t => {
                     const ptsList = pointTotals[t.team_name] || [];
                     const avgPts = ptsList.reduce((acc, v) => acc + v, 0) / (ptsList.length || 1);
@@ -940,16 +969,25 @@
                     expFinish = expFinish / SIM_RUNS;
                     const top2 = (((rCounts[1] || 0) + (rCounts[2] || 0)) / SIM_RUNS) * 100.0;
 
+                    const updatedGp = (t.current_gp || 0) + (addedGp[t.team_name] || 0);
+                    const updatedPts = (t.current_pts || 0) + (addedPts[t.team_name] || 0);
+
                     return {
                         team_name: t.team_name,
-                        current_gp: t.current_gp,
-                        current_pts: t.current_pts,
+                        current_gp: updatedGp,
+                        current_pts: updatedPts,
                         proj_pts: avgPts,
                         proj_fin: expFinish,
                         top2_pct: top2,
                         proj_pool: getProjectedPoolAssignment(t, currentCohort, currentLeague, Math.round(expFinish) || 1)
                     };
-                }).sort((a, b) => b.proj_pts - a.proj_pts);
+                }).sort((a, b) => {
+                    // Ranked primarily by updated Points descending, tiebreaker by Proj Pts
+                    if (b.current_pts !== a.current_pts) {
+                        return b.current_pts - a.current_pts;
+                    }
+                    return b.proj_pts - a.proj_pts;
+                });
 
                 renderSimulatorStandingsTable(simResults);
                 if (spinner) spinner.classList.add('hidden');
@@ -960,15 +998,15 @@
             const tbody = document.getElementById('sim-standings-tbody');
             if (!tbody) return;
 
-            tbody.innerHTML = simResults.map((t, idx) => {
+            tbody.innerHTML = simResults.map((t) => {
                 return `
                     <tr class="hover:bg-teal-50/60 border-b border-teal-100/60">
                         <td class="py-2.5 px-3 font-black uppercase text-teal-950 truncate max-w-[150px] sm:max-w-xs">
                             ${t.team_name}
                         </td>
                         <td class="py-2.5 px-2 text-center font-mono text-slate-500">${t.current_gp}</td>
-                        <td class="py-2.5 px-2 text-center font-mono font-bold text-slate-700">${t.current_pts}</td>
-                        <td class="py-2.5 px-2.5 text-center font-mono font-black text-teal-800 bg-teal-50/70">${t.proj_pts.toFixed(1)}</td>
+                        <td class="py-2.5 px-2.5 text-center font-mono font-black text-teal-900 bg-teal-50/70">${t.current_pts}</td>
+                        <td class="py-2.5 px-2.5 text-center font-mono font-black text-cyan-700">${t.proj_pts.toFixed(1)}</td>
                         <td class="py-2.5 px-2 text-center font-mono font-bold text-slate-800">#${t.proj_fin.toFixed(1)}</td>
                         <td class="py-2.5 px-2.5 text-center font-mono font-black text-slate-900">${t.top2_pct.toFixed(1)}%</td>
                         <td class="py-2.5 px-3 text-center font-mono font-black text-teal-900">${t.proj_pool}</td>
