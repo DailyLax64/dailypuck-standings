@@ -8,15 +8,22 @@ from functools import cmp_to_key
 from datetime import datetime, timezone
 
 # 1. Configuration & Parameters
-SIMULATION_RUNS = 25000       # 25,000 runs balances precision (±0.2%) and execution speed
-HOME_ICE_ADVANTAGE = 0.35     # MHR rating bonus for home ice
-DEFAULT_MHR_RATING = 82.0      # Fallback rating if unranked
-VOLATILITY_FACTOR = 0.70       # Softened delta factor (0.70) accounts for kid hockey volatility
+SIMULATION_RUNS = 25000        # 25,000 runs balances precision (±0.2%) and execution speed
+HOME_ICE_ADVANTAGE = 0.35      # MHR rating bonus for home ice
+DEFAULT_MHR_RATING = 82.0       # Fallback rating if unranked
+VOLATILITY_FACTOR = 0.70        # Softened delta factor (0.70) accounts for kid hockey volatility
 
 # Bayesian Dynamic Rating Parameters
-BAYESIAN_K = 8                 # Half-life: at 8 GP, weight is 50% MHR / 50% GameSheet performance
-MAX_MARGIN_CAP = 5.0           # Caps blowout scores at ±5 goals (OMHA tournament standard)
-MARGIN_TO_RATING_FACTOR = 0.75 # Conversion of average goal margin to MHR rating points
+BAYESIAN_K = 8                  # Half-life: at 8 GP, weight is 50% MHR / 50% GameSheet performance
+MAX_MARGIN_CAP = 5.0            # Caps blowout scores at ±5 goals (OMHA tournament standard)
+MARGIN_TO_RATING_FACTOR = 0.75  # Conversion of average goal margin to MHR rating points
+
+# Expected Regular Season Games by League
+EXPECTED_GAMES_BY_LEAGUE = {
+    "Tri-County": 26,
+    "York-Simcoe": 26,
+    "Lakeshore": 27
+}
 
 # Official Playoff Group Seed Mappings
 TRI_COUNTY_POOLS = {
@@ -43,6 +50,38 @@ LAKESHORE_POOLS = {
     "Pool A": {1, 4, 6, 8, 10},
     "Pool B": {2, 3, 5, 7, 9}
 }
+
+def is_regular_season_date(date_str):
+    """Returns True if the date falls between October 1 and January 21 inclusive."""
+    if not date_str or date_str in ["-", "TBD"]:
+        return False
+    s = str(date_str).strip()
+    m = re.search(r'(\d{4})[-/](\d{1,2})[-/](\d{1,2})', s)
+    if m:
+        month = int(m.group(2))
+        day = int(m.group(3))
+    else:
+        m2 = re.search(r'(\d{1,2})[-/](\d{1,2})[-/](\d{4})', s)
+        if m2:
+            month = int(m2.group(1))
+            day = int(m2.group(2))
+        else:
+            months = {'jan': 1, 'feb': 2, 'mar': 3, 'apr': 4, 'may': 5, 'jun': 6,
+                      'jul': 7, 'aug': 8, 'sep': 9, 'oct': 10, 'nov': 11, 'dec': 12}
+            m3 = re.search(r'([a-zA-Z]{3,9})\s+(\d{1,2}),?\s+(\d{4})', s)
+            if m3:
+                month = months.get(m3.group(1)[:3].lower(), 0)
+                day = int(m3.group(2))
+            else:
+                return False
+
+    # Oct 1 - Dec 31
+    if month in (10, 11, 12):
+        return True
+    # Jan 1 - Jan 21
+    if month == 1 and 1 <= day <= 21:
+        return True
+    return False
 
 def load_data():
     with open("master_teams.json", "r", encoding="utf-8") as f:
@@ -170,9 +209,13 @@ def simulate():
     omha_games = omha_data.get("games", [])
     valid_final_games = 0
 
-    # 1. Ingest Completed GameSheet Scores & Track Margin of Victory
+    # 1. Ingest Completed GameSheet Scores (Filtered: Oct 1 - Jan 21)
     for g in omha_games:
         if str(g.get("status", "")).lower() != "final":
+            continue
+
+        date_val = str(g.get("date") or "")
+        if not is_regular_season_date(date_val):
             continue
 
         h_goals = g.get("home_goals")
@@ -229,7 +272,6 @@ def simulate():
             base_h2h_pts[(cohort, h_can, v_can)] += 1
             base_h2h_pts[(cohort, v_can, h_can)] += 1
 
-        date_val = str(g.get("date") or "")
         loc_val = str(g.get("location") or "Arena")
 
         team_completed_games[(cohort, h_can)].append({
@@ -251,10 +293,14 @@ def simulate():
             "location": loc_val
         })
 
-    # 2. Ingest Scheduled Games from Calendar
+    # 2. Ingest Scheduled Games from Calendar (Filtered: Oct 1 - Jan 21)
     remaining_games = []
     for g in all_games:
         if str(g.get("status", "")).lower() == "scheduled":
+            date_val = str(g.get("date") or "")
+            if not is_regular_season_date(date_val):
+                continue
+
             cohort = g.get("cohort")
             h_raw = g.get("home")
             v_raw = g.get("visitor")
@@ -268,20 +314,20 @@ def simulate():
                 "cohort": cohort,
                 "home": h_can,
                 "visitor": v_can,
-                "date": str(g.get("date") or ""),
+                "date": date_val,
                 "time": str(g.get("time") or "TBD"),
                 "location": str(g.get("location") or "Arena")
             })
 
             team_upcoming_games[(cohort, h_can)].append({
-                "date": str(g.get("date") or ""),
+                "date": date_val,
                 "time": str(g.get("time") or "TBD"),
                 "opponent": v_can,
                 "is_home": True,
                 "location": str(g.get("location") or "Home Arena")
             })
             team_upcoming_games[(cohort, v_can)].append({
-                "date": str(g.get("date") or ""),
+                "date": date_val,
                 "time": str(g.get("time") or "TBD"),
                 "opponent": h_can,
                 "is_home": False,
@@ -324,9 +370,9 @@ def simulate():
 
     print("=" * 105)
     print(f"RUNNING MONTE CARLO SEASON SIMULATION ({SIMULATION_RUNS:,} iterations)")
-    print(f"GameSheet Matches Processed:          {valid_final_games}")
+    print(f"GameSheet Matches Processed:          {valid_final_games} (Window: Oct 1 - Jan 21)")
     print(f"Teams with Standings Computed:        {matched_teams_count} / {total_teams_count}")
-    print(f"Remaining Games to Simulate:          {len(remaining_games)}")
+    print(f"Remaining Games to Simulate:          {len(remaining_games)} (Window: Oct 1 - Jan 21)")
     print(f"Engine Calibration:                   Bayesian blend active (MHR prior + GameSheet MOV, K={BAYESIAN_K})")
     print(f"Kid Hockey Volatility Factor:         Margin delta = {VOLATILITY_FACTOR:.2f} (Upsets enabled)")
     print("=" * 105)
