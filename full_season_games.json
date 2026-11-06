@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T17:41:25.023267+00:00",
+  "updated_at": "2026-11-06T04:01:09.659523+00:00",
   "total_season_games": 946,
   "games": [
     {
@@ -1537,7 +1537,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-05",
       "time": "23:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "Newmarket Renegades U11 AA",
       "visitor": "South Simcoe Storm U11 AA",
       "location": "Magna Centre (Scotiabank)"
@@ -6773,7 +6773,7 @@
       "league": "Tri-County",
       "date": "2026-11-05",
       "time": "00:15",
-      "status": "scheduled",
+      "status": "played",
       "home": "Halton Hills Thunder",
       "visitor": "Hamilton Steel",
       "location": "Acton (Main)"
@@ -6784,7 +6784,7 @@
       "league": "Tri-County",
       "date": "2026-11-05",
       "time": "01:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "Centre Wellington Fusion",
       "visitor": "Milton Winterhawks",
       "location": "Fergus (A)"
