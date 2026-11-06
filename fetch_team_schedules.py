@@ -3,6 +3,9 @@ import urllib.request
 import re
 import time
 from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
+
+TORONTO_TZ = ZoneInfo("America/Toronto")
 
 # Blacklist of known tournament games that adopted league bracket syntax
 EXCLUDED_GAME_KEYS = {
@@ -11,7 +14,29 @@ EXCLUDED_GAME_KEYS = {
 }
 
 def parse_dt(dt_str):
-    clean = re.sub(r'[^0-9T]', '', dt_str or "")
+    """
+    Parses iCal DTSTART strings and converts UTC (Z) timestamps 
+    to local Eastern Time (America/Toronto).
+    Example: '20261106T010000Z' (8:00 PM EST Nov 5) -> ('2026-11-05', '20:00')
+    """
+    if not dt_str:
+        return "", ""
+    s = str(dt_str).strip()
+
+    # 1. UTC Timestamp ending in 'Z'
+    if s.endswith("Z"):
+        clean = re.sub(r'[^0-9T]', '', s)
+        if "T" in clean:
+            fmt = "%Y%m%dT%H%M%S" if len(clean) >= 15 else "%Y%m%dT%H%M"
+            try:
+                dt_utc = datetime.strptime(clean[:15], fmt).replace(tzinfo=timezone.utc)
+                dt_local = dt_utc.astimezone(TORONTO_TZ)
+                return dt_local.strftime("%Y-%m-%d"), dt_local.strftime("%H:%M")
+            except Exception as e:
+                pass
+
+    # 2. Local or naive timestamp (no Z)
+    clean = re.sub(r'[^0-9T]', '', s)
     date_part, time_part = "", ""
     if "T" in clean:
         d, t = clean.split("T", 1)
@@ -74,7 +99,9 @@ def main():
     resolver = build_team_resolver(master_teams)
     all_league_games = []
     seen_matchups = set()
-    today_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    
+    # Calculate local today string in Ontario Eastern Time
+    today_str = datetime.now(TORONTO_TZ).strftime("%Y-%m-%d")
 
     for cohort, teams in calendars.items():
         print(f"\n📡 Processing cohort: {cohort}", flush=True)
