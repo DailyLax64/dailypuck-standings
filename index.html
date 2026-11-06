@@ -278,7 +278,7 @@
             "Lakeshore": 27
         };
 
-        // Date Boundary Validator: October 1 to January 21 inclusive
+        // Date Boundary Validator: October 1 to January 24 inclusive
         function isRegularSeasonDate(dateStr) {
             if (!dateStr || dateStr === '-' || dateStr === 'TBD') return false;
             const s = String(dateStr).trim();
@@ -302,7 +302,7 @@
                 }
             }
             if (month >= 10 && month <= 12) return true;
-            if (month === 1 && day >= 1 && day <= 21) return true;
+            if (month === 1 && day >= 1 && day <= 24) return true;
             return false;
         }
 
@@ -472,14 +472,31 @@
                 teams = teams.filter(t => t.team_name.toLowerCase().includes(currentSearchQuery));
             }
 
-            // Ensure point percentage is computed for sorting
+            // Dynamically ensure self-healing regular season GP and Point Percentages
             teams.forEach(t => {
-                t.pt_pct = (t.current_gp && t.current_gp > 0) ? ((t.current_pts / (t.current_gp * 2)) * 100) : 0.0;
+                const comp = (t.completed_games || []).filter(g => isRegularSeasonDate(g.date));
+                const effectiveGp = (t.completed_games && t.completed_games.length > 0) ? comp.length : (t.current_gp || 0);
+                let effectivePts = t.current_pts || 0;
+                if (t.completed_games && t.completed_games.length > 0 && comp.length !== t.completed_games.length) {
+                    const w = comp.filter(g => g.result === 'W').length;
+                    const ti = comp.filter(g => g.result === 'T').length;
+                    effectivePts = (w * 2) + ti;
+                }
+                t.effective_gp = effectiveGp;
+                t.effective_pts = effectivePts;
+                t.pt_pct = effectiveGp > 0 ? ((effectivePts / (effectiveGp * 2)) * 100) : 0.0;
             });
 
             return [...teams].sort((a, b) => {
                 let valA = a[currentSortColumn];
                 let valB = b[currentSortColumn];
+                if (currentSortColumn === 'current_pts') {
+                    valA = a.effective_pts;
+                    valB = b.effective_pts;
+                } else if (currentSortColumn === 'current_gp') {
+                    valA = a.effective_gp;
+                    valB = b.effective_gp;
+                }
                 if (typeof valA === 'string') {
                     return currentSortDirection === 'asc' ? valA.localeCompare(valB) : valB.localeCompare(valA);
                 }
@@ -539,20 +556,35 @@
 
             teams.forEach((t) => {
                 const isOpen = activeOpenAccordionTeam === t.team_name;
-                const recStr = `${t.current_w}-${t.current_l}-${t.current_t}`;
                 const projectedSeed = Math.round(t.proj_finish) || 1;
                 const assignedPool = getProjectedPoolAssignment(t, currentCohort, currentLeague, projectedSeed);
-                const ptPct = (t.current_gp && t.current_gp > 0) ? ((t.current_pts / (t.current_gp * 2)) * 100) : 0.0;
 
-                // Filter games to ensure only regular season (Oct 1 - Jan 21) are counted
+                // Filter games strictly to regular season window (Oct 1 - Jan 24)
                 const filteredComp = (t.completed_games || []).filter(g => isRegularSeasonDate(g.date));
                 const filteredUp = (t.upcoming_games || []).filter(g => isRegularSeasonDate(g.date));
-                const totalRegularSeasonGames = (t.current_gp || 0) + filteredUp.length;
 
-                // Anomaly check: Add hazard icon if total games != expected
+                // Self-healing regular season tallies
+                let effectiveGp = (t.completed_games && t.completed_games.length > 0) ? filteredComp.length : (t.current_gp || 0);
+                let effectivePts = t.current_pts || 0;
+                let effectiveW = t.current_w || 0;
+                let effectiveL = t.current_l || 0;
+                let effectiveT = t.current_t || 0;
+
+                if (t.completed_games && t.completed_games.length > 0 && filteredComp.length !== t.completed_games.length) {
+                    effectiveW = filteredComp.filter(g => g.result === 'W').length;
+                    effectiveL = filteredComp.filter(g => g.result === 'L').length;
+                    effectiveT = filteredComp.filter(g => g.result === 'T').length;
+                    effectivePts = (effectiveW * 2) + effectiveT;
+                }
+
+                const recStr = `${effectiveW}-${effectiveL}-${effectiveT}`;
+                const ptPct = effectiveGp > 0 ? ((effectivePts / (effectiveGp * 2)) * 100) : 0.0;
+
+                // Anomaly check: Add hazard icon if total regular season games != expected
+                const totalRegularSeasonGames = effectiveGp + filteredUp.length;
                 const hasScheduleDiscrepancy = totalRegularSeasonGames !== expectedGames;
                 const hazardBadge = hasScheduleDiscrepancy 
-                    ? `<span title="Schedule Discrepancy: ${totalRegularSeasonGames} of ${expectedGames} regular season games recorded (Oct 1 - Jan 21)" class="ml-1.5 cursor-help text-amber-500 font-bold select-none text-xs">⚠️</span>`
+                    ? `<span title="Schedule Discrepancy: ${totalRegularSeasonGames} of ${expectedGames} regular season games recorded (Oct 1 - Jan 24)" class="ml-1.5 cursor-help text-amber-500 font-bold select-none text-xs">⚠️</span>`
                     : '';
 
                 let poolOddsStr = "";
@@ -572,9 +604,9 @@
                             </span>
                             <span class="text-[10px] font-mono text-teal-600 ml-2">${isOpen ? '▲' : '▼'}</span>
                         </td>
-                        <td class="py-3 px-2 text-center font-mono text-slate-600">${t.current_gp}</td>
+                        <td class="py-3 px-2 text-center font-mono text-slate-600">${effectiveGp}</td>
                         <td class="py-3 px-2 text-center font-mono text-slate-700">${recStr}</td>
-                        <td class="py-3 px-3 text-center font-mono font-black text-teal-900 bg-teal-50/50">${t.current_pts}</td>
+                        <td class="py-3 px-3 text-center font-mono font-black text-teal-900 bg-teal-50/50">${effectivePts}</td>
                         <td class="py-3 px-2.5 text-center font-mono font-bold text-slate-700">${ptPct.toFixed(1)}%</td>
                         <td class="py-3 px-3 text-center font-mono font-black text-cyan-700">${t.proj_pts_avg.toFixed(1)}</td>
                         <td class="py-3 px-3 text-center font-mono font-black text-slate-900">#${t.proj_finish.toFixed(1)}</td>
@@ -676,7 +708,7 @@
                                             <span class="text-xs font-black uppercase tracking-wider text-teal-900 flex items-center gap-1.5">
                                                 <span>📅</span> Upcoming Games (${upGames.length})
                                             </span>
-                                            <span class="text-[10px] font-mono text-slate-400 uppercase">Regular Season (through Jan 21)</span>
+                                            <span class="text-[10px] font-mono text-slate-400 uppercase">Regular Season (through Jan 24)</span>
                                         </div>
                                         <div class="overflow-x-auto touch-scroll max-h-56 overflow-y-auto">
                                             <table class="w-full text-left">
@@ -778,7 +810,7 @@
 
             teams.forEach(t => {
                 (t.upcoming_games || []).forEach(g => {
-                    // Strictly exclude games outside regular season window (Oct 1 - Jan 21)
+                    // Strictly exclude games outside regular season window (Oct 1 - Jan 24)
                     if (!isRegularSeasonDate(g.date)) return;
 
                     const homeTeam = g.is_home ? t.team_name : g.opponent;
@@ -969,7 +1001,8 @@
                 for (let r = 0; r < SIM_RUNS; r++) {
                     const currentPts = {};
                     teams.forEach(t => { 
-                        currentPts[t.team_name] = (t.current_pts || 0) + (addedPts[t.team_name] || 0); 
+                        const basePts = t.effective_pts !== undefined ? t.effective_pts : (t.current_pts || 0);
+                        currentPts[t.team_name] = basePts + (addedPts[t.team_name] || 0); 
                     });
 
                     fixtures.forEach(f => {
@@ -1022,8 +1055,10 @@
                     expFinish = expFinish / SIM_RUNS;
                     const top2 = (((rCounts[1] || 0) + (rCounts[2] || 0)) / SIM_RUNS) * 100.0;
 
-                    const updatedGp = (t.current_gp || 0) + (addedGp[t.team_name] || 0);
-                    const updatedPts = (t.current_pts || 0) + (addedPts[t.team_name] || 0);
+                    const baseGp = t.effective_gp !== undefined ? t.effective_gp : (t.current_gp || 0);
+                    const basePts = t.effective_pts !== undefined ? t.effective_pts : (t.current_pts || 0);
+                    const updatedGp = baseGp + (addedGp[t.team_name] || 0);
+                    const updatedPts = basePts + (addedPts[t.team_name] || 0);
 
                     return {
                         team_name: t.team_name,
