@@ -51,8 +51,12 @@ LAKESHORE_POOLS = {
     "Pool B": {2, 3, 5, 7, 9}
 }
 
-def is_regular_season_date(date_str):
-    """Returns True if the date falls between October 1 and January 24 inclusive."""
+def is_regular_season_date(date_str, league=None):
+    """Returns True if the date falls within the league's regular season window:
+       - Tri-County: Oct 1 - Jan 24 inclusive
+       - York-Simcoe: Oct 1 - Feb 7 inclusive
+       - Lakeshore: Oct 1 - Jan 31 inclusive
+    """
     if not date_str or str(date_str).strip() in ["-", "TBD", "None", ""]:
         return False
     s = str(date_str).strip()
@@ -75,12 +79,26 @@ def is_regular_season_date(date_str):
             else:
                 return False
 
-    # Oct 1 - Dec 31
+    # Months 10, 11, 12 (Oct, Nov, Dec) are valid across all leagues
     if month in (10, 11, 12):
         return True
-    # Jan 1 - Jan 24
-    if month == 1 and 1 <= day <= 24:
-        return True
+
+    l = str(league or "").lower()
+    if "york" in l or "simcoe" in l:
+        # Oct 1 - Feb 7
+        if month == 1:
+            return True
+        if month == 2 and 1 <= day <= 7:
+            return True
+    elif "lake" in l:
+        # Oct 1 - Jan 31
+        if month == 1 and 1 <= day <= 31:
+            return True
+    else:
+        # Tri-County default: Oct 1 - Jan 24
+        if month == 1 and 1 <= day <= 24:
+            return True
+
     return False
 
 def load_data():
@@ -209,28 +227,29 @@ def simulate():
     omha_games = omha_data.get("games", [])
     valid_final_games = 0
 
-    # 1. Ingest Completed GameSheet Scores (Filtered strictly: Oct 1 - Jan 24)
+    # 1. Ingest Completed GameSheet Scores (Filtered to each league's regular season window)
     for g in omha_games:
         if str(g.get("status", "")).lower() != "final":
-            continue
-
-        date_val = str(g.get("date") or "")
-        if not is_regular_season_date(date_val):
-            continue
-
-        h_goals = g.get("home_goals")
-        v_goals = g.get("visitor_goals")
-        if h_goals is None or v_goals is None:
             continue
 
         cohort = g.get("cohort")
         h_raw = g.get("home_name")
         v_raw = g.get("visitor_name")
 
-        h_can, _ = resolve_team(resolver, cohort, h_raw)
-        v_can, _ = resolve_team(resolver, cohort, v_raw)
+        h_can, h_league = resolve_team(resolver, cohort, h_raw)
+        v_can, v_league = resolve_team(resolver, cohort, v_raw)
 
         if not h_can or not v_can:
+            continue
+
+        game_league = h_league or v_league or g.get("league")
+        date_val = str(g.get("date") or "")
+        if not is_regular_season_date(date_val, game_league):
+            continue
+
+        h_goals = g.get("home_goals")
+        v_goals = g.get("visitor_goals")
+        if h_goals is None or v_goals is None:
             continue
 
         valid_final_games += 1
@@ -293,21 +312,22 @@ def simulate():
             "location": loc_val
         })
 
-    # 2. Ingest Scheduled Games from Calendar (Filtered strictly: Oct 1 - Jan 24)
+    # 2. Ingest Scheduled Games from Calendar (Filtered to each league's regular season window)
     remaining_games = []
     for g in all_games:
         if str(g.get("status", "")).lower() == "scheduled":
-            date_val = str(g.get("date") or "")
-            if not is_regular_season_date(date_val):
-                continue
-
             cohort = g.get("cohort")
             h_raw = g.get("home")
             v_raw = g.get("visitor")
 
-            h_can, _ = resolve_team(resolver, cohort, h_raw)
-            v_can, _ = resolve_team(resolver, cohort, v_raw)
+            h_can, h_league = resolve_team(resolver, cohort, h_raw)
+            v_can, v_league = resolve_team(resolver, cohort, v_raw)
             if not h_can or not v_can:
+                continue
+
+            game_league = h_league or v_league or g.get("league")
+            date_val = str(g.get("date") or "")
+            if not is_regular_season_date(date_val, game_league):
                 continue
 
             remaining_games.append({
@@ -370,9 +390,10 @@ def simulate():
 
     print("=" * 105)
     print(f"RUNNING MONTE CARLO SEASON SIMULATION ({SIMULATION_RUNS:,} iterations)")
-    print(f"GameSheet Matches Processed:          {valid_final_games} (Regular Season: Oct 1 - Jan 24)")
+    print(f"GameSheet Matches Processed:          {valid_final_games}")
     print(f"Teams with Standings Computed:        {matched_teams_count} / {total_teams_count}")
-    print(f"Remaining Games to Simulate:          {len(remaining_games)} (Regular Season: Oct 1 - Jan 24)")
+    print(f"Remaining Games to Simulate:          {len(remaining_games)}")
+    print(f"League Cutoffs:                       Tri-County: Jan 24 | Lakeshore: Jan 31 | York-Simcoe: Feb 7")
     print(f"Engine Calibration:                   Bayesian blend active (MHR prior + GameSheet MOV, K={BAYESIAN_K})")
     print(f"Kid Hockey Volatility Factor:         Margin delta = {VOLATILITY_FACTOR:.2f} (Upsets enabled)")
     print("=" * 105)
