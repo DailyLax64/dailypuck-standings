@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06T04:01:16.981330+00:00",
+  "generated_at": "2026-11-06T09:01:21.096160+00:00",
   "standings": [
     {
       "league": "Tri-County",
@@ -3348,6 +3348,38 @@
       "visitor_goals": null
     },
     {
+      "game_id": "3163869",
+      "league": "Tri-County",
+      "league_id": "15497",
+      "cohort": "U14 AA",
+      "date": "Nov 12, 2026",
+      "time": "7:30 PM",
+      "status": "scheduled",
+      "location": "Waterford (Waterford)",
+      "home_id": "537296",
+      "home_name": "Norfolk Knights",
+      "home_goals": null,
+      "visitor_id": "534740",
+      "visitor_name": "Halton Hills Thunder",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3163870",
+      "league": "Tri-County",
+      "league_id": "15497",
+      "cohort": "U14 AA",
+      "date": "Nov 12, 2026",
+      "time": "7:45 PM",
+      "status": "scheduled",
+      "location": "Glen Abbey (Blue)",
+      "home_id": "537295",
+      "home_name": "Oakville Rangers",
+      "home_goals": null,
+      "visitor_id": "534709",
+      "visitor_name": "Milton Winterhawks",
+      "visitor_goals": null
+    },
+    {
       "game_id": "3032678",
       "league": "York-Simcoe",
       "league_id": "15489",
@@ -6305,6 +6337,70 @@
       "home_goals": null,
       "visitor_id": "534521",
       "visitor_name": "KINGSTON AREA AA U14",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3163927",
+      "league": "Lakeshore",
+      "league_id": "15493",
+      "cohort": "U11 AA",
+      "date": "Nov 12, 2026",
+      "time": "6:15 PM",
+      "status": "scheduled",
+      "location": "Duncan McDonald (1)",
+      "home_id": "534560",
+      "home_name": "QUINTE WEST AA U11",
+      "home_goals": null,
+      "visitor_id": "534518",
+      "visitor_name": "KINGSTON AREA AA U11",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3163928",
+      "league": "Lakeshore",
+      "league_id": "15493",
+      "cohort": "U11 AA",
+      "date": "Nov 12, 2026",
+      "time": "6:30 PM",
+      "status": "scheduled",
+      "location": "Don Beer (3)",
+      "home_id": "534519",
+      "home_name": "AJAX-PICKERING AA U11",
+      "home_goals": null,
+      "visitor_id": "534499",
+      "visitor_name": "WHITBY AA U11",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3163823",
+      "league": "Lakeshore",
+      "league_id": "15493",
+      "cohort": "U14 AA",
+      "date": "Nov 12, 2026",
+      "time": "6:45 PM",
+      "status": "scheduled",
+      "location": "McKinney (1)",
+      "home_id": "534528",
+      "home_name": "WHITBY AA U14",
+      "home_goals": null,
+      "visitor_id": "534529",
+      "visitor_name": "AJAX-PICKERING AA U14",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3163824",
+      "league": "Lakeshore",
+      "league_id": "15493",
+      "cohort": "U14 AA",
+      "date": "Nov 12, 2026",
+      "time": "7:30 PM",
+      "status": "scheduled",
+      "location": "Jack Burger (Jack Burger)",
+      "home_id": "534522",
+      "home_name": "NORTHUMBERLAND AA U14",
+      "home_goals": null,
+      "visitor_id": "534527",
+      "visitor_name": "CLARINGTON AA U14",
       "visitor_goals": null
     }
   ]
