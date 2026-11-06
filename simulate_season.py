@@ -51,35 +51,46 @@ LAKESHORE_POOLS = {
     "Pool B": {2, 3, 5, 7, 9}
 }
 
+def parse_date_obj(d_str):
+    if not d_str or str(d_str).strip() in ["-", "TBD", "None", ""]:
+        return None
+    s = str(date_str).strip() if (date_str := d_str) else ""
+    m = re.search(r'(\d{4})[-/](\d{1,2})[-/](\d{1,2})', s)
+    if m:
+        try:
+            return datetime(int(m.group(1)), int(m.group(2)), int(m.group(3))).date()
+        except ValueError:
+            return None
+    m2 = re.search(r'(\d{1,2})[-/](\d{1,2})[-/](\d{4})', s)
+    if m2:
+        try:
+            return datetime(int(m2.group(3)), int(m2.group(1)), int(m2.group(2))).date()
+        except ValueError:
+            return None
+    months = {'jan': 1, 'feb': 2, 'mar': 3, 'apr': 4, 'may': 5, 'jun': 6,
+              'jul': 7, 'aug': 8, 'sep': 9, 'oct': 10, 'nov': 11, 'dec': 12}
+    m3 = re.search(r'([a-zA-Z]{3,9})\s+(\d{1,2}),?\s+(\d{4})', s)
+    if m3:
+        try:
+            return datetime(int(m3.group(3)), months.get(m3.group(1)[:3].lower(), 1), int(m3.group(2))).date()
+        except ValueError:
+            return None
+    return None
+
 def is_regular_season_date(date_str, league=None):
     """Returns True if the date falls within the league's regular season window:
        - Tri-County: Oct 1 - Jan 24 inclusive
-       - York-Simcoe: Oct 1 - Feb 7 inclusive
        - Lakeshore: Oct 1 - Jan 31 inclusive
+       - York-Simcoe: Oct 1 - Feb 7 inclusive
     """
-    if not date_str or str(date_str).strip() in ["-", "TBD", "None", ""]:
+    d = parse_date_obj(date_str)
+    if not d:
         return False
-    s = str(date_str).strip()
-    m = re.search(r'(\d{4})[-/](\d{1,2})[-/](\d{1,2})', s)
-    if m:
-        month = int(m.group(2))
-        day = int(m.group(3))
-    else:
-        m2 = re.search(r'(\d{1,2})[-/](\d{1,2})[-/](\d{4})', s)
-        if m2:
-            month = int(m2.group(1))
-            day = int(m2.group(2))
-        else:
-            months = {'jan': 1, 'feb': 2, 'mar': 3, 'apr': 4, 'may': 5, 'jun': 6,
-                      'jul': 7, 'aug': 8, 'sep': 9, 'oct': 10, 'nov': 11, 'dec': 12}
-            m3 = re.search(r'([a-zA-Z]{3,9})\s+(\d{1,2}),?\s+(\d{4})', s)
-            if m3:
-                month = months.get(m3.group(1)[:3].lower(), 0)
-                day = int(m3.group(2))
-            else:
-                return False
 
-    # Months 10, 11, 12 (Oct, Nov, Dec) are valid across all leagues
+    month = d.month
+    day = d.day
+
+    # Oct, Nov, Dec are valid across all leagues
     if month in (10, 11, 12):
         return True
 
@@ -224,6 +235,9 @@ def simulate():
     team_completed_games = defaultdict(list)
     team_upcoming_games = defaultdict(list)
 
+    # Track completed dates per exact matchup (cohort, home, visitor) for de-duplication
+    completed_matchup_dates = defaultdict(list)
+
     omha_games = omha_data.get("games", [])
     valid_final_games = 0
 
@@ -256,6 +270,11 @@ def simulate():
         h_g = int(h_goals)
         v_g = int(v_goals)
 
+        # Record date for exact home-vs-visitor completed matchups
+        d_obj = parse_date_obj(date_val)
+        if d_obj:
+            completed_matchup_dates[(cohort, h_can, v_can)].append(d_obj)
+
         base_gp[(cohort, h_can)] += 1
         base_gp[(cohort, v_can)] += 1
         base_gf[(cohort, h_can)] += h_g
@@ -263,7 +282,6 @@ def simulate():
         base_gf[(cohort, v_can)] += v_g
         base_ga[(cohort, v_can)] += h_g
 
-        # Cap goal differential to prevent blowouts from skewing ratings
         margin = max(-MAX_MARGIN_CAP, min(MAX_MARGIN_CAP, float(h_g - v_g)))
         team_margins[(cohort, h_can)].append(margin)
         team_margins[(cohort, v_can)].append(-margin)
@@ -312,8 +330,10 @@ def simulate():
             "location": loc_val
         })
 
-    # 2. Ingest Scheduled Games from Calendar (Filtered to each league's regular season window)
+    # 2. Ingest Scheduled Games from Calendar (Filtered with precise 0-1 day de-duplication)
     remaining_games = []
+    dropped_duplicates = 0
+
     for g in all_games:
         if str(g.get("status", "")).lower() == "scheduled":
             cohort = g.get("cohort")
@@ -329,6 +349,15 @@ def simulate():
             date_val = str(g.get("date") or "")
             if not is_regular_season_date(date_val, game_league):
                 continue
+
+            # Precise rollover check: Same home, same visitor, scheduled on same day (0) or +1 day later
+            sched_d = parse_date_obj(date_val)
+            match_key = (cohort, h_can, v_can)
+            if sched_d and match_key in completed_matchup_dates:
+                if any(0 <= (sched_d - comp_d).days <= 1 for comp_d in completed_matchup_dates[match_key]):
+                    dropped_duplicates += 1
+                    print(f"   ℹ️ Purged UTC rollover duplicate: [{cohort}] {h_can} vs {v_can} on {date_val} (already played)", flush=True)
+                    continue
 
             remaining_games.append({
                 "cohort": cohort,
@@ -392,7 +421,7 @@ def simulate():
     print(f"RUNNING MONTE CARLO SEASON SIMULATION ({SIMULATION_RUNS:,} iterations)")
     print(f"GameSheet Matches Processed:          {valid_final_games}")
     print(f"Teams with Standings Computed:        {matched_teams_count} / {total_teams_count}")
-    print(f"Remaining Games to Simulate:          {len(remaining_games)}")
+    print(f"Remaining Games to Simulate:          {len(remaining_games)} ({dropped_duplicates} ghost games purged)")
     print(f"League Cutoffs:                       Tri-County: Jan 24 | Lakeshore: Jan 31 | York-Simcoe: Feb 7")
     print(f"Engine Calibration:                   Bayesian blend active (MHR prior + GameSheet MOV, K={BAYESIAN_K})")
     print(f"Kid Hockey Volatility Factor:         Margin delta = {VOLATILITY_FACTOR:.2f} (Upsets enabled)")
