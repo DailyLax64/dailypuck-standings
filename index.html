@@ -346,23 +346,27 @@
         }
 
         // Checks if an upcoming game is a ghost/rescheduled duplicate of an already completed match
+        // Strictly checks: exact same opponent, identical home/away orientation, and 0 to 1 day delta
         function isDuplicateOrAlreadyPlayed(game, completedGames) {
             const gDate = formatGameDate(game.date);
             if (!gDate || gDate === '-') return false;
             const opp = (game.opponent || '').toUpperCase();
+            const isHome = !!game.is_home;
             const d1 = new Date(gDate + 'T00:00:00');
             if (isNaN(d1.getTime())) return false;
 
             return (completedGames || []).some(cg => {
                 const cgOpp = (cg.opponent || '').toUpperCase();
                 if (cgOpp !== opp) return false;
+                if (cg.is_home !== undefined && cg.is_home !== isHome) return false;
+
                 const cgDate = formatGameDate(cg.date);
                 if (!cgDate || cgDate === '-') return false;
                 const d2 = new Date(cgDate + 'T00:00:00');
                 if (isNaN(d2.getTime())) return false;
 
-                const diffDays = Math.abs((d1 - d2) / (1000 * 60 * 60 * 24));
-                return diffDays <= 3;
+                const diffDays = Math.round((d1 - d2) / (1000 * 60 * 60 * 24));
+                return diffDays >= 0 && diffDays <= 1;
             });
         }
 
@@ -720,7 +724,6 @@
                         <tr class="bg-teal-50/40 border-b border-teal-200 animate-fadeIn">
                             <td colspan="12" class="p-3 sm:p-5">
                                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-                                    <!-- Completed Box Scores -->
                                     <div class="bg-white rounded-xl border border-teal-200 p-3 shadow-sm">
                                         <div class="flex items-center justify-between pb-2 mb-2 border-b border-teal-100">
                                             <span class="text-xs font-black uppercase tracking-wider text-teal-900 flex items-center gap-1.5">
@@ -744,7 +747,6 @@
                                         </div>
                                     </div>
 
-                                    <!-- Upcoming Schedule -->
                                     <div class="bg-white rounded-xl border border-teal-200 p-3 shadow-sm">
                                         <div class="flex items-center justify-between pb-2 mb-2 border-b border-teal-100">
                                             <span class="text-xs font-black uppercase tracking-wider text-teal-900 flex items-center gap-1.5">
@@ -844,7 +846,6 @@
         // ⚡ HIGH-PERFORMANCE 10,000-ITERATION WHAT-IF SIMULATOR ENGINE
         // =========================================================================
 
-        // Analytical Poisson probability generator (precomputes P(Win), P(Tie), P(Loss) in <0.2ms)
         function getMatchupProbs(rHome, rAway) {
             const delta = (rHome + 0.35) - rAway;
             const margin = delta * 0.70;
@@ -1065,7 +1066,6 @@
                     startGp[i] = t.effective_gp !== undefined ? t.effective_gp : (t.current_gp || 0);
                 });
 
-                // Apply custom user picks to starting points
                 const lockedPts = new Int32Array(startPts);
                 const updatedGp = new Int32Array(startGp);
                 const activeUnpicked = [];
@@ -1086,7 +1086,6 @@
                             lockedPts[aIdx] += 1;
                         }
                     } else {
-                        // Precompute win/loss/tie probability matrix
                         const probs = getMatchupProbs(teamRatings[hIdx], teamRatings[aIdx]);
                         activeUnpicked.push({
                             hIdx: hIdx,
@@ -1130,7 +1129,6 @@
                     }
                 }
 
-                // Compile final simulator output
                 const simResults = teams.map((t, i) => {
                     const avgPts = totalSimPts[i] / SIM_RUNS;
                     let expFinish = 0;
