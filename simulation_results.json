@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06T20:00:17.899394+00:00",
+  "generated_at": "2026-11-06T20:36:03.237230+00:00",
   "simulations_count": 25000,
   "results": {
     "U11 AA": {
@@ -16,14 +16,14 @@
           "current_l": 2,
           "current_t": 0,
           "proj_pts_avg": 38.2,
-          "proj_finish": 1.7,
-          "prob_1st_pct": 61.8,
-          "prob_top2_pct": 81.2,
-          "prob_top4_pct": 95.5,
+          "proj_finish": 1.8,
+          "prob_1st_pct": 61.6,
+          "prob_top2_pct": 81.0,
+          "prob_top4_pct": 95.4,
           "pool_probs": {
-            "Group A": 63.0,
+            "Group A": 62.9,
             "Group B": 22.1,
-            "Group C": 14.8
+            "Group C": 15.0
           },
           "completed_games": [
             {
@@ -239,13 +239,13 @@
           "current_t": 1,
           "proj_pts_avg": 34.1,
           "proj_finish": 3.4,
-          "prob_1st_pct": 13.8,
-          "prob_top2_pct": 38.0,
-          "prob_top4_pct": 74.8,
+          "prob_1st_pct": 13.9,
+          "prob_top2_pct": 38.6,
+          "prob_top4_pct": 74.6,
           "pool_probs": {
             "Group A": 21.3,
-            "Group B": 37.9,
-            "Group C": 40.8
+            "Group B": 38.6,
+            "Group C": 40.1
           },
           "completed_games": [
             {
@@ -463,15 +463,15 @@
           "current_w": 6,
           "current_l": 3,
           "current_t": 0,
-          "proj_pts_avg": 33.8,
+          "proj_pts_avg": 33.7,
           "proj_finish": 3.6,
           "prob_1st_pct": 11.9,
-          "prob_top2_pct": 34.5,
-          "prob_top4_pct": 70.9,
+          "prob_top2_pct": 33.7,
+          "prob_top4_pct": 70.6,
           "pool_probs": {
             "Group A": 20.6,
-            "Group B": 38.1,
-            "Group C": 41.3
+            "Group B": 37.8,
+            "Group C": 41.6
           },
           "completed_games": [
             {
@@ -691,13 +691,13 @@
           "current_t": 1,
           "proj_pts_avg": 32.2,
           "proj_finish": 4.5,
-          "prob_1st_pct": 6.7,
-          "prob_top2_pct": 20.6,
-          "prob_top4_pct": 53.7,
+          "prob_1st_pct": 6.5,
+          "prob_top2_pct": 20.5,
+          "prob_top4_pct": 53.4,
           "pool_probs": {
-            "Group A": 20.7,
+            "Group A": 21.1,
             "Group B": 37.3,
-            "Group C": 41.9
+            "Group C": 41.6
           },
           "completed_games": [
             {
@@ -912,14 +912,14 @@
           "current_l": 3,
           "current_t": 0,
           "proj_pts_avg": 30.2,
-          "proj_finish": 5.7,
-          "prob_1st_pct": 2.4,
-          "prob_top2_pct": 9.5,
-          "prob_top4_pct": 33.5,
+          "proj_finish": 5.6,
+          "prob_1st_pct": 2.6,
+          "prob_top2_pct": 9.9,
+          "prob_top4_pct": 33.8,
           "pool_probs": {
-            "Group A": 22.8,
-            "Group B": 39.4,
-            "Group C": 37.7
+            "Group A": 23.1,
+            "Group B": 39.5,
+            "Group C": 37.3
           },
           "completed_games": [
             {
@@ -1140,12 +1140,12 @@
           "proj_pts_avg": 29.9,
           "proj_finish": 5.9,
           "prob_1st_pct": 1.5,
-          "prob_top2_pct": 7.4,
+          "prob_top2_pct": 7.3,
           "prob_top4_pct": 28.6,
           "pool_probs": {
-            "Group A": 23.9,
-            "Group B": 40.3,
-            "Group C": 35.8
+            "Group A": 23.6,
+            "Group B": 40.5,
+            "Group C": 35.9
           },
           "completed_games": [
             {
@@ -1365,13 +1365,13 @@
           "current_t": 0,
           "proj_pts_avg": 28.9,
           "proj_finish": 6.5,
-          "prob_1st_pct": 1.2,
-          "prob_top2_pct": 5.4,
-          "prob_top4_pct": 22.0,
+          "prob_1st_pct": 1.3,
+          "prob_top2_pct": 5.5,
+          "prob_top4_pct": 22.3,
           "pool_probs": {
-            "Group A": 26.6,
-            "Group B": 41.1,
-            "Group C": 32.3
+            "Group A": 26.8,
+            "Group B": 41.2,
+            "Group C": 32.0
           },
           "completed_games": [
             {
@@ -1587,13 +1587,13 @@
           "current_t": 1,
           "proj_pts_avg": 27.3,
           "proj_finish": 7.5,
-          "prob_1st_pct": 0.4,
+          "prob_1st_pct": 0.3,
           "prob_top2_pct": 1.9,
-          "prob_top4_pct": 11.0,
+          "prob_top4_pct": 10.9,
           "pool_probs": {
-            "Group A": 30.2,
-            "Group B": 44.0,
-            "Group C": 25.9
+            "Group A": 30.0,
+            "Group B": 43.7,
+            "Group C": 26.3
           },
           "completed_games": [
             {
@@ -1809,15 +1809,15 @@
           "current_w": 3,
           "current_l": 4,
           "current_t": 0,
-          "proj_pts_avg": 26.4,
+          "proj_pts_avg": 26.5,
           "proj_finish": 8.0,
           "prob_1st_pct": 0.3,
           "prob_top2_pct": 1.5,
-          "prob_top4_pct": 8.7,
+          "prob_top4_pct": 8.9,
           "pool_probs": {
-            "Group A": 35.3,
+            "Group A": 34.9,
             "Group B": 42.0,
-            "Group C": 22.7
+            "Group C": 23.1
           },
           "completed_games": [
             {
@@ -2035,11 +2035,11 @@
           "proj_finish": 10.4,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.1,
-          "prob_top4_pct": 0.8,
+          "prob_top4_pct": 0.9,
           "pool_probs": {
-            "Group A": 58.3,
-            "Group B": 22.5,
-            "Group C": 19.2
+            "Group A": 58.2,
+            "Group B": 22.2,
+            "Group C": 19.6
           },
           "completed_games": [
             {
@@ -2263,9 +2263,9 @@
           "prob_top2_pct": 0.0,
           "prob_top4_pct": 0.4,
           "pool_probs": {
-            "Group A": 59.9,
-            "Group B": 16.9,
-            "Group C": 23.2
+            "Group A": 59.7,
+            "Group B": 16.7,
+            "Group C": 23.6
           },
           "completed_games": [
             {
@@ -2489,8 +2489,8 @@
           "prob_top2_pct": 0.0,
           "prob_top4_pct": 0.2,
           "pool_probs": {
-            "Group A": 57.1,
-            "Group B": 13.4,
+            "Group A": 57.0,
+            "Group B": 13.7,
             "Group C": 29.4
           },
           "completed_games": [
@@ -2713,9 +2713,9 @@
           "prob_top2_pct": 0.0,
           "prob_top4_pct": 0.1,
           "pool_probs": {
-            "Group A": 48.3,
+            "Group A": 48.9,
             "Group B": 11.3,
-            "Group C": 40.4
+            "Group C": 39.8
           },
           "completed_games": [
             {
@@ -2938,8 +2938,8 @@
           "prob_top4_pct": 0.0,
           "pool_probs": {
             "Group A": 7.6,
-            "Group B": 41.5,
-            "Group C": 50.9
+            "Group B": 41.4,
+            "Group C": 51.0
           },
           "completed_games": [
             {
@@ -3151,15 +3151,15 @@
           "current_w": 1,
           "current_l": 6,
           "current_t": 1,
-          "proj_pts_avg": 12.5,
+          "proj_pts_avg": 12.4,
           "proj_finish": 14.3,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.0,
           "prob_top4_pct": 0.0,
           "pool_probs": {
-            "Group A": 4.3,
+            "Group A": 4.2,
             "Group B": 52.1,
-            "Group C": 43.6
+            "Group C": 43.7
           },
           "completed_games": [
             {
@@ -3379,12 +3379,12 @@
           "current_t": 0,
           "proj_pts_avg": 38.4,
           "proj_finish": 1.8,
-          "prob_1st_pct": 51.8,
-          "prob_top2_pct": 78.2,
+          "prob_1st_pct": 50.7,
+          "prob_top2_pct": 78.1,
           "prob_top4_pct": 96.8,
           "pool_probs": {
-            "Pool A": 51.8,
-            "Pool B": 26.5,
+            "Pool A": 50.7,
+            "Pool B": 27.4,
             "Pool C": 13.8,
             "Pool D": 8.0
           },
@@ -3602,14 +3602,14 @@
           "current_t": 1,
           "proj_pts_avg": 36.0,
           "proj_finish": 2.7,
-          "prob_1st_pct": 22.7,
-          "prob_top2_pct": 51.2,
-          "prob_top4_pct": 88.4,
+          "prob_1st_pct": 23.6,
+          "prob_top2_pct": 51.4,
+          "prob_top4_pct": 88.3,
           "pool_probs": {
-            "Pool A": 22.7,
-            "Pool B": 28.6,
-            "Pool C": 26.6,
-            "Pool D": 22.1
+            "Pool A": 23.6,
+            "Pool B": 27.9,
+            "Pool C": 26.9,
+            "Pool D": 21.6
           },
           "completed_games": [
             {
@@ -3823,16 +3823,16 @@
           "current_w": 4,
           "current_l": 2,
           "current_t": 0,
-          "proj_pts_avg": 35.7,
+          "proj_pts_avg": 35.6,
           "proj_finish": 2.8,
-          "prob_1st_pct": 20.8,
+          "prob_1st_pct": 20.7,
           "prob_top2_pct": 48.9,
-          "prob_top4_pct": 86.5,
+          "prob_top4_pct": 86.2,
           "pool_probs": {
-            "Pool A": 20.8,
-            "Pool B": 28.2,
-            "Pool C": 27.4,
-            "Pool D": 23.7
+            "Pool A": 20.7,
+            "Pool B": 28.3,
+            "Pool C": 27.1,
+            "Pool D": 23.9
           },
           "completed_games": [
             {
@@ -4045,15 +4045,15 @@
           "current_l": 0,
           "current_t": 3,
           "proj_pts_avg": 30.4,
-          "proj_finish": 5.2,
-          "prob_1st_pct": 2.0,
-          "prob_top2_pct": 8.0,
-          "prob_top4_pct": 37.5,
+          "proj_finish": 5.1,
+          "prob_1st_pct": 2.1,
+          "prob_top2_pct": 7.9,
+          "prob_top4_pct": 37.9,
           "pool_probs": {
-            "Pool A": 2.0,
-            "Pool B": 8.5,
-            "Pool C": 33.7,
-            "Pool D": 55.9
+            "Pool A": 2.1,
+            "Pool B": 8.0,
+            "Pool C": 33.8,
+            "Pool D": 56.1
           },
           "completed_games": [
             {
@@ -4269,14 +4269,14 @@
           "current_t": 2,
           "proj_pts_avg": 30.2,
           "proj_finish": 5.2,
-          "prob_1st_pct": 0.9,
+          "prob_1st_pct": 1.0,
           "prob_top2_pct": 5.0,
-          "prob_top4_pct": 35.3,
+          "prob_top4_pct": 35.6,
           "pool_probs": {
-            "Pool A": 0.9,
-            "Pool B": 6.6,
-            "Pool C": 31.7,
-            "Pool D": 60.8
+            "Pool A": 1.0,
+            "Pool B": 6.4,
+            "Pool C": 31.1,
+            "Pool D": 61.6
           },
           "completed_games": [
             {
@@ -4497,13 +4497,13 @@
           "proj_pts_avg": 29.3,
           "proj_finish": 5.7,
           "prob_1st_pct": 0.8,
-          "prob_top2_pct": 3.8,
+          "prob_top2_pct": 3.9,
           "prob_top4_pct": 24.9,
           "pool_probs": {
             "Pool A": 0.8,
             "Pool B": 6.2,
-            "Pool C": 38.9,
-            "Pool D": 54.1
+            "Pool C": 38.6,
+            "Pool D": 54.4
           },
           "completed_games": [
             {
@@ -4723,14 +4723,14 @@
           "current_t": 1,
           "proj_pts_avg": 29.1,
           "proj_finish": 5.7,
-          "prob_1st_pct": 1.1,
-          "prob_top2_pct": 4.6,
-          "prob_top4_pct": 26.3,
+          "prob_1st_pct": 1.0,
+          "prob_top2_pct": 4.4,
+          "prob_top4_pct": 26.1,
           "pool_probs": {
             "Pool A": 1.1,
             "Pool B": 8.5,
-            "Pool C": 38.2,
-            "Pool D": 52.2
+            "Pool C": 38.9,
+            "Pool D": 51.5
           },
           "completed_games": [
             {
@@ -4944,16 +4944,16 @@
           "current_w": 2,
           "current_l": 3,
           "current_t": 2,
-          "proj_pts_avg": 24.8,
+          "proj_pts_avg": 24.7,
           "proj_finish": 7.6,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.3,
           "prob_top4_pct": 4.0,
           "pool_probs": {
             "Pool A": 0.7,
-            "Pool B": 27.0,
-            "Pool C": 53.5,
-            "Pool D": 18.8
+            "Pool B": 26.7,
+            "Pool C": 54.2,
+            "Pool D": 18.4
           },
           "completed_games": [
             {
@@ -5168,14 +5168,14 @@
           "current_l": 4,
           "current_t": 3,
           "proj_pts_avg": 20.6,
-          "proj_finish": 9.0,
+          "proj_finish": 9.1,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.0,
-          "prob_top4_pct": 0.3,
+          "prob_top4_pct": 0.2,
           "pool_probs": {
-            "Pool A": 3.1,
-            "Pool B": 73.0,
-            "Pool C": 21.0,
+            "Pool A": 3.3,
+            "Pool B": 73.4,
+            "Pool C": 20.4,
             "Pool D": 2.9
           },
           "completed_games": [
@@ -5400,9 +5400,9 @@
           "prob_top2_pct": 0.0,
           "prob_top4_pct": 0.1,
           "pool_probs": {
-            "Pool A": 9.9,
-            "Pool B": 73.5,
-            "Pool C": 14.9,
+            "Pool A": 9.8,
+            "Pool B": 73.7,
+            "Pool C": 14.8,
             "Pool D": 1.7
           },
           "completed_games": [
@@ -5624,8 +5624,8 @@
           "prob_top4_pct": 0.0,
           "pool_probs": {
             "Pool A": 86.4,
-            "Pool B": 13.2,
-            "Pool C": 0.3,
+            "Pool B": 13.3,
+            "Pool C": 0.4,
             "Pool D": 0.0
           },
           "completed_games": [
@@ -6064,13 +6064,13 @@
           "current_l": 1,
           "current_t": 1,
           "proj_pts_avg": 40.0,
-          "proj_finish": 1.9,
-          "prob_1st_pct": 44.7,
-          "prob_top2_pct": 72.1,
+          "proj_finish": 2.0,
+          "prob_1st_pct": 44.1,
+          "prob_top2_pct": 71.7,
           "prob_top4_pct": 98.9,
           "pool_probs": {
-            "Pool A": 54.1,
-            "Pool B": 45.9
+            "Pool A": 53.7,
+            "Pool B": 46.3
           },
           "completed_games": [
             {
@@ -6291,14 +6291,14 @@
           "current_w": 5,
           "current_l": 0,
           "current_t": 1,
-          "proj_pts_avg": 38.2,
+          "proj_pts_avg": 38.3,
           "proj_finish": 2.5,
-          "prob_1st_pct": 25.7,
-          "prob_top2_pct": 52.5,
-          "prob_top4_pct": 96.2,
+          "prob_1st_pct": 26.4,
+          "prob_top2_pct": 52.8,
+          "prob_top4_pct": 96.1,
           "pool_probs": {
-            "Pool A": 45.4,
-            "Pool B": 54.6
+            "Pool A": 45.5,
+            "Pool B": 54.5
           },
           "completed_games": [
             {
@@ -6519,12 +6519,12 @@
           "current_t": 3,
           "proj_pts_avg": 37.0,
           "proj_finish": 2.9,
-          "prob_1st_pct": 14.5,
+          "prob_1st_pct": 14.8,
           "prob_top2_pct": 38.2,
-          "prob_top4_pct": 92.6,
+          "prob_top4_pct": 92.9,
           "pool_probs": {
-            "Pool A": 42.1,
-            "Pool B": 57.9
+            "Pool A": 42.7,
+            "Pool B": 57.3
           },
           "completed_games": [
             {
@@ -6749,12 +6749,12 @@
           "current_t": 2,
           "proj_pts_avg": 36.6,
           "proj_finish": 3.0,
-          "prob_1st_pct": 14.9,
-          "prob_top2_pct": 36.3,
-          "prob_top4_pct": 92.3,
+          "prob_1st_pct": 14.5,
+          "prob_top2_pct": 36.4,
+          "prob_top4_pct": 92.0,
           "pool_probs": {
-            "Pool A": 46.2,
-            "Pool B": 53.8
+            "Pool A": 45.9,
+            "Pool B": 54.1
           },
           "completed_games": [
             {
@@ -6976,11 +6976,11 @@
           "proj_pts_avg": 27.9,
           "proj_finish": 5.7,
           "prob_1st_pct": 0.1,
-          "prob_top2_pct": 0.8,
-          "prob_top4_pct": 12.3,
+          "prob_top2_pct": 0.7,
+          "prob_top4_pct": 12.2,
           "pool_probs": {
-            "Pool A": 43.0,
-            "Pool B": 57.0
+            "Pool A": 42.6,
+            "Pool B": 57.4
           },
           "completed_games": [
             {
@@ -7199,14 +7199,14 @@
           "current_w": 4,
           "current_l": 6,
           "current_t": 0,
-          "proj_pts_avg": 25.6,
+          "proj_pts_avg": 25.5,
           "proj_finish": 6.4,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.1,
-          "prob_top4_pct": 3.3,
+          "prob_top4_pct": 3.0,
           "pool_probs": {
-            "Pool A": 51.2,
-            "Pool B": 48.8
+            "Pool A": 51.0,
+            "Pool B": 49.0
           },
           "completed_games": [
             {
@@ -7433,14 +7433,14 @@
           "current_w": 1,
           "current_l": 4,
           "current_t": 1,
-          "proj_pts_avg": 24.9,
+          "proj_pts_avg": 25.0,
           "proj_finish": 6.6,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.1,
-          "prob_top4_pct": 3.1,
+          "prob_top4_pct": 3.3,
           "pool_probs": {
-            "Pool A": 52.8,
-            "Pool B": 47.2
+            "Pool A": 52.9,
+            "Pool B": 47.1
           },
           "completed_games": [
             {
@@ -7663,10 +7663,10 @@
           "proj_finish": 7.1,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.0,
-          "prob_top4_pct": 1.3,
+          "prob_top4_pct": 1.5,
           "pool_probs": {
-            "Pool A": 63.2,
-            "Pool B": 36.8
+            "Pool A": 63.7,
+            "Pool B": 36.3
           },
           "completed_games": [
             {
@@ -7885,14 +7885,14 @@
           "current_w": 2,
           "current_l": 4,
           "current_t": 1,
-          "proj_pts_avg": 11.6,
+          "proj_pts_avg": 11.7,
           "proj_finish": 9.0,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.0,
           "prob_top4_pct": 0.0,
           "pool_probs": {
-            "Pool A": 4.8,
-            "Pool B": 95.2
+            "Pool A": 4.5,
+            "Pool B": 95.5
           },
           "completed_games": [
             {
@@ -8119,8 +8119,8 @@
           "prob_top2_pct": 0.0,
           "prob_top4_pct": 0.0,
           "pool_probs": {
-            "Pool A": 97.2,
-            "Pool B": 2.8
+            "Pool A": 97.5,
+            "Pool B": 2.5
           },
           "completed_games": [
             {
@@ -8353,13 +8353,13 @@
           "current_t": 0,
           "proj_pts_avg": 42.0,
           "proj_finish": 1.4,
-          "prob_1st_pct": 73.1,
-          "prob_top2_pct": 93.0,
-          "prob_top4_pct": 99.8,
+          "prob_1st_pct": 72.9,
+          "prob_top2_pct": 92.8,
+          "prob_top4_pct": 99.9,
           "pool_probs": {
-            "Group A": 73.1,
+            "Group A": 72.9,
             "Group B": 20.0,
-            "Group C": 6.8
+            "Group C": 7.1
           },
           "completed_games": [
             {
@@ -8579,13 +8579,13 @@
           "current_t": 0,
           "proj_pts_avg": 38.1,
           "proj_finish": 2.3,
-          "prob_1st_pct": 18.0,
+          "prob_1st_pct": 17.9,
           "prob_top2_pct": 65.6,
-          "prob_top4_pct": 97.7,
+          "prob_top4_pct": 97.6,
           "pool_probs": {
-            "Group A": 18.6,
-            "Group B": 49.3,
-            "Group C": 32.1
+            "Group A": 18.5,
+            "Group B": 49.5,
+            "Group C": 32.0
           },
           "completed_games": [
             {
@@ -8803,13 +8803,13 @@
           "current_t": 3,
           "proj_pts_avg": 36.0,
           "proj_finish": 3.0,
-          "prob_1st_pct": 8.0,
-          "prob_top2_pct": 33.3,
+          "prob_1st_pct": 8.4,
+          "prob_top2_pct": 33.6,
           "prob_top4_pct": 91.2,
           "pool_probs": {
-            "Group A": 10.8,
-            "Group B": 31.2,
-            "Group C": 58.1
+            "Group A": 11.1,
+            "Group B": 31.1,
+            "Group C": 57.8
           },
           "completed_games": [
             {
@@ -9031,13 +9031,13 @@
           "current_t": 2,
           "proj_pts_avg": 31.7,
           "proj_finish": 4.5,
-          "prob_1st_pct": 0.7,
-          "prob_top2_pct": 6.2,
-          "prob_top4_pct": 57.3,
+          "prob_1st_pct": 0.6,
+          "prob_top2_pct": 6.0,
+          "prob_top4_pct": 57.4,
           "pool_probs": {
-            "Group A": 18.6,
-            "Group B": 27.6,
-            "Group C": 53.8
+            "Group A": 18.3,
+            "Group B": 27.5,
+            "Group C": 54.2
           },
           "completed_games": [
             {
@@ -9259,8 +9259,8 @@
           "prob_top2_pct": 0.8,
           "prob_top4_pct": 24.4,
           "pool_probs": {
-            "Group A": 34.5,
-            "Group B": 33.1,
+            "Group A": 34.6,
+            "Group B": 33.0,
             "Group C": 32.4
           },
           "completed_games": [
@@ -9481,13 +9481,13 @@
           "current_t": 2,
           "proj_pts_avg": 27.7,
           "proj_finish": 6.3,
-          "prob_1st_pct": 0.0,
-          "prob_top2_pct": 0.6,
-          "prob_top4_pct": 16.1,
+          "prob_1st_pct": 0.1,
+          "prob_top2_pct": 0.8,
+          "prob_top4_pct": 16.4,
           "pool_probs": {
-            "Group A": 38.8,
-            "Group B": 32.8,
-            "Group C": 28.5
+            "Group A": 38.2,
+            "Group B": 32.9,
+            "Group C": 28.9
           },
           "completed_games": [
             {
@@ -9706,12 +9706,12 @@
           "proj_pts_avg": 25.9,
           "proj_finish": 7.2,
           "prob_1st_pct": 0.0,
-          "prob_top2_pct": 0.3,
-          "prob_top4_pct": 7.8,
+          "prob_top2_pct": 0.2,
+          "prob_top4_pct": 7.7,
           "pool_probs": {
-            "Group A": 37.1,
-            "Group B": 34.9,
-            "Group C": 28.0
+            "Group A": 37.0,
+            "Group B": 35.4,
+            "Group C": 27.6
           },
           "completed_games": [
             {
@@ -9935,9 +9935,9 @@
           "prob_top2_pct": 0.1,
           "prob_top4_pct": 3.4,
           "pool_probs": {
-            "Group A": 31.2,
-            "Group B": 40.2,
-            "Group C": 28.6
+            "Group A": 31.8,
+            "Group B": 40.1,
+            "Group C": 28.1
           },
           "completed_games": [
             {
@@ -10155,15 +10155,15 @@
           "current_w": 2,
           "current_l": 5,
           "current_t": 1,
-          "proj_pts_avg": 22.7,
-          "proj_finish": 8.6,
+          "proj_pts_avg": 22.6,
+          "proj_finish": 8.7,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.0,
-          "prob_top4_pct": 1.2,
+          "prob_top4_pct": 1.1,
           "pool_probs": {
             "Group A": 21.7,
-            "Group B": 48.6,
-            "Group C": 29.7
+            "Group B": 49.0,
+            "Group C": 29.3
           },
           "completed_games": [
             {
@@ -10383,11 +10383,11 @@
           "proj_finish": 8.8,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.0,
-          "prob_top4_pct": 1.0,
+          "prob_top4_pct": 0.9,
           "pool_probs": {
-            "Group A": 17.3,
-            "Group B": 57.3,
-            "Group C": 25.4
+            "Group A": 17.4,
+            "Group B": 56.1,
+            "Group C": 26.4
           },
           "completed_games": [
             {
@@ -10613,9 +10613,9 @@
           "prob_top2_pct": 0.0,
           "prob_top4_pct": 0.0,
           "pool_probs": {
-            "Group A": 21.8,
-            "Group B": 21.7,
-            "Group C": 56.5
+            "Group A": 22.4,
+            "Group B": 21.8,
+            "Group C": 55.8
           },
           "completed_games": [
             {
@@ -10835,9 +10835,9 @@
           "prob_top2_pct": 0.0,
           "prob_top4_pct": 0.0,
           "pool_probs": {
-            "Group A": 82.6,
-            "Group B": 2.5,
-            "Group C": 14.8
+            "Group A": 82.3,
+            "Group B": 2.7,
+            "Group C": 15.1
           },
           "completed_games": [
             {
@@ -11061,9 +11061,9 @@
           "prob_top2_pct": 0.0,
           "prob_top4_pct": 0.0,
           "pool_probs": {
-            "Group A": 93.9,
-            "Group B": 0.9,
-            "Group C": 5.3
+            "Group A": 93.8,
+            "Group B": 0.8,
+            "Group C": 5.4
           },
           "completed_games": [
             {
@@ -11279,14 +11279,14 @@
           "current_t": 1,
           "proj_pts_avg": 40.8,
           "proj_finish": 1.4,
-          "prob_1st_pct": 73.2,
-          "prob_top2_pct": 92.6,
+          "prob_1st_pct": 73.1,
+          "prob_top2_pct": 93.0,
           "prob_top4_pct": 99.4,
           "pool_probs": {
-            "Pool A": 73.2,
-            "Pool B": 19.4,
-            "Pool C": 5.0,
-            "Pool D": 2.4
+            "Pool A": 73.1,
+            "Pool B": 20.0,
+            "Pool C": 4.8,
+            "Pool D": 2.1
           },
           "completed_games": [
             {
@@ -11505,13 +11505,13 @@
           "proj_pts_avg": 36.6,
           "proj_finish": 2.6,
           "prob_1st_pct": 17.5,
-          "prob_top2_pct": 59.4,
-          "prob_top4_pct": 90.2,
+          "prob_top2_pct": 59.6,
+          "prob_top4_pct": 90.6,
           "pool_probs": {
             "Pool A": 17.5,
             "Pool B": 42.1,
-            "Pool C": 22.0,
-            "Pool D": 18.5
+            "Pool C": 22.1,
+            "Pool D": 18.3
           },
           "completed_games": [
             {
@@ -11730,13 +11730,13 @@
           "proj_pts_avg": 33.0,
           "proj_finish": 4.0,
           "prob_1st_pct": 5.7,
-          "prob_top2_pct": 22.3,
-          "prob_top4_pct": 64.4,
+          "prob_top2_pct": 22.4,
+          "prob_top4_pct": 64.2,
           "pool_probs": {
             "Pool A": 5.7,
             "Pool B": 18.3,
-            "Pool C": 33.4,
-            "Pool D": 42.6
+            "Pool C": 33.1,
+            "Pool D": 42.9
           },
           "completed_games": [
             {
@@ -11946,14 +11946,14 @@
           "current_t": 1,
           "proj_pts_avg": 32.1,
           "proj_finish": 4.4,
-          "prob_1st_pct": 2.1,
-          "prob_top2_pct": 12.5,
-          "prob_top4_pct": 55.1,
+          "prob_1st_pct": 2.2,
+          "prob_top2_pct": 12.4,
+          "prob_top4_pct": 55.3,
           "pool_probs": {
-            "Pool A": 2.1,
-            "Pool B": 11.9,
-            "Pool C": 32.3,
-            "Pool D": 53.7
+            "Pool A": 2.2,
+            "Pool B": 11.7,
+            "Pool C": 32.7,
+            "Pool D": 53.4
           },
           "completed_games": [
             {
@@ -12174,13 +12174,13 @@
           "proj_pts_avg": 30.3,
           "proj_finish": 5.3,
           "prob_1st_pct": 0.7,
-          "prob_top2_pct": 5.1,
-          "prob_top4_pct": 34.1,
+          "prob_top2_pct": 4.9,
+          "prob_top4_pct": 33.7,
           "pool_probs": {
             "Pool A": 0.7,
             "Pool B": 8.1,
-            "Pool C": 34.5,
-            "Pool D": 56.6
+            "Pool C": 34.2,
+            "Pool D": 57.0
           },
           "completed_games": [
             {
@@ -12399,13 +12399,13 @@
           "proj_pts_avg": 30.3,
           "proj_finish": 5.3,
           "prob_1st_pct": 0.6,
-          "prob_top2_pct": 6.0,
-          "prob_top4_pct": 36.2,
+          "prob_top2_pct": 5.7,
+          "prob_top4_pct": 35.8,
           "pool_probs": {
             "Pool A": 0.6,
-            "Pool B": 9.5,
-            "Pool C": 35.2,
-            "Pool D": 54.7
+            "Pool B": 9.2,
+            "Pool C": 35.3,
+            "Pool D": 55.0
           },
           "completed_games": [
             {
@@ -12622,13 +12622,13 @@
           "proj_pts_avg": 27.3,
           "proj_finish": 6.8,
           "prob_1st_pct": 0.1,
-          "prob_top2_pct": 1.1,
-          "prob_top4_pct": 10.8,
+          "prob_top2_pct": 1.2,
+          "prob_top4_pct": 11.0,
           "pool_probs": {
             "Pool A": 0.1,
-            "Pool B": 18.3,
-            "Pool C": 47.6,
-            "Pool D": 34.0
+            "Pool B": 19.0,
+            "Pool C": 47.1,
+            "Pool D": 33.8
           },
           "completed_games": [
             {
@@ -12844,16 +12844,16 @@
           "current_w": 5,
           "current_l": 3,
           "current_t": 2,
-          "proj_pts_avg": 25.5,
+          "proj_pts_avg": 25.6,
           "proj_finish": 7.6,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.3,
-          "prob_top4_pct": 4.2,
+          "prob_top4_pct": 4.4,
           "pool_probs": {
             "Pool A": 0.0,
-            "Pool B": 31.7,
+            "Pool B": 31.8,
             "Pool C": 49.5,
-            "Pool D": 18.8
+            "Pool D": 18.6
           },
           "completed_games": [
             {
@@ -13073,16 +13073,16 @@
           "current_w": 2,
           "current_l": 2,
           "current_t": 0,
-          "proj_pts_avg": 25.0,
+          "proj_pts_avg": 25.1,
           "proj_finish": 7.7,
           "prob_1st_pct": 0.1,
-          "prob_top2_pct": 0.6,
-          "prob_top4_pct": 5.7,
+          "prob_top2_pct": 0.5,
+          "prob_top4_pct": 5.6,
           "pool_probs": {
             "Pool A": 0.2,
-            "Pool B": 41.3,
-            "Pool C": 39.8,
-            "Pool D": 18.7
+            "Pool B": 40.2,
+            "Pool C": 40.7,
+            "Pool D": 18.9
           },
           "completed_games": [
             {
@@ -13296,9 +13296,9 @@
           "prob_top2_pct": 0.0,
           "prob_top4_pct": 0.0,
           "pool_probs": {
-            "Pool A": 28.8,
-            "Pool B": 70.6,
-            "Pool C": 0.6,
+            "Pool A": 28.3,
+            "Pool B": 71.2,
+            "Pool C": 0.5,
             "Pool D": 0.0
           },
           "completed_games": [
@@ -13513,14 +13513,14 @@
           "current_w": 0,
           "current_l": 6,
           "current_t": 0,
-          "proj_pts_avg": 9.8,
+          "proj_pts_avg": 9.7,
           "proj_finish": 11.1,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.0,
           "prob_top4_pct": 0.0,
           "pool_probs": {
-            "Pool A": 79.4,
-            "Pool B": 20.6,
+            "Pool A": 79.7,
+            "Pool B": 20.3,
             "Pool C": 0.0,
             "Pool D": 0.0
           },
@@ -13740,8 +13740,8 @@
           "prob_top2_pct": 0.0,
           "prob_top4_pct": 0.0,
           "pool_probs": {
-            "Pool A": 91.6,
-            "Pool B": 8.4,
+            "Pool A": 91.9,
+            "Pool B": 8.1,
             "Pool C": 0.0,
             "Pool D": 0.0
           },
@@ -13957,12 +13957,12 @@
           "current_t": 3,
           "proj_pts_avg": 40.2,
           "proj_finish": 1.5,
-          "prob_1st_pct": 64.3,
-          "prob_top2_pct": 91.6,
+          "prob_1st_pct": 64.4,
+          "prob_top2_pct": 91.4,
           "prob_top4_pct": 99.6,
           "pool_probs": {
-            "Pool A": 65.8,
-            "Pool B": 34.2
+            "Pool A": 66.0,
+            "Pool B": 34.0
           },
           "completed_games": [
             {
@@ -14187,14 +14187,14 @@
           "current_w": 4,
           "current_l": 1,
           "current_t": 3,
-          "proj_pts_avg": 38.0,
+          "proj_pts_avg": 37.9,
           "proj_finish": 2.0,
-          "prob_1st_pct": 28.9,
+          "prob_1st_pct": 29.0,
           "prob_top2_pct": 76.8,
-          "prob_top4_pct": 98.1,
+          "prob_top4_pct": 98.2,
           "pool_probs": {
-            "Pool A": 34.6,
-            "Pool B": 65.4
+            "Pool A": 34.7,
+            "Pool B": 65.3
           },
           "completed_games": [
             {
@@ -14417,14 +14417,14 @@
           "current_w": 2,
           "current_l": 2,
           "current_t": 0,
-          "proj_pts_avg": 32.0,
-          "proj_finish": 3.7,
-          "prob_1st_pct": 4.0,
-          "prob_top2_pct": 16.4,
-          "prob_top4_pct": 72.4,
+          "proj_pts_avg": 31.9,
+          "proj_finish": 3.8,
+          "prob_1st_pct": 3.8,
+          "prob_top2_pct": 16.2,
+          "prob_top4_pct": 72.1,
           "pool_probs": {
-            "Pool A": 36.9,
-            "Pool B": 63.1
+            "Pool A": 37.1,
+            "Pool B": 62.9
           },
           "completed_games": [
             {
@@ -14642,11 +14642,11 @@
           "proj_pts_avg": 31.2,
           "proj_finish": 4.0,
           "prob_1st_pct": 2.1,
-          "prob_top2_pct": 10.2,
-          "prob_top4_pct": 65.9,
+          "prob_top2_pct": 10.6,
+          "prob_top4_pct": 66.4,
           "pool_probs": {
-            "Pool A": 41.6,
-            "Pool B": 58.4
+            "Pool A": 42.2,
+            "Pool B": 57.8
           },
           "completed_games": [
             {
@@ -14868,13 +14868,13 @@
           "current_l": 3,
           "current_t": 2,
           "proj_pts_avg": 29.7,
-          "proj_finish": 4.5,
+          "proj_finish": 4.6,
           "prob_1st_pct": 0.6,
-          "prob_top2_pct": 4.3,
-          "prob_top4_pct": 47.9,
+          "prob_top2_pct": 4.4,
+          "prob_top4_pct": 47.2,
           "pool_probs": {
-            "Pool A": 43.0,
-            "Pool B": 57.0
+            "Pool A": 42.1,
+            "Pool B": 57.9
           },
           "completed_games": [
             {
@@ -15103,10 +15103,10 @@
           "proj_finish": 6.2,
           "prob_1st_pct": 0.1,
           "prob_top2_pct": 0.5,
-          "prob_top4_pct": 10.2,
+          "prob_top4_pct": 10.3,
           "pool_probs": {
-            "Pool A": 52.0,
-            "Pool B": 48.0
+            "Pool A": 52.3,
+            "Pool B": 47.7
           },
           "completed_games": [
             {
@@ -15333,10 +15333,10 @@
           "proj_finish": 6.7,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.2,
-          "prob_top4_pct": 5.2,
+          "prob_top4_pct": 5.6,
           "pool_probs": {
-            "Pool A": 46.8,
-            "Pool B": 53.2
+            "Pool A": 46.9,
+            "Pool B": 53.1
           },
           "completed_games": [
             {
@@ -15557,14 +15557,14 @@
           "current_w": 1,
           "current_l": 3,
           "current_t": 1,
-          "proj_pts_avg": 17.4,
+          "proj_pts_avg": 17.5,
           "proj_finish": 8.6,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.0,
           "prob_top4_pct": 0.3,
           "pool_probs": {
-            "Pool A": 58.9,
-            "Pool B": 41.1
+            "Pool A": 58.2,
+            "Pool B": 41.8
           },
           "completed_games": [
             {
@@ -15787,8 +15787,8 @@
           "prob_top2_pct": 0.0,
           "prob_top4_pct": 0.1,
           "pool_probs": {
-            "Pool A": 58.1,
-            "Pool B": 41.9
+            "Pool A": 58.5,
+            "Pool B": 41.5
           },
           "completed_games": [
             {
@@ -16019,8 +16019,8 @@
           "prob_top2_pct": 0.0,
           "prob_top4_pct": 0.1,
           "pool_probs": {
-            "Pool A": 62.2,
-            "Pool B": 37.8
+            "Pool A": 61.9,
+            "Pool B": 38.1
           },
           "completed_games": [
             {
