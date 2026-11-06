@@ -278,8 +278,18 @@
             "Lakeshore": 27
         };
 
-        // Date Boundary Validator: October 1 to January 24 inclusive
-        function isRegularSeasonDate(dateStr) {
+        // League-Specific Regular Season Cutoff Dates
+        const REGULAR_SEASON_CUTOFFS = {
+            "Tri-County": "Jan 24",
+            "York-Simcoe": "Feb 7",
+            "Lakeshore": "Jan 31"
+        };
+
+        // Date Boundary Validator:
+        // Tri-County: Oct 1 - Jan 24
+        // Lakeshore: Oct 1 - Jan 31
+        // York-Simcoe: Oct 1 - Feb 7
+        function isRegularSeasonDate(dateStr, league) {
             if (!dateStr || dateStr === '-' || dateStr === 'TBD') return false;
             const s = String(dateStr).trim();
             let month = 0, day = 0;
@@ -302,6 +312,18 @@
                 }
             }
             if (month >= 10 && month <= 12) return true;
+
+            const l = (league || currentLeague || '').toLowerCase();
+            if (l.includes('york') || l.includes('simcoe')) {
+                if (month === 1) return true;
+                if (month === 2 && day >= 1 && day <= 7) return true;
+                return false;
+            }
+            if (l.includes('lake')) {
+                if (month === 1 && day >= 1 && day <= 31) return true;
+                return false;
+            }
+            // Tri-County default: Oct 1 - Jan 24
             if (month === 1 && day >= 1 && day <= 24) return true;
             return false;
         }
@@ -474,7 +496,7 @@
 
             // Dynamically ensure self-healing regular season GP and Point Percentages
             teams.forEach(t => {
-                const comp = (t.completed_games || []).filter(g => isRegularSeasonDate(g.date));
+                const comp = (t.completed_games || []).filter(g => isRegularSeasonDate(g.date, currentLeague));
                 const effectiveGp = (t.completed_games && t.completed_games.length > 0) ? comp.length : (t.current_gp || 0);
                 let effectivePts = t.current_pts || 0;
                 if (t.completed_games && t.completed_games.length > 0 && comp.length !== t.completed_games.length) {
@@ -521,6 +543,7 @@
             const teams = getActiveTeams();
             const isYorkSimcoe = currentLeague === "York-Simcoe";
             const expectedGames = EXPECTED_GAMES_BY_LEAGUE[currentLeague] || 26;
+            const seasonEndStr = REGULAR_SEASON_CUTOFFS[currentLeague] || "Jan 24";
 
             document.getElementById('standings-table-title').innerHTML = `<span>🏒</span> [${currentCohort}] ${currentLeague} Standings Matrix`;
             document.getElementById('standings-count-badge').innerText = `${teams.length} Teams`;
@@ -559,9 +582,9 @@
                 const projectedSeed = Math.round(t.proj_finish) || 1;
                 const assignedPool = getProjectedPoolAssignment(t, currentCohort, currentLeague, projectedSeed);
 
-                // Filter games strictly to regular season window (Oct 1 - Jan 24)
-                const filteredComp = (t.completed_games || []).filter(g => isRegularSeasonDate(g.date));
-                const filteredUp = (t.upcoming_games || []).filter(g => isRegularSeasonDate(g.date));
+                // Filter games strictly to league regular season window
+                const filteredComp = (t.completed_games || []).filter(g => isRegularSeasonDate(g.date, currentLeague));
+                const filteredUp = (t.upcoming_games || []).filter(g => isRegularSeasonDate(g.date, currentLeague));
 
                 // Self-healing regular season tallies
                 let effectiveGp = (t.completed_games && t.completed_games.length > 0) ? filteredComp.length : (t.current_gp || 0);
@@ -584,7 +607,7 @@
                 const totalRegularSeasonGames = effectiveGp + filteredUp.length;
                 const hasScheduleDiscrepancy = totalRegularSeasonGames !== expectedGames;
                 const hazardBadge = hasScheduleDiscrepancy 
-                    ? `<span title="Schedule Discrepancy: ${totalRegularSeasonGames} of ${expectedGames} regular season games recorded (Oct 1 - Jan 24)" class="ml-1.5 cursor-help text-amber-500 font-bold select-none text-xs">⚠️</span>`
+                    ? `<span title="Schedule Discrepancy: ${totalRegularSeasonGames} of ${expectedGames} regular season games recorded (Oct 1 - ${seasonEndStr})" class="ml-1.5 cursor-help text-amber-500 font-bold select-none text-xs">⚠️</span>`
                     : '';
 
                 let poolOddsStr = "";
@@ -708,7 +731,7 @@
                                             <span class="text-xs font-black uppercase tracking-wider text-teal-900 flex items-center gap-1.5">
                                                 <span>📅</span> Upcoming Games (${upGames.length})
                                             </span>
-                                            <span class="text-[10px] font-mono text-slate-400 uppercase">Regular Season (through Jan 24)</span>
+                                            <span class="text-[10px] font-mono text-slate-400 uppercase">Regular Season (through ${seasonEndStr})</span>
                                         </div>
                                         <div class="overflow-x-auto touch-scroll max-h-56 overflow-y-auto">
                                             <table class="w-full text-left">
@@ -810,8 +833,8 @@
 
             teams.forEach(t => {
                 (t.upcoming_games || []).forEach(g => {
-                    // Strictly exclude games outside regular season window (Oct 1 - Jan 24)
-                    if (!isRegularSeasonDate(g.date)) return;
+                    // Strictly exclude games outside the league regular season window
+                    if (!isRegularSeasonDate(g.date, league)) return;
 
                     const homeTeam = g.is_home ? t.team_name : g.opponent;
                     const awayTeam = g.is_home ? g.opponent : t.team_name;
