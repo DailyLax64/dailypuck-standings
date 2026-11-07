@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-07T04:01:08.089430+00:00",
+  "updated_at": "2026-11-07T09:01:20.868679+00:00",
   "total_season_games": 946,
   "games": [
     {
@@ -1548,7 +1548,7 @@
       "league": "Tri-County",
       "date": "2026-11-06",
       "time": "19:15",
-      "status": "scheduled",
+      "status": "played",
       "home": "Burlington Eagles",
       "visitor": "Milton Winterhawks",
       "location": "Appleby (1)"
@@ -6828,7 +6828,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-06",
       "time": "19:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "Orangeville Flyers U14 AA",
       "visitor": "Barrie Colts U14 AA",
       "location": "Tony Rose A"
@@ -6839,7 +6839,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-06",
       "time": "20:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "Stouffville Clippers U14 AA",
       "visitor": "Upper York Admirals U14 AA",
       "location": "Stouffville Clippers (CC1)"
