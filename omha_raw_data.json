@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07T01:24:11.303370+00:00",
+  "generated_at": "2026-11-07T04:01:15.943067+00:00",
   "standings": [
     {
       "league": "Tri-County",
@@ -757,8 +757,8 @@
       "league": "York-Simcoe",
       "league_id": "15489",
       "cohort": "U14 AA",
-      "team_id": "534103",
-      "team_name": "TNT Tornados U14 AA",
+      "team_id": "534148",
+      "team_name": "Upper York Admirals U14 AA",
       "gp": 0,
       "w": 0,
       "l": 0,
@@ -773,8 +773,8 @@
       "league": "York-Simcoe",
       "league_id": "15489",
       "cohort": "U14 AA",
-      "team_id": "534148",
-      "team_name": "Upper York Admirals U14 AA",
+      "team_id": "534103",
+      "team_name": "TNT Tornados U14 AA",
       "gp": 0,
       "w": 0,
       "l": 0,
@@ -805,8 +805,8 @@
       "league": "York-Simcoe",
       "league_id": "15489",
       "cohort": "U14 AA",
-      "team_id": "534101",
-      "team_name": "Stouffville Clippers U14 AA",
+      "team_id": "534165",
+      "team_name": "Caledon Hawks U14 AA",
       "gp": 0,
       "w": 0,
       "l": 0,
@@ -821,8 +821,8 @@
       "league": "York-Simcoe",
       "league_id": "15489",
       "cohort": "U14 AA",
-      "team_id": "534165",
-      "team_name": "Caledon Hawks U14 AA",
+      "team_id": "534101",
+      "team_name": "Stouffville Clippers U14 AA",
       "gp": 0,
       "w": 0,
       "l": 0,
@@ -4777,15 +4777,15 @@
       "league_id": "15489",
       "cohort": "U14 AA",
       "date": "Nov 6, 2026",
-      "time": "8:00 PM",
-      "status": "scheduled",
+      "time": "7:00 PM",
+      "status": "final",
       "location": "Stouffville Clippers (CC1)",
       "home_id": "534101",
       "home_name": "Stouffville Clippers U14 AA",
-      "home_goals": null,
+      "home_goals": 1,
       "visitor_id": "534148",
       "visitor_name": "Upper York Admirals U14 AA",
-      "visitor_goals": null
+      "visitor_goals": 9
     },
     {
       "game_id": "3145366",
@@ -6417,6 +6417,22 @@
       "home_goals": null,
       "visitor_id": "534527",
       "visitor_name": "CLARINGTON AA U14",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3164960",
+      "league": "Lakeshore",
+      "league_id": "15493",
+      "cohort": "U11 AA",
+      "date": "Nov 13, 2026",
+      "time": "6:00 PM",
+      "status": "scheduled",
+      "location": "Healthy Planet (Gardener)",
+      "home_id": "534496",
+      "home_name": "PETERBOROUGH AA U11",
+      "home_goals": null,
+      "visitor_id": "534497",
+      "visitor_name": "NORTHUMBERLAND AA U11",
       "visitor_goals": null
     }
   ]

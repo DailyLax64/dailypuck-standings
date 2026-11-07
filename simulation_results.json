@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07T01:24:47.373421+00:00",
+  "generated_at": "2026-11-07T04:02:02.273320+00:00",
   "simulations_count": 25000,
   "results": {
     "U11 AA": {
@@ -17,13 +17,13 @@
           "current_t": 0,
           "proj_pts_avg": 38.2,
           "proj_finish": 1.8,
-          "prob_1st_pct": 61.1,
-          "prob_top2_pct": 80.8,
-          "prob_top4_pct": 95.5,
+          "prob_1st_pct": 60.8,
+          "prob_top2_pct": 80.4,
+          "prob_top4_pct": 95.6,
           "pool_probs": {
-            "Group A": 62.3,
-            "Group B": 22.5,
-            "Group C": 15.1
+            "Group A": 62.0,
+            "Group B": 22.3,
+            "Group C": 15.7
           },
           "completed_games": [
             {
@@ -239,13 +239,13 @@
           "current_t": 1,
           "proj_pts_avg": 34.6,
           "proj_finish": 3.2,
-          "prob_1st_pct": 15.6,
-          "prob_top2_pct": 42.4,
-          "prob_top4_pct": 78.6,
+          "prob_1st_pct": 15.3,
+          "prob_top2_pct": 41.8,
+          "prob_top4_pct": 79.0,
           "pool_probs": {
             "Group A": 21.4,
-            "Group B": 39.1,
-            "Group C": 39.5
+            "Group B": 38.3,
+            "Group C": 40.4
           },
           "completed_games": [
             {
@@ -465,15 +465,15 @@
           "current_w": 6,
           "current_l": 3,
           "current_t": 0,
-          "proj_pts_avg": 33.7,
+          "proj_pts_avg": 33.8,
           "proj_finish": 3.7,
-          "prob_1st_pct": 10.9,
-          "prob_top2_pct": 32.2,
-          "prob_top4_pct": 69.5,
+          "prob_1st_pct": 11.7,
+          "prob_top2_pct": 32.9,
+          "prob_top4_pct": 69.9,
           "pool_probs": {
-            "Group A": 19.8,
-            "Group B": 37.7,
-            "Group C": 42.5
+            "Group A": 20.8,
+            "Group B": 37.2,
+            "Group C": 42.0
           },
           "completed_games": [
             {
@@ -693,13 +693,13 @@
           "current_t": 1,
           "proj_pts_avg": 32.2,
           "proj_finish": 4.6,
-          "prob_1st_pct": 6.6,
-          "prob_top2_pct": 20.0,
-          "prob_top4_pct": 52.8,
+          "prob_1st_pct": 6.5,
+          "prob_top2_pct": 20.1,
+          "prob_top4_pct": 53.3,
           "pool_probs": {
-            "Group A": 20.8,
-            "Group B": 37.6,
-            "Group C": 41.7
+            "Group A": 20.6,
+            "Group B": 37.5,
+            "Group C": 42.0
           },
           "completed_games": [
             {
@@ -915,13 +915,13 @@
           "current_t": 0,
           "proj_pts_avg": 30.2,
           "proj_finish": 5.7,
-          "prob_1st_pct": 2.6,
-          "prob_top2_pct": 9.2,
-          "prob_top4_pct": 33.2,
+          "prob_1st_pct": 2.3,
+          "prob_top2_pct": 9.1,
+          "prob_top4_pct": 32.7,
           "pool_probs": {
-            "Group A": 23.0,
-            "Group B": 39.1,
-            "Group C": 37.9
+            "Group A": 23.8,
+            "Group B": 39.0,
+            "Group C": 37.3
           },
           "completed_games": [
             {
@@ -1141,13 +1141,13 @@
           "current_t": 2,
           "proj_pts_avg": 29.9,
           "proj_finish": 6.0,
-          "prob_1st_pct": 1.4,
-          "prob_top2_pct": 7.0,
-          "prob_top4_pct": 28.2,
+          "prob_1st_pct": 1.5,
+          "prob_top2_pct": 6.7,
+          "prob_top4_pct": 27.3,
           "pool_probs": {
-            "Group A": 23.9,
-            "Group B": 40.4,
-            "Group C": 35.6
+            "Group A": 24.1,
+            "Group B": 40.5,
+            "Group C": 35.4
           },
           "completed_games": [
             {
@@ -1365,15 +1365,15 @@
           "current_w": 4,
           "current_l": 3,
           "current_t": 0,
-          "proj_pts_avg": 28.9,
+          "proj_pts_avg": 29.0,
           "proj_finish": 6.5,
-          "prob_1st_pct": 1.1,
-          "prob_top2_pct": 4.8,
-          "prob_top4_pct": 21.7,
+          "prob_1st_pct": 1.2,
+          "prob_top2_pct": 5.4,
+          "prob_top4_pct": 22.1,
           "pool_probs": {
-            "Group A": 26.6,
-            "Group B": 41.1,
-            "Group C": 32.3
+            "Group A": 26.5,
+            "Group B": 41.3,
+            "Group C": 32.2
           },
           "completed_games": [
             {
@@ -1587,15 +1587,15 @@
           "current_w": 4,
           "current_l": 3,
           "current_t": 1,
-          "proj_pts_avg": 27.4,
+          "proj_pts_avg": 27.3,
           "proj_finish": 7.5,
           "prob_1st_pct": 0.4,
           "prob_top2_pct": 2.0,
-          "prob_top4_pct": 10.7,
+          "prob_top4_pct": 10.5,
           "pool_probs": {
-            "Group A": 30.3,
-            "Group B": 43.9,
-            "Group C": 25.8
+            "Group A": 30.0,
+            "Group B": 44.7,
+            "Group C": 25.4
           },
           "completed_games": [
             {
@@ -1814,12 +1814,12 @@
           "proj_pts_avg": 26.5,
           "proj_finish": 8.0,
           "prob_1st_pct": 0.3,
-          "prob_top2_pct": 1.5,
-          "prob_top4_pct": 8.5,
+          "prob_top2_pct": 1.6,
+          "prob_top4_pct": 8.4,
           "pool_probs": {
-            "Group A": 34.2,
-            "Group B": 42.9,
-            "Group C": 23.0
+            "Group A": 34.1,
+            "Group B": 43.2,
+            "Group C": 22.7
           },
           "completed_games": [
             {
@@ -2037,11 +2037,11 @@
           "proj_finish": 10.4,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.1,
-          "prob_top4_pct": 0.8,
+          "prob_top4_pct": 0.7,
           "pool_probs": {
             "Group A": 59.5,
-            "Group B": 22.2,
-            "Group C": 18.3
+            "Group B": 21.7,
+            "Group C": 18.7
           },
           "completed_games": [
             {
@@ -2260,13 +2260,13 @@
           "current_l": 5,
           "current_t": 0,
           "proj_pts_avg": 21.4,
-          "proj_finish": 10.9,
+          "proj_finish": 10.8,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.0,
           "prob_top4_pct": 0.3,
           "pool_probs": {
-            "Group A": 61.0,
-            "Group B": 16.7,
+            "Group A": 60.4,
+            "Group B": 17.4,
             "Group C": 22.2
           },
           "completed_games": [
@@ -2489,11 +2489,11 @@
           "proj_finish": 11.4,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.0,
-          "prob_top4_pct": 0.2,
+          "prob_top4_pct": 0.1,
           "pool_probs": {
-            "Group A": 58.6,
-            "Group B": 13.4,
-            "Group C": 28.1
+            "Group A": 58.2,
+            "Group B": 13.5,
+            "Group C": 28.4
           },
           "completed_games": [
             {
@@ -2715,9 +2715,9 @@
           "prob_top2_pct": 0.0,
           "prob_top4_pct": 0.0,
           "pool_probs": {
-            "Group A": 46.2,
-            "Group B": 10.4,
-            "Group C": 43.4
+            "Group A": 46.5,
+            "Group B": 10.2,
+            "Group C": 43.3
           },
           "completed_games": [
             {
@@ -2935,15 +2935,15 @@
           "current_w": 0,
           "current_l": 5,
           "current_t": 1,
-          "proj_pts_avg": 13.2,
+          "proj_pts_avg": 13.1,
           "proj_finish": 14.1,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.0,
           "prob_top4_pct": 0.0,
           "pool_probs": {
-            "Group A": 7.8,
-            "Group B": 41.4,
-            "Group C": 50.7
+            "Group A": 7.9,
+            "Group B": 41.8,
+            "Group C": 50.3
           },
           "completed_games": [
             {
@@ -3155,15 +3155,15 @@
           "current_w": 1,
           "current_l": 6,
           "current_t": 1,
-          "proj_pts_avg": 12.5,
+          "proj_pts_avg": 12.4,
           "proj_finish": 14.3,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.0,
           "prob_top4_pct": 0.0,
           "pool_probs": {
-            "Group A": 4.7,
+            "Group A": 4.4,
             "Group B": 51.5,
-            "Group C": 43.8
+            "Group C": 44.0
           },
           "completed_games": [
             {
@@ -3381,16 +3381,16 @@
           "current_w": 6,
           "current_l": 1,
           "current_t": 0,
-          "proj_pts_avg": 38.4,
+          "proj_pts_avg": 38.5,
           "proj_finish": 1.8,
-          "prob_1st_pct": 51.1,
-          "prob_top2_pct": 78.4,
+          "prob_1st_pct": 51.7,
+          "prob_top2_pct": 78.5,
           "prob_top4_pct": 96.9,
           "pool_probs": {
-            "Pool A": 51.1,
-            "Pool B": 27.2,
-            "Pool C": 14.0,
-            "Pool D": 7.7
+            "Pool A": 51.7,
+            "Pool B": 26.8,
+            "Pool C": 13.9,
+            "Pool D": 7.6
           },
           "completed_games": [
             {
@@ -3604,15 +3604,15 @@
           "current_w": 6,
           "current_l": 0,
           "current_t": 1,
-          "proj_pts_avg": 35.9,
+          "proj_pts_avg": 36.0,
           "proj_finish": 2.7,
           "prob_1st_pct": 23.1,
           "prob_top2_pct": 51.4,
-          "prob_top4_pct": 88.3,
+          "prob_top4_pct": 88.5,
           "pool_probs": {
             "Pool A": 23.1,
             "Pool B": 28.4,
-            "Pool C": 26.7,
+            "Pool C": 26.8,
             "Pool D": 21.8
           },
           "completed_games": [
@@ -3829,14 +3829,14 @@
           "current_t": 0,
           "proj_pts_avg": 35.6,
           "proj_finish": 2.8,
-          "prob_1st_pct": 21.0,
-          "prob_top2_pct": 48.9,
-          "prob_top4_pct": 86.2,
+          "prob_1st_pct": 20.5,
+          "prob_top2_pct": 49.0,
+          "prob_top4_pct": 86.6,
           "pool_probs": {
-            "Pool A": 21.0,
-            "Pool B": 28.0,
-            "Pool C": 27.1,
-            "Pool D": 23.9
+            "Pool A": 20.5,
+            "Pool B": 28.6,
+            "Pool C": 27.0,
+            "Pool D": 24.0
           },
           "completed_games": [
             {
@@ -4051,13 +4051,13 @@
           "proj_pts_avg": 30.4,
           "proj_finish": 5.1,
           "prob_1st_pct": 2.1,
-          "prob_top2_pct": 7.7,
-          "prob_top4_pct": 37.5,
+          "prob_top2_pct": 8.0,
+          "prob_top4_pct": 37.6,
           "pool_probs": {
             "Pool A": 2.1,
-            "Pool B": 8.1,
-            "Pool C": 33.5,
-            "Pool D": 56.3
+            "Pool B": 8.4,
+            "Pool C": 34.0,
+            "Pool D": 55.6
           },
           "completed_games": [
             {
@@ -4275,12 +4275,12 @@
           "proj_finish": 5.2,
           "prob_1st_pct": 0.9,
           "prob_top2_pct": 5.0,
-          "prob_top4_pct": 35.2,
+          "prob_top4_pct": 35.0,
           "pool_probs": {
             "Pool A": 0.9,
-            "Pool B": 6.7,
-            "Pool C": 31.5,
-            "Pool D": 60.9
+            "Pool B": 6.5,
+            "Pool C": 32.0,
+            "Pool D": 60.7
           },
           "completed_games": [
             {
@@ -4500,14 +4500,14 @@
           "current_t": 3,
           "proj_pts_avg": 29.3,
           "proj_finish": 5.7,
-          "prob_1st_pct": 0.8,
-          "prob_top2_pct": 3.9,
-          "prob_top4_pct": 25.2,
+          "prob_1st_pct": 0.7,
+          "prob_top2_pct": 3.7,
+          "prob_top4_pct": 25.0,
           "pool_probs": {
-            "Pool A": 0.8,
-            "Pool B": 6.3,
-            "Pool C": 38.9,
-            "Pool D": 54.0
+            "Pool A": 0.7,
+            "Pool B": 6.1,
+            "Pool C": 38.5,
+            "Pool D": 54.7
           },
           "completed_games": [
             {
@@ -4728,13 +4728,13 @@
           "proj_pts_avg": 29.1,
           "proj_finish": 5.7,
           "prob_1st_pct": 0.9,
-          "prob_top2_pct": 4.3,
-          "prob_top4_pct": 26.3,
+          "prob_top2_pct": 4.2,
+          "prob_top4_pct": 25.9,
           "pool_probs": {
-            "Pool A": 1.0,
-            "Pool B": 8.3,
-            "Pool C": 38.7,
-            "Pool D": 52.0
+            "Pool A": 0.9,
+            "Pool B": 8.1,
+            "Pool C": 38.2,
+            "Pool D": 52.7
           },
           "completed_games": [
             {
@@ -4950,14 +4950,14 @@
           "current_t": 2,
           "proj_pts_avg": 24.8,
           "proj_finish": 7.6,
-          "prob_1st_pct": 0.0,
+          "prob_1st_pct": 0.1,
           "prob_top2_pct": 0.3,
           "prob_top4_pct": 3.9,
           "pool_probs": {
-            "Pool A": 0.8,
-            "Pool B": 26.6,
-            "Pool C": 53.9,
-            "Pool D": 18.7
+            "Pool A": 0.7,
+            "Pool B": 26.8,
+            "Pool C": 54.1,
+            "Pool D": 18.4
           },
           "completed_games": [
             {
@@ -5175,11 +5175,11 @@
           "proj_finish": 9.0,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.0,
-          "prob_top4_pct": 0.3,
+          "prob_top4_pct": 0.4,
           "pool_probs": {
-            "Pool A": 3.3,
-            "Pool B": 72.9,
-            "Pool C": 20.8,
+            "Pool A": 3.2,
+            "Pool B": 73.2,
+            "Pool C": 20.7,
             "Pool D": 3.0
           },
           "completed_games": [
@@ -5402,10 +5402,10 @@
           "proj_finish": 9.4,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.0,
-          "prob_top4_pct": 0.2,
+          "prob_top4_pct": 0.1,
           "pool_probs": {
-            "Pool A": 9.8,
-            "Pool B": 74.0,
+            "Pool A": 10.2,
+            "Pool B": 73.6,
             "Pool C": 14.5,
             "Pool D": 1.7
           },
@@ -5627,8 +5627,8 @@
           "prob_top2_pct": 0.0,
           "prob_top4_pct": 0.0,
           "pool_probs": {
-            "Pool A": 86.3,
-            "Pool B": 13.4,
+            "Pool A": 86.2,
+            "Pool B": 13.5,
             "Pool C": 0.3,
             "Pool D": 0.0
           },
@@ -6068,13 +6068,13 @@
           "current_l": 1,
           "current_t": 1,
           "proj_pts_avg": 40.0,
-          "proj_finish": 1.9,
-          "prob_1st_pct": 44.8,
-          "prob_top2_pct": 71.9,
+          "proj_finish": 2.0,
+          "prob_1st_pct": 44.2,
+          "prob_top2_pct": 72.0,
           "prob_top4_pct": 99.0,
           "pool_probs": {
-            "Pool A": 54.2,
-            "Pool B": 45.8
+            "Pool A": 53.5,
+            "Pool B": 46.5
           },
           "completed_games": [
             {
@@ -6295,14 +6295,14 @@
           "current_w": 5,
           "current_l": 0,
           "current_t": 1,
-          "proj_pts_avg": 38.2,
+          "proj_pts_avg": 38.3,
           "proj_finish": 2.5,
-          "prob_1st_pct": 25.2,
-          "prob_top2_pct": 52.8,
-          "prob_top4_pct": 96.3,
+          "prob_1st_pct": 26.4,
+          "prob_top2_pct": 53.3,
+          "prob_top4_pct": 96.4,
           "pool_probs": {
-            "Pool A": 44.8,
-            "Pool B": 55.2
+            "Pool A": 45.7,
+            "Pool B": 54.3
           },
           "completed_games": [
             {
@@ -6521,11 +6521,11 @@
           "current_w": 5,
           "current_l": 0,
           "current_t": 3,
-          "proj_pts_avg": 37.0,
+          "proj_pts_avg": 36.9,
           "proj_finish": 2.9,
-          "prob_1st_pct": 14.7,
-          "prob_top2_pct": 38.1,
-          "prob_top4_pct": 92.6,
+          "prob_1st_pct": 14.5,
+          "prob_top2_pct": 38.0,
+          "prob_top4_pct": 92.5,
           "pool_probs": {
             "Pool A": 42.4,
             "Pool B": 57.6
@@ -6753,12 +6753,12 @@
           "current_t": 2,
           "proj_pts_avg": 36.6,
           "proj_finish": 3.0,
-          "prob_1st_pct": 15.2,
-          "prob_top2_pct": 36.2,
-          "prob_top4_pct": 92.0,
+          "prob_1st_pct": 14.8,
+          "prob_top2_pct": 35.6,
+          "prob_top4_pct": 91.9,
           "pool_probs": {
-            "Pool A": 46.6,
-            "Pool B": 53.4
+            "Pool A": 46.3,
+            "Pool B": 53.7
           },
           "completed_games": [
             {
@@ -6980,11 +6980,11 @@
           "proj_pts_avg": 27.9,
           "proj_finish": 5.7,
           "prob_1st_pct": 0.1,
-          "prob_top2_pct": 0.9,
-          "prob_top4_pct": 12.3,
+          "prob_top2_pct": 0.8,
+          "prob_top4_pct": 12.2,
           "pool_probs": {
-            "Pool A": 43.1,
-            "Pool B": 56.9
+            "Pool A": 42.7,
+            "Pool B": 57.3
           },
           "completed_games": [
             {
@@ -7203,14 +7203,14 @@
           "current_w": 4,
           "current_l": 6,
           "current_t": 0,
-          "proj_pts_avg": 25.5,
+          "proj_pts_avg": 25.6,
           "proj_finish": 6.4,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.1,
-          "prob_top4_pct": 3.2,
+          "prob_top4_pct": 3.3,
           "pool_probs": {
-            "Pool A": 51.4,
-            "Pool B": 48.6
+            "Pool A": 51.1,
+            "Pool B": 48.9
           },
           "completed_games": [
             {
@@ -7441,10 +7441,10 @@
           "proj_finish": 6.6,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.1,
-          "prob_top4_pct": 3.1,
+          "prob_top4_pct": 3.3,
           "pool_probs": {
-            "Pool A": 52.6,
-            "Pool B": 47.4
+            "Pool A": 52.8,
+            "Pool B": 47.2
           },
           "completed_games": [
             {
@@ -7667,10 +7667,10 @@
           "proj_finish": 7.1,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.0,
-          "prob_top4_pct": 1.5,
+          "prob_top4_pct": 1.4,
           "pool_probs": {
-            "Pool A": 62.7,
-            "Pool B": 37.3
+            "Pool A": 63.5,
+            "Pool B": 36.5
           },
           "completed_games": [
             {
@@ -7895,8 +7895,8 @@
           "prob_top2_pct": 0.0,
           "prob_top4_pct": 0.0,
           "pool_probs": {
-            "Pool A": 4.8,
-            "Pool B": 95.2
+            "Pool A": 4.6,
+            "Pool B": 95.4
           },
           "completed_games": [
             {
@@ -8117,14 +8117,14 @@
           "current_w": 0,
           "current_l": 9,
           "current_t": 1,
-          "proj_pts_avg": 5.0,
+          "proj_pts_avg": 4.9,
           "proj_finish": 10.0,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.0,
           "prob_top4_pct": 0.0,
           "pool_probs": {
-            "Pool A": 97.5,
-            "Pool B": 2.5
+            "Pool A": 97.4,
+            "Pool B": 2.6
           },
           "completed_games": [
             {
@@ -8357,13 +8357,13 @@
           "current_t": 0,
           "proj_pts_avg": 42.0,
           "proj_finish": 1.3,
-          "prob_1st_pct": 73.4,
-          "prob_top2_pct": 93.0,
+          "prob_1st_pct": 73.3,
+          "prob_top2_pct": 93.1,
           "prob_top4_pct": 99.8,
           "pool_probs": {
-            "Group A": 73.4,
-            "Group B": 19.8,
-            "Group C": 6.8
+            "Group A": 73.3,
+            "Group B": 19.9,
+            "Group C": 6.7
           },
           "completed_games": [
             {
@@ -8583,13 +8583,13 @@
           "current_t": 0,
           "proj_pts_avg": 38.1,
           "proj_finish": 2.3,
-          "prob_1st_pct": 17.8,
-          "prob_top2_pct": 66.0,
-          "prob_top4_pct": 97.6,
+          "prob_1st_pct": 18.2,
+          "prob_top2_pct": 65.5,
+          "prob_top4_pct": 97.8,
           "pool_probs": {
-            "Group A": 18.4,
-            "Group B": 50.0,
-            "Group C": 31.6
+            "Group A": 18.7,
+            "Group B": 49.0,
+            "Group C": 32.3
           },
           "completed_games": [
             {
@@ -8807,13 +8807,13 @@
           "current_t": 3,
           "proj_pts_avg": 36.0,
           "proj_finish": 3.0,
-          "prob_1st_pct": 8.1,
-          "prob_top2_pct": 33.1,
-          "prob_top4_pct": 91.2,
+          "prob_1st_pct": 7.8,
+          "prob_top2_pct": 33.3,
+          "prob_top4_pct": 91.5,
           "pool_probs": {
-            "Group A": 10.7,
-            "Group B": 31.1,
-            "Group C": 58.2
+            "Group A": 10.3,
+            "Group B": 31.3,
+            "Group C": 58.5
           },
           "completed_games": [
             {
@@ -9036,11 +9036,11 @@
           "proj_pts_avg": 31.7,
           "proj_finish": 4.5,
           "prob_1st_pct": 0.6,
-          "prob_top2_pct": 5.9,
-          "prob_top4_pct": 57.2,
+          "prob_top2_pct": 6.2,
+          "prob_top4_pct": 57.4,
           "pool_probs": {
-            "Group A": 18.6,
-            "Group B": 27.3,
+            "Group A": 18.2,
+            "Group B": 27.7,
             "Group C": 54.1
           },
           "completed_games": [
@@ -9260,12 +9260,12 @@
           "proj_pts_avg": 28.6,
           "proj_finish": 5.7,
           "prob_1st_pct": 0.0,
-          "prob_top2_pct": 0.9,
-          "prob_top4_pct": 24.6,
+          "prob_top2_pct": 1.0,
+          "prob_top4_pct": 23.9,
           "pool_probs": {
-            "Group A": 34.1,
-            "Group B": 33.4,
-            "Group C": 32.5
+            "Group A": 34.5,
+            "Group B": 33.9,
+            "Group C": 31.6
           },
           "completed_games": [
             {
@@ -9483,15 +9483,15 @@
           "current_w": 3,
           "current_l": 3,
           "current_t": 2,
-          "proj_pts_avg": 27.7,
+          "proj_pts_avg": 27.8,
           "proj_finish": 6.3,
           "prob_1st_pct": 0.1,
-          "prob_top2_pct": 0.7,
-          "prob_top4_pct": 16.5,
+          "prob_top2_pct": 0.6,
+          "prob_top4_pct": 16.6,
           "pool_probs": {
-            "Group A": 38.6,
-            "Group B": 32.8,
-            "Group C": 28.6
+            "Group A": 38.2,
+            "Group B": 32.6,
+            "Group C": 29.2
           },
           "completed_games": [
             {
@@ -9710,12 +9710,12 @@
           "proj_pts_avg": 25.8,
           "proj_finish": 7.2,
           "prob_1st_pct": 0.0,
-          "prob_top2_pct": 0.2,
-          "prob_top4_pct": 7.6,
+          "prob_top2_pct": 0.3,
+          "prob_top4_pct": 7.7,
           "pool_probs": {
-            "Group A": 36.9,
-            "Group B": 35.1,
-            "Group C": 28.0
+            "Group A": 37.7,
+            "Group B": 34.7,
+            "Group C": 27.6
           },
           "completed_games": [
             {
@@ -9937,11 +9937,11 @@
           "proj_finish": 7.8,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.1,
-          "prob_top4_pct": 3.4,
+          "prob_top4_pct": 3.1,
           "pool_probs": {
             "Group A": 31.5,
-            "Group B": 40.0,
-            "Group C": 28.6
+            "Group B": 40.2,
+            "Group C": 28.2
           },
           "completed_games": [
             {
@@ -10165,9 +10165,9 @@
           "prob_top2_pct": 0.0,
           "prob_top4_pct": 1.2,
           "pool_probs": {
-            "Group A": 21.8,
+            "Group A": 22.2,
             "Group B": 48.8,
-            "Group C": 29.4
+            "Group C": 29.0
           },
           "completed_games": [
             {
@@ -10387,11 +10387,11 @@
           "proj_finish": 8.8,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.0,
-          "prob_top4_pct": 0.9,
+          "prob_top4_pct": 1.0,
           "pool_probs": {
-            "Group A": 17.5,
-            "Group B": 56.4,
-            "Group C": 26.1
+            "Group A": 16.8,
+            "Group B": 57.0,
+            "Group C": 26.2
           },
           "completed_games": [
             {
@@ -10617,9 +10617,9 @@
           "prob_top2_pct": 0.0,
           "prob_top4_pct": 0.0,
           "pool_probs": {
-            "Group A": 21.8,
-            "Group B": 21.9,
-            "Group C": 56.3
+            "Group A": 22.3,
+            "Group B": 21.5,
+            "Group C": 56.2
           },
           "completed_games": [
             {
@@ -10839,8 +10839,8 @@
           "prob_top2_pct": 0.0,
           "prob_top4_pct": 0.0,
           "pool_probs": {
-            "Group A": 82.8,
-            "Group B": 2.5,
+            "Group A": 82.7,
+            "Group B": 2.6,
             "Group C": 14.7
           },
           "completed_games": [
@@ -11065,9 +11065,9 @@
           "prob_top2_pct": 0.0,
           "prob_top4_pct": 0.0,
           "pool_probs": {
-            "Group A": 94.0,
+            "Group A": 93.7,
             "Group B": 0.9,
-            "Group C": 5.1
+            "Group C": 5.5
           },
           "completed_games": [
             {
@@ -11281,16 +11281,16 @@
           "current_w": 6,
           "current_l": 2,
           "current_t": 1,
-          "proj_pts_avg": 38.9,
+          "proj_pts_avg": 39.0,
           "proj_finish": 1.8,
-          "prob_1st_pct": 51.3,
-          "prob_top2_pct": 80.2,
+          "prob_1st_pct": 52.0,
+          "prob_top2_pct": 80.5,
           "prob_top4_pct": 97.8,
           "pool_probs": {
-            "Pool A": 51.3,
-            "Pool B": 28.9,
+            "Pool A": 52.0,
+            "Pool B": 28.4,
             "Pool C": 13.0,
-            "Pool D": 6.9
+            "Pool D": 6.6
           },
           "completed_games": [
             {
@@ -11510,14 +11510,14 @@
           "current_t": 2,
           "proj_pts_avg": 36.4,
           "proj_finish": 2.7,
-          "prob_1st_pct": 23.4,
-          "prob_top2_pct": 53.3,
-          "prob_top4_pct": 88.8,
+          "prob_1st_pct": 23.3,
+          "prob_top2_pct": 52.9,
+          "prob_top4_pct": 88.7,
           "pool_probs": {
-            "Pool A": 23.4,
-            "Pool B": 30.0,
-            "Pool C": 24.6,
-            "Pool D": 22.1
+            "Pool A": 23.3,
+            "Pool B": 29.7,
+            "Pool C": 25.3,
+            "Pool D": 21.7
           },
           "completed_games": [
             {
@@ -11735,14 +11735,14 @@
           "current_t": 0,
           "proj_pts_avg": 35.5,
           "proj_finish": 3.0,
-          "prob_1st_pct": 19.9,
+          "prob_1st_pct": 19.4,
           "prob_top2_pct": 43.3,
-          "prob_top4_pct": 82.3,
+          "prob_top4_pct": 82.1,
           "pool_probs": {
-            "Pool A": 19.9,
-            "Pool B": 23.8,
-            "Pool C": 27.5,
-            "Pool D": 28.8
+            "Pool A": 19.4,
+            "Pool B": 24.4,
+            "Pool C": 27.8,
+            "Pool D": 28.5
           },
           "completed_games": [
             {
@@ -11953,15 +11953,15 @@
           "current_l": 2,
           "current_t": 1,
           "proj_pts_avg": 32.1,
-          "proj_finish": 4.5,
-          "prob_1st_pct": 3.2,
-          "prob_top2_pct": 12.1,
-          "prob_top4_pct": 52.3,
+          "proj_finish": 4.6,
+          "prob_1st_pct": 3.1,
+          "prob_top2_pct": 11.9,
+          "prob_top4_pct": 51.3,
           "pool_probs": {
-            "Pool A": 3.2,
-            "Pool B": 10.3,
-            "Pool C": 29.6,
-            "Pool D": 56.9
+            "Pool A": 3.1,
+            "Pool B": 10.5,
+            "Pool C": 28.9,
+            "Pool D": 57.5
           },
           "completed_games": [
             {
@@ -12181,14 +12181,14 @@
           "current_t": 1,
           "proj_pts_avg": 30.3,
           "proj_finish": 5.4,
-          "prob_1st_pct": 1.0,
+          "prob_1st_pct": 1.1,
           "prob_top2_pct": 4.5,
-          "prob_top4_pct": 30.5,
+          "prob_top4_pct": 30.3,
           "pool_probs": {
-            "Pool A": 1.0,
+            "Pool A": 1.1,
             "Pool B": 7.6,
-            "Pool C": 32.0,
-            "Pool D": 59.5
+            "Pool C": 32.5,
+            "Pool D": 58.9
           },
           "completed_games": [
             {
@@ -12408,12 +12408,12 @@
           "proj_finish": 5.4,
           "prob_1st_pct": 0.9,
           "prob_top2_pct": 5.0,
-          "prob_top4_pct": 31.2,
+          "prob_top4_pct": 30.9,
           "pool_probs": {
             "Pool A": 0.9,
-            "Pool B": 8.2,
-            "Pool C": 33.5,
-            "Pool D": 57.4
+            "Pool B": 8.9,
+            "Pool C": 33.9,
+            "Pool D": 56.3
           },
           "completed_games": [
             {
@@ -12630,13 +12630,13 @@
           "proj_pts_avg": 27.2,
           "proj_finish": 6.9,
           "prob_1st_pct": 0.1,
-          "prob_top2_pct": 0.9,
-          "prob_top4_pct": 8.8,
+          "prob_top2_pct": 1.0,
+          "prob_top4_pct": 9.2,
           "pool_probs": {
             "Pool A": 0.1,
-            "Pool B": 18.1,
-            "Pool C": 48.9,
-            "Pool D": 32.9
+            "Pool B": 20.0,
+            "Pool C": 47.8,
+            "Pool D": 32.0
           },
           "completed_games": [
             {
@@ -12842,6 +12842,225 @@
           ]
         },
         {
+          "team_name": "Upper York Admirals U14 AA",
+          "mhr_rating": 82.15,
+          "effective_rating": 82.19,
+          "gamesheet_rating": 82.25,
+          "gamesheet_weight_pct": 38.5,
+          "current_gp": 5,
+          "current_pts": 6,
+          "current_w": 3,
+          "current_l": 2,
+          "current_t": 0,
+          "proj_pts_avg": 25.6,
+          "proj_finish": 7.5,
+          "prob_1st_pct": 0.1,
+          "prob_top2_pct": 0.7,
+          "prob_top4_pct": 6.1,
+          "pool_probs": {
+            "Pool A": 0.2,
+            "Pool B": 35.6,
+            "Pool C": 42.5,
+            "Pool D": 21.7
+          },
+          "completed_games": [
+            {
+              "date": "Nov 6, 2026",
+              "opponent": "Stouffville Clippers U14 AA",
+              "is_home": false,
+              "team_goals": 9,
+              "opp_goals": 1,
+              "result": "W",
+              "location": "Stouffville Clippers (CC1)"
+            },
+            {
+              "date": "Oct 15, 2026",
+              "opponent": "Collingwood Jr. Blues 14 AA",
+              "is_home": false,
+              "team_goals": 3,
+              "opp_goals": 4,
+              "result": "L",
+              "location": "Eddie Bush (Eddie Bush)"
+            },
+            {
+              "date": "Oct 18, 2026",
+              "opponent": "Aurora Tigers U14 AA",
+              "is_home": true,
+              "team_goals": 3,
+              "opp_goals": 5,
+              "result": "L",
+              "location": "Georgina Sutton (Georgina Sutton)"
+            },
+            {
+              "date": "Oct 25, 2026",
+              "opponent": "Stouffville Clippers U14 AA",
+              "is_home": true,
+              "team_goals": 7,
+              "opp_goals": 2,
+              "result": "W",
+              "location": "Georgina Sutton (Georgina Sutton)"
+            },
+            {
+              "date": "Oct 4, 2026",
+              "opponent": "King Rebellion U14 AA",
+              "is_home": false,
+              "team_goals": 4,
+              "opp_goals": 3,
+              "result": "W",
+              "location": "Zancor (CDS)"
+            }
+          ],
+          "upcoming_games": [
+            {
+              "date": "2026-11-07",
+              "time": "17:30",
+              "opponent": "Markham Waxers U14 AA",
+              "is_home": false,
+              "location": "Village"
+            },
+            {
+              "date": "2026-11-09",
+              "time": "18:00",
+              "opponent": "Aurora Tigers U14 AA",
+              "is_home": false,
+              "location": "Aurora Recreation Complex (West) - Aurora Toyota Arena"
+            },
+            {
+              "date": "2026-11-14",
+              "time": "14:30",
+              "opponent": "Stouffville Clippers U14 AA",
+              "is_home": false,
+              "location": "Stouffville Clippers (CC1)"
+            },
+            {
+              "date": "2026-11-15",
+              "time": "14:30",
+              "opponent": "Orangeville Flyers U14 AA",
+              "is_home": true,
+              "location": "Georgina Sutton"
+            },
+            {
+              "date": "2026-11-17",
+              "time": "20:00",
+              "opponent": "TNT Tornados U14 AA",
+              "is_home": false,
+              "location": "New Tecumseth Rec (NTRC 1)"
+            },
+            {
+              "date": "2026-11-18",
+              "time": "19:00",
+              "opponent": "Barrie Colts U14 AA",
+              "is_home": false,
+              "location": "Allandale Recreation Centre (Red)"
+            },
+            {
+              "date": "2026-11-22",
+              "time": "16:45",
+              "opponent": "Collingwood Jr. Blues 14 AA",
+              "is_home": true,
+              "location": "Georgina Sutton"
+            },
+            {
+              "date": "2026-12-05",
+              "time": "19:00",
+              "opponent": "Markham Waxers U14 AA",
+              "is_home": false,
+              "location": "Milliken Mills"
+            },
+            {
+              "date": "2026-12-06",
+              "time": "15:45",
+              "opponent": "Newmarket Renegades U14 AA",
+              "is_home": true,
+              "location": "Georgina Sutton"
+            },
+            {
+              "date": "2026-12-16",
+              "time": "19:30",
+              "opponent": "Caledon Hawks U14 AA",
+              "is_home": false,
+              "location": "Caledon East (1)"
+            },
+            {
+              "date": "2026-12-20",
+              "time": "17:45",
+              "opponent": "Barrie Colts U14 AA",
+              "is_home": true,
+              "location": "Georgina Sutton"
+            },
+            {
+              "date": "2027-01-03",
+              "time": "17:15",
+              "opponent": "Markham Waxers U14 AA",
+              "is_home": true,
+              "location": "Georgina Sutton Arena - White"
+            },
+            {
+              "date": "2027-01-08",
+              "time": "19:15",
+              "opponent": "Orangeville Flyers U14 AA",
+              "is_home": false,
+              "location": "Tony Rose A"
+            },
+            {
+              "date": "2027-01-09",
+              "time": "18:30",
+              "opponent": "Newmarket Renegades U14 AA",
+              "is_home": false,
+              "location": "Magna Centre (Scotiabank)"
+            },
+            {
+              "date": "2027-01-10",
+              "time": "15:45",
+              "opponent": "Caledon Hawks U14 AA",
+              "is_home": true,
+              "location": "Georgina Sutton Arena - White"
+            },
+            {
+              "date": "2027-01-21",
+              "time": "18:00",
+              "opponent": "South Simcoe Storm U14 AA",
+              "is_home": true,
+              "location": "Georgina Sutton"
+            },
+            {
+              "date": "2027-01-24",
+              "time": "17:45",
+              "opponent": "King Rebellion U14 AA",
+              "is_home": true,
+              "location": "Georgina Sutton"
+            },
+            {
+              "date": "2027-01-27",
+              "time": "19:30",
+              "opponent": "South Simcoe Storm U14 AA",
+              "is_home": false,
+              "location": "IRC CORTELLUCCI (RED)"
+            },
+            {
+              "date": "2027-01-31",
+              "time": "17:30",
+              "opponent": "Aurora Tigers U14 AA",
+              "is_home": true,
+              "location": "Georgina Sutton"
+            },
+            {
+              "date": "2027-02-05",
+              "time": "19:15",
+              "opponent": "King Rebellion U14 AA",
+              "is_home": true,
+              "location": "Georgina Sutton"
+            },
+            {
+              "date": "2027-02-07",
+              "time": "15:45",
+              "opponent": "TNT Tornados U14 AA",
+              "is_home": true,
+              "location": "Georgina Ice Palace - Blue"
+            }
+          ]
+        },
+        {
           "team_name": "Collingwood Jr. Blues 14 AA",
           "mhr_rating": 81.85,
           "effective_rating": 82.12,
@@ -12853,15 +13072,15 @@
           "current_l": 3,
           "current_t": 2,
           "proj_pts_avg": 25.4,
-          "proj_finish": 7.6,
+          "proj_finish": 7.7,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.3,
-          "prob_top4_pct": 3.4,
+          "prob_top4_pct": 3.3,
           "pool_probs": {
             "Pool A": 0.0,
-            "Pool B": 33.0,
-            "Pool C": 49.9,
-            "Pool D": 17.1
+            "Pool B": 35.2,
+            "Pool C": 47.9,
+            "Pool D": 16.9
           },
           "completed_games": [
             {
@@ -13071,223 +13290,6 @@
           ]
         },
         {
-          "team_name": "Upper York Admirals U14 AA",
-          "mhr_rating": 82.15,
-          "effective_rating": 82.14,
-          "gamesheet_rating": 82.12,
-          "gamesheet_weight_pct": 33.3,
-          "current_gp": 4,
-          "current_pts": 4,
-          "current_w": 2,
-          "current_l": 2,
-          "current_t": 0,
-          "proj_pts_avg": 25.0,
-          "proj_finish": 7.7,
-          "prob_1st_pct": 0.1,
-          "prob_top2_pct": 0.5,
-          "prob_top4_pct": 4.9,
-          "pool_probs": {
-            "Pool A": 0.3,
-            "Pool B": 40.8,
-            "Pool C": 40.5,
-            "Pool D": 18.4
-          },
-          "completed_games": [
-            {
-              "date": "Oct 15, 2026",
-              "opponent": "Collingwood Jr. Blues 14 AA",
-              "is_home": false,
-              "team_goals": 3,
-              "opp_goals": 4,
-              "result": "L",
-              "location": "Eddie Bush (Eddie Bush)"
-            },
-            {
-              "date": "Oct 18, 2026",
-              "opponent": "Aurora Tigers U14 AA",
-              "is_home": true,
-              "team_goals": 3,
-              "opp_goals": 5,
-              "result": "L",
-              "location": "Georgina Sutton (Georgina Sutton)"
-            },
-            {
-              "date": "Oct 25, 2026",
-              "opponent": "Stouffville Clippers U14 AA",
-              "is_home": true,
-              "team_goals": 7,
-              "opp_goals": 2,
-              "result": "W",
-              "location": "Georgina Sutton (Georgina Sutton)"
-            },
-            {
-              "date": "Oct 4, 2026",
-              "opponent": "King Rebellion U14 AA",
-              "is_home": false,
-              "team_goals": 4,
-              "opp_goals": 3,
-              "result": "W",
-              "location": "Zancor (CDS)"
-            }
-          ],
-          "upcoming_games": [
-            {
-              "date": "2026-11-06",
-              "time": "20:00",
-              "opponent": "Stouffville Clippers U14 AA",
-              "is_home": false,
-              "location": "Stouffville Clippers (CC1)"
-            },
-            {
-              "date": "2026-11-07",
-              "time": "17:30",
-              "opponent": "Markham Waxers U14 AA",
-              "is_home": false,
-              "location": "Village"
-            },
-            {
-              "date": "2026-11-09",
-              "time": "18:00",
-              "opponent": "Aurora Tigers U14 AA",
-              "is_home": false,
-              "location": "Aurora Recreation Complex (West) - Aurora Toyota Arena"
-            },
-            {
-              "date": "2026-11-14",
-              "time": "14:30",
-              "opponent": "Stouffville Clippers U14 AA",
-              "is_home": false,
-              "location": "Stouffville Clippers (CC1)"
-            },
-            {
-              "date": "2026-11-15",
-              "time": "14:30",
-              "opponent": "Orangeville Flyers U14 AA",
-              "is_home": true,
-              "location": "Georgina Sutton"
-            },
-            {
-              "date": "2026-11-17",
-              "time": "20:00",
-              "opponent": "TNT Tornados U14 AA",
-              "is_home": false,
-              "location": "New Tecumseth Rec (NTRC 1)"
-            },
-            {
-              "date": "2026-11-18",
-              "time": "19:00",
-              "opponent": "Barrie Colts U14 AA",
-              "is_home": false,
-              "location": "Allandale Recreation Centre (Red)"
-            },
-            {
-              "date": "2026-11-22",
-              "time": "16:45",
-              "opponent": "Collingwood Jr. Blues 14 AA",
-              "is_home": true,
-              "location": "Georgina Sutton"
-            },
-            {
-              "date": "2026-12-05",
-              "time": "19:00",
-              "opponent": "Markham Waxers U14 AA",
-              "is_home": false,
-              "location": "Milliken Mills"
-            },
-            {
-              "date": "2026-12-06",
-              "time": "15:45",
-              "opponent": "Newmarket Renegades U14 AA",
-              "is_home": true,
-              "location": "Georgina Sutton"
-            },
-            {
-              "date": "2026-12-16",
-              "time": "19:30",
-              "opponent": "Caledon Hawks U14 AA",
-              "is_home": false,
-              "location": "Caledon East (1)"
-            },
-            {
-              "date": "2026-12-20",
-              "time": "17:45",
-              "opponent": "Barrie Colts U14 AA",
-              "is_home": true,
-              "location": "Georgina Sutton"
-            },
-            {
-              "date": "2027-01-03",
-              "time": "17:15",
-              "opponent": "Markham Waxers U14 AA",
-              "is_home": true,
-              "location": "Georgina Sutton Arena - White"
-            },
-            {
-              "date": "2027-01-08",
-              "time": "19:15",
-              "opponent": "Orangeville Flyers U14 AA",
-              "is_home": false,
-              "location": "Tony Rose A"
-            },
-            {
-              "date": "2027-01-09",
-              "time": "18:30",
-              "opponent": "Newmarket Renegades U14 AA",
-              "is_home": false,
-              "location": "Magna Centre (Scotiabank)"
-            },
-            {
-              "date": "2027-01-10",
-              "time": "15:45",
-              "opponent": "Caledon Hawks U14 AA",
-              "is_home": true,
-              "location": "Georgina Sutton Arena - White"
-            },
-            {
-              "date": "2027-01-21",
-              "time": "18:00",
-              "opponent": "South Simcoe Storm U14 AA",
-              "is_home": true,
-              "location": "Georgina Sutton"
-            },
-            {
-              "date": "2027-01-24",
-              "time": "17:45",
-              "opponent": "King Rebellion U14 AA",
-              "is_home": true,
-              "location": "Georgina Sutton"
-            },
-            {
-              "date": "2027-01-27",
-              "time": "19:30",
-              "opponent": "South Simcoe Storm U14 AA",
-              "is_home": false,
-              "location": "IRC CORTELLUCCI (RED)"
-            },
-            {
-              "date": "2027-01-31",
-              "time": "17:30",
-              "opponent": "Aurora Tigers U14 AA",
-              "is_home": true,
-              "location": "Georgina Sutton"
-            },
-            {
-              "date": "2027-02-05",
-              "time": "19:15",
-              "opponent": "King Rebellion U14 AA",
-              "is_home": true,
-              "location": "Georgina Sutton"
-            },
-            {
-              "date": "2027-02-07",
-              "time": "15:45",
-              "opponent": "TNT Tornados U14 AA",
-              "is_home": true,
-              "location": "Georgina Ice Palace - Blue"
-            }
-          ]
-        },
-        {
           "team_name": "Markham Waxers U14 AA",
           "mhr_rating": 80.33,
           "effective_rating": 80.8,
@@ -13304,9 +13306,9 @@
           "prob_top2_pct": 0.0,
           "prob_top4_pct": 0.0,
           "pool_probs": {
-            "Pool A": 28.9,
-            "Pool B": 70.5,
-            "Pool C": 0.6,
+            "Pool A": 27.1,
+            "Pool B": 72.3,
+            "Pool C": 0.5,
             "Pool D": 0.0
           },
           "completed_games": [
@@ -13527,8 +13529,8 @@
           "prob_top2_pct": 0.0,
           "prob_top4_pct": 0.0,
           "pool_probs": {
-            "Pool A": 79.3,
-            "Pool B": 20.7,
+            "Pool A": 78.9,
+            "Pool B": 21.1,
             "Pool C": 0.0,
             "Pool D": 0.0
           },
@@ -13734,26 +13736,35 @@
         {
           "team_name": "Stouffville Clippers U14 AA",
           "mhr_rating": 79.01,
-          "effective_rating": 79.11,
-          "gamesheet_rating": 79.27,
-          "gamesheet_weight_pct": 38.5,
-          "current_gp": 5,
+          "effective_rating": 79.06,
+          "gamesheet_rating": 79.12,
+          "gamesheet_weight_pct": 42.9,
+          "current_gp": 6,
           "current_pts": 0,
           "current_w": 0,
-          "current_l": 5,
+          "current_l": 6,
           "current_t": 0,
-          "proj_pts_avg": 7.7,
-          "proj_finish": 11.5,
+          "proj_pts_avg": 7.1,
+          "proj_finish": 11.6,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.0,
           "prob_top4_pct": 0.0,
           "pool_probs": {
-            "Pool A": 91.6,
-            "Pool B": 8.4,
+            "Pool A": 93.9,
+            "Pool B": 6.1,
             "Pool C": 0.0,
             "Pool D": 0.0
           },
           "completed_games": [
+            {
+              "date": "Nov 6, 2026",
+              "opponent": "Upper York Admirals U14 AA",
+              "is_home": true,
+              "team_goals": 1,
+              "opp_goals": 9,
+              "result": "L",
+              "location": "Stouffville Clippers (CC1)"
+            },
             {
               "date": "Oct 17, 2026",
               "opponent": "King Rebellion U14 AA",
@@ -13801,13 +13812,6 @@
             }
           ],
           "upcoming_games": [
-            {
-              "date": "2026-11-06",
-              "time": "20:00",
-              "opponent": "Upper York Admirals U14 AA",
-              "is_home": true,
-              "location": "Stouffville Clippers (CC1)"
-            },
             {
               "date": "2026-11-08",
               "time": "17:00",
@@ -13965,12 +13969,12 @@
           "current_t": 3,
           "proj_pts_avg": 40.2,
           "proj_finish": 1.5,
-          "prob_1st_pct": 64.7,
-          "prob_top2_pct": 91.4,
+          "prob_1st_pct": 64.6,
+          "prob_top2_pct": 91.5,
           "prob_top4_pct": 99.6,
           "pool_probs": {
-            "Pool A": 66.3,
-            "Pool B": 33.7
+            "Pool A": 66.2,
+            "Pool B": 33.8
           },
           "completed_games": [
             {
@@ -14195,14 +14199,14 @@
           "current_w": 4,
           "current_l": 1,
           "current_t": 3,
-          "proj_pts_avg": 37.9,
+          "proj_pts_avg": 38.0,
           "proj_finish": 2.0,
-          "prob_1st_pct": 28.9,
-          "prob_top2_pct": 76.7,
-          "prob_top4_pct": 98.1,
+          "prob_1st_pct": 28.8,
+          "prob_top2_pct": 76.9,
+          "prob_top4_pct": 98.2,
           "pool_probs": {
-            "Pool A": 34.7,
-            "Pool B": 65.3
+            "Pool A": 34.6,
+            "Pool B": 65.4
           },
           "completed_games": [
             {
@@ -14425,14 +14429,14 @@
           "current_w": 2,
           "current_l": 2,
           "current_t": 0,
-          "proj_pts_avg": 32.0,
+          "proj_pts_avg": 31.9,
           "proj_finish": 3.8,
-          "prob_1st_pct": 3.8,
-          "prob_top2_pct": 16.5,
-          "prob_top4_pct": 72.1,
+          "prob_1st_pct": 3.9,
+          "prob_top2_pct": 16.3,
+          "prob_top4_pct": 71.8,
           "pool_probs": {
-            "Pool A": 36.9,
-            "Pool B": 63.1
+            "Pool A": 37.0,
+            "Pool B": 63.0
           },
           "completed_games": [
             {
@@ -14649,9 +14653,9 @@
           "current_t": 2,
           "proj_pts_avg": 31.2,
           "proj_finish": 4.0,
-          "prob_1st_pct": 2.0,
-          "prob_top2_pct": 10.6,
-          "prob_top4_pct": 66.3,
+          "prob_1st_pct": 2.1,
+          "prob_top2_pct": 10.3,
+          "prob_top4_pct": 65.8,
           "pool_probs": {
             "Pool A": 41.4,
             "Pool B": 58.6
@@ -14876,13 +14880,13 @@
           "current_l": 3,
           "current_t": 2,
           "proj_pts_avg": 29.7,
-          "proj_finish": 4.6,
-          "prob_1st_pct": 0.5,
+          "proj_finish": 4.5,
+          "prob_1st_pct": 0.6,
           "prob_top2_pct": 4.2,
-          "prob_top4_pct": 47.7,
+          "prob_top4_pct": 48.4,
           "pool_probs": {
-            "Pool A": 42.6,
-            "Pool B": 57.4
+            "Pool A": 43.1,
+            "Pool B": 56.9
           },
           "completed_games": [
             {
@@ -15111,7 +15115,7 @@
           "proj_finish": 6.2,
           "prob_1st_pct": 0.1,
           "prob_top2_pct": 0.5,
-          "prob_top4_pct": 10.2,
+          "prob_top4_pct": 10.1,
           "pool_probs": {
             "Pool A": 52.2,
             "Pool B": 47.8
@@ -15337,14 +15341,14 @@
           "current_w": 3,
           "current_l": 4,
           "current_t": 0,
-          "proj_pts_avg": 23.1,
+          "proj_pts_avg": 23.0,
           "proj_finish": 6.7,
           "prob_1st_pct": 0.0,
-          "prob_top2_pct": 0.1,
-          "prob_top4_pct": 5.3,
+          "prob_top2_pct": 0.2,
+          "prob_top4_pct": 5.5,
           "pool_probs": {
-            "Pool A": 47.1,
-            "Pool B": 52.9
+            "Pool A": 46.8,
+            "Pool B": 53.2
           },
           "completed_games": [
             {
@@ -15565,14 +15569,14 @@
           "current_w": 1,
           "current_l": 3,
           "current_t": 1,
-          "proj_pts_avg": 17.5,
+          "proj_pts_avg": 17.4,
           "proj_finish": 8.6,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.0,
-          "prob_top4_pct": 0.4,
+          "prob_top4_pct": 0.3,
           "pool_probs": {
-            "Pool A": 58.3,
-            "Pool B": 41.7
+            "Pool A": 58.6,
+            "Pool B": 41.4
           },
           "completed_games": [
             {
@@ -15789,14 +15793,14 @@
           "current_w": 2,
           "current_l": 6,
           "current_t": 1,
-          "proj_pts_avg": 17.2,
+          "proj_pts_avg": 17.3,
           "proj_finish": 8.7,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.0,
-          "prob_top4_pct": 0.1,
+          "prob_top4_pct": 0.2,
           "pool_probs": {
-            "Pool A": 58.5,
-            "Pool B": 41.5
+            "Pool A": 58.4,
+            "Pool B": 41.6
           },
           "completed_games": [
             {
@@ -16021,14 +16025,14 @@
           "current_w": 1,
           "current_l": 5,
           "current_t": 2,
-          "proj_pts_avg": 16.4,
-          "proj_finish": 9.0,
+          "proj_pts_avg": 16.5,
+          "proj_finish": 8.9,
           "prob_1st_pct": 0.0,
           "prob_top2_pct": 0.0,
           "prob_top4_pct": 0.1,
           "pool_probs": {
-            "Pool A": 62.0,
-            "Pool B": 38.0
+            "Pool A": 61.8,
+            "Pool B": 38.2
           },
           "completed_games": [
             {
