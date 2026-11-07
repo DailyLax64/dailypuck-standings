@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07T09:01:29.319224+00:00",
+  "generated_at": "2026-11-07T15:23:22.175475+00:00",
   "standings": [
     {
       "league": "Tri-County",
@@ -3380,6 +3380,38 @@
       "visitor_goals": null
     },
     {
+      "game_id": "3165307",
+      "league": "Tri-County",
+      "league_id": "15497",
+      "cohort": "U11 AA",
+      "date": "Nov 13, 2026",
+      "time": "7:00 PM",
+      "status": "scheduled",
+      "location": "Susan Fennell (1)",
+      "home_id": "534781",
+      "home_name": "Brampton 45s",
+      "home_goals": null,
+      "visitor_id": "534701",
+      "visitor_name": "Garden City Minor Falcons",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3165308",
+      "league": "Tri-County",
+      "league_id": "15497",
+      "cohort": "U11 AA",
+      "date": "Nov 13, 2026",
+      "time": "7:30 PM",
+      "status": "scheduled",
+      "location": "LIUNA 4 (Red)",
+      "home_id": "534787",
+      "home_name": "Hamilton Steel",
+      "home_goals": null,
+      "visitor_id": "537289",
+      "visitor_name": "Norfolk Knights",
+      "visitor_goals": null
+    },
+    {
       "game_id": "3032678",
       "league": "York-Simcoe",
       "league_id": "15489",
@@ -4993,6 +5025,22 @@
       "home_goals": null,
       "visitor_id": "534175",
       "visitor_name": "Collingwood Jr. Blues 11 AA",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3165340",
+      "league": "York-Simcoe",
+      "league_id": "15489",
+      "cohort": "U14 AA",
+      "date": "Nov 13, 2026",
+      "time": "7:15 PM",
+      "status": "scheduled",
+      "location": "Tony Rose (A)",
+      "home_id": "534166",
+      "home_name": "Orangeville Flyers U14 AA",
+      "home_goals": null,
+      "visitor_id": "534102",
+      "visitor_name": "Aurora Tigers U14 AA",
       "visitor_goals": null
     },
     {
