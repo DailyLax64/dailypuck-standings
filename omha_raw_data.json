@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06T20:35:16.468855+00:00",
+  "generated_at": "2026-11-07T01:24:11.303370+00:00",
   "standings": [
     {
       "league": "Tri-County",
@@ -3034,14 +3034,14 @@
       "cohort": "U11 AA",
       "date": "Nov 6, 2026",
       "time": "7:15 PM",
-      "status": "scheduled",
+      "status": "final",
       "location": "Appleby (1)",
       "home_id": "534784",
       "home_name": "Burlington Eagles",
-      "home_goals": null,
+      "home_goals": 3,
       "visitor_id": "534777",
       "visitor_name": "Milton Winterhawks",
-      "visitor_goals": null
+      "visitor_goals": 0
     },
     {
       "game_id": "3144932",
@@ -4762,14 +4762,14 @@
       "cohort": "U14 AA",
       "date": "Nov 6, 2026",
       "time": "7:00 PM",
-      "status": "scheduled",
+      "status": "final",
       "location": "Tony Rose (A)",
       "home_id": "534166",
       "home_name": "Orangeville Flyers U14 AA",
-      "home_goals": null,
+      "home_goals": 1,
       "visitor_id": "534128",
       "visitor_name": "Barrie Colts U14 AA",
-      "visitor_goals": null
+      "visitor_goals": 4
     },
     {
       "game_id": "3143875",
@@ -4977,6 +4977,22 @@
       "home_goals": null,
       "visitor_id": "534092",
       "visitor_name": "Stouffville Clippers U11 AA",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3164857",
+      "league": "York-Simcoe",
+      "league_id": "15489",
+      "cohort": "U11 AA",
+      "date": "Nov 13, 2026",
+      "time": "6:00 PM",
+      "status": "scheduled",
+      "location": "Stouffville (Pad A)",
+      "home_id": "534092",
+      "home_name": "Stouffville Clippers U11 AA",
+      "home_goals": null,
+      "visitor_id": "534175",
+      "visitor_name": "Collingwood Jr. Blues 11 AA",
       "visitor_goals": null
     },
     {
