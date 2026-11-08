@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-08T09:01:17.566875+00:00",
+  "generated_at": "2026-11-08T13:53:38.071781+00:00",
   "standings": [
     {
       "league": "Tri-County",
@@ -3098,14 +3098,14 @@
       "cohort": "U11 AA",
       "date": "Nov 7, 2026",
       "time": "4:45 PM",
-      "status": "scheduled",
+      "status": "final",
       "location": "Appleby (2)",
       "home_id": "534784",
       "home_name": "Burlington Eagles",
-      "home_goals": null,
+      "home_goals": 5,
       "visitor_id": "534724",
       "visitor_name": "Halton Hills Thunder",
-      "visitor_goals": null
+      "visitor_goals": 2
     },
     {
       "game_id": "3145298",
@@ -6769,6 +6769,38 @@
       "home_goals": null,
       "visitor_id": "534524",
       "visitor_name": "OSHAWA AA U14",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3167443",
+      "league": "Lakeshore",
+      "league_id": "15493",
+      "cohort": "U14 AA",
+      "date": "Nov 14, 2026",
+      "time": "7:00 PM",
+      "status": "scheduled",
+      "location": "Quinte S & WC (Wally Dever)",
+      "home_id": "534525",
+      "home_name": "BELLEVILLE AA U14",
+      "home_goals": null,
+      "visitor_id": "534526",
+      "visitor_name": "NORTH DURHAM AA U14",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3167444",
+      "league": "Lakeshore",
+      "league_id": "15493",
+      "cohort": "U14 AA",
+      "date": "Nov 14, 2026",
+      "time": "7:15 PM",
+      "status": "scheduled",
+      "location": "Rickard (Toyota)",
+      "home_id": "534527",
+      "home_name": "CLARINGTON AA U14",
+      "home_goals": null,
+      "visitor_id": "534562",
+      "visitor_name": "QUINTE WEST AA U14",
       "visitor_goals": null
     }
   ]
