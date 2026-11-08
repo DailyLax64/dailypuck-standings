@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-08T04:01:12.813132+00:00",
+  "updated_at": "2026-11-08T09:01:10.693184+00:00",
   "total_season_games": 946,
   "games": [
     {
@@ -1559,7 +1559,7 @@
       "league": "Lakeshore",
       "date": "2026-11-07",
       "time": "13:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "KINGSTON AREA AA U11",
       "visitor": "PETERBOROUGH AA U11",
       "location": "Cataraqui (Kinsmen)"
@@ -1570,7 +1570,7 @@
       "league": "Lakeshore",
       "date": "2026-11-07",
       "time": "13:15",
-      "status": "scheduled",
+      "status": "played",
       "home": "CLARINGTON AA U11",
       "visitor": "BELLEVILLE AA U11",
       "location": "Rickard (Toyota)"
@@ -1581,7 +1581,7 @@
       "league": "Tri-County",
       "date": "2026-11-07",
       "time": "13:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "Guelph Gryphons",
       "visitor": "West Niagara Flying Aces",
       "location": "West End Recreation Centre (1)"
@@ -1592,7 +1592,7 @@
       "league": "Lakeshore",
       "date": "2026-11-07",
       "time": "14:15",
-      "status": "scheduled",
+      "status": "played",
       "home": "QUINTE WEST AA U11",
       "visitor": "NORTHUMBERLAND AA U11",
       "location": "Duncan McDonald (1)"
@@ -1603,7 +1603,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-07",
       "time": "14:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "Barrie Colts U11 AA",
       "visitor": "South Simcoe Storm U11 AA",
       "location": "Peggy Hill (Arena 1)"
@@ -1614,7 +1614,7 @@
       "league": "Tri-County",
       "date": "2026-11-07",
       "time": "15:15",
-      "status": "scheduled",
+      "status": "played",
       "home": "Hamilton Steel",
       "visitor": "Centre Wellington Fusion",
       "location": "Parkdale"
@@ -1625,7 +1625,7 @@
       "league": "Tri-County",
       "date": "2026-11-07",
       "time": "16:45",
-      "status": "scheduled",
+      "status": "played",
       "home": "Burlington Eagles",
       "visitor": "Halton Hills Thunder",
       "location": "Appleby (2)"
@@ -6850,7 +6850,7 @@
       "league": "Lakeshore",
       "date": "2026-11-07",
       "time": "13:15",
-      "status": "scheduled",
+      "status": "played",
       "home": "NORTH DURHAM AA U14",
       "visitor": "QUINTE WEST AA U14",
       "location": "Uxbridge (2)"
@@ -6861,7 +6861,7 @@
       "league": "Tri-County",
       "date": "2026-11-07",
       "time": "15:15",
-      "status": "scheduled",
+      "status": "played",
       "home": "Garden City Minor Falcons",
       "visitor": "Halton Hills Thunder",
       "location": "Walkers Sports and Abilities Centre Rink 2"
@@ -6872,7 +6872,7 @@
       "league": "Lakeshore",
       "date": "2026-11-07",
       "time": "16:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "KINGSTON AREA AA U14",
       "visitor": "CLARINGTON AA U14",
       "location": "INVISTA (CUPE)"
@@ -6883,7 +6883,7 @@
       "league": "Tri-County",
       "date": "2026-11-07",
       "time": "17:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "Milton Winterhawks",
       "visitor": "Guelph Gryphons",
       "location": "Milton Sports Centre - Rink D"
@@ -6894,7 +6894,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-07",
       "time": "17:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "Markham Waxers U14 AA",
       "visitor": "Upper York Admirals U14 AA",
       "location": "Village"
@@ -6905,7 +6905,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-07",
       "time": "18:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "Newmarket Renegades U14 AA",
       "visitor": "South Simcoe Storm U14 AA",
       "location": "Magna (Scotiabank)"
@@ -6916,7 +6916,7 @@
       "league": "Lakeshore",
       "date": "2026-11-07",
       "time": "19:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "OSHAWA AA U14",
       "visitor": "BELLEVILLE AA U14",
       "location": "Delpark Homes Centre (Pad 2)"
