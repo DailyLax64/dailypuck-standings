@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-08T15:45:16.448397+00:00",
+  "updated_at": "2026-11-08T23:17:11.932150+00:00",
   "total_season_games": 946,
   "games": [
     {
@@ -4095,17 +4095,6 @@
       "location": "Susan Fennell (1)"
     },
     {
-      "game_code": "U11AA-121",
-      "cohort": "U11 AA",
-      "league": "Tri-County",
-      "date": "2027-01-03",
-      "time": "14:30",
-      "status": "scheduled",
-      "home": "Flamborough Sabres",
-      "visitor": "Glancaster Bombers",
-      "location": "Harry Howell (B)"
-    },
-    {
       "game_code": "U11AA-017",
       "cohort": "U11 AA",
       "league": "Lakeshore",
@@ -4126,6 +4115,17 @@
       "home": "NORTHUMBERLAND AA U11",
       "visitor": "PETERBOROUGH AA U11",
       "location": "CCC (Bowl)"
+    },
+    {
+      "game_code": "U11AA-121",
+      "cohort": "U11 AA",
+      "league": "Tri-County",
+      "date": "2027-01-03",
+      "time": "15:15",
+      "status": "scheduled",
+      "home": "Flamborough Sabres",
+      "visitor": "Glancaster Bombers",
+      "location": "Olympic"
     },
     {
       "game_code": "U11AA-RS-19",
