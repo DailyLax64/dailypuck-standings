@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T09:01:32.074183+00:00",
+  "generated_at": "2026-11-09T19:28:11.045107+00:00",
   "standings": [
     {
       "league": "Tri-County",
@@ -3553,6 +3553,22 @@
       "home_goals": null,
       "visitor_id": "534725",
       "visitor_name": "Flamborough Sabres",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3171811",
+      "league": "Tri-County",
+      "league_id": "15497",
+      "cohort": "U14 AA",
+      "date": "Nov 15, 2026",
+      "time": "7:30 PM",
+      "status": "scheduled",
+      "location": "Morgan (B)",
+      "home_id": "534746",
+      "home_name": "Glancaster Bombers",
+      "home_goals": null,
+      "visitor_id": "534709",
+      "visitor_name": "Milton Winterhawks",
       "visitor_goals": null
     },
     {
