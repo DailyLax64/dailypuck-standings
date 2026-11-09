@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T04:01:31.513642+00:00",
+  "generated_at": "2026-11-09T09:01:32.074183+00:00",
   "standings": [
     {
       "league": "Tri-County",
@@ -7025,6 +7025,38 @@
       "home_goals": null,
       "visitor_id": "534527",
       "visitor_name": "CLARINGTON AA U14",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3170999",
+      "league": "Lakeshore",
+      "league_id": "15493",
+      "cohort": "U14 AA",
+      "date": "Nov 15, 2026",
+      "time": "6:30 PM",
+      "status": "scheduled",
+      "location": "Scugog (1)",
+      "home_id": "534526",
+      "home_name": "NORTH DURHAM AA U14",
+      "home_goals": null,
+      "visitor_id": "534521",
+      "visitor_name": "KINGSTON AREA AA U14",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3171000",
+      "league": "Lakeshore",
+      "league_id": "15493",
+      "cohort": "U14 AA",
+      "date": "Nov 15, 2026",
+      "time": "7:00 PM",
+      "status": "scheduled",
+      "location": "CCC (Bowl)",
+      "home_id": "534522",
+      "home_name": "NORTHUMBERLAND AA U14",
+      "home_goals": null,
+      "visitor_id": "534528",
+      "visitor_name": "WHITBY AA U14",
       "visitor_goals": null
     }
   ]

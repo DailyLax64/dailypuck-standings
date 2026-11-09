@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-09T04:01:22.966856+00:00",
+  "updated_at": "2026-11-09T09:01:23.379371+00:00",
   "total_season_games": 946,
   "games": [
     {
@@ -1636,7 +1636,7 @@
       "league": "Tri-County",
       "date": "2026-11-08",
       "time": "13:15",
-      "status": "scheduled",
+      "status": "played",
       "home": "West Niagara Flying Aces",
       "visitor": "Oakville Rangers",
       "location": "Fleming"
@@ -1647,7 +1647,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-08",
       "time": "14:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "Collingwood Jr. Blues 11 AA",
       "visitor": "Newmarket Renegades U11 AA",
       "location": "Eddie Bush Arena"
@@ -1658,7 +1658,7 @@
       "league": "Tri-County",
       "date": "2026-11-08",
       "time": "14:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "Halton Hills Thunder",
       "visitor": "Guelph Gryphons",
       "location": "Acton (B)"
@@ -1669,7 +1669,7 @@
       "league": "Lakeshore",
       "date": "2026-11-08",
       "time": "14:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "NORTHUMBERLAND AA U11",
       "visitor": "KINGSTON AREA AA U11",
       "location": "CCC (Bowl)"
@@ -1680,7 +1680,7 @@
       "league": "Lakeshore",
       "date": "2026-11-08",
       "time": "15:45",
-      "status": "scheduled",
+      "status": "played",
       "home": "BELLEVILLE AA U11",
       "visitor": "PETERBOROUGH AA U11",
       "location": "Quinte SWC (Wally Dever)"
@@ -6927,7 +6927,7 @@
       "league": "Tri-County",
       "date": "2026-11-08",
       "time": "12:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "Milton Winterhawks",
       "visitor": "Oakville Rangers",
       "location": "Milton Memorial Arena"
@@ -6938,7 +6938,7 @@
       "league": "Lakeshore",
       "date": "2026-11-08",
       "time": "15:45",
-      "status": "scheduled",
+      "status": "played",
       "home": "QUINTE WEST AA U14",
       "visitor": "BELLEVILLE AA U14",
       "location": "Duncan McDonald (1)"
@@ -6949,7 +6949,7 @@
       "league": "Tri-County",
       "date": "2026-11-08",
       "time": "16:05",
-      "status": "scheduled",
+      "status": "played",
       "home": "Burlington Eagles",
       "visitor": "Centre Wellington Fusion",
       "location": "Appleby (1)"
@@ -6960,7 +6960,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-08",
       "time": "17:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "Stouffville Clippers U14 AA",
       "visitor": "Collingwood Jr. Blues 14 AA",
       "location": "Stouffville (Pad A)"
@@ -6971,7 +6971,7 @@
       "league": "Lakeshore",
       "date": "2026-11-08",
       "time": "18:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "CLARINGTON AA U14",
       "visitor": "NORTH DURHAM AA U14",
       "location": "Darlington"
