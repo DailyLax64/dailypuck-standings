@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T09:01:32.435018+00:00",
+  "generated_at": "2026-11-10T16:45:44.187300+00:00",
   "standings": [
     {
       "league": "Tri-County",
@@ -3572,6 +3572,54 @@
       "visitor_goals": null
     },
     {
+      "game_id": "3174464",
+      "league": "Tri-County",
+      "league_id": "15497",
+      "cohort": "U11 AA",
+      "date": "Nov 16, 2026",
+      "time": "6:25 PM",
+      "status": "scheduled",
+      "location": "Morgan (A)",
+      "home_id": "534728",
+      "home_name": "Glancaster Bombers",
+      "home_goals": null,
+      "visitor_id": "534701",
+      "visitor_name": "Garden City Minor Falcons",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3174465",
+      "league": "Tri-County",
+      "league_id": "15497",
+      "cohort": "U11 AA",
+      "date": "Nov 16, 2026",
+      "time": "6:30 PM",
+      "status": "scheduled",
+      "location": "MSC (D)",
+      "home_id": "534777",
+      "home_name": "Milton Winterhawks",
+      "home_goals": null,
+      "visitor_id": "534702",
+      "visitor_name": "Guelph Gryphons",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3174487",
+      "league": "Tri-County",
+      "league_id": "15497",
+      "cohort": "U14 AA",
+      "date": "Nov 16, 2026",
+      "time": "7:15 PM",
+      "status": "scheduled",
+      "location": "WERC (2)",
+      "home_id": "537298",
+      "home_name": "Guelph Gryphons",
+      "home_goals": null,
+      "visitor_id": "537295",
+      "visitor_name": "Oakville Rangers",
+      "visitor_goals": null
+    },
+    {
       "game_id": "3032678",
       "league": "York-Simcoe",
       "league_id": "15489",
@@ -5380,6 +5428,22 @@
       "visitor_goals": null
     },
     {
+      "game_id": "3174416",
+      "league": "York-Simcoe",
+      "league_id": "15489",
+      "cohort": "U14 AA",
+      "date": "Nov 16, 2026",
+      "time": "6:00 PM",
+      "status": "scheduled",
+      "location": "Aurora Rec Complex (Toyota)",
+      "home_id": "534102",
+      "home_name": "Aurora Tigers U14 AA",
+      "home_goals": null,
+      "visitor_id": "534182",
+      "visitor_name": "Markham Waxers U14 AA",
+      "visitor_goals": null
+    },
+    {
       "game_id": "3032658",
       "league": "Lakeshore",
       "league_id": "15493",
@@ -6730,14 +6794,14 @@
       "cohort": "U14 AA",
       "date": "Nov 9, 2026",
       "time": "7:45 PM",
-      "status": "scheduled",
+      "status": "final",
       "location": "Quinte S & WC (FDC)",
       "home_id": "534525",
       "home_name": "BELLEVILLE AA U14",
-      "home_goals": null,
+      "home_goals": 1,
       "visitor_id": "534521",
       "visitor_name": "KINGSTON AREA AA U14",
-      "visitor_goals": null
+      "visitor_goals": 2
     },
     {
       "game_id": "3163927",

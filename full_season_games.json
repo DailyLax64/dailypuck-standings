@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10T09:01:24.764536+00:00",
+  "updated_at": "2026-11-10T16:45:36.910634+00:00",
   "total_season_games": 946,
   "games": [
     {
@@ -2181,6 +2181,17 @@
       "location": "Uxbridge Community Centre Pad 1"
     },
     {
+      "game_code": "U11AA-RS--053",
+      "cohort": "U11 AA",
+      "league": "York-Simcoe",
+      "date": "2026-11-21",
+      "time": "13:15",
+      "status": "scheduled",
+      "home": "TNT Tornados U11 AA",
+      "visitor": "Markham Waxers U11 AA",
+      "location": "Alliston NTRC (2)"
+    },
+    {
       "game_code": "U11AA-RS-33",
       "cohort": "U11 AA",
       "league": "York-Simcoe",
@@ -2201,17 +2212,6 @@
       "home": "KINGSTON AREA AA U11",
       "visitor": "CLARINGTON AA U11",
       "location": "Cataraqui CC (Cataraqui)"
-    },
-    {
-      "game_code": "U11AA-RS--053",
-      "cohort": "U11 AA",
-      "league": "York-Simcoe",
-      "date": "2026-11-21",
-      "time": "14:45",
-      "status": "scheduled",
-      "home": "TNT Tornados U11 AA",
-      "visitor": "Markham Waxers U11 AA",
-      "location": "Alliston NTRC (2)"
     },
     {
       "game_code": "U11AA-172",
@@ -9390,11 +9390,11 @@
       "cohort": "U14 AA",
       "league": "Tri-County",
       "date": "2027-01-04",
-      "time": "19:15",
+      "time": "19:00",
       "status": "scheduled",
       "home": "Guelph Gryphons",
       "visitor": "Centre Wellington Fusion",
-      "location": "West End Recreation Centre (2)"
+      "location": "West End Recreation Centre (1)"
     },
     {
       "game_code": "U14AA-64",
