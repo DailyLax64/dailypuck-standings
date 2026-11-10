@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10T04:01:23.669578+00:00",
+  "updated_at": "2026-11-10T09:01:24.764536+00:00",
   "total_season_games": 946,
   "games": [
     {
@@ -1691,7 +1691,7 @@
       "league": "Tri-County",
       "date": "2026-11-09",
       "time": "18:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "Milton Winterhawks",
       "visitor": "Hamilton Steel",
       "location": "Milton Sports Centre - Rink D"
@@ -1702,7 +1702,7 @@
       "league": "Lakeshore",
       "date": "2026-11-09",
       "time": "19:15",
-      "status": "scheduled",
+      "status": "played",
       "home": "PETERBOROUGH AA U11",
       "visitor": "CLARINGTON AA U11",
       "location": "Healthy Planet Arena (Sign-a-fied)"
@@ -6982,7 +6982,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-09",
       "time": "18:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "Aurora Tigers U14 AA",
       "visitor": "Upper York Admirals U14 AA",
       "location": "Aurora Recreation Complex (West) - Aurora Toyota Arena"
@@ -6993,7 +6993,7 @@
       "league": "Tri-County",
       "date": "2026-11-09",
       "time": "19:15",
-      "status": "scheduled",
+      "status": "played",
       "home": "Guelph Gryphons",
       "visitor": "West Niagara Flying Aces",
       "location": "West End Recreation Centre (2)"
@@ -7004,7 +7004,7 @@
       "league": "Lakeshore",
       "date": "2026-11-09",
       "time": "19:45",
-      "status": "scheduled",
+      "status": "played",
       "home": "BELLEVILLE AA U14",
       "visitor": "KINGSTON AREA AA U14",
       "location": "Quinte S & WC (FDC)"
