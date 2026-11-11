@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-11T04:01:14.427024+00:00",
+  "updated_at": "2026-11-11T09:01:22.937123+00:00",
   "total_season_games": 946,
   "games": [
     {
@@ -1713,7 +1713,7 @@
       "league": "Tri-County",
       "date": "2026-11-10",
       "time": "18:15",
-      "status": "scheduled",
+      "status": "played",
       "home": "Burlington Eagles",
       "visitor": "Glancaster Bombers",
       "location": "Appleby (1)"
@@ -1724,7 +1724,7 @@
       "league": "Tri-County",
       "date": "2026-11-10",
       "time": "18:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "Oakville Rangers",
       "visitor": "Flamborough Sabres",
       "location": "Trafalgar Park"
@@ -7015,7 +7015,7 @@
       "league": "Tri-County",
       "date": "2026-11-10",
       "time": "19:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "Niagara Falls Canucks",
       "visitor": "Hamilton Steel",
       "location": "Gale (4 - Centennial)"
@@ -7026,7 +7026,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-10",
       "time": "19:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "Markham Waxers U14 AA",
       "visitor": "King Rebellion U14 AA",
       "location": "Centennial"
@@ -7037,7 +7037,7 @@
       "league": "Tri-County",
       "date": "2026-11-10",
       "time": "19:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "Flamborough Sabres",
       "visitor": "Glancaster Bombers",
       "location": "Harry Howell (B)"
@@ -7048,7 +7048,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-10",
       "time": "20:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "South Simcoe Storm U14 AA",
       "visitor": "Caledon Hawks U14 AA",
       "location": "BLC - PAUL DOSSEY"

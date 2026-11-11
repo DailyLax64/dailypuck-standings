@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T04:01:21.745469+00:00",
+  "generated_at": "2026-11-11T09:01:31.825507+00:00",
   "standings": [
     {
       "league": "Tri-County",
@@ -7137,6 +7137,22 @@
       "home_goals": null,
       "visitor_id": "534528",
       "visitor_name": "WHITBY AA U14",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3176254",
+      "league": "Lakeshore",
+      "league_id": "15493",
+      "cohort": "U11 AA",
+      "date": "Nov 17, 2026",
+      "time": "7:30 PM",
+      "status": "scheduled",
+      "location": "Delpark Homes (1)",
+      "home_id": "534493",
+      "home_name": "OSHAWA AA U11",
+      "home_goals": null,
+      "visitor_id": "534499",
+      "visitor_name": "WHITBY AA U11",
       "visitor_goals": null
     }
   ]
