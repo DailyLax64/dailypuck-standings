@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-12T04:01:15.856646+00:00",
+  "updated_at": "2026-11-12T09:01:28.352586+00:00",
   "total_season_games": 946,
   "games": [
     {
@@ -1735,7 +1735,7 @@
       "league": "Tri-County",
       "date": "2026-11-11",
       "time": "18:35",
-      "status": "scheduled",
+      "status": "played",
       "home": "Centre Wellington Fusion",
       "visitor": "Stoney Creek Warriors",
       "location": "Elora"
@@ -1746,7 +1746,7 @@
       "league": "Tri-County",
       "date": "2026-11-11",
       "time": "19:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "Garden City Minor Falcons",
       "visitor": "Niagara Falls Canucks",
       "location": "Seymour-Hannah (3)"
@@ -7059,7 +7059,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-11",
       "time": "19:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "Orangeville Flyers U14 AA",
       "visitor": "Stouffville Clippers U14 AA",
       "location": "Alder (Red)"
@@ -7070,7 +7070,7 @@
       "league": "Tri-County",
       "date": "2026-11-11",
       "time": "19:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "Halton Hills Thunder",
       "visitor": "Niagara Falls Canucks",
       "location": "Acton (Main)"
@@ -7081,7 +7081,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-11",
       "time": "19:40",
-      "status": "scheduled",
+      "status": "played",
       "home": "South Simcoe Storm U14 AA",
       "visitor": "King Rebellion U14 AA",
       "location": "Innisfil Rec (Red)"
@@ -7092,7 +7092,7 @@
       "league": "Tri-County",
       "date": "2026-11-11",
       "time": "20:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "Centre Wellington Fusion",
       "visitor": "Flamborough Sabres",
       "location": "Centre Wellington Community Sportsplex (Pad A)"
