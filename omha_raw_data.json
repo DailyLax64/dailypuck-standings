@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T09:01:13.712500+00:00",
+  "generated_at": "2026-11-13T16:55:00.519169+00:00",
   "standings": [
     {
       "league": "Tri-County",
@@ -3370,14 +3370,14 @@
       "cohort": "U14 AA",
       "date": "Nov 12, 2026",
       "time": "7:45 PM",
-      "status": "scheduled",
+      "status": "final",
       "location": "Glen Abbey (Blue)",
       "home_id": "537295",
       "home_name": "Oakville Rangers",
-      "home_goals": null,
+      "home_goals": 0,
       "visitor_id": "534709",
       "visitor_name": "Milton Winterhawks",
-      "visitor_goals": null
+      "visitor_goals": 5
     },
     {
       "game_id": "3165307",
