@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T04:01:15.993441+00:00",
+  "generated_at": "2026-11-13T09:01:13.712500+00:00",
   "standings": [
     {
       "league": "Tri-County",
@@ -3764,6 +3764,22 @@
       "visitor_goals": null
     },
     {
+      "game_id": "3179588",
+      "league": "Tri-County",
+      "league_id": "15497",
+      "cohort": "U14 AA",
+      "date": "Nov 19, 2026",
+      "time": "7:30 PM",
+      "status": "scheduled",
+      "location": "Waterford (Waterford)",
+      "home_id": "537296",
+      "home_name": "Norfolk Knights",
+      "home_goals": null,
+      "visitor_id": "534744",
+      "visitor_name": "Flamborough Sabres",
+      "visitor_goals": null
+    },
+    {
       "game_id": "3032678",
       "league": "York-Simcoe",
       "league_id": "15489",
@@ -5700,6 +5716,22 @@
       "visitor_goals": null
     },
     {
+      "game_id": "3179500",
+      "league": "York-Simcoe",
+      "league_id": "15489",
+      "cohort": "U14 AA",
+      "date": "Nov 19, 2026",
+      "time": "8:15 PM",
+      "status": "scheduled",
+      "location": "Eddie Bush (Eddie Bush)",
+      "home_id": "534178",
+      "home_name": "Collingwood Jr. Blues 14 AA",
+      "home_goals": null,
+      "visitor_id": "534140",
+      "visitor_name": "South Simcoe Storm U14 AA",
+      "visitor_goals": null
+    },
+    {
       "game_id": "3032658",
       "league": "Lakeshore",
       "league_id": "15493",
@@ -7409,6 +7441,22 @@
       "home_goals": null,
       "visitor_id": "534499",
       "visitor_name": "WHITBY AA U11",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3179480",
+      "league": "Lakeshore",
+      "league_id": "15493",
+      "cohort": "U14 AA",
+      "date": "Nov 19, 2026",
+      "time": "7:30 PM",
+      "status": "scheduled",
+      "location": "Jack Burger (Jack Burger)",
+      "home_id": "534522",
+      "home_name": "NORTHUMBERLAND AA U14",
+      "home_goals": null,
+      "visitor_id": "534523",
+      "visitor_name": "PETERBOROUGH AA U14",
       "visitor_goals": null
     }
   ]

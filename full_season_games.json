@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-13T04:01:09.477810+00:00",
+  "updated_at": "2026-11-13T09:01:06.451686+00:00",
   "total_season_games": 946,
   "games": [
     {
@@ -1757,7 +1757,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-12",
       "time": "18:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "Aurora Tigers U11 AA",
       "visitor": "Orangeville Flyer U11 AA",
       "location": "Aurora Community Centre - Ford"
@@ -1768,7 +1768,7 @@
       "league": "Lakeshore",
       "date": "2026-11-12",
       "time": "18:15",
-      "status": "scheduled",
+      "status": "played",
       "home": "QUINTE WEST AA U11",
       "visitor": "KINGSTON AREA AA U11",
       "location": "Duncan McDonald (1)"
@@ -1779,7 +1779,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-12",
       "time": "18:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "Newmarket Renegades U11 AA",
       "visitor": "Stouffville Clippers U11 AA",
       "location": "Magna Centre (Scotiabank)"
@@ -1790,7 +1790,7 @@
       "league": "Lakeshore",
       "date": "2026-11-12",
       "time": "18:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "AJAX-PICKERING AA U11",
       "visitor": "WHITBY AA U11",
       "location": "Don Beer (3)"
@@ -7103,7 +7103,7 @@
       "league": "Lakeshore",
       "date": "2026-11-12",
       "time": "18:45",
-      "status": "scheduled",
+      "status": "played",
       "home": "WHITBY AA U14",
       "visitor": "AJAX-PICKERING AA U14",
       "location": "McKinney (1)"
@@ -7114,7 +7114,7 @@
       "league": "Tri-County",
       "date": "2026-11-12",
       "time": "19:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "Norfolk Knights",
       "visitor": "Halton Hills Thunder",
       "location": "Waterford"
@@ -7125,7 +7125,7 @@
       "league": "Lakeshore",
       "date": "2026-11-12",
       "time": "19:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "NORTHUMBERLAND AA U14",
       "visitor": "CLARINGTON AA U14",
       "location": "Jack Burger"
@@ -7136,7 +7136,7 @@
       "league": "Tri-County",
       "date": "2026-11-12",
       "time": "19:45",
-      "status": "scheduled",
+      "status": "played",
       "home": "Oakville Rangers",
       "visitor": "Milton Winterhawks",
       "location": "Glen Abbey (Blue)"
