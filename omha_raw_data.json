@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T09:01:11.149975+00:00",
+  "generated_at": "2026-11-14T15:30:31.722710+00:00",
   "standings": [
     {
       "league": "Tri-County",
@@ -5748,6 +5748,22 @@
       "visitor_goals": null
     },
     {
+      "game_id": "3181068",
+      "league": "York-Simcoe",
+      "league_id": "15489",
+      "cohort": "U14 AA",
+      "date": "Nov 20, 2026",
+      "time": "8:00 PM",
+      "status": "scheduled",
+      "location": "Stouffville Clippers (CC1)",
+      "home_id": "534101",
+      "home_name": "Stouffville Clippers U14 AA",
+      "home_goals": null,
+      "visitor_id": "534103",
+      "visitor_name": "TNT Tornados U14 AA",
+      "visitor_goals": null
+    },
+    {
       "game_id": "3032658",
       "league": "Lakeshore",
       "league_id": "15493",
@@ -7473,6 +7489,22 @@
       "home_goals": null,
       "visitor_id": "534523",
       "visitor_name": "PETERBOROUGH AA U14",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3181057",
+      "league": "Lakeshore",
+      "league_id": "15493",
+      "cohort": "U11 AA",
+      "date": "Nov 20, 2026",
+      "time": "3:30 PM",
+      "status": "scheduled",
+      "location": "Slush Puppy (Slush Puppy)",
+      "home_id": "534518",
+      "home_name": "KINGSTON AREA AA U11",
+      "home_goals": null,
+      "visitor_id": "534494",
+      "visitor_name": "CLARINGTON AA U11",
       "visitor_goals": null
     },
     {
