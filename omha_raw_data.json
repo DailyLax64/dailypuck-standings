@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T04:01:11.524196+00:00",
+  "generated_at": "2026-11-14T09:01:11.149975+00:00",
   "standings": [
     {
       "league": "Tri-County",
@@ -3780,6 +3780,22 @@
       "visitor_goals": null
     },
     {
+      "game_id": "3180865",
+      "league": "Tri-County",
+      "league_id": "15497",
+      "cohort": "U14 AA",
+      "date": "Nov 20, 2026",
+      "time": "7:15 PM",
+      "status": "scheduled",
+      "location": "Fleming (Fleming)",
+      "home_id": "534710",
+      "home_name": "West Niagara Flying Aces",
+      "home_goals": null,
+      "visitor_id": "537296",
+      "visitor_name": "Norfolk Knights",
+      "visitor_goals": null
+    },
+    {
       "game_id": "3032678",
       "league": "York-Simcoe",
       "league_id": "15489",
@@ -7457,6 +7473,22 @@
       "home_goals": null,
       "visitor_id": "534523",
       "visitor_name": "PETERBOROUGH AA U14",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3180882",
+      "league": "Lakeshore",
+      "league_id": "15493",
+      "cohort": "U14 AA",
+      "date": "Nov 20, 2026",
+      "time": "8:30 PM",
+      "status": "scheduled",
+      "location": "Miskin Law CC (Russelle Toyota)",
+      "home_id": "534523",
+      "home_name": "PETERBOROUGH AA U14",
+      "home_goals": null,
+      "visitor_id": "534525",
+      "visitor_name": "BELLEVILLE AA U14",
       "visitor_goals": null
     }
   ]

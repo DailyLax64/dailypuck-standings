@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-14T04:01:04.644433+00:00",
+  "updated_at": "2026-11-14T09:01:04.022961+00:00",
   "total_season_games": 946,
   "games": [
     {
@@ -1801,7 +1801,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-13",
       "time": "18:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "Stouffville Clippers U11 AA",
       "visitor": "Collingwood Jr. Blues 11 AA",
       "location": "Stouffville (Pad A)"
@@ -1812,7 +1812,7 @@
       "league": "Lakeshore",
       "date": "2026-11-13",
       "time": "18:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "PETERBOROUGH AA U11",
       "visitor": "NORTHUMBERLAND AA U11",
       "location": "Healthy Planet Arena (The Gardener)"
@@ -1823,7 +1823,7 @@
       "league": "Tri-County",
       "date": "2026-11-13",
       "time": "19:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "Brampton 45s",
       "visitor": "Garden City Minor Falcons",
       "location": "Susan Fennell (1)"
@@ -1834,7 +1834,7 @@
       "league": "Tri-County",
       "date": "2026-11-13",
       "time": "19:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "Hamilton Steel",
       "visitor": "Norfolk Knights",
       "location": "LIUNA 4 (Red)"
@@ -7147,7 +7147,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-13",
       "time": "19:15",
-      "status": "scheduled",
+      "status": "played",
       "home": "Orangeville Flyers U14 AA",
       "visitor": "Aurora Tigers U14 AA",
       "location": "Tony Rose A"
