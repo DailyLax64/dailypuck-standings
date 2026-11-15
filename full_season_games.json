@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-14T15:30:25.338925+00:00",
+  "updated_at": "2026-11-15T04:01:14.951441+00:00",
   "total_season_games": 946,
   "games": [
     {
@@ -3765,6 +3765,17 @@
       "location": "East Bayfield Arena (Purple)"
     },
     {
+      "game_code": "U11AA-110",
+      "cohort": "U11 AA",
+      "league": "Tri-County",
+      "date": "2026-12-20",
+      "time": "13:00",
+      "status": "scheduled",
+      "home": "Brampton 45s",
+      "visitor": "Hamilton Steel",
+      "location": "Susan Fennell (Pad 1)"
+    },
+    {
       "game_code": "U11AA-046",
       "cohort": "U11 AA",
       "league": "Lakeshore",
@@ -3774,17 +3785,6 @@
       "home": "KINGSTON AREA AA U11",
       "visitor": "NORTH DURHAM AA U11",
       "location": "Centre 70"
-    },
-    {
-      "game_code": "U11AA-110",
-      "cohort": "U11 AA",
-      "league": "Tri-County",
-      "date": "2026-12-20",
-      "time": "13:15",
-      "status": "scheduled",
-      "home": "Brampton 45s",
-      "visitor": "Hamilton Steel",
-      "location": "Susan Fennell (Pad 2)"
     },
     {
       "game_code": "U11AA-177",
