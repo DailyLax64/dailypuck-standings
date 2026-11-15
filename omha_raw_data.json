@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T09:01:17.560946+00:00",
+  "generated_at": "2026-11-15T16:02:52.434851+00:00",
   "standings": [
     {
       "league": "Tri-County",
@@ -3857,6 +3857,38 @@
       "home_goals": null,
       "visitor_id": "537289",
       "visitor_name": "Norfolk Knights",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3183304",
+      "league": "Tri-County",
+      "league_id": "15497",
+      "cohort": "U14 AA",
+      "date": "Nov 21, 2026",
+      "time": "6:30 PM",
+      "status": "scheduled",
+      "location": "S-H SEC (Sportsplex) (1)",
+      "home_id": "534743",
+      "home_name": "Garden City Minor Falcons",
+      "home_goals": null,
+      "visitor_id": "534710",
+      "visitor_name": "West Niagara Flying Aces",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3183255",
+      "league": "Tri-County",
+      "league_id": "15497",
+      "cohort": "U11 AA",
+      "date": "Nov 21, 2026",
+      "time": "6:40 PM",
+      "status": "scheduled",
+      "location": "Appleby (1)",
+      "home_id": "534784",
+      "home_name": "Burlington Eagles",
+      "home_goals": null,
+      "visitor_id": "534727",
+      "visitor_name": "West Niagara Flying Aces",
       "visitor_goals": null
     },
     {
