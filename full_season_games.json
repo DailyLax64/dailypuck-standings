@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-15T04:01:14.951441+00:00",
+  "updated_at": "2026-11-15T09:01:10.717895+00:00",
   "total_season_games": 946,
   "games": [
     {
@@ -1845,7 +1845,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-14",
       "time": "12:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "Richmond Hill Jaguars U11 AA",
       "visitor": "Aurora Tigers U11 AA",
       "location": "Elvis Stojko"
@@ -1856,7 +1856,7 @@
       "league": "Lakeshore",
       "date": "2026-11-14",
       "time": "13:15",
-      "status": "scheduled",
+      "status": "played",
       "home": "CLARINGTON AA U11",
       "visitor": "OSHAWA AA U11",
       "location": "Rickard (Toyota)"
@@ -1867,7 +1867,7 @@
       "league": "Tri-County",
       "date": "2026-11-14",
       "time": "13:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "Guelph Gryphons",
       "visitor": "Glancaster Bombers",
       "location": "WERC (1)"
@@ -1878,7 +1878,7 @@
       "league": "Lakeshore",
       "date": "2026-11-14",
       "time": "13:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "PETERBOROUGH AA U11",
       "visitor": "KINGSTON AREA AA U11",
       "location": "Miskin Law Community Complex (CHE)"
@@ -1889,7 +1889,7 @@
       "league": "Lakeshore",
       "date": "2026-11-14",
       "time": "14:15",
-      "status": "scheduled",
+      "status": "played",
       "home": "QUINTE WEST AA U11",
       "visitor": "AJAX-PICKERING AA U11",
       "location": "Duncan McDonald (1)"
@@ -1900,7 +1900,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-14",
       "time": "14:40",
-      "status": "scheduled",
+      "status": "played",
       "home": "Upper York Admirals U11 AA",
       "visitor": "South Simcoe Storm U11 AA",
       "location": "EGSC (West)"
@@ -1911,7 +1911,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-14",
       "time": "15:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "Orangeville Flyer U11 AA",
       "visitor": "King Rebellion U11AA",
       "location": "Alder Red"
@@ -1922,7 +1922,7 @@
       "league": "Tri-County",
       "date": "2026-11-14",
       "time": "15:15",
-      "status": "scheduled",
+      "status": "played",
       "home": "Hamilton Steel",
       "visitor": "Halton Hills Thunder",
       "location": "Parkdale"
@@ -1933,7 +1933,7 @@
       "league": "Tri-County",
       "date": "2026-11-14",
       "time": "15:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "Stoney Creek Warriors",
       "visitor": "Brampton 45s",
       "location": "Valley Park arena"
@@ -1944,7 +1944,7 @@
       "league": "Lakeshore",
       "date": "2026-11-14",
       "time": "15:35",
-      "status": "scheduled",
+      "status": "played",
       "home": "WHITBY AA U11",
       "visitor": "NORTHUMBERLAND AA U11",
       "location": "IPSC (4)"
@@ -7158,7 +7158,7 @@
       "league": "Lakeshore",
       "date": "2026-11-14",
       "time": "12:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "AJAX-PICKERING AA U14",
       "visitor": "NORTHUMBERLAND AA U14",
       "location": "Don Beer Arena (Pad 3)"
@@ -7169,7 +7169,7 @@
       "league": "Tri-County",
       "date": "2026-11-14",
       "time": "14:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "Hamilton Steel",
       "visitor": "Guelph Gryphons",
       "location": "Chedoke (Red)"
@@ -7180,7 +7180,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-14",
       "time": "14:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "Stouffville Clippers U14 AA",
       "visitor": "Upper York Admirals U14 AA",
       "location": "Stouffville Clippers (CC1)"
@@ -7191,7 +7191,7 @@
       "league": "Tri-County",
       "date": "2026-11-14",
       "time": "15:45",
-      "status": "scheduled",
+      "status": "played",
       "home": "Milton Winterhawks",
       "visitor": "Burlington Eagles",
       "location": "Sherwood Arena"
@@ -7202,7 +7202,7 @@
       "league": "Lakeshore",
       "date": "2026-11-14",
       "time": "16:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "WHITBY AA U14",
       "visitor": "PETERBOROUGH AA U14",
       "location": "IPSC (1)"
@@ -7213,7 +7213,7 @@
       "league": "Tri-County",
       "date": "2026-11-14",
       "time": "16:50",
-      "status": "scheduled",
+      "status": "played",
       "home": "Oakville Rangers",
       "visitor": "Glancaster Bombers",
       "location": "Joshua Creek (Red)"
@@ -7224,7 +7224,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-14",
       "time": "17:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "Newmarket Renegades U14 AA",
       "visitor": "TNT Tornados U14 AA",
       "location": "Magna Centre (Scotiabank)"
@@ -7235,7 +7235,7 @@
       "league": "Lakeshore",
       "date": "2026-11-14",
       "time": "17:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "KINGSTON AREA AA U14",
       "visitor": "OSHAWA AA U14",
       "location": "Centre 70 Arena"
@@ -7246,7 +7246,7 @@
       "league": "Lakeshore",
       "date": "2026-11-14",
       "time": "19:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "BELLEVILLE AA U14",
       "visitor": "NORTH DURHAM AA U14",
       "location": "Quinte SWC (Wally Dever)"
@@ -7257,7 +7257,7 @@
       "league": "Lakeshore",
       "date": "2026-11-14",
       "time": "19:15",
-      "status": "scheduled",
+      "status": "played",
       "home": "CLARINGTON AA U14",
       "visitor": "QUINTE WEST AA U14",
       "location": "G.B. Rickard (Toyota)"
