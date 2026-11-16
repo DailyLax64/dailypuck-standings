@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-16T04:01:19.095211+00:00",
+  "updated_at": "2026-11-16T09:01:20.448402+00:00",
   "total_season_games": 946,
   "games": [
     {
@@ -1955,7 +1955,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-15",
       "time": "11:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "King Rebellion U11AA",
       "visitor": "TNT Tornados U11 AA",
       "location": "Zancor (JTF)"
@@ -1966,7 +1966,7 @@
       "league": "Lakeshore",
       "date": "2026-11-15",
       "time": "13:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "KINGSTON AREA AA U11",
       "visitor": "WHITBY AA U11",
       "location": "INVISTA (Selkirk)"
@@ -1977,7 +1977,7 @@
       "league": "Tri-County",
       "date": "2026-11-15",
       "time": "13:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "Oakville Rangers",
       "visitor": "Norfolk Knights",
       "location": "Trafalgar Park"
@@ -1988,7 +1988,7 @@
       "league": "Lakeshore",
       "date": "2026-11-15",
       "time": "14:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "NORTHUMBERLAND AA U11",
       "visitor": "OSHAWA AA U11",
       "location": "CCC (Bowl)"
@@ -1999,7 +1999,7 @@
       "league": "Lakeshore",
       "date": "2026-11-15",
       "time": "14:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "CLARINGTON AA U11",
       "visitor": "QUINTE WEST AA U11",
       "location": "South Courtice (B)"
@@ -2010,7 +2010,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-15",
       "time": "15:15",
-      "status": "scheduled",
+      "status": "played",
       "home": "Upper York Admirals U11 AA",
       "visitor": "Collingwood Jr. Blues 11 AA",
       "location": "Ice Palace (Blue)"
@@ -2021,7 +2021,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-15",
       "time": "15:45",
-      "status": "scheduled",
+      "status": "played",
       "home": "Aurora Tigers U11 AA",
       "visitor": "Newmarket Renegades U11 AA",
       "location": "Aurora CC (2 - Lincoln)"
@@ -2032,7 +2032,7 @@
       "league": "Tri-County",
       "date": "2026-11-15",
       "time": "17:15",
-      "status": "scheduled",
+      "status": "played",
       "home": "Niagara Falls Canucks",
       "visitor": "Flamborough Sabres",
       "location": "Gale (1 - ES Fox)"
@@ -7268,7 +7268,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-15",
       "time": "14:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "Upper York Admirals U14 AA",
       "visitor": "Orangeville Flyers U14 AA",
       "location": "Georgina Sutton"
@@ -7279,7 +7279,7 @@
       "league": "Lakeshore",
       "date": "2026-11-15",
       "time": "15:45",
-      "status": "scheduled",
+      "status": "played",
       "home": "QUINTE WEST AA U14",
       "visitor": "AJAX-PICKERING AA U14",
       "location": "Duncan McDonald (1)"
@@ -7290,7 +7290,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-15",
       "time": "16:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "King Rebellion U14 AA",
       "visitor": "Barrie Colts U14 AA",
       "location": "Zancor (CDS Pad)"
@@ -7301,7 +7301,7 @@
       "league": "Tri-County",
       "date": "2026-11-15",
       "time": "17:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "West Niagara Flying Aces",
       "visitor": "Niagara Falls Canucks",
       "location": "Fleming Memorial Arena"
@@ -7312,7 +7312,7 @@
       "league": "Lakeshore",
       "date": "2026-11-15",
       "time": "17:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "BELLEVILLE AA U14",
       "visitor": "CLARINGTON AA U14",
       "location": "Quinte S & WC (Wally Dever)"
@@ -7323,7 +7323,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-15",
       "time": "17:15",
-      "status": "scheduled",
+      "status": "played",
       "home": "Caledon Hawks U14 AA",
       "visitor": "Markham Waxers U14 AA",
       "location": "Caledon East (1)"
@@ -7334,7 +7334,7 @@
       "league": "Lakeshore",
       "date": "2026-11-15",
       "time": "18:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "NORTH DURHAM AA U14",
       "visitor": "KINGSTON AREA AA U14",
       "location": "Scugog (1)"
@@ -7345,7 +7345,7 @@
       "league": "Lakeshore",
       "date": "2026-11-15",
       "time": "19:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "NORTHUMBERLAND AA U14",
       "visitor": "WHITBY AA U14",
       "location": "CCC-Bowl"
@@ -7356,7 +7356,7 @@
       "league": "Tri-County",
       "date": "2026-11-15",
       "time": "19:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "Glancaster Bombers",
       "visitor": "Milton Winterhawks",
       "location": "Morgan (B)"
