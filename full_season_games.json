@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-17T04:01:27.007304+00:00",
+  "updated_at": "2026-11-17T09:01:06.826293+00:00",
   "total_season_games": 946,
   "games": [
     {
@@ -2043,7 +2043,7 @@
       "league": "Tri-County",
       "date": "2026-11-16",
       "time": "18:25",
-      "status": "scheduled",
+      "status": "played",
       "home": "Glancaster Bombers",
       "visitor": "Garden City Minor Falcons",
       "location": "Morgan (A)"
@@ -2054,7 +2054,7 @@
       "league": "Tri-County",
       "date": "2026-11-16",
       "time": "18:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "Milton Winterhawks",
       "visitor": "Guelph Gryphons",
       "location": "MSC (D)"
@@ -7367,7 +7367,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-16",
       "time": "18:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "Aurora Tigers U14 AA",
       "visitor": "Markham Waxers U14 AA",
       "location": "Aurora Recreation Complex (West) - Aurora Toyota Arena"
@@ -7378,7 +7378,7 @@
       "league": "Tri-County",
       "date": "2026-11-16",
       "time": "19:15",
-      "status": "scheduled",
+      "status": "played",
       "home": "Guelph Gryphons",
       "visitor": "Oakville Rangers",
       "location": "West End Recreation Centre (2)"
