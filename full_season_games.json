@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T04:01:13.505700+00:00",
+  "updated_at": "2026-11-18T09:01:05.335803+00:00",
   "total_season_games": 946,
   "games": [
     {
@@ -2065,7 +2065,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-17",
       "time": "18:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "Richmond Hill Jaguars U11 AA",
       "visitor": "Stouffville Clippers U11 AA",
       "location": "Elvis Stojko"
@@ -2076,7 +2076,7 @@
       "league": "Tri-County",
       "date": "2026-11-17",
       "time": "18:15",
-      "status": "scheduled",
+      "status": "played",
       "home": "Burlington Eagles",
       "visitor": "Niagara Falls Canucks",
       "location": "Central"
@@ -2087,7 +2087,7 @@
       "league": "Tri-County",
       "date": "2026-11-17",
       "time": "19:15",
-      "status": "scheduled",
+      "status": "played",
       "home": "Garden City Minor Falcons",
       "visitor": "Milton Winterhawks",
       "location": "Bill Burgoyne Arena"
@@ -2098,7 +2098,7 @@
       "league": "Lakeshore",
       "date": "2026-11-17",
       "time": "19:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "OSHAWA AA U11",
       "visitor": "WHITBY AA U11",
       "location": "Delpark Homes Centre (Pad 1)"
@@ -7389,7 +7389,7 @@
       "league": "Tri-County",
       "date": "2026-11-17",
       "time": "19:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "Niagara Falls Canucks",
       "visitor": "Burlington Eagles",
       "location": "Gale (4 - Centennial)"
@@ -7400,7 +7400,7 @@
       "league": "Tri-County",
       "date": "2026-11-17",
       "time": "19:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "Flamborough Sabres",
       "visitor": "Norfolk Knights",
       "location": "Harry Howell Arena (B)"
@@ -7411,7 +7411,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-17",
       "time": "20:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "TNT Tornados U14 AA",
       "visitor": "Upper York Admirals U14 AA",
       "location": "New Tecumseth Rec (NTRC 1)"
