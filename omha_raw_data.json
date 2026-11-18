@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T09:01:12.170288+00:00",
+  "generated_at": "2026-11-18T17:46:53.677189+00:00",
   "standings": [
     {
       "league": "Tri-County",
@@ -4065,6 +4065,38 @@
       "home_goals": null,
       "visitor_id": "534778",
       "visitor_name": "Stoney Creek Warriors",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3191942",
+      "league": "Tri-County",
+      "league_id": "15497",
+      "cohort": "U11 AA",
+      "date": "Nov 24, 2026",
+      "time": "7:15 PM",
+      "status": "scheduled",
+      "location": "Burgoyne (Burgoyne)",
+      "home_id": "534701",
+      "home_name": "Garden City Minor Falcons",
+      "home_goals": null,
+      "visitor_id": "534784",
+      "visitor_name": "Burlington Eagles",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3191956",
+      "league": "Tri-County",
+      "league_id": "15497",
+      "cohort": "U14 AA",
+      "date": "Nov 24, 2026",
+      "time": "7:30 PM",
+      "status": "scheduled",
+      "location": "SMSC (2)",
+      "home_id": "537295",
+      "home_name": "Oakville Rangers",
+      "home_goals": null,
+      "visitor_id": "534747",
+      "visitor_name": "Burlington Eagles",
       "visitor_goals": null
     },
     {
@@ -8225,6 +8257,22 @@
       "home_goals": null,
       "visitor_id": "534494",
       "visitor_name": "CLARINGTON AA U11",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3191920",
+      "league": "Lakeshore",
+      "league_id": "15493",
+      "cohort": "U11 AA",
+      "date": "Nov 24, 2026",
+      "time": "7:00 PM",
+      "status": "scheduled",
+      "location": "Delpark Homes (1)",
+      "home_id": "534493",
+      "home_name": "OSHAWA AA U11",
+      "home_goals": null,
+      "visitor_id": "534498",
+      "visitor_name": "NORTH DURHAM AA U11",
       "visitor_goals": null
     }
   ]

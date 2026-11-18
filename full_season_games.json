@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T09:01:05.335803+00:00",
+  "updated_at": "2026-11-18T17:46:46.231813+00:00",
   "total_season_games": 946,
   "games": [
     {
@@ -3248,6 +3248,17 @@
       "location": "Nobleton Rec"
     },
     {
+      "game_code": "U11AA-RS--028",
+      "cohort": "U11 AA",
+      "league": "York-Simcoe",
+      "date": "2026-12-12",
+      "time": "14:15",
+      "status": "scheduled",
+      "home": "TNT Tornados U11 AA",
+      "visitor": "Orangeville Flyer U11 AA",
+      "location": "New Tecumseth Rec (NTRC 2)"
+    },
+    {
       "game_code": "U11AA-113",
       "cohort": "U11 AA",
       "league": "Lakeshore",
@@ -3279,17 +3290,6 @@
       "home": "Hamilton Steel",
       "visitor": "Brampton 45s",
       "location": "Parkdale"
-    },
-    {
-      "game_code": "U11AA-RS--028",
-      "cohort": "U11 AA",
-      "league": "York-Simcoe",
-      "date": "2026-12-12",
-      "time": "15:15",
-      "status": "scheduled",
-      "home": "TNT Tornados U11 AA",
-      "visitor": "Orangeville Flyer U11 AA",
-      "location": "New Tecumseth Rec (NTRC 2)"
     },
     {
       "game_code": "U11AA-129",
