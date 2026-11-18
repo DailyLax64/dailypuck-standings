@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-11-17T18:06:50.585116+00:00",
+  "generated_at": "2026-11-18T04:01:19.946104+00:00",
   "standings": [
     {
       "league": "Tri-County",
       "league_id": "15497",
       "cohort": "U11 AA",
-      "team_id": "534702",
-      "team_name": "Guelph Gryphons",
+      "team_id": "534701",
+      "team_name": "Garden City Minor Falcons",
       "gp": 0,
       "w": 0,
       "l": 0,
@@ -21,8 +21,8 @@
       "league": "Tri-County",
       "league_id": "15497",
       "cohort": "U11 AA",
-      "team_id": "534701",
-      "team_name": "Garden City Minor Falcons",
+      "team_id": "534702",
+      "team_name": "Guelph Gryphons",
       "gp": 0,
       "w": 0,
       "l": 0,
@@ -757,8 +757,8 @@
       "league": "York-Simcoe",
       "league_id": "15489",
       "cohort": "U14 AA",
-      "team_id": "534148",
-      "team_name": "Upper York Admirals U14 AA",
+      "team_id": "534103",
+      "team_name": "TNT Tornados U14 AA",
       "gp": 0,
       "w": 0,
       "l": 0,
@@ -773,8 +773,8 @@
       "league": "York-Simcoe",
       "league_id": "15489",
       "cohort": "U14 AA",
-      "team_id": "534103",
-      "team_name": "TNT Tornados U14 AA",
+      "team_id": "534148",
+      "team_name": "Upper York Admirals U14 AA",
       "gp": 0,
       "w": 0,
       "l": 0,
@@ -837,8 +837,8 @@
       "league": "Lakeshore",
       "league_id": "15493",
       "cohort": "U11 AA",
-      "team_id": "534493",
-      "team_name": "OSHAWA AA U11",
+      "team_id": "534499",
+      "team_name": "WHITBY AA U11",
       "gp": 0,
       "w": 0,
       "l": 0,
@@ -869,8 +869,8 @@
       "league": "Lakeshore",
       "league_id": "15493",
       "cohort": "U11 AA",
-      "team_id": "534499",
-      "team_name": "WHITBY AA U11",
+      "team_id": "534493",
+      "team_name": "OSHAWA AA U11",
       "gp": 0,
       "w": 0,
       "l": 0,
@@ -3626,14 +3626,14 @@
       "cohort": "U11 AA",
       "date": "Nov 17, 2026",
       "time": "6:15 PM",
-      "status": "scheduled",
+      "status": "final",
       "location": "Central (Central)",
       "home_id": "534784",
       "home_name": "Burlington Eagles",
-      "home_goals": null,
+      "home_goals": 1,
       "visitor_id": "534795",
       "visitor_name": "Niagara Falls Canucks",
-      "visitor_goals": null
+      "visitor_goals": 1
     },
     {
       "game_id": "3176333",
@@ -3642,14 +3642,14 @@
       "cohort": "U14 AA",
       "date": "Nov 17, 2026",
       "time": "7:00 PM",
-      "status": "scheduled",
+      "status": "final",
       "location": "Gale (4 - Centennial)",
       "home_id": "534797",
       "home_name": "Niagara Falls Canucks",
-      "home_goals": null,
+      "home_goals": 3,
       "visitor_id": "534747",
       "visitor_name": "Burlington Eagles",
-      "visitor_goals": null
+      "visitor_goals": 3
     },
     {
       "game_id": "3176382",
@@ -3658,14 +3658,14 @@
       "cohort": "U11 AA",
       "date": "Nov 17, 2026",
       "time": "7:15 PM",
-      "status": "scheduled",
+      "status": "final",
       "location": "Burgoyne (Burgoyne)",
       "home_id": "534701",
       "home_name": "Garden City Minor Falcons",
-      "home_goals": null,
+      "home_goals": 4,
       "visitor_id": "534777",
       "visitor_name": "Milton Winterhawks",
-      "visitor_goals": null
+      "visitor_goals": 2
     },
     {
       "game_id": "3176334",
@@ -3674,14 +3674,14 @@
       "cohort": "U14 AA",
       "date": "Nov 17, 2026",
       "time": "7:30 PM",
-      "status": "scheduled",
+      "status": "final",
       "location": "Harry Howell (B)",
       "home_id": "534744",
       "home_name": "Flamborough Sabres",
-      "home_goals": null,
+      "home_goals": 7,
       "visitor_id": "537296",
       "visitor_name": "Norfolk Knights",
-      "visitor_goals": null
+      "visitor_goals": 2
     },
     {
       "game_id": "3177678",
@@ -4049,6 +4049,22 @@
       "home_goals": null,
       "visitor_id": "534797",
       "visitor_name": "Niagara Falls Canucks",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3191167",
+      "league": "Tri-County",
+      "league_id": "15497",
+      "cohort": "U11 AA",
+      "date": "Nov 24, 2026",
+      "time": "6:15 PM",
+      "status": "scheduled",
+      "location": "Harry Howell (B)",
+      "home_id": "534725",
+      "home_name": "Flamborough Sabres",
+      "home_goals": null,
+      "visitor_id": "534778",
+      "visitor_name": "Stoney Creek Warriors",
       "visitor_goals": null
     },
     {
@@ -5882,14 +5898,14 @@
       "cohort": "U11 AA",
       "date": "Nov 17, 2026",
       "time": "6:00 PM",
-      "status": "scheduled",
+      "status": "final",
       "location": "Elvis Stojko (Elvis Stojko)",
       "home_id": "534160",
       "home_name": "Richmond Hill Jaguars U11 AA",
-      "home_goals": null,
+      "home_goals": 2,
       "visitor_id": "534092",
       "visitor_name": "Stouffville Clippers U11 AA",
-      "visitor_goals": null
+      "visitor_goals": 2
     },
     {
       "game_id": "3176373",
@@ -5898,14 +5914,14 @@
       "cohort": "U14 AA",
       "date": "Nov 17, 2026",
       "time": "8:00 PM",
-      "status": "scheduled",
+      "status": "final",
       "location": "New Tecumseth Rec (NTRC 1)",
       "home_id": "534103",
       "home_name": "TNT Tornados U14 AA",
-      "home_goals": null,
+      "home_goals": 6,
       "visitor_id": "534148",
       "visitor_name": "Upper York Admirals U14 AA",
-      "visitor_goals": null
+      "visitor_goals": 2
     },
     {
       "game_id": "3177663",
@@ -6193,6 +6209,22 @@
       "home_goals": null,
       "visitor_id": "534101",
       "visitor_name": "Stouffville Clippers U14 AA",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3191185",
+      "league": "York-Simcoe",
+      "league_id": "15489",
+      "cohort": "U14 AA",
+      "date": "Nov 24, 2026",
+      "time": "7:00 PM",
+      "status": "scheduled",
+      "location": "Centennial (Centennial)",
+      "home_id": "534182",
+      "home_name": "Markham Waxers U14 AA",
+      "home_goals": null,
+      "visitor_id": "534166",
+      "visitor_name": "Orangeville Flyers U14 AA",
       "visitor_goals": null
     },
     {
@@ -7898,14 +7930,14 @@
       "cohort": "U11 AA",
       "date": "Nov 17, 2026",
       "time": "7:30 PM",
-      "status": "scheduled",
+      "status": "final",
       "location": "Delpark Homes (1)",
       "home_id": "534493",
       "home_name": "OSHAWA AA U11",
-      "home_goals": null,
+      "home_goals": 5,
       "visitor_id": "534499",
       "visitor_name": "WHITBY AA U11",
-      "visitor_goals": null
+      "visitor_goals": 7
     },
     {
       "game_id": "3179480",
@@ -8177,6 +8209,22 @@
       "home_goals": null,
       "visitor_id": "534521",
       "visitor_name": "KINGSTON AREA AA U14",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3191107",
+      "league": "Lakeshore",
+      "league_id": "15493",
+      "cohort": "U11 AA",
+      "date": "Nov 24, 2026",
+      "time": "5:15 PM",
+      "status": "scheduled",
+      "location": "Ajax CC (3)",
+      "home_id": "534519",
+      "home_name": "AJAX-PICKERING AA U11",
+      "home_goals": null,
+      "visitor_id": "534494",
+      "visitor_name": "CLARINGTON AA U11",
       "visitor_goals": null
     }
   ]
