@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-19T09:01:21.162632+00:00",
+  "updated_at": "2026-11-19T17:57:23.768064+00:00",
   "total_season_games": 946,
   "games": [
     {
@@ -9034,17 +9034,6 @@
       "location": "Georgina Sutton"
     },
     {
-      "game_code": "U14AA-125",
-      "cohort": "U14 AA",
-      "league": "Lakeshore",
-      "date": "2026-12-20",
-      "time": "18:15",
-      "status": "scheduled",
-      "home": "WHITBY AA U14",
-      "visitor": "CLARINGTON AA U14",
-      "location": "IPSC (4)"
-    },
-    {
       "game_code": "U14AA-120",
       "cohort": "U14 AA",
       "league": "Tri-County",
@@ -9065,6 +9054,17 @@
       "home": "Burlington Eagles",
       "visitor": "Guelph Gryphons",
       "location": "Appleby (1)"
+    },
+    {
+      "game_code": "U14AA-125",
+      "cohort": "U14 AA",
+      "league": "Lakeshore",
+      "date": "2026-12-20",
+      "time": "18:45",
+      "status": "scheduled",
+      "home": "WHITBY AA U14",
+      "visitor": "CLARINGTON AA U14",
+      "location": "Fieldgate (1)"
     },
     {
       "game_code": "U14AA-075",
