@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T17:46:46.231813+00:00",
+  "updated_at": "2026-11-19T04:01:11.452629+00:00",
   "total_season_games": 946,
   "games": [
     {
@@ -4326,6 +4326,17 @@
       "location": "Elvis Stojko Arena"
     },
     {
+      "game_code": "U11AA-RS-37",
+      "cohort": "U11 AA",
+      "league": "York-Simcoe",
+      "date": "2027-01-09",
+      "time": "12:30",
+      "status": "scheduled",
+      "home": "King Rebellion U11AA",
+      "visitor": "Orangeville Flyer U11 AA",
+      "location": "Nobleton Rec"
+    },
+    {
       "game_code": "U11AA-009",
       "cohort": "U11 AA",
       "league": "Lakeshore",
@@ -4346,17 +4357,6 @@
       "home": "Norfolk Knights",
       "visitor": "Oakville Rangers",
       "location": "Port Dover Arena"
-    },
-    {
-      "game_code": "U11AA-RS-37",
-      "cohort": "U11 AA",
-      "league": "York-Simcoe",
-      "date": "2027-01-09",
-      "time": "13:55",
-      "status": "scheduled",
-      "home": "King Rebellion U11AA",
-      "visitor": "Orangeville Flyer U11 AA",
-      "location": "Nobleton Rec"
     },
     {
       "game_code": "U11AA-62",
@@ -4601,17 +4601,6 @@
       "location": "Jefferson Elora Community Centre"
     },
     {
-      "game_code": "U11AA-99",
-      "cohort": "U11 AA",
-      "league": "Tri-County",
-      "date": "2027-01-13",
-      "time": "19:00",
-      "status": "scheduled",
-      "home": "Guelph Gryphons",
-      "visitor": "Burlington Eagles",
-      "location": "Victoria"
-    },
-    {
       "game_code": "U11AA-4",
       "cohort": "U11 AA",
       "league": "Tri-County",
@@ -4632,6 +4621,17 @@
       "home": "King Rebellion U11AA",
       "visitor": "Richmond Hill Jaguars U11 AA",
       "location": "Zancor (CDS Pad)"
+    },
+    {
+      "game_code": "U11AA-99",
+      "cohort": "U11 AA",
+      "league": "Tri-County",
+      "date": "2027-01-13",
+      "time": "19:15",
+      "status": "scheduled",
+      "home": "Guelph Gryphons",
+      "visitor": "Burlington Eagles",
+      "location": "Victoria"
     },
     {
       "game_code": "U11AA-RS--006",
@@ -8741,7 +8741,7 @@
       "cohort": "U14 AA",
       "league": "Tri-County",
       "date": "2026-12-16",
-      "time": "19:15",
+      "time": "19:30",
       "status": "scheduled",
       "home": "Halton Hills Thunder",
       "visitor": "Burlington Eagles",
