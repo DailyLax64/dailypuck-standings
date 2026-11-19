@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-19T04:01:11.452629+00:00",
+  "updated_at": "2026-11-19T09:01:21.162632+00:00",
   "total_season_games": 946,
   "games": [
     {
@@ -2109,7 +2109,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-18",
       "time": "18:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "Markham Waxers U11 AA",
       "visitor": "South Simcoe Storm U11 AA",
       "location": "Centennial"
@@ -2120,7 +2120,7 @@
       "league": "Tri-County",
       "date": "2026-11-18",
       "time": "18:15",
-      "status": "scheduled",
+      "status": "played",
       "home": "Stoney Creek Warriors",
       "visitor": "Oakville Rangers",
       "location": "Valley Park arena"
@@ -2131,7 +2131,7 @@
       "league": "Tri-County",
       "date": "2026-11-18",
       "time": "18:15",
-      "status": "scheduled",
+      "status": "played",
       "home": "Halton Hills Thunder",
       "visitor": "Hamilton Steel",
       "location": "D-Mold-Master Saputo"
@@ -7422,7 +7422,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-18",
       "time": "18:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "Newmarket Renegades U14 AA",
       "visitor": "Orangeville Flyers U14 AA",
       "location": "Ray Twinney (1)"
@@ -7433,7 +7433,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-18",
       "time": "19:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "Barrie Colts U14 AA",
       "visitor": "Upper York Admirals U14 AA",
       "location": "Allandale Recreation Centre (Red)"
@@ -7444,7 +7444,7 @@
       "league": "Tri-County",
       "date": "2026-11-18",
       "time": "19:15",
-      "status": "scheduled",
+      "status": "played",
       "home": "Halton Hills Thunder",
       "visitor": "Garden City Minor Falcons",
       "location": "Acton (Main)"
@@ -7455,7 +7455,7 @@
       "league": "Tri-County",
       "date": "2026-11-18",
       "time": "19:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "Oakville Rangers",
       "visitor": "West Niagara Flying Aces",
       "location": "SMSC (2)"
@@ -7466,7 +7466,7 @@
       "league": "Tri-County",
       "date": "2026-11-18",
       "time": "20:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "Centre Wellington Fusion",
       "visitor": "Hamilton Steel",
       "location": "Fergus (A)"
