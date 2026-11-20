@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T04:01:15.986521+00:00",
+  "generated_at": "2026-11-20T09:01:32.864339+00:00",
   "standings": [
     {
       "league": "Tri-County",
@@ -8433,6 +8433,38 @@
       "home_goals": null,
       "visitor_id": "534562",
       "visitor_name": "QUINTE WEST AA U14",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3195254",
+      "league": "Lakeshore",
+      "league_id": "15493",
+      "cohort": "U14 AA",
+      "date": "Nov 26, 2026",
+      "time": "6:00 PM",
+      "status": "scheduled",
+      "location": "Don Beer (2)",
+      "home_id": "534529",
+      "home_name": "AJAX-PICKERING AA U14",
+      "home_goals": null,
+      "visitor_id": "534527",
+      "visitor_name": "CLARINGTON AA U14",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3195255",
+      "league": "Lakeshore",
+      "league_id": "15493",
+      "cohort": "U14 AA",
+      "date": "Nov 26, 2026",
+      "time": "7:00 PM",
+      "status": "scheduled",
+      "location": "Delpark Homes (1)",
+      "home_id": "534524",
+      "home_name": "OSHAWA AA U14",
+      "home_goals": null,
+      "visitor_id": "534528",
+      "visitor_name": "WHITBY AA U14",
       "visitor_goals": null
     }
   ]

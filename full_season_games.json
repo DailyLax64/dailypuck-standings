@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-20T04:01:08.424336+00:00",
+  "updated_at": "2026-11-20T09:01:23.783848+00:00",
   "total_season_games": 946,
   "games": [
     {
@@ -2142,7 +2142,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-19",
       "time": "18:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "Newmarket Renegades U11 AA",
       "visitor": "King Rebellion U11AA",
       "location": "Magna Centre (Scotiabank)"
@@ -2153,7 +2153,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-19",
       "time": "19:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "Aurora Tigers U11 AA",
       "visitor": "Stouffville Clippers U11 AA",
       "location": "Aurora CC (1 - McAlpine Ford)"
@@ -2828,6 +2828,17 @@
       "home": "Garden City Minor Falcons",
       "visitor": "Glancaster Bombers",
       "location": "Seymour-Hannah (1)"
+    },
+    {
+      "game_code": "U11AA-48",
+      "cohort": "U11 AA",
+      "league": "Tri-County",
+      "date": "2026-12-01",
+      "time": "18:40",
+      "status": "scheduled",
+      "home": "Glancaster Bombers",
+      "visitor": "West Niagara Flying Aces",
+      "location": "Morgan (B)"
     },
     {
       "game_code": "U11AA-RS-76",
@@ -4742,17 +4753,6 @@
       "home": "Stoney Creek Warriors",
       "visitor": "Halton Hills Thunder",
       "location": "Valley Park arena"
-    },
-    {
-      "game_code": "U11AA-48",
-      "cohort": "U11 AA",
-      "league": "Tri-County",
-      "date": "2027-01-16",
-      "time": "16:25",
-      "status": "scheduled",
-      "home": "Glancaster Bombers",
-      "visitor": "West Niagara Flying Aces",
-      "location": "Glanbrook"
     },
     {
       "game_code": "U11AA-022",
@@ -7477,7 +7477,7 @@
       "league": "Tri-County",
       "date": "2026-11-19",
       "time": "19:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "Norfolk Knights",
       "visitor": "Flamborough Sabres",
       "location": "Waterford"
@@ -7488,7 +7488,7 @@
       "league": "Lakeshore",
       "date": "2026-11-19",
       "time": "19:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "NORTHUMBERLAND AA U14",
       "visitor": "PETERBOROUGH AA U14",
       "location": "Jack Burger"
@@ -7499,7 +7499,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-19",
       "time": "20:15",
-      "status": "scheduled",
+      "status": "played",
       "home": "Collingwood Jr. Blues 14 AA",
       "visitor": "South Simcoe Storm U14 AA",
       "location": "Eddie Bush Arena"
