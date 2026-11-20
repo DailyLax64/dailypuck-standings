@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T09:01:32.864339+00:00",
+  "generated_at": "2026-11-20T17:30:30.752835+00:00",
   "standings": [
     {
       "league": "Tri-County",
@@ -4164,6 +4164,22 @@
       "visitor_goals": null
     },
     {
+      "game_id": "3195287",
+      "league": "Tri-County",
+      "league_id": "15497",
+      "cohort": "U14 AA",
+      "date": "Nov 26, 2026",
+      "time": "7:30 PM",
+      "status": "scheduled",
+      "location": "Waterford (Waterford)",
+      "home_id": "537296",
+      "home_name": "Norfolk Knights",
+      "home_goals": null,
+      "visitor_id": "534747",
+      "visitor_name": "Burlington Eagles",
+      "visitor_goals": null
+    },
+    {
       "game_id": "3032678",
       "league": "York-Simcoe",
       "league_id": "15489",
@@ -6401,6 +6417,38 @@
       "home_goals": null,
       "visitor_id": "534166",
       "visitor_name": "Orangeville Flyers U14 AA",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3195272",
+      "league": "York-Simcoe",
+      "league_id": "15489",
+      "cohort": "U11 AA",
+      "date": "Nov 26, 2026",
+      "time": "6:30 PM",
+      "status": "scheduled",
+      "location": "Magna (Scotiabank)",
+      "home_id": "534121",
+      "home_name": "Newmarket Renegades U11 AA",
+      "home_goals": null,
+      "visitor_id": "534160",
+      "visitor_name": "Richmond Hill Jaguars U11 AA",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3195320",
+      "league": "York-Simcoe",
+      "league_id": "15489",
+      "cohort": "U14 AA",
+      "date": "Nov 26, 2026",
+      "time": "8:15 PM",
+      "status": "scheduled",
+      "location": "Eddie Bush (Eddie Bush)",
+      "home_id": "534178",
+      "home_name": "Collingwood Jr. Blues 14 AA",
+      "home_goals": null,
+      "visitor_id": "534182",
+      "visitor_name": "Markham Waxers U14 AA",
       "visitor_goals": null
     },
     {
