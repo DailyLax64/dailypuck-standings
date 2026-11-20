@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-19T17:57:23.768064+00:00",
+  "updated_at": "2026-11-20T04:01:08.424336+00:00",
   "total_season_games": 946,
   "games": [
     {
@@ -10200,17 +10200,6 @@
       "location": "Eddie Bush Arena"
     },
     {
-      "game_code": "U14AA-064",
-      "cohort": "U14 AA",
-      "league": "Lakeshore",
-      "date": "2027-01-30",
-      "time": "14:45",
-      "status": "scheduled",
-      "home": "NORTH DURHAM AA U14",
-      "visitor": "PETERBOROUGH AA U14",
-      "location": "Uxbridge Community Centre Pad 2"
-    },
-    {
       "game_code": "U14AA-RS-106",
       "cohort": "U14 AA",
       "league": "York-Simcoe",
@@ -10220,6 +10209,17 @@
       "home": "Collingwood Jr. Blues 14 AA",
       "visitor": "Barrie Colts U14 AA",
       "location": "Eddie Bush Arena"
+    },
+    {
+      "game_code": "U14AA-064",
+      "cohort": "U14 AA",
+      "league": "Lakeshore",
+      "date": "2027-01-30",
+      "time": "16:15",
+      "status": "scheduled",
+      "home": "NORTH DURHAM AA U14",
+      "visitor": "PETERBOROUGH AA U14",
+      "location": "Uxbridge Community Centre Pad 2"
     },
     {
       "game_code": "U14AA-RS-113",
