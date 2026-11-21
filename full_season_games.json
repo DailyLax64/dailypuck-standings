@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-20T17:30:22.751228+00:00",
+  "updated_at": "2026-11-21T04:01:04.784622+00:00",
   "total_season_games": 946,
   "games": [
     {
@@ -8561,6 +8561,17 @@
       "location": "Chedoke (Red)"
     },
     {
+      "game_code": "U14AA-110",
+      "cohort": "U14 AA",
+      "league": "Lakeshore",
+      "date": "2026-12-12",
+      "time": "15:30",
+      "status": "scheduled",
+      "home": "QUINTE WEST AA U14",
+      "visitor": "BELLEVILLE AA U14",
+      "location": "Duncan McDonald (1)"
+    },
+    {
       "game_code": "U14AA-047",
       "cohort": "U14 AA",
       "league": "Lakeshore",
@@ -8603,17 +8614,6 @@
       "home": "WHITBY AA U14",
       "visitor": "OSHAWA AA U14",
       "location": "IPSC (3)"
-    },
-    {
-      "game_code": "U14AA-110",
-      "cohort": "U14 AA",
-      "league": "Lakeshore",
-      "date": "2026-12-12",
-      "time": "18:45",
-      "status": "scheduled",
-      "home": "QUINTE WEST AA U14",
-      "visitor": "BELLEVILLE AA U14",
-      "location": "Duncan McDonald (1)"
     },
     {
       "game_code": "U14AA-RS-031",
