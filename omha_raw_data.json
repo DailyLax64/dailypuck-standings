@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T04:01:11.965982+00:00",
+  "generated_at": "2026-11-21T09:01:35.383513+00:00",
   "standings": [
     {
       "league": "Tri-County",
@@ -4177,6 +4177,22 @@
       "home_goals": null,
       "visitor_id": "534747",
       "visitor_name": "Burlington Eagles",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3197062",
+      "league": "Tri-County",
+      "league_id": "15497",
+      "cohort": "U11 AA",
+      "date": "Nov 27, 2026",
+      "time": "7:00 PM",
+      "status": "scheduled",
+      "location": "Susan Fennell (1)",
+      "home_id": "534781",
+      "home_name": "Brampton 45s",
+      "home_goals": null,
+      "visitor_id": "534702",
+      "visitor_name": "Guelph Gryphons",
       "visitor_goals": null
     },
     {
@@ -8529,6 +8545,54 @@
       "home_goals": null,
       "visitor_id": "534528",
       "visitor_name": "WHITBY AA U14",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3197215",
+      "league": "Lakeshore",
+      "league_id": "15493",
+      "cohort": "U11 AA",
+      "date": "Nov 27, 2026",
+      "time": "6:00 PM",
+      "status": "scheduled",
+      "location": "Centre 70 (Centre 70)",
+      "home_id": "534518",
+      "home_name": "KINGSTON AREA AA U11",
+      "home_goals": null,
+      "visitor_id": "534495",
+      "visitor_name": "BELLEVILLE AA U11",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3197216",
+      "league": "Lakeshore",
+      "league_id": "15493",
+      "cohort": "U11 AA",
+      "date": "Nov 27, 2026",
+      "time": "6:45 PM",
+      "status": "scheduled",
+      "location": "Miskin Law CC (Russelle Toyota)",
+      "home_id": "534496",
+      "home_name": "PETERBOROUGH AA U11",
+      "home_goals": null,
+      "visitor_id": "534498",
+      "visitor_name": "NORTH DURHAM AA U11",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3197217",
+      "league": "Lakeshore",
+      "league_id": "15493",
+      "cohort": "U11 AA",
+      "date": "Nov 27, 2026",
+      "time": "7:00 PM",
+      "status": "scheduled",
+      "location": "Delpark Homes (1)",
+      "home_id": "534493",
+      "home_name": "OSHAWA AA U11",
+      "home_goals": null,
+      "visitor_id": "534494",
+      "visitor_name": "CLARINGTON AA U11",
       "visitor_goals": null
     }
   ]

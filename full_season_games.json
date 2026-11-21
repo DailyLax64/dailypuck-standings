@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-21T04:01:04.784622+00:00",
+  "updated_at": "2026-11-21T09:01:26.767095+00:00",
   "total_season_games": 946,
   "games": [
     {
@@ -2164,7 +2164,7 @@
       "league": "Lakeshore",
       "date": "2026-11-20",
       "time": "15:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "KINGSTON AREA AA U11",
       "visitor": "CLARINGTON AA U11",
       "location": "Slush Puppie Place"
@@ -7510,7 +7510,7 @@
       "league": "Tri-County",
       "date": "2026-11-20",
       "time": "19:15",
-      "status": "scheduled",
+      "status": "played",
       "home": "West Niagara Flying Aces",
       "visitor": "Norfolk Knights",
       "location": "Fleming Memorial Arena"
@@ -7521,7 +7521,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-20",
       "time": "20:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "Stouffville Clippers U14 AA",
       "visitor": "TNT Tornados U14 AA",
       "location": "Stouffville Clippers (CC1)"
@@ -7532,7 +7532,7 @@
       "league": "Lakeshore",
       "date": "2026-11-20",
       "time": "20:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "PETERBOROUGH AA U14",
       "visitor": "BELLEVILLE AA U14",
       "location": "Miskin Law CC (Russelle Toyota)"
