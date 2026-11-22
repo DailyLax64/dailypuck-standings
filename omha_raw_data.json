@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T09:01:27.725326+00:00",
+  "generated_at": "2026-11-22T16:52:13.376842+00:00",
   "standings": [
     {
       "league": "Tri-County",
@@ -4289,6 +4289,22 @@
       "home_goals": null,
       "visitor_id": "537289",
       "visitor_name": "Norfolk Knights",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3199683",
+      "league": "Tri-County",
+      "league_id": "15497",
+      "cohort": "U14 AA",
+      "date": "Nov 28, 2026",
+      "time": "7:00 PM",
+      "status": "scheduled",
+      "location": "Morgan (B)",
+      "home_id": "534746",
+      "home_name": "Glancaster Bombers",
+      "home_goals": null,
+      "visitor_id": "534710",
+      "visitor_name": "West Niagara Flying Aces",
       "visitor_goals": null
     },
     {
@@ -8833,6 +8849,38 @@
       "home_goals": null,
       "visitor_id": "534495",
       "visitor_name": "BELLEVILLE AA U11",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3199599",
+      "league": "Lakeshore",
+      "league_id": "15493",
+      "cohort": "U14 AA",
+      "date": "Nov 28, 2026",
+      "time": "6:00 PM",
+      "status": "scheduled",
+      "location": "Quinte S & WC (Wally Dever)",
+      "home_id": "534525",
+      "home_name": "BELLEVILLE AA U14",
+      "home_goals": null,
+      "visitor_id": "534523",
+      "visitor_name": "PETERBOROUGH AA U14",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3199600",
+      "league": "Lakeshore",
+      "league_id": "15493",
+      "cohort": "U14 AA",
+      "date": "Nov 28, 2026",
+      "time": "7:00 PM",
+      "status": "scheduled",
+      "location": "Delpark Homes (2)",
+      "home_id": "534524",
+      "home_name": "OSHAWA AA U14",
+      "home_goals": null,
+      "visitor_id": "534522",
+      "visitor_name": "NORTHUMBERLAND AA U14",
       "visitor_goals": null
     }
   ]
