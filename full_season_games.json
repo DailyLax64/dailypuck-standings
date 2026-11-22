@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-22T04:01:21.688431+00:00",
+  "updated_at": "2026-11-22T09:01:18.668429+00:00",
   "total_season_games": 946,
   "games": [
     {
@@ -2175,7 +2175,7 @@
       "league": "Lakeshore",
       "date": "2026-11-21",
       "time": "12:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "NORTH DURHAM AA U11",
       "visitor": "AJAX-PICKERING AA U11",
       "location": "Uxbridge Community Centre Pad 1"
@@ -2186,7 +2186,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-21",
       "time": "13:15",
-      "status": "scheduled",
+      "status": "played",
       "home": "TNT Tornados U11 AA",
       "visitor": "Markham Waxers U11 AA",
       "location": "Alliston NTRC (2)"
@@ -2197,7 +2197,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-21",
       "time": "13:55",
-      "status": "scheduled",
+      "status": "played",
       "home": "King Rebellion U11AA",
       "visitor": "Richmond Hill Jaguars U11 AA",
       "location": "Nobleton Arena"
@@ -2208,7 +2208,7 @@
       "league": "Lakeshore",
       "date": "2026-11-21",
       "time": "14:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "KINGSTON AREA AA U11",
       "visitor": "CLARINGTON AA U11",
       "location": "Cataraqui CC (Cataraqui)"
@@ -2219,7 +2219,7 @@
       "league": "Tri-County",
       "date": "2026-11-21",
       "time": "15:10",
-      "status": "scheduled",
+      "status": "played",
       "home": "Glancaster Bombers",
       "visitor": "Milton Winterhawks",
       "location": "Morgan Firestone Arena (A Pad)"
@@ -2230,7 +2230,7 @@
       "league": "Lakeshore",
       "date": "2026-11-21",
       "time": "15:35",
-      "status": "scheduled",
+      "status": "played",
       "home": "WHITBY AA U11",
       "visitor": "BELLEVILLE AA U11",
       "location": "IPSC (4)"
@@ -2241,7 +2241,7 @@
       "league": "Tri-County",
       "date": "2026-11-21",
       "time": "17:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "Garden City Minor Falcons",
       "visitor": "Brampton 45s",
       "location": "Seymour-Hannah (1)"
@@ -2252,7 +2252,7 @@
       "league": "Tri-County",
       "date": "2026-11-21",
       "time": "17:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "Flamborough Sabres",
       "visitor": "Norfolk Knights",
       "location": "Carlisle"
@@ -2263,7 +2263,7 @@
       "league": "Tri-County",
       "date": "2026-11-21",
       "time": "18:40",
-      "status": "scheduled",
+      "status": "played",
       "home": "Burlington Eagles",
       "visitor": "West Niagara Flying Aces",
       "location": "Appleby (1)"
@@ -7543,7 +7543,7 @@
       "league": "Lakeshore",
       "date": "2026-11-21",
       "time": "13:15",
-      "status": "scheduled",
+      "status": "played",
       "home": "NORTH DURHAM AA U14",
       "visitor": "NORTHUMBERLAND AA U14",
       "location": "Uxbridge (2)"
@@ -7554,7 +7554,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-21",
       "time": "13:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "TNT Tornados U14 AA",
       "visitor": "Aurora Tigers U14 AA",
       "location": "New Tecumseth Rec (NTRC 1)"
@@ -7565,7 +7565,7 @@
       "league": "Tri-County",
       "date": "2026-11-21",
       "time": "15:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "Hamilton Steel",
       "visitor": "Niagara Falls Canucks",
       "location": "Chedoke Twin Pad - Red"
@@ -7576,7 +7576,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-21",
       "time": "15:45",
-      "status": "scheduled",
+      "status": "played",
       "home": "South Simcoe Storm U14 AA",
       "visitor": "Caledon Hawks U14 AA",
       "location": "BLC - GREEN"
@@ -7587,7 +7587,7 @@
       "league": "Tri-County",
       "date": "2026-11-21",
       "time": "18:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "Garden City Minor Falcons",
       "visitor": "West Niagara Flying Aces",
       "location": "Seymour-Hannah (1)"
@@ -7598,7 +7598,7 @@
       "league": "Lakeshore",
       "date": "2026-11-21",
       "time": "18:35",
-      "status": "scheduled",
+      "status": "played",
       "home": "WHITBY AA U14",
       "visitor": "BELLEVILLE AA U14",
       "location": "IPSC (3)"
@@ -7609,7 +7609,7 @@
       "league": "Lakeshore",
       "date": "2026-11-21",
       "time": "19:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "QUINTE WEST AA U14",
       "visitor": "PETERBOROUGH AA U14",
       "location": "Duncan McDonald (1)"
