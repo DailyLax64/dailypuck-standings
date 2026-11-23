@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T04:01:13.343988+00:00",
+  "generated_at": "2026-11-23T09:01:19.106127+00:00",
   "standings": [
     {
       "league": "Tri-County",
@@ -9153,6 +9153,54 @@
       "home_goals": null,
       "visitor_id": "534518",
       "visitor_name": "KINGSTON AREA AA U11",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3203179",
+      "league": "Lakeshore",
+      "league_id": "15493",
+      "cohort": "U14 AA",
+      "date": "Nov 29, 2026",
+      "time": "6:30 PM",
+      "status": "scheduled",
+      "location": "Scugog (1)",
+      "home_id": "534526",
+      "home_name": "NORTH DURHAM AA U14",
+      "home_goals": null,
+      "visitor_id": "534527",
+      "visitor_name": "CLARINGTON AA U14",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3203180",
+      "league": "Lakeshore",
+      "league_id": "15493",
+      "cohort": "U14 AA",
+      "date": "Nov 29, 2026",
+      "time": "6:30 PM",
+      "status": "scheduled",
+      "location": "Quinte S & WC (Wally Dever)",
+      "home_id": "534525",
+      "home_name": "BELLEVILLE AA U14",
+      "home_goals": null,
+      "visitor_id": "534528",
+      "visitor_name": "WHITBY AA U14",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3203181",
+      "league": "Lakeshore",
+      "league_id": "15493",
+      "cohort": "U14 AA",
+      "date": "Nov 29, 2026",
+      "time": "6:45 PM",
+      "status": "scheduled",
+      "location": "Duncan McDonald (1)",
+      "home_id": "534562",
+      "home_name": "QUINTE WEST AA U14",
+      "home_goals": null,
+      "visitor_id": "534524",
+      "visitor_name": "OSHAWA AA U14",
       "visitor_goals": null
     }
   ]

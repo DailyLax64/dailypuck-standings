@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-23T04:01:06.535446+00:00",
+  "updated_at": "2026-11-23T09:01:11.296075+00:00",
   "total_season_games": 946,
   "games": [
     {
@@ -2274,7 +2274,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-22",
       "time": "11:45",
-      "status": "scheduled",
+      "status": "played",
       "home": "TNT Tornados U11 AA",
       "visitor": "Barrie Colts U11 AA",
       "location": "New Tecumseth Rec (NTRC 2)"
@@ -2285,7 +2285,7 @@
       "league": "Lakeshore",
       "date": "2026-11-22",
       "time": "12:15",
-      "status": "scheduled",
+      "status": "played",
       "home": "WHITBY AA U11",
       "visitor": "KINGSTON AREA AA U11",
       "location": "IPSC (4)"
@@ -2296,7 +2296,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-22",
       "time": "13:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "South Simcoe Storm U11 AA",
       "visitor": "Aurora Tigers U11 AA",
       "location": "BF - Bob Fallis Sports Centre"
@@ -2307,7 +2307,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-22",
       "time": "14:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "Markham Waxers U11 AA",
       "visitor": "King Rebellion U11AA",
       "location": "Angus Glen (1 - West)"
@@ -2318,7 +2318,7 @@
       "league": "Tri-County",
       "date": "2026-11-22",
       "time": "14:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "West Niagara Flying Aces",
       "visitor": "Garden City Minor Falcons",
       "location": "Fleming"
@@ -2329,7 +2329,7 @@
       "league": "Tri-County",
       "date": "2026-11-22",
       "time": "14:40",
-      "status": "scheduled",
+      "status": "played",
       "home": "Brampton 45s",
       "visitor": "Norfolk Knights",
       "location": "Susan Fennell (1)"
@@ -2340,7 +2340,7 @@
       "league": "Lakeshore",
       "date": "2026-11-22",
       "time": "15:45",
-      "status": "scheduled",
+      "status": "played",
       "home": "BELLEVILLE AA U11",
       "visitor": "NORTH DURHAM AA U11",
       "location": "Quinte S & WC (Wally Dever)"
@@ -2351,7 +2351,7 @@
       "league": "Lakeshore",
       "date": "2026-11-22",
       "time": "16:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "AJAX-PICKERING AA U11",
       "visitor": "QUINTE WEST AA U11",
       "location": "Ajax Community Centre (Pad 4)"
@@ -7620,7 +7620,7 @@
       "league": "Lakeshore",
       "date": "2026-11-22",
       "time": "14:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "QUINTE WEST AA U14",
       "visitor": "KINGSTON AREA AA U14",
       "location": "Duncan McDonald (1)"
@@ -7631,7 +7631,7 @@
       "league": "Lakeshore",
       "date": "2026-11-22",
       "time": "15:45",
-      "status": "scheduled",
+      "status": "played",
       "home": "CLARINGTON AA U14",
       "visitor": "WHITBY AA U14",
       "location": "South Courtice (B)"
@@ -7642,7 +7642,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-22",
       "time": "16:45",
-      "status": "scheduled",
+      "status": "played",
       "home": "Upper York Admirals U14 AA",
       "visitor": "Collingwood Jr. Blues 14 AA",
       "location": "Georgina Sutton"
@@ -7653,7 +7653,7 @@
       "league": "Tri-County",
       "date": "2026-11-22",
       "time": "17:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "West Niagara Flying Aces",
       "visitor": "Norfolk Knights",
       "location": "Fleming Memorial Arena"
@@ -7664,7 +7664,7 @@
       "league": "Lakeshore",
       "date": "2026-11-22",
       "time": "17:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "BELLEVILLE AA U14",
       "visitor": "NORTHUMBERLAND AA U14",
       "location": "Quinte S & WC (Wally Dever)"
@@ -7675,7 +7675,7 @@
       "league": "Lakeshore",
       "date": "2026-11-22",
       "time": "17:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "PETERBOROUGH AA U14",
       "visitor": "NORTH DURHAM AA U14",
       "location": "Miskin Law CC (South)"
@@ -7686,7 +7686,7 @@
       "league": "Tri-County",
       "date": "2026-11-22",
       "time": "17:45",
-      "status": "scheduled",
+      "status": "played",
       "home": "Flamborough Sabres",
       "visitor": "Garden City Minor Falcons",
       "location": "Harry Howell (B)"
@@ -7697,7 +7697,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-22",
       "time": "18:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "Markham Waxers U14 AA",
       "visitor": "TNT Tornados U14 AA",
       "location": "Angus Glen (1 - West)"
@@ -7708,7 +7708,7 @@
       "league": "Tri-County",
       "date": "2026-11-22",
       "time": "19:40",
-      "status": "scheduled",
+      "status": "played",
       "home": "Glancaster Bombers",
       "visitor": "Hamilton Steel",
       "location": "Morgan (B)"
