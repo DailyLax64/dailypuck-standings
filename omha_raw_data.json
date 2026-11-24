@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T09:01:25.438474+00:00",
+  "generated_at": "2026-11-24T19:54:32.265295+00:00",
   "standings": [
     {
       "league": "Tri-County",
@@ -4042,14 +4042,14 @@
       "cohort": "U14 AA",
       "date": "Nov 23, 2026",
       "time": "8:45 PM",
-      "status": "scheduled",
+      "status": "final",
       "location": "Harry Howell (B)",
       "home_id": "534744",
       "home_name": "Flamborough Sabres",
-      "home_goals": null,
+      "home_goals": 3,
       "visitor_id": "534797",
       "visitor_name": "Niagara Falls Canucks",
-      "visitor_goals": null
+      "visitor_goals": 3
     },
     {
       "game_id": "3191167",
@@ -4449,6 +4449,54 @@
       "home_goals": null,
       "visitor_id": "537295",
       "visitor_name": "Oakville Rangers",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3206301",
+      "league": "Tri-County",
+      "league_id": "15497",
+      "cohort": "U11 AA",
+      "date": "Nov 30, 2026",
+      "time": "6:30 PM",
+      "status": "scheduled",
+      "location": "MSC (D)",
+      "home_id": "534777",
+      "home_name": "Milton Winterhawks",
+      "home_goals": null,
+      "visitor_id": "534724",
+      "visitor_name": "Halton Hills Thunder",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3206302",
+      "league": "Tri-County",
+      "league_id": "15497",
+      "cohort": "U11 AA",
+      "date": "Nov 30, 2026",
+      "time": "6:45 PM",
+      "status": "scheduled",
+      "location": "Parkdale (Parkdale)",
+      "home_id": "534787",
+      "home_name": "Hamilton Steel",
+      "home_goals": null,
+      "visitor_id": "534795",
+      "visitor_name": "Niagara Falls Canucks",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3206303",
+      "league": "Tri-County",
+      "league_id": "15497",
+      "cohort": "U11 AA",
+      "date": "Nov 30, 2026",
+      "time": "7:00 PM",
+      "status": "scheduled",
+      "location": "S-H SEC (Sportsplex) (1)",
+      "home_id": "534701",
+      "home_name": "Garden City Minor Falcons",
+      "home_goals": null,
+      "visitor_id": "534728",
+      "visitor_name": "Glancaster Bombers",
       "visitor_goals": null
     },
     {
