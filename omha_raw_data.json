@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T04:01:37.648818+00:00",
+  "generated_at": "2026-11-24T09:01:25.438474+00:00",
   "standings": [
     {
       "league": "Tri-County",
@@ -9265,6 +9265,22 @@
       "home_goals": null,
       "visitor_id": "534524",
       "visitor_name": "OSHAWA AA U14",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3206237",
+      "league": "Lakeshore",
+      "league_id": "15493",
+      "cohort": "U14 AA",
+      "date": "Nov 30, 2026",
+      "time": "8:00 PM",
+      "status": "scheduled",
+      "location": "Duncan McDonald (1)",
+      "home_id": "534562",
+      "home_name": "QUINTE WEST AA U14",
+      "home_goals": null,
+      "visitor_id": "534528",
+      "visitor_name": "WHITBY AA U14",
       "visitor_goals": null
     }
   ]

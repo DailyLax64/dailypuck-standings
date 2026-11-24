@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-24T04:01:28.861641+00:00",
-  "total_season_games": 946,
+  "updated_at": "2026-11-24T09:01:17.508847+00:00",
+  "total_season_games": 944,
   "games": [
     {
       "game_code": "U11AA-RS-68",
@@ -55,7 +55,7 @@
       "status": "played",
       "home": "Centre Wellington Fusion",
       "visitor": "West Niagara Flying Aces",
-      "location": "Jefferson Elora Community Centre"
+      "location": "Elora"
     },
     {
       "game_code": "U11AA-104",
@@ -330,7 +330,7 @@
       "status": "played",
       "home": "Centre Wellington Fusion",
       "visitor": "Brampton 45s",
-      "location": "Jefferson Elora Community Centre"
+      "location": "Elora"
     },
     {
       "game_code": "U11AA-RS--072",
@@ -407,7 +407,7 @@
       "status": "played",
       "home": "Brampton 45s",
       "visitor": "Centre Wellington Fusion",
-      "location": "Earnscliffe (2)"
+      "location": "Earnscliffe (Pad 2)"
     },
     {
       "game_code": "U11AA-063",
@@ -463,17 +463,6 @@
       "home": "Stoney Creek Warriors",
       "visitor": "West Niagara Flying Aces",
       "location": "Valley Park arena"
-    },
-    {
-      "game_code": "U11AA-40",
-      "cohort": "U11 AA",
-      "league": "Tri-County",
-      "date": "2026-10-10",
-      "time": "17:45",
-      "status": "played",
-      "home": "Glancaster Bombers",
-      "visitor": "Centre Wellington Fusion",
-      "location": "Morgan (B)"
     },
     {
       "game_code": "U11AA-44",
@@ -605,7 +594,7 @@
       "status": "played",
       "home": "Centre Wellington Fusion",
       "visitor": "Halton Hills Thunder",
-      "location": "Jefferson Elora Community Centre"
+      "location": "Elora"
     },
     {
       "game_code": "U11AA-RS-14",
@@ -913,7 +902,7 @@
       "status": "played",
       "home": "Centre Wellington Fusion",
       "visitor": "Oakville Rangers",
-      "location": "Jefferson Elora Community Centre"
+      "location": "Elora"
     },
     {
       "game_code": "U11AA-RS-38",
@@ -968,7 +957,7 @@
       "status": "played",
       "home": "Norfolk Knights",
       "visitor": "Centre Wellington Fusion",
-      "location": "Port Dover"
+      "location": "Port Dover Arena"
     },
     {
       "game_code": "U11AA-061",
@@ -1529,7 +1518,7 @@
       "status": "played",
       "home": "Centre Wellington Fusion",
       "visitor": "Hamilton Steel",
-      "location": "Jefferson Elora Community Centre"
+      "location": "Elora"
     },
     {
       "game_code": "U11AA-RS-64",
@@ -1617,7 +1606,7 @@
       "status": "played",
       "home": "Hamilton Steel",
       "visitor": "Centre Wellington Fusion",
-      "location": "Parkdale"
+      "location": "Pat Quinn-Parkdale Arena"
     },
     {
       "game_code": "U11AA-25",
@@ -2362,7 +2351,7 @@
       "league": "Tri-County",
       "date": "2026-11-23",
       "time": "18:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "Milton Winterhawks",
       "visitor": "Niagara Falls Canucks",
       "location": "Milton Sports Centre - Rink D"
@@ -2373,7 +2362,7 @@
       "league": "Tri-County",
       "date": "2026-11-23",
       "time": "19:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "Flamborough Sabres",
       "visitor": "Burlington Eagles",
       "location": "Harry Howell (B)"
@@ -2384,7 +2373,7 @@
       "league": "Tri-County",
       "date": "2026-11-23",
       "time": "19:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "Guelph Gryphons",
       "visitor": "Oakville Rangers",
       "location": "WERC (1)"
@@ -2629,7 +2618,7 @@
       "status": "scheduled",
       "home": "Halton Hills Thunder",
       "visitor": "Centre Wellington Fusion",
-      "location": "Acton (B)"
+      "location": "B-Acton (McKnight)"
     },
     {
       "game_code": "U11AA-RS--014",
@@ -3410,7 +3399,7 @@
       "status": "scheduled",
       "home": "Flamborough Sabres",
       "visitor": "Centre Wellington Fusion",
-      "location": "Harry Howell (B)"
+      "location": "Harry Howell Arena (B)"
     },
     {
       "game_code": "U11AA-037",
@@ -3531,7 +3520,7 @@
       "status": "scheduled",
       "home": "Centre Wellington Fusion",
       "visitor": "Flamborough Sabres",
-      "location": "Jefferson Elora Community Centre"
+      "location": "Elora"
     },
     {
       "game_code": "U11AA-156",
@@ -3828,7 +3817,7 @@
       "status": "scheduled",
       "home": "Centre Wellington Fusion",
       "visitor": "Norfolk Knights",
-      "location": "Jefferson Elora Community Centre"
+      "location": "Elora"
     },
     {
       "game_code": "U11AA-RS-17",
@@ -4257,7 +4246,7 @@
       "status": "scheduled",
       "home": "Centre Wellington Fusion",
       "visitor": "Guelph Gryphons",
-      "location": "Jefferson Elora Community Centre"
+      "location": "Elora"
     },
     {
       "game_code": "U11AA-106",
@@ -4422,7 +4411,7 @@
       "status": "scheduled",
       "home": "Niagara Falls Canucks",
       "visitor": "Centre Wellington Fusion",
-      "location": "Gale (4 - Centennial)"
+      "location": "Gale Centre 4 - Centennial"
     },
     {
       "game_code": "U11AA-150",
@@ -4609,7 +4598,7 @@
       "status": "scheduled",
       "home": "Centre Wellington Fusion",
       "visitor": "Milton Winterhawks",
-      "location": "Jefferson Elora Community Centre"
+      "location": "Elora"
     },
     {
       "game_code": "U11AA-4",
@@ -4708,7 +4697,7 @@
       "status": "scheduled",
       "home": "Guelph Gryphons",
       "visitor": "Centre Wellington Fusion",
-      "location": "WERC (1)"
+      "location": "West End Recreation Centre (1)"
     },
     {
       "game_code": "U11AA-RS-44",
@@ -4796,7 +4785,7 @@
       "status": "scheduled",
       "home": "West Niagara Flying Aces",
       "visitor": "Centre Wellington Fusion",
-      "location": "Fleming"
+      "location": "Fleming Memorial Arena"
     },
     {
       "game_code": "U11AA-027",
@@ -4830,17 +4819,6 @@
       "home": "Milton Winterhawks",
       "visitor": "Oakville Rangers",
       "location": "MSC (D)"
-    },
-    {
-      "game_code": "U11AA-145",
-      "cohort": "U11 AA",
-      "league": "Tri-County",
-      "date": "2027-01-19",
-      "time": "18:20",
-      "status": "scheduled",
-      "home": "Centre Wellington Fusion",
-      "visitor": "Glancaster Bombers",
-      "location": "Centre Wellington Community Sportsplex (Pad A)"
     },
     {
       "game_code": "U11AA-160",
@@ -7719,7 +7697,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-23",
       "time": "18:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "Aurora Tigers U14 AA",
       "visitor": "South Simcoe Storm U14 AA",
       "location": "Aurora Rec Complex (Toyota)"
@@ -7730,7 +7708,7 @@
       "league": "Tri-County",
       "date": "2026-11-23",
       "time": "19:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "Hamilton Steel",
       "visitor": "Halton Hills Thunder",
       "location": "Chedoke Twin Pad - Red"
@@ -7741,7 +7719,7 @@
       "league": "Lakeshore",
       "date": "2026-11-23",
       "time": "19:45",
-      "status": "scheduled",
+      "status": "played",
       "home": "BELLEVILLE AA U14",
       "visitor": "KINGSTON AREA AA U14",
       "location": "Quinte S & WC (FDC)"
@@ -7752,7 +7730,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-23",
       "time": "20:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "Newmarket Renegades U14 AA",
       "visitor": "Stouffville Clippers U14 AA",
       "location": "Ray Twinney (1)"
@@ -7763,7 +7741,7 @@
       "league": "Tri-County",
       "date": "2026-11-23",
       "time": "20:45",
-      "status": "scheduled",
+      "status": "played",
       "home": "Flamborough Sabres",
       "visitor": "Niagara Falls Canucks",
       "location": "Harry Howell (B)"
