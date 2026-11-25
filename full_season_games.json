@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-25T04:01:21.058730+00:00",
+  "updated_at": "2026-11-25T09:01:06.370568+00:00",
   "total_season_games": 946,
   "games": [
     {
@@ -2395,7 +2395,7 @@
       "league": "Lakeshore",
       "date": "2026-11-24",
       "time": "17:15",
-      "status": "scheduled",
+      "status": "played",
       "home": "AJAX-PICKERING AA U11",
       "visitor": "CLARINGTON AA U11",
       "location": "Ajax Community Centre (Pad 3)"
@@ -2406,7 +2406,7 @@
       "league": "Tri-County",
       "date": "2026-11-24",
       "time": "18:15",
-      "status": "scheduled",
+      "status": "played",
       "home": "Flamborough Sabres",
       "visitor": "Stoney Creek Warriors",
       "location": "Harry Howell (B)"
@@ -2417,7 +2417,7 @@
       "league": "Lakeshore",
       "date": "2026-11-24",
       "time": "19:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "OSHAWA AA U11",
       "visitor": "NORTH DURHAM AA U11",
       "location": "Delpark Homes (1)"
@@ -2428,7 +2428,7 @@
       "league": "Tri-County",
       "date": "2026-11-24",
       "time": "19:15",
-      "status": "scheduled",
+      "status": "played",
       "home": "Garden City Minor Falcons",
       "visitor": "Burlington Eagles",
       "location": "Bill Burgoyne Arena"
@@ -7774,7 +7774,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-24",
       "time": "19:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "Markham Waxers U14 AA",
       "visitor": "Orangeville Flyers U14 AA",
       "location": "Centennial"
@@ -7785,7 +7785,7 @@
       "league": "Tri-County",
       "date": "2026-11-24",
       "time": "19:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "Oakville Rangers",
       "visitor": "Burlington Eagles",
       "location": "SMSC (2)"
