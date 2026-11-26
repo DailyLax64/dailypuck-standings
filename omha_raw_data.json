@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T09:01:26.323310+00:00",
+  "generated_at": "2026-11-26T18:48:20.153011+00:00",
   "standings": [
     {
       "league": "Tri-County",
@@ -7092,6 +7092,54 @@
       "visitor_goals": null
     },
     {
+      "game_id": "3210909",
+      "league": "York-Simcoe",
+      "league_id": "15489",
+      "cohort": "U11 AA",
+      "date": "Dec 2, 2026",
+      "time": "6:00 PM",
+      "status": "scheduled",
+      "location": "Centennial (Centennial)",
+      "home_id": "534123",
+      "home_name": "Markham Waxers U11 AA",
+      "home_goals": null,
+      "visitor_id": "534159",
+      "visitor_name": "Orangeville Flyer U11 AA",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3210927",
+      "league": "York-Simcoe",
+      "league_id": "15489",
+      "cohort": "U14 AA",
+      "date": "Dec 2, 2026",
+      "time": "7:15 PM",
+      "status": "scheduled",
+      "location": "Alder (Red)",
+      "home_id": "534166",
+      "home_name": "Orangeville Flyers U14 AA",
+      "home_goals": null,
+      "visitor_id": "534151",
+      "visitor_name": "King Rebellion U14 AA",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3210928",
+      "league": "York-Simcoe",
+      "league_id": "15489",
+      "cohort": "U14 AA",
+      "date": "Dec 2, 2026",
+      "time": "7:30 PM",
+      "status": "scheduled",
+      "location": "Caledon East (1)",
+      "home_id": "534165",
+      "home_name": "Caledon Hawks U14 AA",
+      "home_goals": null,
+      "visitor_id": "534128",
+      "visitor_name": "Barrie Colts U14 AA",
+      "visitor_goals": null
+    },
+    {
       "game_id": "3032658",
       "league": "Lakeshore",
       "league_id": "15493",
@@ -9425,6 +9473,22 @@
       "home_goals": null,
       "visitor_id": "534499",
       "visitor_name": "WHITBY AA U11",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3210856",
+      "league": "Lakeshore",
+      "league_id": "15493",
+      "cohort": "U14 AA",
+      "date": "Dec 2, 2026",
+      "time": "7:15 PM",
+      "status": "scheduled",
+      "location": "Uxbridge (2)",
+      "home_id": "534526",
+      "home_name": "NORTH DURHAM AA U14",
+      "home_goals": null,
+      "visitor_id": "534524",
+      "visitor_name": "OSHAWA AA U14",
       "visitor_goals": null
     }
   ]
