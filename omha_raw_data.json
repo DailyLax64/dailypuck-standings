@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T04:01:14.684443+00:00",
+  "generated_at": "2026-11-26T09:01:26.323310+00:00",
   "standings": [
     {
       "league": "Tri-County",
@@ -9409,6 +9409,22 @@
       "home_goals": null,
       "visitor_id": "534528",
       "visitor_name": "WHITBY AA U14",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3210728",
+      "league": "Lakeshore",
+      "league_id": "15493",
+      "cohort": "U11 AA",
+      "date": "Dec 2, 2026",
+      "time": "6:15 PM",
+      "status": "scheduled",
+      "location": "Rickard (Toyota)",
+      "home_id": "534494",
+      "home_name": "CLARINGTON AA U11",
+      "home_goals": null,
+      "visitor_id": "534499",
+      "visitor_name": "WHITBY AA U11",
       "visitor_goals": null
     }
   ]

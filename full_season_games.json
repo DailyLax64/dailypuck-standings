@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-26T04:01:06.861308+00:00",
+  "updated_at": "2026-11-26T09:01:18.575983+00:00",
   "total_season_games": 946,
   "games": [
     {
@@ -2439,7 +2439,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-25",
       "time": "18:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "Barrie Colts U11 AA",
       "visitor": "Newmarket Renegades U11 AA",
       "location": "East Bayfield (Purple)"
@@ -2450,7 +2450,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-25",
       "time": "18:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "Orangeville Flyer U11 AA",
       "visitor": "TNT Tornados U11 AA",
       "location": "Alder Red"
@@ -2461,7 +2461,7 @@
       "league": "Tri-County",
       "date": "2026-11-25",
       "time": "19:15",
-      "status": "scheduled",
+      "status": "played",
       "home": "West Niagara Flying Aces",
       "visitor": "Norfolk Knights",
       "location": "Fleming"
@@ -2472,7 +2472,7 @@
       "league": "Tri-County",
       "date": "2026-11-25",
       "time": "19:45",
-      "status": "scheduled",
+      "status": "played",
       "home": "Oakville Rangers",
       "visitor": "Glancaster Bombers",
       "location": "Marc Pinizzotto Memorial (Red)"
@@ -7796,7 +7796,7 @@
       "league": "Tri-County",
       "date": "2026-11-25",
       "time": "19:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "Garden City Minor Falcons",
       "visitor": "Milton Winterhawks",
       "location": "Seymour-Hannah (3)"
@@ -7807,7 +7807,7 @@
       "league": "Tri-County",
       "date": "2026-11-25",
       "time": "19:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "Halton Hills Thunder",
       "visitor": "Centre Wellington Fusion",
       "location": "Acton (Main)"
@@ -7818,7 +7818,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-25",
       "time": "19:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "Caledon Hawks U14 AA",
       "visitor": "Orangeville Flyers U14 AA",
       "location": "Caledon East (1)"
@@ -7829,7 +7829,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-25",
       "time": "19:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "South Simcoe Storm U14 AA",
       "visitor": "Barrie Colts U14 AA",
       "location": "IRC CORTELLUCCI (RED)"
@@ -7840,7 +7840,7 @@
       "league": "Lakeshore",
       "date": "2026-11-25",
       "time": "19:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "WHITBY AA U14",
       "visitor": "QUINTE WEST AA U14",
       "location": "IPSC (1)"
