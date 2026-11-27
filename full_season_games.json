@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-27T04:01:04.075269+00:00",
+  "updated_at": "2026-11-27T09:01:08.526160+00:00",
   "total_season_games": 946,
   "games": [
     {
@@ -2483,7 +2483,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-26",
       "time": "18:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "Newmarket Renegades U11 AA",
       "visitor": "Richmond Hill Jaguars U11 AA",
       "location": "Magna Centre (Scotiabank)"
@@ -7851,7 +7851,7 @@
       "league": "Lakeshore",
       "date": "2026-11-26",
       "time": "18:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "AJAX-PICKERING AA U14",
       "visitor": "CLARINGTON AA U14",
       "location": "Don Beer Arena (Pad 2)"
@@ -7862,7 +7862,7 @@
       "league": "Lakeshore",
       "date": "2026-11-26",
       "time": "19:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "OSHAWA AA U14",
       "visitor": "WHITBY AA U14",
       "location": "Delpark Homes Centre (Pad 1)"
@@ -7873,7 +7873,7 @@
       "league": "Tri-County",
       "date": "2026-11-26",
       "time": "19:30",
-      "status": "scheduled",
+      "status": "played",
       "home": "Norfolk Knights",
       "visitor": "Burlington Eagles",
       "location": "Waterford"
@@ -7884,7 +7884,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-26",
       "time": "20:15",
-      "status": "scheduled",
+      "status": "played",
       "home": "Collingwood Jr. Blues 14 AA",
       "visitor": "Markham Waxers U14 AA",
       "location": "Eddie Bush Arena"

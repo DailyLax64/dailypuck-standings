@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T04:01:11.059804+00:00",
+  "generated_at": "2026-11-27T09:01:16.795256+00:00",
   "standings": [
     {
       "league": "Tri-County",
@@ -4564,6 +4564,38 @@
       "visitor_goals": null
     },
     {
+      "game_id": "3211624",
+      "league": "Tri-County",
+      "league_id": "15497",
+      "cohort": "U14 AA",
+      "date": "Dec 3, 2026",
+      "time": "6:00 PM",
+      "status": "scheduled",
+      "location": "S-H SEC (Sportsplex) (1)",
+      "home_id": "534743",
+      "home_name": "Garden City Minor Falcons",
+      "home_goals": null,
+      "visitor_id": "534744",
+      "visitor_name": "Flamborough Sabres",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3211625",
+      "league": "Tri-County",
+      "league_id": "15497",
+      "cohort": "U14 AA",
+      "date": "Dec 3, 2026",
+      "time": "7:30 PM",
+      "status": "scheduled",
+      "location": "Waterford (Waterford)",
+      "home_id": "537296",
+      "home_name": "Norfolk Knights",
+      "home_goals": null,
+      "visitor_id": "537295",
+      "visitor_name": "Oakville Rangers",
+      "visitor_goals": null
+    },
+    {
       "game_id": "3032678",
       "league": "York-Simcoe",
       "league_id": "15489",
@@ -7137,6 +7169,38 @@
       "home_goals": null,
       "visitor_id": "534128",
       "visitor_name": "Barrie Colts U14 AA",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3211711",
+      "league": "York-Simcoe",
+      "league_id": "15489",
+      "cohort": "U11 AA",
+      "date": "Dec 3, 2026",
+      "time": "6:30 PM",
+      "status": "scheduled",
+      "location": "Magna (Scotiabank)",
+      "home_id": "534121",
+      "home_name": "Newmarket Renegades U11 AA",
+      "home_goals": null,
+      "visitor_id": "534090",
+      "visitor_name": "Aurora Tigers U11 AA",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3211539",
+      "league": "York-Simcoe",
+      "league_id": "15489",
+      "cohort": "U14 AA",
+      "date": "Dec 3, 2026",
+      "time": "8:15 PM",
+      "status": "scheduled",
+      "location": "Eddie Bush (Eddie Bush)",
+      "home_id": "534178",
+      "home_name": "Collingwood Jr. Blues 14 AA",
+      "home_goals": null,
+      "visitor_id": "534102",
+      "visitor_name": "Aurora Tigers U14 AA",
       "visitor_goals": null
     },
     {
