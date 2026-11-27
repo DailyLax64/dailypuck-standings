@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T18:48:20.153011+00:00",
+  "generated_at": "2026-11-27T04:01:11.059804+00:00",
   "standings": [
     {
       "league": "Tri-County",
@@ -1013,6 +1013,22 @@
       "league": "Lakeshore",
       "league_id": "15493",
       "cohort": "U14 AA",
+      "team_id": "534527",
+      "team_name": "CLARINGTON AA U14",
+      "gp": 0,
+      "w": 0,
+      "l": 0,
+      "t": 0,
+      "pts": 0,
+      "gf": 0,
+      "ga": 0,
+      "diff": 0,
+      "pim": 0
+    },
+    {
+      "league": "Lakeshore",
+      "league_id": "15493",
+      "cohort": "U14 AA",
       "team_id": "534525",
       "team_name": "BELLEVILLE AA U14",
       "gp": 0,
@@ -1031,22 +1047,6 @@
       "cohort": "U14 AA",
       "team_id": "534529",
       "team_name": "AJAX-PICKERING AA U14",
-      "gp": 0,
-      "w": 0,
-      "l": 0,
-      "t": 0,
-      "pts": 0,
-      "gf": 0,
-      "ga": 0,
-      "diff": 0,
-      "pim": 0
-    },
-    {
-      "league": "Lakeshore",
-      "league_id": "15493",
-      "cohort": "U14 AA",
-      "team_id": "534527",
-      "team_name": "CLARINGTON AA U14",
       "gp": 0,
       "w": 0,
       "l": 0,
@@ -4170,14 +4170,14 @@
       "cohort": "U14 AA",
       "date": "Nov 26, 2026",
       "time": "7:30 PM",
-      "status": "scheduled",
+      "status": "final",
       "location": "Waterford (Waterford)",
       "home_id": "537296",
       "home_name": "Norfolk Knights",
-      "home_goals": null,
+      "home_goals": 4,
       "visitor_id": "534747",
       "visitor_name": "Burlington Eagles",
-      "visitor_goals": null
+      "visitor_goals": 7
     },
     {
       "game_id": "3197062",
@@ -6826,14 +6826,14 @@
       "cohort": "U11 AA",
       "date": "Nov 26, 2026",
       "time": "6:30 PM",
-      "status": "scheduled",
+      "status": "final",
       "location": "Magna (Scotiabank)",
       "home_id": "534121",
       "home_name": "Newmarket Renegades U11 AA",
-      "home_goals": null,
+      "home_goals": 6,
       "visitor_id": "534160",
       "visitor_name": "Richmond Hill Jaguars U11 AA",
-      "visitor_goals": null
+      "visitor_goals": 1
     },
     {
       "game_id": "3195320",
@@ -9178,14 +9178,14 @@
       "cohort": "U14 AA",
       "date": "Nov 26, 2026",
       "time": "6:00 PM",
-      "status": "scheduled",
+      "status": "final",
       "location": "Don Beer (2)",
       "home_id": "534529",
       "home_name": "AJAX-PICKERING AA U14",
-      "home_goals": null,
+      "home_goals": 3,
       "visitor_id": "534527",
       "visitor_name": "CLARINGTON AA U14",
-      "visitor_goals": null
+      "visitor_goals": 6
     },
     {
       "game_id": "3195255",
