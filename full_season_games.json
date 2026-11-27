@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-27T09:01:08.526160+00:00",
+  "updated_at": "2026-11-27T18:40:26.683987+00:00",
   "total_season_games": 946,
   "games": [
     {
@@ -649,7 +649,7 @@
       "status": "played",
       "home": "KINGSTON AREA AA U11",
       "visitor": "NORTH DURHAM AA U11",
-      "location": "INVISTA (CUPE)"
+      "location": "INVISTA (CS Physio)"
     },
     {
       "game_code": "U11AA-091",
@@ -9694,6 +9694,17 @@
       "location": "Harry Howell (B)"
     },
     {
+      "game_code": "U14AA-RS-131",
+      "cohort": "U14 AA",
+      "league": "York-Simcoe",
+      "date": "2027-01-12",
+      "time": "19:30",
+      "status": "scheduled",
+      "home": "Stouffville Clippers U14 AA",
+      "visitor": "Aurora Tigers U14 AA",
+      "location": "Stouffville (Pad A)"
+    },
+    {
       "game_code": "U14AA-036",
       "cohort": "U14 AA",
       "league": "Lakeshore",
@@ -9714,17 +9725,6 @@
       "home": "Collingwood Jr. Blues 14 AA",
       "visitor": "Barrie Colts U14 AA",
       "location": "Eddie Bush Arena"
-    },
-    {
-      "game_code": "U14AA-RS-131",
-      "cohort": "U14 AA",
-      "league": "York-Simcoe",
-      "date": "2027-01-15",
-      "time": "20:00",
-      "status": "scheduled",
-      "home": "Stouffville Clippers U14 AA",
-      "visitor": "Aurora Tigers U14 AA",
-      "location": "Stouffville Clippers (CC1)"
     },
     {
       "game_code": "U14AA-111",
