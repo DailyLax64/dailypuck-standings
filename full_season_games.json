@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-28T04:01:09.199998+00:00",
+  "updated_at": "2026-11-28T09:01:18.944686+00:00",
   "total_season_games": 946,
   "games": [
     {
@@ -2494,7 +2494,7 @@
       "league": "York-Simcoe",
       "date": "2026-11-27",
       "time": "18:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "Stouffville Clippers U11 AA",
       "visitor": "TNT Tornados U11 AA",
       "location": "Stouffville (Pad A)"
@@ -2505,7 +2505,7 @@
       "league": "Lakeshore",
       "date": "2026-11-27",
       "time": "18:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "KINGSTON AREA AA U11",
       "visitor": "BELLEVILLE AA U11",
       "location": "Centre 70"
@@ -2516,7 +2516,7 @@
       "league": "Lakeshore",
       "date": "2026-11-27",
       "time": "18:45",
-      "status": "scheduled",
+      "status": "played",
       "home": "PETERBOROUGH AA U11",
       "visitor": "NORTH DURHAM AA U11",
       "location": "Miskin Law CC (Russelle Toyota)"
@@ -2527,7 +2527,7 @@
       "league": "Tri-County",
       "date": "2026-11-27",
       "time": "19:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "Brampton 45s",
       "visitor": "Guelph Gryphons",
       "location": "Susan Fennell (1)"
@@ -2538,7 +2538,7 @@
       "league": "Lakeshore",
       "date": "2026-11-27",
       "time": "19:00",
-      "status": "scheduled",
+      "status": "played",
       "home": "OSHAWA AA U11",
       "visitor": "CLARINGTON AA U11",
       "location": "Delpark Homes Centre (Pad 1)"

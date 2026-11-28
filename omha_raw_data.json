@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-28T04:01:15.582945+00:00",
+  "generated_at": "2026-11-28T09:01:28.380523+00:00",
   "standings": [
     {
       "league": "Tri-County",
@@ -9553,6 +9553,22 @@
       "home_goals": null,
       "visitor_id": "534524",
       "visitor_name": "OSHAWA AA U14",
+      "visitor_goals": null
+    },
+    {
+      "game_id": "3212475",
+      "league": "Lakeshore",
+      "league_id": "15493",
+      "cohort": "U11 AA",
+      "date": "Dec 4, 2026",
+      "time": "7:00 PM",
+      "status": "scheduled",
+      "location": "Delpark Homes (1)",
+      "home_id": "534493",
+      "home_name": "OSHAWA AA U11",
+      "home_goals": null,
+      "visitor_id": "534494",
+      "visitor_name": "CLARINGTON AA U11",
       "visitor_goals": null
     }
   ]
